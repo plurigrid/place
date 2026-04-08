@@ -1,0 +1,74 @@
+\title{Focused Ultrasound: Multi-Sensory Stimulation Architecture}
+\taxon{device}
+\author{monaduck1069}
+\date{2026-04-07}
+\import{macros}
+\tag{fus}
+\tag{ultrasound}
+\tag{stimulation}
+\tag{hardware}
+\meta{modality}{neurostimulation}
+\meta{product}{Rigol AWG + 300kHz FUS transducer}
+\meta{price}{$3500 (ultrasound) + $7000 (tongue electrodes)}
+
+\p{A single focused ultrasound rig covering four sensory cortices via beam steering, plus a tongue electrode array for taste. Total BOM: ~$10,500 for all five senses. The key insight is that one 300kHz transducer can target multiple cortical regions by changing the beam angle and coupling point — no need for separate hardware per modality.}
+
+\image{fus-multisensory-arch.png}
+
+\subtree{\title{Shared ultrasound hardware ($3,500)}
+\taxon{remark}
+\ul{
+\li{Rigol AWG (arbitrary waveform generator) — drives the transducer}
+\li{RF amplifier — boosts signal to therapeutic levels}
+\li{300 kHz single-element transducer — low frequency for transcranial penetration}
+\li{Ultrasound gel + 3D-printed mount — mechanical coupling and positioning}
+}
+\p{Beam steering reuses the same probe at different angles and coupling points to reach four distinct cortical targets.}
+}
+
+\subtree{\title{Cortical targets}
+\taxon{remark}
+
+\table{
+\tr{\th{Target} \th{Cortex} \th{Modality} \th{Protocol} \th{Evidence (n)}}
+\tr{\td{OlfBulb} \td{Olfactory bulb} \td{Smell} \td{Chizhov} \td{2 ★}}
+\tr{\td{S1} \td{Primary somatosensory} \td{Touch} \td{Lee/Legon} \td{18}}
+\tr{\td{V1} \td{Primary visual} \td{Sight (+tDCS)} \td{—} \td{19}}
+\tr{\td{A1} \td{Primary auditory} \td{Hearing} \td{Gavrilov} \td{50+}}
+}
+
+\p{Evidence strength increases from smell (2 studies, high risk) to hearing (50+ studies, most mature). The starred olfactory entry flags it as the least validated pathway.}
+}
+
+\subtree{\title{Tongue electrodes ($7,000)}
+\taxon{remark}
+\ul{
+\li{256-channel electrode array — placed on tongue surface}
+\li{EEG decode — closed-loop feedback from cortical activity}
+\li{Targets gustatory cortex indirectly — ultrasound cannot easily reach insular cortex}
+}
+\p{This is the most expensive single component. The BrainPort-style tongue display has decades of prior art in sensory substitution (Bach-y-Rita).}
+}
+
+\subtree{\title{Beam steering strategy}
+\taxon{remark}
+\p{Rather than buying four transducers, a single 300 kHz element is repositioned using a 3D-printed articulating mount. Each cortical target requires a different:}
+\ol{
+\li{Skull coupling point (gel pad location)}
+\li{Beam angle (azimuth + elevation relative to cortical target)}
+\li{Focal depth (adjusted via waveform parameters on the AWG)}
+}
+\p{Sequential stimulation across modalities. Simultaneous multi-target requires phased arrays (not in this BOM).}
+}
+
+\subtree{\title{Risk assessment by modality}
+\taxon{remark}
+\table{
+\tr{\th{Modality} \th{Risk} \th{Notes}}
+\tr{\td{Hearing} \td{Low} \td{Gavrilov demonstrated ultrasonic hearing in the 1970s; 50+ replications}}
+\tr{\td{Sight} \td{Low-Medium} \td{19 studies; V1 is superficial and easy to target; tDCS co-stimulation common}}
+\tr{\td{Touch} \td{Medium} \td{Lee/Legon S1 protocols well-characterized; 18 studies}}
+\tr{\td{Smell} \td{High} \td{Only 2 studies (Chizhov); olfactory bulb is small and anterior — targeting is hard}}
+\tr{\td{Taste} \td{Medium} \td{No FUS path; relies on tongue electrodes with established sensory substitution literature}}
+}
+}
