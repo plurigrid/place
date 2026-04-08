@@ -157,5 +157,8 @@
 \li{Loregian, arXiv:2509.06769 -- 2-transducers as 1-cells in a bicategory}
 \li{Nelson, \em{Literary Machines} (1981) -- transclusion as live reference}
 \li{Kant, \em{Critique of Pure Reason} (1781) -- transcendental as conditions of possibility}
+\li{\ref{stk-0004} -- Categories: 2-transducers live in a bicategory of categories}
+\li{\ref{stk-0006} -- Sheaves on Spaces: transclusion is the sheaf restriction map}
+\li{\ref{stk-0007} -- Sites and Sheaves: the forest topology is a Grothendieck site}
 }
 }

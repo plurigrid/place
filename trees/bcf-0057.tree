@@ -92,5 +92,9 @@
 \li{\ref{bcf-0055} -- Alterstructure design this inventory feeds}
 \li{LG TV detailed profile in project memory (lg-webos-tv.md)}
 \li{plurigrid/vivarium repo: inventory.md, deploy scripts}
+\li{\ref{stk-0033} -- Varieties: 52-device network as algebraic variety (points=devices, Zariski=VLANs)}
+\li{\ref{stk-0005} -- Topology: mDNS service broadcast defines the network topology}
+\li{\ref{stk-0065} -- Algebraic Spaces: devices as algebraic spaces quotiented by VLAN equivalence}
+\li{\ref{stk-0085} -- Simplicial Spaces: Cech nerve of the VLAN cover recovers full topology}
 }
 }

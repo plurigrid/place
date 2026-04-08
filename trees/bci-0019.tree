@@ -108,5 +108,9 @@ Evoked response              nk.erp_process()
 \li{\ref{bcf-0057} -- Vivarium inventory: DGX, workstations on VLAN 10}
 \li{\ref{bci-0018} -- HRV trit: independent autonomic channel alongside cortical trit}
 \li{\ref{bcf-0054} -- Trans-Pentad: FUS stimulation is transduction (+1), EEG recording is also transduction (+1), the closed loop is transitivity (0)}
+\li{\ref{stk-0030} -- Cohomology of Schemes: evoked potentials as cohomology classes persisting across trials}
+\li{\ref{stk-0051} -- Local Cohomology: ERP source localization computes cortical support}
+\li{\ref{stk-0087} -- Formal Algebraic Spaces: EEG linearization around stimulus onset = formal neighborhood}
+\li{\ref{stk-0091} -- Deformation Theory: BCI calibration as infinitesimal deformation of default model}
 }
 }
