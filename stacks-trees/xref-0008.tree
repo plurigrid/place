@@ -1,0 +1,69 @@
+\title{Stacks-BCI Bridge: Algebraic Foundations}
+\taxon{reference}
+\author{barton-rhodes}
+\date{2026-04-08}
+\import{macros}
+\tag{stacks-project}
+\tag{transclusion}
+\tag{bridge}
+
+\p{Transclusion links from orphaned Stacks Project chapters into the BCI Factory forest. Each link identifies the mathematical structure in the Stacks chapter that appears (often implicitly) in the BCI stack. Goal: reduce the non-transcluded ratio from 73 percent toward 50 percent.}
+
+\subtree{\title{Foundations → Pipeline Infrastructure}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0003} Set Theory}\td{\ref{bcf-0054} Trans-Pentad}\td{GF(3)/GF(5) fields are quotient sets. Pentad algebra requires set-theoretic foundations for finite field arithmetic.}}
+\tr{\td{\ref{stk-0005} Topology}\td{\ref{bcf-0055} Alterstructure}\td{VLAN topology is literally a network topology. Open sets = reachable subnets. Firewall rules = continuous maps between topological spaces.}}
+\tr{\td{\ref{stk-0010} Commutative Algebra}\td{Ego-locale}\td{Ordered locales are frames, which are complete Heyting algebras over commutative rings. The way-below relation is an algebraic structure.}}
+\tr{\td{\ref{stk-0026} Schemes}\td{CatColab Olog}\td{Schemes are the geometric objects built from commutative algebra. The CatColab 4-model stack uses scheme-like structures for compositional modeling.}}
+\tr{\td{\ref{stk-0014} Simplicial Methods}\td{Aella term graphs}\td{DPO rewriting on term graphs uses simplicial structure. Nerve of a category = simplicial set.}}
+}
+}
+
+\subtree{\title{Sheaves and Modules → Signal Processing}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0017} Sheaves of Modules}\td{\ref{bcf-0052} HD-72 pipeline}\td{EEG channel data over electrode montage = sheaf of modules over a site. Each electrode is an open set; the sheaf assigns a signal module.}}
+\tr{\td{\ref{stk-0018} Modules on Sites}\td{\ref{bci-0018} HRV coplay}\td{HRV metrics over sliding time windows = sections of a sheaf on the site of time intervals. Gluing = overlapping window consistency.}}
+\tr{\td{\ref{stk-0019} Injectives}\td{NeuroKit2 processing}\td{Injective resolutions compute derived functors. ERP averaging is a derived functor: the evoked potential is the cohomological residue after noise cancellation.}}
+\tr{\td{\ref{stk-0030} Cohomology of Schemes}\td{\ref{bci-0019} Closed-loop BCI}\td{Evoked potentials are cohomology classes: they persist across stimulation trials while noise varies. The FUS-EEG loop computes H^0 of the stimulus sheaf.}}
+}
+}
+
+\subtree{\title{Morphisms → Network and Protocol}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0029} Morphisms of Schemes}\td{\ref{bcf-0055} Alterstructure}\td{VLAN firewall rules are morphisms between network schemes. A capability grant is a morphism from the authority scheme to the device scheme.}}
+\tr{\td{\ref{stk-0041} Etale Morphisms}\td{OCapN CapTP}\td{Capability attenuation across vat boundaries is an etale cover: locally isomorphic (same interface) but globally branched (attenuated authority).}}
+\tr{\td{\ref{stk-0031} Divisors}\td{flowglad-rs billing}\td{The 1069 inversion threshold is a divisor on the skill inventory scheme. Below: extraction. Above: generative. The divisor class determines the line bundle of value flow.}}
+\tr{\td{\ref{stk-0033} Varieties}\td{\ref{bcf-0057} Vivarium topology}\td{The 52-device network is an algebraic variety: points = devices, Zariski topology = VLAN segmentation, function field = mDNS service namespace.}}
+}
+}
+
+\subtree{\title{Algebraic Spaces and Stacks → Distributed Systems}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0042} Chow Homology}\td{Vibesnipe settlement}\td{On-chain settlement computes intersection numbers: who won, by how much, weighted by physiological attestation. Chow groups track these equivalence classes.}}
+\tr{\td{\ref{stk-0022} DG Algebra}\td{nanoclj-zig}\td{The Clojure interpreter's evaluation chain is a differential graded algebra: each reduction step lowers degree, the differential is beta-reduction.}}
+\tr{\td{\ref{stk-0025} Hypercoverings}\td{\ref{bcf-0053} HD-72 protocol}\td{Delta-compressed serial protocol: each mode (1/2/3 byte) is a refinement level. The decoder reconstructs the signal from a hypercover of delta patches.}}
+\tr{\td{\ref{stk-0011} Brauer Groups}\td{Gay.jl colors}\td{The Brauer group classifies central simple algebras. SplitMix64 seed to SRGB color is a splitting: the color field extension splits over the MAC address base field.}}
+}
+}
+
+\subtree{\title{Connections}
+\taxon{remark}
+
+\ul{
+\li{\ref{stk-0000} -- Stacks Project index}
+\li{\ref{bcf-0054} -- Trans-Pentad (transclusion as operadic embedding)}
+\li{\ref{bci-0020} -- Commentariat: stacks bridges are prime targets for trit-0 (questioning) comments}
+}
+}
