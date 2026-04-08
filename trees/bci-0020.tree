@@ -1,0 +1,153 @@
+\title{Commentariat: Trit-Weighted Annotation Layer for bci.horse}
+\taxon{design}
+\author{barton-rhodes}
+\date{2026-04-08}
+\import{macros}
+\tag{commentariat}
+\tag{annotation}
+\tag{gf3}
+\tag{coplay}
+\tag{capability}
+\meta{scope}{social}
+
+\p{A commentary system for the bci.horse forest where every annotation carries a GF(3) trit: \strong{+1} (extends), \strong{0} (questions), \strong{-1} (contests). The commentariat is not a forum -- it is a structured peer review protocol where the aggregate trit signal per tree node produces a legible quality gradient across the forest.}
+
+\subtree{\title{Why Not Just GitHub Issues?}
+\taxon{remark}
+
+\p{GitHub issues are unstructured, disconnected from tree topology, and carry no formal signal. The commentariat is:}
+\ul{
+\li{\strong{Tree-local}: each comment is anchored to a specific tree ID (e.g., \code{bcf-0056}), not a repo-level thread}
+\li{\strong{Trit-typed}: every comment declares its stance -- extending, questioning, or contesting the tree's claims}
+\li{\strong{Aggregatable}: the sum of trits on a tree is its community temperature. A tree with sum +5 has strong support. Sum -3 has active contestation. Sum 0 is in equilibrium.}
+\li{\strong{Capability-gated}: commenting requires a capability token (OCapN sturdy ref or Aptos account), preventing anonymous noise}
+}
+}
+
+\subtree{\title{Comment Structure}
+\taxon{definition}
+
+\pre{\startverb
+{
+  "tree_id": "bcf-0056",
+  "author": "0x1a2b...@aptos",
+  "trit": +1,
+  "body": "The beam steering strategy assumes sequential
+           targeting. Phased array FUS (Deffieux 2013) can
+           do simultaneous multi-focus at 300kHz with 128
+           elements for ~$8K additional.",
+  "parent_comment": null,
+  "timestamp": "2026-04-08T08:00:00Z",
+  "attestation": "sha256:abc123..."
+}
+\stopverb}
+
+\p{Comments are threaded (parent_comment for replies). The body is plain text -- no markup. The trit is the structured signal; the body is the unstructured reasoning.}
+}
+
+\subtree{\title{Trit Semantics}
+\taxon{definition}
+
+\table{
+\tr{\th{Trit}\th{Label}\th{Meaning}\th{Effect on tree}}
+\tr{\td{+1}\td{Extends}\td{Adds evidence, connects to new work, strengthens claims}\td{Raises tree temperature}}
+\tr{\td{0}\td{Questions}\td{Asks for clarification, flags ambiguity, requests evidence}\td{Neutral -- signals attention without judgment}}
+\tr{\td{-1}\td{Contests}\td{Identifies errors, contradicting evidence, scope problems}\td{Lowers tree temperature}}
+}
+
+\p{A comment with trit -1 is not hostile -- it is the most valuable signal. A forest where every tree has trit sum +N is an echo chamber. Healthy forests have mixed trits with contested trees driving revision.}
+}
+
+\subtree{\title{Tree Temperature}
+\taxon{definition}
+
+\p{For a tree \code{T} with comments \code{c_1, ..., c_n}:}
+
+\pre{\startverb
+temperature(T) = sum(trit(c_i)) / n        (normalized to [-1, +1])
+heat(T) = n                                 (total comment count)
+controversy(T) = stddev(trit(c_i))          (high when mixed +1/-1)
+\stopverb}
+
+\p{A tree is \strong{hot} (high heat) when many people comment. A tree is \strong{warm} (temperature > 0) when the community extends it. A tree is \strong{controversial} (high controversy, temperature near 0) when +1 and -1 comments are balanced.}
+
+\p{Display: each tree node in the forest gets a color ring:}
+\ul{
+\li{Green ring: temperature > 0.3 (community extends)}
+\li{Yellow ring: controversy > 0.5 (actively debated)}
+\li{Red ring: temperature < -0.3 (community contests)}
+\li{Gray ring: heat < 3 (insufficient comments)}
+}
+}
+
+\subtree{\title{Storage}
+\taxon{design}
+
+\p{Comments are stored in DuckDB (same as the vibesnipe market history). Schema:}
+
+\pre{\startverb
+CREATE TABLE commentariat (
+  id            UUID PRIMARY KEY,
+  tree_id       VARCHAR NOT NULL,
+  author        VARCHAR NOT NULL,
+  trit          TINYINT NOT NULL CHECK (trit IN (-1, 0, 1)),
+  body          TEXT NOT NULL,
+  parent_id     UUID REFERENCES commentariat(id),
+  created_at    TIMESTAMPTZ DEFAULT now(),
+  attestation   VARCHAR,
+  -- GF(3) conservation: comment trits on a tree should tend toward 0
+  -- over time as contested claims get revised
+);
+
+CREATE INDEX idx_tree ON commentariat(tree_id);
+CREATE INDEX idx_author ON commentariat(author);
+\stopverb}
+
+\p{No blockchain for comments themselves -- too high frequency. The attestation field is an optional hash anchoring the comment to an Aptos transaction for immutability when needed (e.g., formal peer review).}
+}
+
+\subtree{\title{API}
+\taxon{design}
+
+\pre{\startverb
+POST /commentariat/:tree_id
+  { "trit": +1, "body": "...", "parent_id": null }
+  -> { "id": "uuid", "temperature": 0.4, "heat": 7 }
+
+GET /commentariat/:tree_id
+  -> { "comments": [...], "temperature": 0.4, "heat": 7, "controversy": 0.6 }
+
+GET /commentariat/hot
+  -> top 10 trees by heat (most discussed)
+
+GET /commentariat/contested
+  -> top 10 trees by controversy (most debated)
+\stopverb}
+
+\p{The API runs as a route on the flowglad-rs service (\code{localhost:3000}). Comments are capability-gated: the caller must present a valid Aptos account or OCapN capability token.}
+}
+
+\subtree{\title{Coplay with Vibesnipe}
+\taxon{design}
+
+\p{The commentariat feeds into vibesnipe challenge races (\ref{bci-0018}):}
+
+\ul{
+\li{\strong{Challenge selection}: hot or contested trees become vibesnipe challenge topics. "Improve bcf-0056 to address the -1 comments."}
+\li{\strong{Scoring bonus}: a vibesnipe winner whose PR resolves contested comments (flips tree temperature from negative to positive) gets a multiplier on their settlement.}
+\li{\strong{HRV during review}: when a player is writing a trit -1 comment (contesting), their HRV trit is visible to the goblin swarm. A reviewer in flow (+1 HRV) writing a contestation (-1 trit) signals careful, regulated disagreement. A reviewer in tilt (-1 HRV) writing a contestation signals possible frustration -- the swarm can flag this for cooling off.}
+}
+}
+
+\subtree{\title{Connections}
+\taxon{remark}
+
+\ul{
+\li{\ref{bci-0018} -- HRV trit as coplay signal during review}
+\li{\ref{bcf-0054} -- Trans-Pentad: commenting is transclusion (-1) -- referencing another's work without copying it}
+\li{\ref{bcf-0055} -- Alterstructure: commentariat API on VLAN 10 (Trusted)}
+\li{\ref{bcf-0056} -- FUS tree as example target for commentary}
+\li{flowglad-rs: commentariat routes added to the Axum service}
+\li{DuckDB: comment storage alongside market history}
+}
+}
