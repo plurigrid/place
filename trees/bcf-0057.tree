@@ -1,0 +1,96 @@
+\title{Vivarium Network Topology: Discovered Infrastructure}
+\taxon{experiment}
+\author{barton-rhodes}
+\date{2026-04-08}
+\import{macros}
+\tag{network}
+\tag{vivarium}
+\tag{thread}
+\tag{zigbee}
+\tag{matter}
+\tag{discovery}
+\meta{scope}{infrastructure}
+\meta{device-count}{52}
+
+\p{Empirical network discovery at Vivarium (San Francisco). 52 devices on a flat /24 LAN with no VLAN isolation. Three mesh protocols already active: Thread 1.3 (Apple), Zigbee (Hue), and Wi-Fi. This inventory feeds the alterstructure design (\ref{bcf-0055}).}
+
+\subtree{\title{Mesh Networks}
+\taxon{finding}
+
+\table{
+\tr{\th{Protocol}\th{Coordinator}\th{IP}\th{Version}\th{Coverage}}
+\tr{\td{Thread}\td{Apple HomePod/TV}\td{192.168.0.231}\td{1.3.0}\td{Matter-native mesh, border router}}
+\tr{\td{Zigbee}\td{Philips Hue Bridge v2}\td{192.168.0.163}\td{BSB002}\td{Hue ecosystem lighting}}
+\tr{\td{Sub-1G}\td{(need Tapo H200)}\td{--}\td{--}\td{Battery camera mesh}}
+}
+
+\p{The Apple Thread border router at \code{Game-Room.local} advertises via \code{_meshcop._udp} on port 49153. It runs Thread 1.3.0 with DefaultDomain. This is the Matter backbone -- any Matter-compatible device (including the planned Tapo H200) joins through this border router.}
+
+\p{The Hue Bridge (bridgeid \code{ecb5fafffebec998}) runs Zigbee and bridges to HomeKit via the Apple ecosystem. It serves HTTPS on port 443 at \code{ecb5fabec998.local}.}
+}
+
+\subtree{\title{Infrastructure Devices}
+\taxon{finding}
+
+\table{
+\tr{\th{Device}\th{IP}\th{Role}\th{VLAN target}}
+\tr{\td{UniFi Dream Machine SE}\td{.0.1}\td{Gateway, firewall, future container host}\td{Router}}
+\tr{\td{local.vivarium.sh}\td{.0.9}\td{UniFi managed device}\td{10 (Trusted)}}
+\tr{\td{UniFi Access Hub Enterprise}\td{.0.33}\td{Physical access control}\td{20 (IoT)}}
+\tr{\td{UniFi Intercom}\td{.0.69}\td{Door intercom}\td{20 (IoT)}}
+}
+}
+
+\subtree{\title{Key IoT Devices}
+\taxon{finding}
+
+\table{
+\tr{\th{Device}\th{IP}\th{Ports open}\th{Risk}\th{VLAN target}}
+\tr{\td{LG OLED77C5PUA}\td{.0.103}\td{3000, 3001, 7000, 18181, 36866}\td{High (CVE-2023-6317..6320 chain)}\td{20 (IoT)}}
+\tr{\td{Hue Bridge v2}\td{.0.163}\td{443}\td{Low}\td{20 (IoT)}}
+\tr{\td{Apple Thread BR}\td{.0.231}\td{49153}\td{Low (Apple auth)}\td{20 (IoT)}}
+\tr{\td{HP OfficeJet Pro 8120e}\td{mDNS}\td{HTTP, IPP}\td{Medium (print protocol)}\td{20 (IoT)}}
+}
+}
+
+\subtree{\title{mDNS Service Map}
+\taxon{finding}
+
+\p{Services broadcasting on the LAN, grouped by function:}
+
+\ul{
+\li{\strong{Smart home}: \code{_hue}, \code{_hap} (HomeKit), \code{_meshcop}/_trel/_srpl-tls (Thread), \code{_companion-link}}
+\li{\strong{Media}: \code{_airplay}, \code{_raop} (AirPlay audio)}
+\li{\strong{File sharing}: \code{_smb}, \code{_sftp-ssh}}
+\li{\strong{Remote access}: \code{_ssh}, \code{_rfb} (VNC), \code{_eppc} (Apple Remote Events), \code{_remotepairing}}
+\li{\strong{Printing}: \code{_ipp}, \code{_ipps}, \code{_pdl-datastream}, \code{_uscan}/_uscans}
+\li{\strong{Monitoring}: \code{_screenpipe}}
+}
+
+\p{Notable: \code{_screenpipe} is broadcasting -- this is the Screenpipe local AI recording service. Should be restricted to VLAN 10.}
+}
+
+\subtree{\title{Bluetooth Proximity}
+\taxon{finding}
+
+\p{BLE scan from workstation. RSSI indicates physical proximity:}
+
+\table{
+\tr{\th{Device}\th{RSSI}\th{Type}\th{Notes}}
+\tr{\td{Adv360 Pro}\td{connected}\td{Split keyboard}\td{Kinesis, primary input}}
+\tr{\td{hatchery}\td{-54 dBm}\td{BLE beacon}\td{Unknown. Close proximity. Investigate.}}
+\tr{\td{radhatter}\td{paired}\td{Unknown BLE}\td{No RSSI available}}
+}
+
+\p{The \code{hatchery} device at -54 dBm is within 2-3 meters. Identity unknown -- could be a development board, sensor, or someone else's device.}
+}
+
+\subtree{\title{Connections}
+\taxon{remark}
+
+\ul{
+\li{\ref{bcf-0055} -- Alterstructure design this inventory feeds}
+\li{LG TV detailed profile in project memory (lg-webos-tv.md)}
+\li{plurigrid/vivarium repo: inventory.md, deploy scripts}
+}
+}
