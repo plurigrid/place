@@ -1,0 +1,101 @@
+\title{Stacks-BCI Bridge: Deep Structure}
+\taxon{reference}
+\author{barton-rhodes}
+\date{2026-04-08}
+\import{macros}
+\tag{stacks-project}
+\tag{transclusion}
+\tag{bridge}
+
+\p{Second bridge file targeting the remaining 64 orphaned Stacks chapters. These connections are deeper -- algebraic spaces as distributed systems, deformation theory as learning, derived categories as signal processing chains.}
+
+\subtree{\title{Algebraic Spaces → Distributed State}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0065} Algebraic Spaces}\td{Goblins vats}\td{An algebraic space is a sheaf quotient by an etale equivalence relation. A Goblins vat is a local state space quotiented by capability-mediated access. The vat boundary is the etale cover.}}
+\tr{\td{\ref{stk-0066} Properties of Algebraic Spaces}\td{OCapN properties}\td{Separated, quasi-compact, locally noetherian -- these translate to capability safety properties: no ambient authority (separated), finite resource bounds (quasi-compact), well-founded trust chains (noetherian).}}
+\tr{\td{\ref{stk-0067} Morphisms of Algebraic Spaces}\td{CapTP messages}\td{Morphisms between algebraic spaces = capability-mediated messages between vats. Proper = message delivery guaranteed. Finite = bounded resource transfer.}}
+\tr{\td{\ref{stk-0068} Decent Algebraic Spaces}\td{CRDT convergence}\td{Decent spaces have enough points. Aella CRDT term graphs converge because the underlying algebraic space of edits is decent -- every concurrent state has a merge point.}}
+\tr{\td{\ref{stk-0073} Topologies on Algebraic Spaces}\td{\ref{bcf-0057} Vivarium network}\td{The etale, fppf, and Zariski topologies on algebraic spaces correspond to different granularities of network discovery: mDNS (etale), ARP (fppf), VLAN (Zariski).}}
+\tr{\td{\ref{stk-0078} Groupoids in Algebraic Spaces}\td{Boris-hedges games}\td{Open games are groupoid actions on strategy spaces. The ParaLens 6-wire diagrams are groupoid morphisms in the algebraic space of game states.}}
+\tr{\td{\ref{stk-0081} Pushouts of Algebraic Spaces}\td{Aella DPO rewriting}\td{Double pushout rewriting IS pushouts of algebraic spaces. Each term graph edit is a span whose pushout is the merged state.}}
+}
+}
+
+\subtree{\title{Cohomology → Signal Analysis}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0045} Weil Cohomology Theories}\td{EEG frequency analysis}\td{Weil cohomology extracts topological invariants via algebraic cycles. Frequency-domain EEG (LF/HF ratio, DFA alpha1) extracts autonomic invariants via spectral cycles.}}
+\tr{\td{\ref{stk-0051} Local Cohomology}\td{ERP source localization}\td{Local cohomology computes support. ERP source localization computes the cortical support of an evoked potential -- where in the brain the signal originates.}}
+\tr{\td{\ref{stk-0059} Etale Cohomology}\td{Network anomaly detection}\td{Etale cohomology detects topological invariants invisible to Zariski. DNS anomaly detection (Pi-hole + DuckDB) detects network behavior invisible to packet inspection.}}
+\tr{\td{\ref{stk-0069} Cohomology of Algebraic Spaces}\td{Distributed consensus}\td{Sheaf cohomology on algebraic spaces measures obstruction to global sections. Distributed consensus measures obstruction to global agreement across vats.}}
+\tr{\td{\ref{stk-0047} Dualizing Complexes}\td{Adjoint functors in BCI}\td{Serre duality via dualizing complexes. The play/coplay adjunction in Boris ParaLens is the game-theoretic Serre duality.}}
+}
+}
+
+\subtree{\title{Deformation and Moduli → Learning and Adaptation}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0091} Deformation Theory}\td{BCI calibration}\td{Deformation theory studies infinitesimal perturbations of structure. BCI calibration (5-min resting baseline per player in bci-0018) is a deformation of the default model by personal physiology.}}
+\tr{\td{\ref{stk-0093} Deformation Problems}\td{Neurofeedback adaptation}\td{A deformation problem is a functor from Artin rings to sets. Neurofeedback is a deformation problem: given the current brain state (Artin ring), what is the space of achievable target states?}}
+\tr{\td{\ref{stk-0095} Examples of Stacks}\td{Vibesnipe challenge types}\td{Examples of algebraic stacks: moduli of curves, vector bundles, stable maps. Examples of vibesnipe challenges: code races, review duels, market snipes. Each is a moduli problem.}}
+\tr{\td{\ref{stk-0100} Properties of Algebraic Stacks}\td{Game-theoretic properties}\td{Quasi-separated stacks have diagonal representable by algebraic spaces. Games with observable strategies (no hidden information) have representable diagonals.}}
+\tr{\td{\ref{stk-0107} The Geometry of Stacks}\td{Vibesnipe geometry}\td{The geometry of the moduli stack of challenge races: dimension = number of free parameters, tangent space = space of small perturbations to race conditions.}}
+}
+}
+
+\subtree{\title{Constructions → Implementation Patterns}
+\taxon{remark}
+
+\table{
+\tr{\th{Stacks chapter}\th{BCI connection}\th{How}}
+\tr{\td{\ref{stk-0027} Constructions of Schemes}\td{Nix derivations}\td{Scheme constructions (fiber products, base change, Proj) are pure functional constructions. Nix derivations build software the same way: inputs, build function, output.}}
+\tr{\td{\ref{stk-0032} Limits of Schemes}\td{LSL stream buffering}\td{Inverse limits = buffering. The LSL multicast stream is a projective limit of finite sample windows. Pro-etale topology = streaming topology.}}
+\tr{\td{\ref{stk-0036} Derived Categories of Schemes}\td{Processing pipeline DAG}\td{The derived category is the homotopy category of chain complexes. The BCI processing pipeline (raw -> filter -> feature -> classify -> act) is a chain complex; quasi-isomorphisms are pipeline optimizations that preserve output.}}
+\tr{\td{\ref{stk-0037} More on Morphisms}\td{Protocol bridges}\td{Smooth, unramified, etale morphisms classify protocol bridges: zig-syrup to Nashator (smooth), Nashator to Goblins (etale), EEG to LSL (unramified).}}
+\tr{\td{\ref{stk-0040} More on Groupoid Schemes}\td{Nashator game trees}\td{Groupoid schemes encode symmetries. Nashator backward induction traverses the groupoid of game states. The Nashator on :9999 is a groupoid scheme evaluator.}}
+\tr{\td{\ref{stk-0043} Intersection Theory}\td{\ref{bci-0020} Commentariat}\td{Intersection numbers count how things meet. Commentariat temperature is an intersection number: how do community opinions meet the tree's claims?}}
+\tr{\td{\ref{stk-0080} Bootstrap}\td{Forester self-hosting}\td{The bootstrap theorem: algebraic spaces can be constructed from schemes via etale descent. The bci.horse forest bootstraps from LaTeX (stacks-project) via forester descent.}}
+\tr{\td{\ref{stk-0085} Simplicial Spaces}\td{Cech nerve of VLAN topology}\td{The Cech nerve of the VLAN cover (Trusted, IoT, Guest) is a simplicial space. Its geometric realization recovers the full network topology.}}
+}
+}
+
+\subtree{\title{Remaining Orphans}
+\taxon{remark}
+
+\p{After this bridge, the following stk chapters remain without BCI connections. These are candidates for trit-0 commentariat questions:}
+
+\ul{
+\li{\ref{stk-0001} Introduction, \ref{stk-0002} Conventions -- meta-content, not mathematical}
+\li{\ref{stk-0015} More on Algebra -- needs specific ring-theoretic BCI connection}
+\li{\ref{stk-0016} Smoothing Ring Maps -- formal smoothness, needs connection to signal smoothing}
+\li{\ref{stk-0023} Divided Power Algebra -- crystalline cohomology prerequisite}
+\li{\ref{stk-0024} Differential Graded Sheaves -- could connect to time-series analysis}
+\li{\ref{stk-0028} Properties of Schemes -- general properties, subsumed by specific chapters}
+\li{\ref{stk-0038} More on Flatness -- flat morphisms in protocol design}
+\li{\ref{stk-0044} Picard Schemes of Curves -- line bundles on algebraic curves}
+\li{\ref{stk-0046} Adequate Modules -- technical homological algebra}
+\li{\ref{stk-0048} Duality for Schemes -- subsumed by dualizing complexes bridge}
+\li{\ref{stk-0049} Discriminants and Differents -- ramification theory}
+\li{\ref{stk-0052} to \ref{stk-0055} -- algebraic/formal geometry, curves, surfaces}
+\li{\ref{stk-0062}, \ref{stk-0063} -- relative cycles, more etale cohomology}
+\li{\ref{stk-0064} Trace Formula -- l-adic, arithmetic}
+}
+}
+
+\subtree{\title{Connections}
+\taxon{remark}
+
+\ul{
+\li{\ref{stk-0000} -- Stacks Project index}
+\li{xref-0001 through xref-0007 -- earlier bridge files}
+\li{xref-0008 -- first algebraic foundations bridge}
+\li{\ref{bci-0020} -- Commentariat for flagging remaining orphans}
+}
+}
