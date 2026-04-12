@@ -21,9 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
-          cache-dependency-path: localcharts/silviculture/package-lock.json
-      - run: npm ci
+      - run: npm install
       - run: npx tsc --noEmit
 
   compile-ocaml:
@@ -36,7 +34,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Build OCaml project
         working-directory: localcharts/cct-reading-group
-        run: nix-shell -p ocaml dune --run 'dune build'
+        run: nix-shell -p ocaml dune ocamlPackages.alcotest --run 'dune build'
 
   compile-swift:
     name: Swift (bci-roomscan)
