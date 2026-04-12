@@ -1,0 +1,62 @@
+name: Typecheck & Compile
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck-typescript:
+    name: TypeScript (silviculture)
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: localcharts/silviculture
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: localcharts/silviculture/package-lock.json
+      - run: npm ci
+      - run: npx tsc --noEmit
+
+  compile-ocaml:
+    name: OCaml (cct-reading-group)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v30
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Build OCaml project
+        working-directory: localcharts/cct-reading-group
+        run: nix-shell -p ocaml dune --run 'dune build'
+
+  compile-swift:
+    name: Swift (bci-roomscan)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Swift package
+        working-directory: bci-roomscan
+        run: swift build
+
+  typecheck-python:
+    name: Python (mypy)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install mypy
+      - name: Typecheck bci/
+        run: mypy --ignore-missing-imports bci/ convert_stacks.py
+      - name: Typecheck stacks-project scripts
+        run: mypy --ignore-missing-imports stacks-project/scripts/
