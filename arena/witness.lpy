@@ -1,0 +1,54 @@
+;; Witness — coherence gate + GAY accrual on top of arena state.
+;; A witness is a contiguous window of N trials that (a) sums to 0 mod 3
+;; and (b) covers ≥ K distinct A-Z letters. Passing a witness accrues GAY.
+
+(ns arena.witness
+  (:require [arena.arena :as arena]
+            [arena.theories :as th]))
+
+(def ^:dynamic *window*    26)    ; trial window = one A-Z cycle
+(def ^:dynamic *min-cover* 13)    ; half the alphabet present
+(def ^:dynamic *gay-per*    1)    ; GAY units per valid witness
+
+(def gay (atom {:total 0 :by-worldid {} :log []}))
+
+(defn window-events [s]
+  (take-last *window* (:events s)))
+
+(defn window-trits [evs]
+  (map :trit evs))
+
+(defn window-letter-set [evs]
+  (into #{} (map :L evs)))
+
+(defn coherent? [evs]
+  (let [trits (window-trits evs)
+        lets  (window-letter-set evs)]
+    (and (= *window* (count evs))
+         (zero? (mod (reduce + 0 trits) 3))
+         (>= (count lets) *min-cover*))))
+
+;; cluster bonus: if the witnessed window hit only invariant-clustered letters,
+;; that's a "resonance" — doubles GAY.
+(defn cluster-bonus? [letter-set]
+  (some (fn [[_ cluster]]
+          (every? cluster letter-set))
+        th/clusters))
+
+(defn maybe-accrue! [worldid]
+  "If current arena window is coherent, accrue GAY to worldid. 2× on cluster resonance."
+  (let [evs  (window-events @arena/state)
+        lets (window-letter-set evs)]
+    (if (coherent? evs)
+      (let [bonus? (boolean (cluster-bonus? lets))
+            gain   (* *gay-per* (if bonus? 2 1))]
+        (swap! gay (fn [g]
+                     (-> g
+                         (update :total + gain)
+                         (update-in [:by-worldid worldid] (fnil + 0) gain)
+                         (update :log conj {:worldid worldid :gain gain
+                                            :cluster-bonus bonus?
+                                            :n-letters (count lets)
+                                            :window-sum (reduce + 0 (window-trits evs))}))))
+        {:accrued gain :bonus bonus? :total (:total @gay)})
+      {:accrued 0 :bonus false :total (:total @gay)})))

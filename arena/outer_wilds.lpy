@@ -1,0 +1,82 @@
+;; Outer Wilds loop ↔ arena window.
+;; 22-minute solar-system run = one witness window. Planets = trits.
+;; Rumor-mode ship log = :by-letter accumulator. Eye = parrot cluster.
+
+(ns arena.outer-wilds
+  (:require [arena.arena   :as arena]
+            [arena.witness :as w]
+            [arena.theories :as th]))
+
+;; ── planet → trit ──────────────────────────────────────────────────
+;; Hourglass Twins: Ember (sand flows OUT) = +1, Ash (sand flows IN) = -1
+;; Timber Hearth (stable ground) = 0
+;; Brittle Hollow (collapsing) = -1. Hollow's Lantern (orbit) = +1.
+;; Giant's Deep (currents) = 0. Dark Bramble = GF(3) singularity (random)
+;; Interloper (comet) = 0. Sun Station = -1. Eye = fixed-point: no trit emitted.
+
+(def planet->trit
+  {"ember"        +1
+   "ash"          -1
+   "timber"        0
+   "brittle"      -1
+   "lantern"      +1
+   "deep"          0
+   "bramble"       0  ; collapses eigenspaces
+   "interloper"    0
+   "sun-station"  -1
+   "quantum-moon" :observer-dependent})
+
+;; ── loop state ─────────────────────────────────────────────────────
+(def loop-count (atom 0))
+(def loop-start (atom (System/currentTimeMillis)))
+
+(def LOOP_MS (* 22 60 1000))   ; 22 minutes canonical
+
+(defn loop-elapsed []
+  (- (System/currentTimeMillis) @loop-start))
+
+(defn supernova? []
+  (>= (loop-elapsed) LOOP_MS))
+
+;; ── planet visit → arena event ─────────────────────────────────────
+(defn visit! [planet letter-hint]
+  "Hopping to a planet emits a trit event into arena.
+   letter-hint: which catcolab theory letter this visit 'lands on'."
+  (let [trit (planet->trit planet)
+        trit (if (keyword? trit) (rand-nth [-1 0 1]) trit)  ; quantum moon
+        ev   {:t (System/currentTimeMillis)
+              :trit trit :L letter-hint
+              :planet planet :loop @loop-count}]
+    (swap! arena/state arena/merge-trial ev)
+    ev))
+
+;; ── supernova → witness attempt + reset ────────────────────────────
+(defn end-loop! [worldid]
+  "Trigger the supernova: attempt witness, carry memory forward (GAY log persists),
+   but reset arena window. Like the Nomai statue: knowledge survives, state doesn't."
+  (let [result (w/maybe-accrue! worldid)]
+    (swap! loop-count inc)
+    (reset! loop-start (System/currentTimeMillis))
+    (reset! arena/state
+            {:trits [] :events [] :sum 0 :by-letter {} :witnesses 0})
+    (assoc result :loop @loop-count :reset true)))
+
+;; ── Eye of the Universe: terminal coalgebra ────────────────────────
+;; Reachable only after accumulating enough cluster-bonus witnesses
+;; across loops. The Eye is not a planet — it's the fixed-point of the
+;; loop functor. Composing all 26 theories' parrot-invariant (y² = y).
+(defn eye-reachable? []
+  (let [log (:log @w/gay)
+        bonus-count (count (filter :cluster-bonus log))]
+    (>= bonus-count 9)))   ; 9 = 3×3, trit-triad × loop-triad
+
+(defn step-into-eye! [worldid]
+  (if (eye-reachable?)
+    {:ending "eye-of-the-universe"
+     :worldid worldid
+     :loops @loop-count
+     :total-gay (:total @w/gay)
+     :message "The universe ends. A new one begins. — Solanum"}
+    {:ending "not-yet"
+     :need-bonus 9
+     :have-bonus (count (filter :cluster-bonus (:log @w/gay)))}))

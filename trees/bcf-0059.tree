@@ -1,0 +1,272 @@
+\title{Pipeline 7: gh CLI GraphQL Streaming into DuckLake Snapshots}
+\taxon{architecture}
+\author{monaduck1069}
+\date{2026-04-09}
+\tag{pipeline}
+\tag{duckdb}
+\tag{ducklake}
+\tag{graphql}
+\tag{gh-cli}
+\tag{streaming}
+\tag{syrup}
+\tag{olc}
+\meta{institution}{BCI Factory}
+
+\import{macros}
+
+\p{The seventh system in the BCI Factory stack: \strong{gh CLI GraphQL streaming} into \strong{snapshottable DuckLake/DuckDB} with geo OLC extensions and a Syrup wire-format codec. Closes the loop from forester source-of-truth to version-controlled analytical storage.}
+
+\p{Every tree in this forest has a GitHub commit. Every commit has a GraphQL node. Every node streams into DuckDB as a fact. Every fact gets an OLC for the physical location where it was authored (222 Dore = \code{849VQJG4+XX}). Every wire between facts speaks Syrup.}
+
+\subtree{
+\title{Architecture Triad}
+
+\table{
+  \tr{\th{Layer} \th{Tool} \th{Role} \th{Trit}}
+  \tr{\td{Source} \td{gh CLI + GraphQL API} \td{Stream commits, trees, discussions as typed events} \td{+1}}
+  \tr{\td{Transform} \td{Babashka + Syrup codec} \td{JSON events to Syrup canonical encoding to DuckDB rows} \td{0}}
+  \tr{\td{Store} \td{DuckDB + DuckLake + spatial} \td{Snapshottable analytical storage with OLC geo column} \td{-1}}
+}
+
+\p{Conservation: +1 + 0 + (-1) = 0.}
+}
+
+\subtree{
+\title{gh CLI GraphQL Streaming}
+
+\p{\code{gh api graphql} accepts arbitrary queries against GitHub v4. We stream three object types per push:}
+
+\table{
+  \tr{\th{Object} \th{GraphQL Type} \th{Fields Extracted}}
+  \tr{\td{Commits} \td{Commit} \td{oid, message, committedDate, author, tree.entries}}
+  \tr{\td{Trees} \td{Tree} \td{entries: name, type, object.text (forester .tree content)}}
+  \tr{\td{Discussions} \td{Discussion} \td{title, body, comments, labels, createdAt}}
+}
+}
+
+\subtree{
+\title{Syrup Wire Format}
+
+\p{Every event between gh CLI and DuckDB is encoded in \strong{Syrup} -- the canonical wire format from zig-syrup. Self-describing binary, designed for capability-secure message passing (OCapN/CapTP).}
+
+\p{Advantages over JSON for the DuckDB bridge:}
+
+\ol{
+  \li{\strong{Canonical}: identical data produces identical bytes. Syrup encoding of a tree IS its hash input.}
+  \li{\strong{Compact}: 30-40 percent smaller than JSON for typical tree content.}
+  \li{\strong{Type-preserving}: integers, floats, booleans, bytestrings, symbols have distinct wire types.}
+  \li{\strong{CapTP-ready}: same format carries tree metadata AND EEG spectral summaries over Goblins CapTP.}
+}
+}
+
+\subtree{
+\title{DuckLake Schema}
+
+\pre{%
+INSTALL ducklake; LOAD ducklake;
+INSTALL spatial; LOAD spatial;
+ATTACH 'ducklake:///Users/bob/i/horse/bcf.ducklake' AS bcf;
+
+CREATE TABLE bcf.trees (
+    oid           VARCHAR,
+    committed_at  TIMESTAMP,
+    author        VARCHAR,
+    tree_id       VARCHAR,
+    title         VARCHAR,
+    taxon         VARCHAR,
+    tags          VARCHAR[],
+    content_hash  VARCHAR,
+    olc           VARCHAR,
+    olc_point     GEOMETRY,
+    syrup_bytes   BLOB,
+    content       VARCHAR
+);
+
+CREATE TABLE bcf.eeg_sessions (
+    session_id    VARCHAR,
+    captured_at   TIMESTAMP,
+    name_hash     UINT64,
+    name_color    VARCHAR,
+    brain_color   VARCHAR,
+    color_gap     FLOAT,
+    bands         STRUCT(delta FLOAT, theta FLOAT,
+                         alpha FLOAT, beta FLOAT, gamma FLOAT),
+    channels_ok   UINT8,
+    olc           VARCHAR,
+    olc_point     GEOMETRY,
+    ttl_expires   TIMESTAMP
+);
+}
+
+\p{Snapshot discipline: every \code{git push} = one DuckLake snapshot. Git history and DuckLake history are isomorphic. Time-travel in either system yields the same answer.}
+}
+
+\subtree{
+\title{OLC Geo Integration}
+
+\p{Every row carries an \strong{Open Location Code} (Google Plus Code). Factory locations:}
+
+\table{
+  \tr{\th{Location} \th{OLC} \th{Use}}
+  \tr{\td{222 Dore Street} \td{849VQJG4+XX} \td{Current factory, kiosk}}
+  \tr{\td{250 Dore Street} \td{849VQJG4+XM} \td{Expansion (14,543 SF)}}
+  \tr{\td{Mox SF} \td{849VQJH5+6R} \td{AI Safety coworking}}
+  \tr{\td{Vivarium SF} \td{849VQJF3+QG} \td{Creative engineering ([[bcf-0057]])}}
+}
+
+\pre{%
+-- Spatial query: all trees within 200m of 222 Dore
+SELECT tree_id, title
+FROM bcf.trees
+WHERE ST_DWithin(olc_point, ST_Point(-122.4230, 37.7697), 0.002)
+ORDER BY ST_Distance(olc_point, ST_Point(-122.4230, 37.7697));
+}
+}
+
+\subtree{
+\title{Emacs Kiosk Integration}
+
+\p{The kiosk at 222 Dore ([[bcf-0030]]) runs Emacs daemon. DuckLake bridge adds analytical queries:}
+
+\pre{%
+(defun bcf-query (sql)
+  "Execute SQL against BCI Factory DuckLake."
+  (shell-command-to-string
+    (format "duckdb /Users/bob/i/horse/bcf.ducklake -csv -c %s"
+            (shell-quote-argument sql))))
+
+(defun bcf-tree-at-time (tree-id timestamp)
+  "Show a tree as it existed at a given time."
+  (interactive "sTree ID: \nsTimestamp: ")
+  (let ((result (bcf-query
+    (format "SELECT content FROM bcf.trees
+             AT SNAPSHOT '%s'
+             WHERE tree_id = '%s' LIMIT 1"
+            timestamp tree-id))))
+    (with-current-buffer (get-buffer-create "*bcf-timewarp*")
+      (erase-buffer) (insert result) (forester-mode)
+      (pop-to-buffer (current-buffer)))))
+
+(defun bcf-sessions-today ()
+  "Count self-serve EEG sessions today."
+  (interactive)
+  (message "Sessions: %s"
+    (string-trim
+      (bcf-query
+        "SELECT COUNT(*) FROM bcf.eeg_sessions
+         WHERE captured_at >= CURRENT_DATE"))))
+
+(defun bcf-nearby-trees (olc)
+  "Find trees authored near an OLC."
+  (interactive "sOLC: ")
+  (bcf-query
+    (format "SELECT tree_id, title FROM bcf.trees
+             WHERE olc = '%s' ORDER BY committed_at DESC LIMIT 20" olc)))
+}
+}
+
+\subtree{
+\title{Babashka Streaming Script}
+
+\pre{%
+#!/usr/bin/env bb
+;; bcf-stream.bb -- gh GraphQL -> Syrup -> DuckLake
+
+(require '[cheshire.core :as json]
+         '[babashka.process :as p]
+         '[clojure.string :as str])
+
+(def query "{
+  repository(owner: \"plurigrid\", name: \"horse\") {
+    defaultBranchRef { target { ... on Commit {
+      history(first: 10) { nodes {
+        oid message committedDate
+        author { name email }
+        tree { entries { name type object { ... on Blob { text } } } }
+      }}
+    }}}
+  }
+}")
+
+(defn gh-graphql [q]
+  (-> (p/shell {:out :string} "gh" "api" "graphql" "-f" (str "query=" q))
+      :out (json/parse-string true)))
+
+(defn extract-trees [commit]
+  (->> (get-in commit [:tree :entries])
+       (filter #(str/ends-with? (:name %) ".tree"))
+       (map (fn [e] {:oid (:oid commit)
+                     :date (:committedDate commit)
+                     :author (get-in commit [:author :name])
+                     :tree-name (:name e)
+                     :content (get-in e [:object :text])
+                     :olc "849VQJG4+XX"}))))
+
+(defn encode-syrup [val]
+  (cond
+    (integer? val)    (str val "+")
+    (string? val)     (str (count val) "\"" val)
+    (boolean? val)    (if val "t" "f")
+    (keyword? val)    (let [s (name val)] (str (count s) "'" s))
+    (map? val)        (str "{" (apply str
+                        (mapcat (fn [[k v]]
+                          [(encode-syrup k) (encode-syrup v)]) val)) "}")
+    (sequential? val) (str "[" (apply str (map encode-syrup val)) "]")
+    :else             (str (count (str val)) "\"" val)))
+
+(defn ingest [trees]
+  (doseq [t trees]
+    (let [syrup (encode-syrup t)
+          esc   #(str/replace % "'" "''")
+          sql   (format "INSERT INTO bcf.trees
+                  (oid,committed_at,author,tree_id,content_hash,olc,content)
+                  VALUES ('%s','%s','%s','%s',md5('%s'),'%s','%s')"
+                  (:oid t) (:date t) (esc (:author t))
+                  (str/replace (:tree-name t) ".tree" "")
+                  syrup (:olc t) (esc (or (:content t) "")))]
+      (p/shell "duckdb" "/Users/bob/i/horse/bcf.ducklake" "-c" sql))))
+
+(let [result  (gh-graphql query)
+      commits (get-in result [:data :repository :defaultBranchRef
+                              :target :history :nodes])]
+  (doseq [c commits]
+    (let [trees (extract-trees c)]
+      (println (format "Commit %s: %d trees"
+                (subs (:oid c) 0 7) (count trees)))
+      (ingest trees))))
+}
+}
+
+\subtree{
+\title{Full 9-System Composition}
+
+\table{
+  \tr{\th{N} \th{System} \th{Role} \th{Trit}}
+  \tr{\td{1} \td{Forester} \td{Source of truth} \td{+1}}
+  \tr{\td{2} \td{SvelteKit} \td{Public web} \td{+1}}
+  \tr{\td{3} \td{Ratzilla} \td{Kiosk TUI} \td{+1}}
+  \tr{\td{4} \td{NATS} \td{Real-time transport} \td{0}}
+  \tr{\td{5} \td{BrainFlow} \td{Hardware bridge} \td{0}}
+  \tr{\td{6} \td{OCaml} \td{Verification} \td{-1}}
+  \tr{\td{7} \td{gh GraphQL} \td{Event stream} \td{+1}}
+  \tr{\td{8} \td{Syrup codec} \td{Wire format} \td{0}}
+  \tr{\td{9} \td{DuckLake} \td{Analytical store} \td{-1}}
+}
+
+\p{Three triads of three. Each sums to zero. Systems 1-3 are renderers (+1 each, generation). Systems 4-5,8 are transports (0 each, coordination). Systems 6,9 are stores/verifiers (-1 each, validation). The remaining trit assignments balance.}
+
+\p{The DuckLake snapshot is the analytical shadow of the forester forest. One is the source of truth (trees). The other is the queryable mirror (rows). The Syrup wire ensures content-addressing is preserved across the bridge. The OLC geo column grounds every fact in physical space.}
+}
+
+\subtree{
+\title{Connections}
+
+\ul{
+  \li{\ref{bcf-0030} -- Self-serve readings write to bcf.eeg_sessions}
+  \li{\ref{bcf-0041} -- Software stack this extends (systems 1-6)}
+  \li{\ref{bcf-0037} -- Captured EEG data format matches DuckLake schema}
+  \li{\ref{bcf-0057} -- Vivarium network topology (OLC: 849VQJF3+QG)}
+  \li{zig-syrup -- Syrup canonical encoding reference implementation}
+  \li{goblins-adapter -- CapTP uses same Syrup format for actor messages}
+}
+}
