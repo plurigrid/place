@@ -289,3 +289,33 @@
 
 \p{Status: ALL PURCHASED 2026-04-05. Awaiting delivery.}
 }
+
+\subtree{\title{JLCPCB Order Incident (2026-04-13)}
+\taxon{remark}
+\import{macros}
+
+\p{Two PCBA orders (12291944A-Y4, 12291944A-Y2) were flagged by JLCPCB QA reviewer Sunny for missing solder mask layers and incomplete board outline. Root cause: initial gerber export from KiCad after Altium import did not include F.Mask and B.Mask layers. Orders cancelled, refunded to JLC Balance.}
+
+\subtree{\title{What was missing}
+\ul{
+\li{Order Y4: no top solder mask layer, no bottom solder mask layer, incomplete outline}
+\li{Order Y2: no top solder mask layer, no bottom solder mask layer}
+\li{PCBA orders do not support file-replace, so both had to be cancelled and reordered}
+}}
+
+\subtree{\title{Fixed gerbers (v2, 2026-04-15)}
+\p{Re-exported from KiCad 8 with all required layers. Verified F_Mask, B_Mask, and Edge_Cuts present in all zips before resubmission.}
+\table{
+\tr{\th{File} \th{PCB} \th{Layers verified}}
+\tr{\td{uncutgem_gerbers.zip} \td{ECU main board (Uncut Gem)} \td{F_Cu, B_Cu, F_Mask (26 KB), B_Mask (10 KB), Edge_Cuts, F_Paste, B_Paste, F_Silkscreen, B_Silkscreen, PTH, NPTH}}
+\tr{\td{ecu_gerbers.zip} \td{fNIRS ECU (Altium conversion)} \td{F_Cu (.gtl), B_Cu (.gbl), F_Mask (.gts, 30 KB), B_Mask (.gbs, 1.6 KB), Edge_Cuts (.gm1), F_Paste, B_Paste, F_SilkS, B_SilkS}}
+\tr{\td{sensor_module_gerbers.zip} \td{25 mm circular sensor module} \td{present (to verify)}}
+\tr{\td{stlink_gerbers.zip} \td{ST-LINK breakout} \td{present (to verify)}}
+}
+\p{All gerber zips archived at assets/gerbers/opennirscap-v2/ in this repository.}
+}
+
+\subtree{\title{Lesson learned}
+\p{Always verify solder mask layers (F_Mask, B_Mask) and board outline (Edge_Cuts) are present in exported gerbers before submitting PCBA orders. JLCPCB PCBA orders cannot have files replaced after submission. Use the JLCPCB gerber viewer to confirm layer count before checkout. When converting from Altium to KiCad, explicitly check that all mechanical and mask layers transferred correctly.}
+}
+}
