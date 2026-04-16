@@ -1,0 +1,59 @@
+\title{ECU Zone Fill Fix: Altium Import Cleanup and Gerber Re-export}
+\taxon{resolution}
+\author{monaduck1069}
+\date{2026-04-16}
+\import{macros}
+\tag{fnirs}
+\tag{hardware}
+\tag{pcb}
+\tag{kicad}
+\tag{gerber}
+\meta{board}{fNIRS ECU}
+\meta{blocker}{zone-fill-missing}
+\meta{status}{resolved}
+
+\p{The fNIRS ECU 4-layer PCB (112x112mm, STM32L476) was missing copper zone fills in the original gerber export. The Altium-to-KiCad import produced 171 zones, of which 131 were corrupt (93 on F.SilkS, 45 unnetted copper). KiCad's zone filler crashed with math overflow on the corrupt data. This tree documents the automated fix.}
+
+\subtree{\title{Root Cause}
+\taxon{remark}
+\p{The Altium .PcbDoc import into KiCad created zones on invalid layers (F.SilkS cannot have copper zones) and zones with no net assignment. These prevented the zone filler from computing valid copper pours. The original gerber export contained zero G36 region commands on any copper layer -- meaning no fills were rendered.}
+}
+
+\subtree{\title{Fix Procedure}
+\taxon{remark}
+
+\ol{
+\li{Ran cleanup-zones.py (pcbnew API) to delete 138 corrupt zones: 93 on F.SilkS + 45 unnetted copper. Kept 40 valid zones.}
+\li{Ran pcbnew ZONE_FILLER on the cleaned board. All 40 zones filled successfully, producing 41 filled_polygon entries.}
+\li{Exported gerbers via kicad-cli (pcbnew PLOT_CONTROLLER had a layer -1 bug). Exported drill files separately.}
+\li{Packaged as ecu_gerbers_refilled.zip (530 KB vs original 162 KB).}
+}
+}
+
+\subtree{\title{Verification: G36 Region Counts}
+\taxon{remark}
+
+\table{
+\tr{\th{Layer} \th{G36 Regions} \th{File Size} \th{Lines} \th{Nets}}
+\tr{\td{F_Cu} \td{21} \td{1.08 MB} \td{45,629} \td{3V3, VBATT, MCU_GND, USB_GND, VDD1, 5V_ISO}}
+\tr{\td{B_Cu} \td{2} \td{612 KB} \td{25,447} \td{MCU_GND, USB_GND}}
+\tr{\td{In1_Cu} \td{11} \td{54 KB} \td{2,339} \td{3V3, VBATT}}
+\tr{\td{In2_Cu} \td{0} \td{44 KB} \td{1,882} \td{(none -- no zones in original Altium import)}}
+}
+
+\p{Total: 34 G36 regions across 3 of 4 copper layers. The original export had 0 on all layers.}
+}
+
+\subtree{\title{In2_Cu Caveat}
+\taxon{remark}
+\p{The Altium import never created zone definitions for In2_Cu. This layer has traces only, no copper pour. If a power plane fill is required on In2_Cu, zones must be created manually in the KiCad GUI and gerbers re-exported. For the current design, the board is functional without In2_Cu fills.}
+}
+
+\subtree{\title{Files}
+\taxon{remark}
+\ul{
+\li{Refilled gerbers: assets/gerbers/opennirscap-v2/ecu_gerbers_refilled.zip (530 KB)}
+\li{Original gerbers: assets/gerbers/opennirscap-v2/ecu_gerbers.zip (162 KB, retained for reference)}
+\li{Cleanup script: github.com/tonykim07/fNIRS -- cleanup-zones.py in hardware/fNIRS_ECU/}
+}
+}

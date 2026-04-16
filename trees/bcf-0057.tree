@@ -1,0 +1,75 @@
+\import{macros}
+\title{Artist Testimony: Color Gradient Sorting as Perceptual Practice}
+\taxon{testimony}
+\date{2026-04-08}
+\author{zubyul}
+\meta{venue}{spoken, transcribed}
+\tag{color-perception}
+\tag{chromatic-vrf}
+\tag{bci}
+
+\p{The game is technically trying to solve a puzzle, but the puzzle at the end has to be a good gradient of all the colors together. You move the tiles that are not marked as a dot — these unmarked tiles can be swapped around inside the whole grid. When swapping, the idea is to get each tile to match the colors on the surrounding tiles, and at the end you build the whole gradient.}
+
+\p{The goal is to get the colors arranged in a very smooth way that does not look like there is a pop of coloring — a color popping up out of the other ones. They all have a sequence.}
+
+\p{A darker goes to brighter, and from the brighter one tone can change to a different tone because it might combine two different families together. A yellow with a red will become orange. The orange kind of tone sits between the yellow and the red. It picks two colors together, mixes them.}
+
+\p{There is a lot of mixing and matching, but also making sure tiles are surrounded by colors that will progress over time instead of just having a color that totally changes the character or personality of the whole arrangement.}
+
+\subtree{
+\title{Perceptual Strategy}
+\taxon{analysis}
+
+\p{The solving process reveals a perceptual pipeline:}
+
+\ol{
+\li{Global scan: identify the fixed anchor dots and their color families}
+\li{Family clustering: group free tiles by hue family (warm, cool, neutral)}
+\li{Luminance sorting: within each family, order dark-to-bright}
+\li{Boundary negotiation: at family transitions (yellow to red to orange), place intermediate tones that bridge both families}
+\li{Smoothness verification: scan for "pops" — tiles that break the local gradient}
+}
+
+\p{This is exactly the perceptual task that engages V4 (color-selective cortex) and the ventral visual stream. The "pop detection" step is a salience computation — the same neural mechanism that drives visual search and oddball detection in EEG.}
+}
+
+\subtree{
+\title{BCI Bridge: EEG Channels for Color Perception}
+\taxon{specification}
+
+\p{Target channels on the Ultracortex Mark IV 16-channel montage for monitoring color gradient sorting:}
+
+\table{
+\tr{\th{Channel}\th{Position}\th{Region}\th{Role in Color Task}}
+\tr{\td{7}\td{O1}\td{Primary visual (left)}\td{Early color processing, luminance}}
+\tr{\td{8}\td{O2}\td{Primary visual (right)}\td{Early color processing, luminance}}
+\tr{\td{5}\td{P7}\td{Lateral occipitotemporal (left)}\td{V4 color selectivity, hue discrimination}}
+\tr{\td{6}\td{P8}\td{Lateral occipitotemporal (right)}\td{V4 color selectivity, hue discrimination}}
+\tr{\td{15}\td{P3}\td{Parietal (left)}\td{Spatial attention during tile placement}}
+\tr{\td{16}\td{P4}\td{Parietal (right)}\td{Spatial attention during tile placement}}
+\tr{\td{3}\td{C3}\td{Central (left)}\td{Motor planning for tile swaps}}
+\tr{\td{4}\td{C4}\td{Central (right)}\td{Motor execution for tile swaps}}
+}
+
+\p{Primary channels: O1, O2, P7, P8 (occipital-parietal). These cover V1 through V4 — the ventral stream pathway from luminance to hue. The "pop" detection signal should appear as a P300-like oddball response when a misplaced tile is noticed, strongest at P7/P8.}
+
+\p{Secondary channels: P3, P4 for spatial reasoning during placement. C3, C4 for motor intention preceding each swap action.}
+}
+
+\subtree{
+\title{Frequency Signatures to Monitor}
+\taxon{specification}
+
+\p{Expected EEG signatures during color gradient sorting:}
+
+\table{
+\tr{\th{Band}\th{Range}\th{Expected Pattern}\th{Interpretation}}
+\tr{\td{Alpha (8–12 Hz)}\td{O1, O2}\td{Desynchronization during active scanning}\td{Visual cortex engagement}}
+\tr{\td{Gamma (30–50 Hz)}\td{P7, P8}\td{Bursts during color discrimination}\td{V4 hue-selective binding}}
+\tr{\td{Theta (4–8 Hz)}\td{P3, P4}\td{Sustained during spatial planning}\td{Working memory for tile layout}}
+\tr{\td{Beta (12–30 Hz)}\td{C3, C4}\td{Desync before swap, rebound after}\td{Motor intention and execution}}
+\tr{\td{P300 ERP}\td{P7, P8, Pz}\td{~300ms after "pop" detection}\td{Oddball salience — misplaced tile noticed}}
+}
+
+\p{The key measurement: correlate gamma bursts at P7/P8 with the moment of correct tile placement. If color perception is guiding the sort, gamma power at V4 sites should peak just before the swap action (beta desync at C3/C4).}
+}
