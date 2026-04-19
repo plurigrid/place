@@ -1,0 +1,80 @@
+\import{macros}
+\title{Home Sleep Study — PSG Approximation Tiers}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-04-18}
+\tag{sleep}
+\tag{polysomnography}
+\tag{inventory}
+
+\p{Cross-reference of home polysomnography tiers against BCI Factory inventory. Each tier approximates clinical PSG with decreasing fidelity and cost. Overlap with existing bcf hardware reduces the buy-in from ~2130 USD to ~870 USD.}
+
+\subtree{
+  \title{Tier 1: Full PSG Equivalent (2000–2300 USD)}
+
+  \p{All standard PSG channels replicated at home with open-source hardware.}
+
+  \subtree{
+    \title{Channels from BCF inventory (already owned)}
+    \table{
+      \tr{\th{Channel}\th{BCF Source}\th{Device}\th{Value}}
+      \tr{\td{EEG 6+ ch}\td{[[bcf-0010]]}\td{Cyton + DSI-24 + HackEEG}\td{1200 USD}}
+      \tr{\td{EOG 2 ch}\td{[[bcf-0010]]}\td{Cyton extra electrodes}\td{30 USD}}
+      \tr{\td{EMG chin}\td{[[bcf-0015]]}\td{Facial EMG montage}\td{15 USD}}
+      \tr{\td{ECG 1-lead}\td{[[bcf-0010]]}\td{Cyton shared board}\td{15 USD}}
+    }
+    \p{Subtotal already owned: ~1260 USD equivalent.}
+  }
+
+  \subtree{
+    \title{Channels requiring purchase}
+    \table{
+      \tr{\th{Channel}\th{Device}\th{Cost}}
+      \tr{\td{EMG legs (PLM)}\td{OpenBCI Daisy expansion}\td{400 USD}}
+      \tr{\td{Airflow}\td{SleepSense nasal pressure transducer}\td{80 USD}}
+      \tr{\td{Respiratory effort}\td{RIP belts — chest + abdomen}\td{225 USD}}
+      \tr{\td{SpO2}\td{Wellue O2Ring}\td{90 USD}}
+      \tr{\td{Position}\td{Accelerometer or phone}\td{30 USD}}
+      \tr{\td{Video}\td{IR webcam}\td{45 USD}}
+    }
+    \p{Subtotal to buy: ~870 USD.}
+  }
+
+  \subtree{
+    \title{Software (free)}
+    \p{YASA and MNE-Python for automated sleep staging. OpenBCI GUI for acquisition. No cost.}
+  }
+}
+
+\subtree{
+  \title{Tier 2: Clinical HST + EEG Headband (400–700 USD)}
+  \p{Approximate sleep stages plus apnea-hypopnea index.}
+  \p{EEG: use existing Cyton ([[bcf-0010]]) in reduced montage, or consumer headband (Muse S Gen 2, 250–400 USD).}
+  \p{Respiratory: WatchPAT ONE or ApneaLink Air (150–350 USD, Rx rental). No BCF overlap — dedicated sleep apnea devices.}
+}
+
+\subtree{
+  \title{Tier 3: Prescription HST Only (150–400 USD)}
+  \p{AHI for apnea diagnosis only. No EEG, no sleep staging.}
+  \p{Devices: WatchPAT ONE, ApneaLink Air, Nox T3. Insurance may cover with 0–100 USD copay.}
+  \p{No overlap with BCF inventory.}
+}
+
+\subtree{
+  \title{Tier 4: Consumer Wearables (100–460 USD)}
+  \p{Trend data only, not diagnostic.}
+  \p{Wellue O2Ring (60 USD) plus Oura Ring Gen 3 or Apple Watch (300–400 USD). PPG-derived sleep stages have low accuracy for N1 vs N2.}
+  \p{[[bcf-0011]] and [[bcf-0033]] PLUX kits include SpO2 but cost 50x more — not justified for sleep screening alone.}
+}
+
+\subtree{
+  \title{Tier 5: Phone Only (0 USD)}
+  \p{Sleep Cycle or SnoreLab app. Accelerometer and microphone only. Not diagnostic. Essentially noise.}
+}
+
+\subtree{
+  \title{Beyond PSG: fNIRS hemodynamic channel}
+  \p{The OpenNIRScap 24-channel cap ([[bcf-0036]], on order) adds cortical hemodynamic measurement that no clinical sleep lab performs during polysomnography.}
+  \p{[[bcf-0032]] NIRx NIRSport 2 (50K–120K USD, research grade) and [[bcf-0031]] NV diamond magnetometer (1K USD) provide further modalities unavailable in any PSG configuration.}
+  \p{This positions the BCI Factory stack as a superset of clinical PSG — measuring electrical, hemodynamic, and magnetic brain signals simultaneously during sleep.}
+}
