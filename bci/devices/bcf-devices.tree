@@ -1,0 +1,70 @@
+\title{Device Ledger}
+\taxon{index}
+\author{monaduck1069}
+\date{2026-04-19}
+\tag{inventory}
+\tag{devices}
+\tag{voting}
+
+\import{macros}
+
+\p{Canonical device ledger for the BCI Factory daily vote.
+Devices with status \code{want} or \code{building} enter the daily rotation pool.
+Each day, a date-seeded selection picks two devices for bci.red vs bci.blue.
+Voters simulate each device's world via the embedded WASM gain-of-function kernel
+before casting a vote.}
+
+\subtree{\title{Schema}
+\p{Each device record: \code{id, name, status, cost_usd, modality, channels, sim_params, url, notes}.}
+\p{Status values: \code{own}, \code{building}, \code{on-order}, \code{want}, \code{lent-to-us}, \code{lent-from-us}, \code{dont-want}.}
+\p{Only \code{want} and \code{building} enter the daily vote rotation.}
+}
+
+\subtree{\title{Rotation pool (votable)}
+\taxon{remark}
+
+\table{
+  \tr{\th{ID} \th{Device} \th{Status} \th{Cost} \th{Modality} \th{Channels} \th{Sim params} \th{URL}}
+  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{$419} \td{fNIRS} \td{24} \td{infect:3,saturation:50,stim:0,alpha_suppress:0.4} \td{\link{https://opennirscap.github.io}}}
+  \tr{\td{DEV-EEG-003} \td{Muse S (Gen 2)} \td{want} \td{$400} \td{dry EEG} \td{4} \td{infect:1,saturation:20,stim:0,alpha_suppress:0.7} \td{\link{https://choosemuse.com}}}
+  \tr{\td{DEV-USTIM-001} \td{Focused ultrasound neuromod rig} \td{want} \td{unfunded} \td{tFUS} \td{1} \td{infect:2,saturation:80,stim:1,alpha_suppress:0.1} \td{n/a}}
+  \tr{\td{DEV-MAG-004} \td{QuSpin QZFM magnetometer} \td{want} \td{$5000} \td{OPM-MEG} \td{1} \td{infect:1,saturation:40,stim:0,alpha_suppress:0.2} \td{\link{https://quspin.com}}}
+  \tr{\td{DEV-EEG-004} \td{OpenBCI Ultracortex Mark IV} \td{want} \td{$999} \td{wet EEG} \td{16} \td{infect:2,saturation:30,stim:0,alpha_suppress:0.5} \td{\link{https://shop.openbci.com}}}
+}
+}
+
+\subtree{\title{Owned / operational}
+\taxon{remark}
+
+\table{
+  \tr{\th{ID} \th{Device} \th{Status} \th{Location} \th{Notes}}
+  \tr{\td{DEV-EEG-001} \td{OpenBCI Cyton 8-channel} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-EEG-002} \td{EEG headset (4ch wet)} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-XR-001} \td{XREAL glasses (x3)} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-GPU-001} \td{DGX Spark GX10} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-SOL-001} \td{Soldering kit} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-NET-001} \td{Starlink} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-PWR-001} \td{CyberPower UPS (x3)} \td{own} \td{222 Dore} \td{Sine wave, surge}}
+  \tr{\td{DEV-SBC-001} \td{Raspberry Pi} \td{own} \td{222 Dore} \td{Operational}}
+}
+}
+
+\subtree{\title{On order}
+\taxon{remark}
+
+\table{
+  \tr{\th{ID} \th{Device} \th{Status} \th{Notes}}
+  \tr{\td{DEV-MAG-001} \td{Uncut Gem NV magnetometer (with diamond)} \td{on-order} \td{Full PCB}}
+  \tr{\td{DEV-MAG-002} \td{Uncut Gem NV magnetometer (no diamond)} \td{on-order} \td{Full PCB}}
+  \tr{\td{DEV-MAG-003} \td{Uncut Gem NV magnetometer (no diamond)} \td{on-order} \td{Full PCB}}
+}
+}
+
+\subtree{\title{Rejected}
+\taxon{remark}
+
+\table{
+  \tr{\th{ID} \th{Device} \th{Status} \th{Reason}}
+  \tr{\td{DEV-FNIRS-002} \td{NIRx Brite 8ch fNIRS} \td{dont-want} \td{Optode spacing insufficient to penetrate scalp to cortex}}
+}
+}
