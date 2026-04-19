@@ -1,0 +1,7 @@
+\title{Brain-Computer Interfaces}
+\taxon{stub}
+\import{macros}
+
+\p{Stub. Categorical framing of BCI pipelines; content pending.
+Siblings: [[bci-0002]] (pipeline as functor), [[bci-0003]]–[[bci-0008]] (cofunctors,
+capabilities, Kan extensions, games, hatchery, diffing).}
