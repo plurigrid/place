@@ -1,0 +1,9 @@
+\title{OpenNIRScap (UofT Kim et al.)}
+\taxon{inventory-item}
+\meta{category}{bcf-0036}
+\meta{status}{building}
+\meta{cost-range}{419 USD BOM}
+\meta{url}{https://github.com/tonykim07/fNIRS}
+\meta{sim-params-addr}{bcf-INV-opennirscap-sim}
+
+\p{24-det + 8-src, 35mm separation. Parts bought, assembly in progress.}

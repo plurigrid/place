@@ -1,0 +1,9 @@
+\title{Faraday cage / RF shielding}
+\taxon{inventory-item}
+\meta{category}{bcf-0004}
+\meta{status}{want}
+\meta{cost-range}{5000-20000 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-faraday-cage-250-dore-sim}
+
+\p{Ambient EM noise floor for NV diamond + high-Z EEG.}

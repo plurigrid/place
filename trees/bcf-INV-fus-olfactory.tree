@@ -1,0 +1,9 @@
+\title{Rigol AWG + FUS (olfactory)}
+\taxon{inventory-item}
+\meta{category}{bcf-0016}
+\meta{status}{defer}
+\meta{cost-range}{3000-6000 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-fus-olfactory-sim}
+
+\p{Tier 3 SR, FDA IDE required. Deferred.}

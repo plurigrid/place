@@ -1,0 +1,9 @@
+\title{OpenBCI Cyton 8ch + Ultracortex Mark IV}
+\taxon{inventory-item}
+\meta{category}{bcf-0010}
+\meta{status}{own}
+\meta{cost-range}{1200 USD}
+\meta{url}{https://docs.openbci.com/}
+\meta{sim-params-addr}{bcf-INV-openbci-cyton-ultracortex-sim}
+
+\p{Factory reference wet EEG.}

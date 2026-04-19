@@ -1,0 +1,9 @@
+\title{Vibrotactile haptic array}
+\taxon{inventory-item}
+\meta{category}{bcf-0016}
+\meta{status}{want}
+\meta{cost-range}{50-300 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-vibrotactile-haptic-sim}
+
+\p{Tier 1 non-invasive.}

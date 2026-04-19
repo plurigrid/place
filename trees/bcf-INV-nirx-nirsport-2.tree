@@ -1,0 +1,9 @@
+\title{NIRx NIRSport 2}
+\taxon{inventory-item}
+\meta{category}{bcf-0032}
+\meta{status}{want}
+\meta{cost-range}{50000-120000 USD}
+\meta{url}{https://nirx.net/nirsport}
+\meta{sim-params-addr}{bcf-INV-nirx-nirsport-2-sim}
+
+\p{Research-grade wearable fNIRS. Stretch goal.}

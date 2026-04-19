@@ -1,0 +1,9 @@
+\title{250 Dore — 1 month rent}
+\taxon{inventory-item}
+\meta{category}{bcf-0004}
+\meta{status}{want}
+\meta{cost-range}{?-? USD/mo}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-250-dore-month-sim}
+
+\p{Per-month voteable unit.}

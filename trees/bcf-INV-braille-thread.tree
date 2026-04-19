@@ -1,0 +1,9 @@
+\title{Braille display (Thread wireless)}
+\taxon{inventory-item}
+\meta{category}{horse-0008}
+\meta{status}{?}
+\meta{cost-range}{500-2000 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-braille-thread-sim}
+
+\p{nRF5340 BLE-Thread bridge. Status pending.}
