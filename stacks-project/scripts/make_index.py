@@ -43,9 +43,9 @@ def find_name(name, label):
 path = get_path()
 lijstje = list_text_files(path)
 ext = ".tex"
-terms = []
-defs = []
-titles = []
+terms: list = []
+defs: list = []
+titles: list = []
 for name in lijstje:
 	filename = path + name + ext
 	tex_file = open(filename, 'r')

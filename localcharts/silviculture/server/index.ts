@@ -9,7 +9,7 @@ import { startBuilder } from './builder.js'
 import { RedisClientType, createClient } from 'redis'
 import sqlite3 from 'sqlite3'
 import { appendFile, readFile, writeFile } from 'fs/promises'
-import * as fastifyStatic from '@fastify/static'
+import fastifyStatic from '@fastify/static'
 import { NewTreeRequest } from '../common/api.js'
 import { spawn } from 'child_process'
 
