@@ -1,0 +1,8 @@
+\title{Stage 1: Sites — Implementation}
+\author{bmorphism}
+\import{macros}
+\taxon{stub}
+
+\p{Stub. Implementation details for Stage 1 (sites / electrode array as a site
+for local sections). Content pending. Downstream stages: [[bci-stage-2]]
+(spectral analysis), [[bci-stage-3]] (descent), [[bci-stage-4]] (decode).}

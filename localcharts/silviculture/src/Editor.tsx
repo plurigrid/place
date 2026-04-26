@@ -1,6 +1,6 @@
 import * as random from 'lib0/random'
 import * as Y from 'yjs'
-// @ts-expect-error
+// @ts-ignore
 import { yCollab } from 'y-codemirror.next'
 import { EditorView, basicSetup } from 'codemirror'
 import { EditorState, Compartment } from '@codemirror/state'

@@ -289,3 +289,110 @@
 
 \p{Status: ALL PURCHASED 2026-04-05. Awaiting delivery.}
 }
+
+\subtree{\title{JLCPCB Order Audit (2026-04-13 to 2026-04-15)}
+\taxon{remark}
+\import{macros}
+
+\p{Two PCBA orders (12291944A-Y4 for Uncut Gem, 12291944A-Y2 for fNIRS ECU) were cancelled by JLCPCB QA (Sunny) due to missing solder mask layers in the initial gerber export. Root cause: Altium-to-KiCad conversion dropped F_Mask and B_Mask layers. Fixed gerbers re-exported 2026-04-13, archived at assets/gerbers/opennirscap-v2/.}
+
+\subtree{\title{Board 1: Uncut Gem NV Magnetometer (bcf-0031)}
+\p{Order 12291944A-Y4. Qty 3. ADF4351 PLL + MMG3014NT1 RF amp + BPW34 photodiode + ESP32.}
+\table{
+\tr{\th{Layer} \th{Old (Y4)} \th{New file} \th{Size}}
+\tr{\td{F_Cu} \td{present} \td{Uncut Gem-F_Cu.gbr} \td{399 KB}}
+\tr{\td{B_Cu} \td{present} \td{Uncut Gem-B_Cu.gbr} \td{184 KB}}
+\tr{\td{F_Mask} \td{MISSING} \td{Uncut Gem-F_Mask.gbr} \td{26 KB}}
+\tr{\td{B_Mask} \td{MISSING} \td{Uncut Gem-B_Mask.gbr} \td{10 KB}}
+\tr{\td{F_Paste} \td{present} \td{Uncut Gem-F_Paste.gbr} \td{18 KB}}
+\tr{\td{B_Paste} \td{present} \td{Uncut Gem-B_Paste.gbr} \td{1.6 KB}}
+\tr{\td{F_Silkscreen} \td{present} \td{Uncut Gem-F_Silkscreen.gbr} \td{247 KB}}
+\tr{\td{B_Silkscreen} \td{present} \td{Uncut Gem-B_Silkscreen.gbr} \td{326 KB}}
+\tr{\td{Edge_Cuts} \td{INCOMPLETE} \td{Uncut Gem-Edge_Cuts.gbr} \td{709 B}}
+\tr{\td{PTH Drill} \td{present} \td{Uncut Gem-PTH.drl} \td{6.6 KB}}
+\tr{\td{NPTH Drill} \td{present} \td{Uncut Gem-NPTH.drl} \td{367 B}}
+}
+}
+
+\subtree{\title{Board 2: fNIRS ECU}
+\p{Order 12291944A-Y2. Qty 1. 112x112mm. STM32L476 + 8x TMUX1104 + 3x PCA9685 + ADUM4160.}
+\table{
+\tr{\th{Layer} \th{Old (Y2)} \th{New file} \th{Size}}
+\tr{\td{F_Cu} \td{present} \td{fNIRS_PCB-PcbDoc-F_Cu.gtl} \td{148 KB}}
+\tr{\td{B_Cu} \td{present} \td{fNIRS_PCB-PcbDoc-B_Cu.gbl} \td{27 KB}}
+\tr{\td{F_Mask} \td{MISSING} \td{fNIRS_PCB-PcbDoc-F_Mask.gts} \td{30 KB}}
+\tr{\td{B_Mask} \td{MISSING} \td{fNIRS_PCB-PcbDoc-B_Mask.gbs} \td{1.6 KB}}
+\tr{\td{F_Paste} \td{present} \td{fNIRS_PCB-PcbDoc-F_Paste.gtp} \td{25 KB}}
+\tr{\td{B_Paste} \td{present} \td{fNIRS_PCB-PcbDoc-B_Paste.gbp} \td{459 B}}
+\tr{\td{F_Silkscreen} \td{present} \td{fNIRS_PCB-PcbDoc-F_SilkS.gto} \td{411 KB}}
+\tr{\td{B_Silkscreen} \td{present} \td{fNIRS_PCB-PcbDoc-B_SilkS.gbo} \td{460 B}}
+\tr{\td{Edge_Cuts} \td{present} \td{fNIRS_PCB-PcbDoc-Edge_Cuts.gm1} \td{681 B}}
+\tr{\td{Drill} \td{present} \td{fNIRS_PCB-PcbDoc.drl} \td{10 KB}}
+\tr{\td{F_Courtyard} \td{--} \td{fNIRS_PCB-PcbDoc-F_CrtYd.gbr} \td{90 KB}}
+\tr{\td{B_Courtyard} \td{--} \td{fNIRS_PCB-PcbDoc-B_CrtYd.gbr} \td{10 KB}}
+}
+}
+
+\subtree{\title{Board 3: Sensor Module (25mm circular)}
+\p{Qty 24. VBPW34S photodiode + AD8618 TIA + VSMD66694 dual LED.}
+\table{
+\tr{\th{Layer} \th{File} \th{Size}}
+\tr{\td{F_Cu} \td{SensorModulePCB-PcbDoc-F_Cu.gtl} \td{6.0 KB}}
+\tr{\td{B_Cu} \td{SensorModulePCB-PcbDoc-B_Cu.gbl} \td{13 KB}}
+\tr{\td{F_Mask} \td{SensorModulePCB-PcbDoc-F_Mask.gts} \td{2.1 KB}}
+\tr{\td{B_Mask} \td{SensorModulePCB-PcbDoc-B_Mask.gbs} \td{4.9 KB}}
+\tr{\td{F_Paste} \td{SensorModulePCB-PcbDoc-F_Paste.gtp} \td{1.1 KB}}
+\tr{\td{B_Paste} \td{SensorModulePCB-PcbDoc-B_Paste.gbp} \td{2.8 KB}}
+\tr{\td{F_Silkscreen} \td{SensorModulePCB-PcbDoc-F_SilkS.gto} \td{12 KB}}
+\tr{\td{B_Silkscreen} \td{SensorModulePCB-PcbDoc-B_SilkS.gbo} \td{29 KB}}
+\tr{\td{Edge_Cuts} \td{SensorModulePCB-PcbDoc-Edge_Cuts.gm1} \td{438 B}}
+\tr{\td{Drill} \td{SensorModulePCB-PcbDoc.drl} \td{805 B}}
+\tr{\td{F_Courtyard} \td{SensorModulePCB-PcbDoc-F_CrtYd.gbr} \td{9.4 KB}}
+\tr{\td{B_Courtyard} \td{SensorModulePCB-PcbDoc-B_CrtYd.gbr} \td{14 KB}}
+}
+\p{All mask layers present. Ready to order.}
+}
+
+\subtree{\title{Board 4: ST-LINK Breakout}
+\p{Qty 1. SWD programming adapter for STM32 firmware flash.}
+\table{
+\tr{\th{Layer} \th{File} \th{Size}}
+\tr{\td{F_Cu} \td{STLINK_Breakout-PcbDoc-F_Cu.gtl} \td{5.1 KB}}
+\tr{\td{B_Cu} \td{STLINK_Breakout-PcbDoc-B_Cu.gbl} \td{2.3 KB}}
+\tr{\td{F_Mask} \td{STLINK_Breakout-PcbDoc-F_Mask.gts} \td{1.9 KB}}
+\tr{\td{B_Mask} \td{STLINK_Breakout-PcbDoc-B_Mask.gbs} \td{1.5 KB}}
+\tr{\td{F_Paste} \td{STLINK_Breakout-PcbDoc-F_Paste.gtp} \td{831 B}}
+\tr{\td{B_Paste} \td{STLINK_Breakout-PcbDoc-B_Paste.gbp} \td{465 B}}
+\tr{\td{F_Silkscreen} \td{STLINK_Breakout-PcbDoc-F_SilkS.gto} \td{13 KB}}
+\tr{\td{B_Silkscreen} \td{STLINK_Breakout-PcbDoc-B_SilkS.gbo} \td{28 KB}}
+\tr{\td{Edge_Cuts} \td{STLINK_Breakout-PcbDoc-Edge_Cuts.gm1} \td{623 B}}
+\tr{\td{Drill} \td{STLINK_Breakout-PcbDoc.drl} \td{675 B}}
+\tr{\td{F_Courtyard} \td{STLINK_Breakout-PcbDoc-F_CrtYd.gbr} \td{1.2 KB}}
+\tr{\td{B_Courtyard} \td{STLINK_Breakout-PcbDoc-B_CrtYd.gbr} \td{640 B}}
+}
+\p{All mask layers present. Ready to order.}
+}
+
+\subtree{\title{DFM Verification Checklist}
+\p{Per-layer manufacturing checks required before resubmission to JLCPCB. Based on IPC Class 2 standards and JLCPCB capability limits.}
+\table{
+\tr{\th{Check} \th{Requirement} \th{Consequence if failed}}
+\tr{\td{Mask polarity} \td{Solder mask must be NEGATIVE (drawn areas = openings)} \td{Entire board unsolderable}}
+\tr{\td{Mask expansion} \td{4-6 mil (0.1-0.15mm) around pads, never zero} \td{Tombstoning, solder bridges on 0201}}
+\tr{\td{Mask web} \td{>=4 mil between pads (green), >=5 mil other colors} \td{Solder bridges between IC pins}}
+\tr{\td{Outline closed} \td{Edge_Cuts must be single closed contour, no gaps} \td{Board cut to wrong shape or rejected}}
+\tr{\td{Drill units} \td{Must match gerber units (both metric or both imperial)} \td{Holes wrong size, components do not fit}}
+\tr{\td{Drill separation} \td{PTH and NPTH in separate files} \td{Mounting holes get plated with copper}}
+\tr{\td{Drill alignment} \td{Same coordinate origin as gerbers} \td{Holes miss pads, vias do not connect}}
+\tr{\td{Annular ring} \td{>=6 mil external, >=4 mil internal} \td{Drill wander breaks connection}}
+\tr{\td{Aspect ratio} \td{<=8:1 (board thickness / drill diameter)} \td{Plating voids, unreliable vias}}
+\tr{\td{Trace width} \td{>=6 mil (0.15mm) standard} \td{Over-etched open circuits}}
+\tr{\td{Trace spacing} \td{>=6 mil between traces and pads} \td{Short circuits}}
+\tr{\td{Copper balance} \td{30-70 pct coverage per layer} \td{Board warpage during reflow}}
+\tr{\td{Silk clearance} \td{>=0.15mm from pads, no overlap} \td{AOI failure, solder issues}}
+\tr{\td{Paste aperture} \td{Pad size times 90 pct for QFN/BGA} \td{Insufficient or excess solder}}
+\tr{\td{No macOS files} \td{Remove ._ and .DS_Store from zip} \td{Confuses CAM software}}
+}
+}
+
+}

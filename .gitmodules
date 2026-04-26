@@ -1,0 +1,3 @@
+[submodule "uncut-gems-v2/gayOS"]
+	path = bci-horse-play/gayOS
+	url = https://github.com/danielesiegel/gayOS

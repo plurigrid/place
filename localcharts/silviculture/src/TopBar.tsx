@@ -1,7 +1,5 @@
 import { JSX, JSXElement, splitProps } from 'solid-js'
 import { PaneState } from './Pane'
-import ky from 'ky'
-import { NewTreeResponse } from '../common/api'
 export { TopBar }
 
 
