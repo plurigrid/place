@@ -1,0 +1,7 @@
+\title{BCI Pipeline as Functor}
+\taxon{stub}
+\import{macros}
+
+\p{Stub. The BCI pipeline — sites → sheaves → descent → decode — viewed as a
+functor between topoi. Content pending. See [[bci-stage-1]]–[[bci-stage-4]] for
+the implementation-level counterparts.}

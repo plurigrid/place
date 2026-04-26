@@ -1,0 +1,371 @@
+\title{Macros}
+
+% These play much nicer with sh in VSCode & my muscle memory
+\def\emph[x]{\em{\x}}
+\def\textbf[x]{\strong{\x}}
+
+% Blackboard bold, bold, and calligraphic characters
+
+\def\AA{#{\mathbb{A}}}
+\def\BB{#{\mathbb{B}}}
+\def\CC{#{\mathbb{C}}}
+\def\DD{#{\mathbb{D}}}
+\def\EE{#{\mathbb{E}}}
+\def\FF{#{\mathbb{F}}}
+\def\GG{#{\mathbb{G}}}
+\def\HH{#{\mathbb{H}}}
+\def\II{#{\mathbb{I}}}
+\def\JJ{#{\mathbb{J}}}
+\def\KK{#{\mathbb{K}}}
+\def\LL{#{\mathbb{L}}}
+\def\MM{#{\mathbb{M}}}
+\def\NN{#{\mathbb{N}}}
+\def\OO{#{\mathbb{O}}}
+\def\PP{#{\mathbb{P}}}
+\def\QQ{#{\mathbb{Q}}}
+\def\RR{#{\mathbb{R}}}
+\def\SS{#{\mathbb{S}}}
+\def\TT{#{\mathbb{T}}}
+\def\UU{#{\mathbb{U}}}
+\def\VV{#{\mathbb{V}}}
+\def\WW{#{\mathbb{W}}}
+\def\XX{#{\mathbb{X}}}
+\def\YY{#{\mathbb{Y}}}
+\def\ZZ{#{\mathbb{Z}}}
+
+\def\bA{#{\mathbf{A}}}
+\def\bB{#{\mathbf{B}}}
+\def\bC{#{\mathbf{C}}}
+\def\bD{#{\mathbf{D}}}
+\def\bE{#{\mathbf{E}}}
+\def\bF{#{\mathbf{F}}}
+\def\bG{#{\mathbf{G}}}
+\def\bH{#{\mathbf{H}}}
+\def\bI{#{\mathbf{I}}}
+\def\bJ{#{\mathbf{J}}}
+\def\bK{#{\mathbf{K}}}
+\def\bL{#{\mathbf{L}}}
+\def\bM{#{\mathbf{M}}}
+\def\bN{#{\mathbf{N}}}
+\def\bO{#{\mathbf{O}}}
+\def\bP{#{\mathbf{P}}}
+\def\bQ{#{\mathbf{Q}}}
+\def\bR{#{\mathbf{R}}}
+\def\bS{#{\mathbf{S}}}
+\def\bT{#{\mathbf{T}}}
+\def\bU{#{\mathbf{U}}}
+\def\bV{#{\mathbf{V}}}
+\def\bW{#{\mathbf{W}}}
+\def\bX{#{\mathbf{X}}}
+\def\bY{#{\mathbf{Y}}}
+\def\bZ{#{\mathbf{Z}}}
+\def\b0{#{\mathbf{0}}}
+\def\b1{#{\mathbf{1}}}
+\def\b2{#{\mathbf{2}}}
+\def\b3{#{\mathbf{3}}}
+\def\b4{#{\mathbf{4}}}
+\def\b5{#{\mathbf{5}}}
+\def\b6{#{\mathbf{6}}}
+\def\b7{#{\mathbf{7}}}
+\def\b8{#{\mathbf{8}}}
+\def\b9{#{\mathbf{9}}}
+
+\def\cA{#{\mathcal{A}}}
+\def\cB{#{\mathcal{B}}}
+\def\cC{#{\mathcal{C}}}
+\def\cD{#{\mathcal{D}}}
+\def\cE{#{\mathcal{E}}}
+\def\cF{#{\mathcal{F}}}
+\def\cG{#{\mathcal{G}}}
+\def\cH{#{\mathcal{H}}}
+\def\cI{#{\mathcal{I}}}
+\def\cJ{#{\mathcal{J}}}
+\def\cK{#{\mathcal{K}}}
+\def\cL{#{\mathcal{L}}}
+\def\cM{#{\mathcal{M}}}
+\def\cN{#{\mathcal{N}}}
+\def\cO{#{\mathcal{O}}}
+\def\cP{#{\mathcal{P}}}
+\def\cQ{#{\mathcal{Q}}}
+\def\cR{#{\mathcal{R}}}
+\def\cS{#{\mathcal{S}}}
+\def\cT{#{\mathcal{T}}}
+\def\cU{#{\mathcal{U}}}
+\def\cV{#{\mathcal{V}}}
+\def\cW{#{\mathcal{W}}}
+\def\cX{#{\mathcal{X}}}
+\def\cY{#{\mathcal{Y}}}
+\def\cZ{#{\mathcal{Z}}}
+
+\def\fA{#{\mathfrak{A}}}
+\def\fB{#{\mathfrak{B}}}
+\def\fC{#{\mathfrak{C}}}
+\def\fD{#{\mathfrak{D}}}
+\def\fE{#{\mathfrak{E}}}
+\def\fF{#{\mathfrak{F}}}
+\def\fG{#{\mathfrak{G}}}
+\def\fH{#{\mathfrak{H}}}
+\def\fI{#{\mathfrak{I}}}
+\def\fJ{#{\mathfrak{J}}}
+\def\fK{#{\mathfrak{K}}}
+\def\fL{#{\mathfrak{L}}}
+\def\fM{#{\mathfrak{M}}}
+\def\fN{#{\mathfrak{N}}}
+\def\fO{#{\mathfrak{O}}}
+\def\fP{#{\mathfrak{P}}}
+\def\fQ{#{\mathfrak{Q}}}
+\def\fR{#{\mathfrak{R}}}
+\def\fS{#{\mathfrak{S}}}
+\def\fT{#{\mathfrak{T}}}
+\def\fU{#{\mathfrak{U}}}
+\def\fV{#{\mathfrak{V}}}
+\def\fW{#{\mathfrak{W}}}
+\def\fX{#{\mathfrak{X}}}
+\def\fY{#{\mathfrak{Y}}}
+\def\fZ{#{\mathfrak{Z}}}
+
+\def\sA{#{\mathscr{A}}}
+\def\sB{#{\mathscr{B}}}
+\def\sC{#{\mathscr{C}}}
+\def\sD{#{\mathscr{D}}}
+\def\sE{#{\mathscr{E}}}
+\def\sF{#{\mathscr{F}}}
+\def\sG{#{\mathscr{G}}}
+\def\sH{#{\mathscr{H}}}
+\def\sI{#{\mathscr{I}}}
+\def\sJ{#{\mathscr{J}}}
+\def\sK{#{\mathscr{K}}}
+\def\sL{#{\mathscr{L}}}
+\def\sM{#{\mathscr{M}}}
+\def\sN{#{\mathscr{N}}}
+\def\sO{#{\mathscr{O}}}
+\def\sP{#{\mathscr{P}}}
+\def\sQ{#{\mathscr{Q}}}
+\def\sR{#{\mathscr{R}}}
+\def\sS{#{\mathscr{S}}}
+\def\sT{#{\mathscr{T}}}
+\def\sU{#{\mathscr{U}}}
+\def\sV{#{\mathscr{V}}}
+\def\sW{#{\mathscr{W}}}
+\def\sX{#{\mathscr{X}}}
+\def\sY{#{\mathscr{Y}}}
+\def\sZ{#{\mathscr{Z}}}
+
+% Category Theory
+
+\def\Hom{#{\operatorname{\mathrm{Hom}}}}
+\def\dom{#{\operatorname{\mathrm{dom}}}}
+\def\codom{#{\operatorname{\mathrm{codom}}}}
+\def\yoneda{#{\operatorname{\mathbf{y}}}}
+
+\def\id{#{\mathrm{id}}}
+\def\then{#{\mathbin{⨟}}}
+\def\hcomp{#{\mathbin{\odot}}}
+
+\def\limit{#{\varprojlim}}
+\def\colimit{#{\varinjlim}}
+
+\def\op{#{\mathrm{op}}}
+\def\cc{#{\mathrm{cc}}}
+\def\lex{#{\mathrm{lex}}}
+
+\def\into{#{\hookrightarrow}}
+\def\onto{#{\twoheadrightarrow}}
+\def\from{#{\leftarrow}}
+\def\xto[f]{#{\xrightarrow{\f}}}
+\def\longto{#{\longrightarrow}}
+\def\proto{#{\nrightarrow}}
+\def\twoto{#{\Rightarrow}}
+
+\def\cat[c]{#{\mathsf{\c}}}
+\def\twocat[c]{#{\mathcal{\c}}}
+\def\dblcat[name]{#{\cat{\mathbb \name}}}
+
+\def\Cat{#{\cat{Cat}}} %should perhaps be a 2-category by default...or double?
+\def\CAT{#{\cat{CAT}}}
+\def\TwoCat{#{\cat{2\text{-}Cat}}}
+\def\Gray{#{\cat{Gray}}}
+\def\Graph{#{\cat{Graph}}}
+\def\dblCat{#{\dblcat{Cat}}} % equipment of cats, not to be confused with DblCat
+\def\Mult{#{\cat{Mult}}}
+
+% it'd be cool to have it automatically linked, like so:
+% \def\dblCat{#{\dblcat{Cat}}}{[#{\dblcat{Cat}}](equipment-of-cats)}
+% but it doesn't compile!
+
+\def\Gpd{#{\cat{Gpd}}}
+\def\Set{#{\cat{Set}}}
+\def\dblSet{#{\dblcat{Set}}} % equipment of spans of sets, i.e. Span(Set)
+\def\Fin{#{\cat{Fin}}}
+\def\FinIso{#{\cat{Fin}_{\cong}}}
+\def\Fam{#{\cat{Fam}}}
+\def\Topos{#{\cat{Topos}}}
+\def\Logos{#{\cat{Logos}}}
+\def\Diag{#{\cat{Diag}}}
+\def\Poset{#{\cat{Poset}}}
+\def\Span{#{\dblcat{Span}}}
+\def\Prof{#{\dblcat{Prof}}}
+\def\Rel{#{\dblcat{Rel}}}
+\def\Mat{#{\dblcat{Mat}}}
+\def\Org{#{\dblcat{Org}}}
+\def\DOrg{#{\dblcat{DOrg}}}
+
+\def\Meas{#{\cat{Meas}}}
+\def\Stoch{#{\cat{Stoch}}}
+\def\NoiseStoch{#{\cat{NoiseStoch}}}
+
+\def\Prob{#{\operatorname{\mathbf{Prob}}}}
+
+\def\horiz{\mathcal{h}}
+
+\def\List{#{\mathbf{List}}}
+
+\def\cofree{#{\fC}}
+
+\def\Ob{#{\operatorname{\mathbf{Ob}}}}
+
+\def\Comon{#{\operatorname{\cat{Comon}}}}
+
+\def\Pr{#{\operatorname{\cP\mathrm{r}}}}
+\def\Pt{#{\operatorname{\cP\mathrm{t}}}}
+\def\Sh{#{\operatorname{\cS\mathrm{h}}}}
+\def\Open{#{\cO}}
+\def\Spec{#{\mathrm{Spec}}}
+
+\def\Poly{#{\cat{Poly}}}
+\def\MonPoly{#{\cat{Mon}(\Poly)}}
+
+\def\Cospan{#{\cat{Cospan}}}
+\def\Csp{#{\cat{Csp}}}
+\def\Edit{#{\dblcat{Edit}}}
+
+\def\parents{#{\operatorname{\mathrm{pa}}}}
+
+\def\CPN{#{\operatorname{\mathbf{CPN}}}}
+\def\CausDiag{#{\operatorname{\mathbf{CausDiag}}}}
+\def\sample{#{\mathbf{sample}}}
+
+% Universal Algebra
+
+\def\Terms{#{\operatorname{\mathbf{Terms}}}}
+\def\PCong{#{\operatorname{\mathbf{PCong}}}}
+\def\Alg{#{\cat{Alg}}}
+\def\Coalg{#{\cat{Coalg}}}
+\def\EPres{#{\cat{EPres}}}
+\def\mnd{#{\mathbf{mnd}}}
+
+% Dynamical systems
+
+\def\DiscInt{#{\II_0}}
+\def\Traj{#{\cat{Traj}}}
+\def\Man{#{\cat{Man}}}
+\def\Vect{#{\cat{Vect}}}
+
+
+% Poly
+
+\def\lott{#{\mathtt{lott}}}
+\def\tri{#{\triangleleft}}
+
+% Lenses
+
+\def\arena[E][B]{#{{\E \choose \B}}}
+
+% Probability
+
+\def\expect{#{\EE}}
+
+% Geometry
+
+\def\Top{#{\cat{Top}}}
+\def\Mfld{#{\cat{Mfld}}}
+\def\Subm{#{\cat{Subm}}}
+\def\CPoly{#{\cat{CPoly}}}
+\def\SPoly{#{\cat{SPoly}}}
+
+% C-sets
+
+\def\src{#{\mathrm{src}}}
+\def\tgt{#{\mathrm{tgt}}}
+
+% Set theory
+
+\def\powerset{#{\cP}}
+\def\nepowerset{#{\cP_{+}}}
+
+% Links
+
+\xmlns:html{http://www.w3.org/1999/xhtml}
+
+\def\nlab[article]{\<html:span>[class]{nlab}{[\article](https://ncatlab.org/nlab/show/\article)}}
+\def\wikipedia[article]{\<html:span>[class]{wikipedia}{[\article](https://en.wikipedia.org/wiki/\article)}}
+
+% Semantic markup
+
+% Used for words being defined.
+\def\defcase[term]{\strong{\term}}
+
+% Blocks
+
+\def\abstract[body]{
+  \subtree{\title{Abstract}\body}
+}
+
+\def\notes[body]{
+  \subtree{\title{Notes.} \body}
+}
+
+\def\idea[body]{
+  \subtree{\title{Idea.} \body}
+}
+
+\def\proof[body]{
+  \subtree{\taxon{proof} \body}
+}
+
+\def\definition[head][body]{
+  \subtree{\title{\head} \taxon{definition} \body}
+}
+
+\def\remark[body]{
+  \subtree{\taxon{remark} \body}
+  % \p{\textbf{Remark}. \body}
+}
+
+\def\predefinition[head][body]{
+  \subtree{\title{\head} \taxon{preliminary definition} \body}
+}
+
+\def\example[head][body]{
+  \subtree{\title{\head} \taxon{example} \body}
+}
+
+\def\proposition[head][body]{
+  \subtree{\title{\head} \taxon{proposition} \body}
+}
+
+% Figures
+
+\def\quiver[body]{
+  \<html:center>{\tex{\usepackage{quiver, amsopn, amssymb, mathrsfs}}{\body}}
+}
+
+\def\image[source]{
+  \<html:center>{\<html:img>[src]{\source}{}}
+}
+
+% Convex duality
+
+\def\Minmax{\cat{Minmax}}
+\def\Conv{\cat{Conv}}
+\def\Conc{\cat{Conc}}
+
+\def\braket[contents]{#{\langle \contents \rangle}}
+
+\def\eRR{#{\overline{\RR}}}
+
+%% Non-syntax-erroring parentheses
+\def\lpar{#{\startverb(\stopverb}}
+\def\rpar{#{\startverb)\stopverb}}
+\def\lsqb{#{\startverb[\stopverb}}
+\def\rsqb{#{\startverb]\stopverb}}

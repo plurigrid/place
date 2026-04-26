@@ -373,25 +373,25 @@
 \p{All mask layers present. Ready to order.}
 }
 
-\subtree{	itle{DFM Verification Checklist}
+\subtree{\title{DFM Verification Checklist}
 \p{Per-layer manufacturing checks required before resubmission to JLCPCB. Based on IPC Class 2 standards and JLCPCB capability limits.}
-	able{
-	r{	h{Check} 	h{Requirement} 	h{Consequence if failed}}
-	r{	d{Mask polarity} 	d{Solder mask must be NEGATIVE (drawn areas = openings)} 	d{Entire board unsolderable}}
-	r{	d{Mask expansion} 	d{4-6 mil (0.1-0.15mm) around pads, never zero} 	d{Tombstoning, solder bridges on 0201}}
-	r{	d{Mask web} 	d{>=4 mil between pads (green), >=5 mil other colors} 	d{Solder bridges between IC pins}}
-	r{	d{Outline closed} 	d{Edge_Cuts must be single closed contour, no gaps} 	d{Board cut to wrong shape or rejected}}
-	r{	d{Drill units} 	d{Must match gerber units (both metric or both imperial)} 	d{Holes wrong size, components do not fit}}
-	r{	d{Drill separation} 	d{PTH and NPTH in separate files} 	d{Mounting holes get plated with copper}}
-	r{	d{Drill alignment} 	d{Same coordinate origin as gerbers} 	d{Holes miss pads, vias do not connect}}
-	r{	d{Annular ring} 	d{>=6 mil external, >=4 mil internal} 	d{Drill wander breaks connection}}
-	r{	d{Aspect ratio} 	d{<=8:1 (board thickness / drill diameter)} 	d{Plating voids, unreliable vias}}
-	r{	d{Trace width} 	d{>=6 mil (0.15mm) standard} 	d{Over-etched open circuits}}
-	r{	d{Trace spacing} 	d{>=6 mil between traces and pads} 	d{Short circuits}}
-	r{	d{Copper balance} 	d{30-70 pct coverage per layer} 	d{Board warpage during reflow}}
-	r{	d{Silk clearance} 	d{>=0.15mm from pads, no overlap} 	d{AOI failure, solder issues}}
-	r{	d{Paste aperture} 	d{Pad size times 90 pct for QFN/BGA} 	d{Insufficient or excess solder}}
-	r{	d{No macOS files} 	d{Remove ._ and .DS_Store from zip} 	d{Confuses CAM software}}
+\table{
+\tr{\th{Check} \th{Requirement} \th{Consequence if failed}}
+\tr{\td{Mask polarity} \td{Solder mask must be NEGATIVE (drawn areas = openings)} \td{Entire board unsolderable}}
+\tr{\td{Mask expansion} \td{4-6 mil (0.1-0.15mm) around pads, never zero} \td{Tombstoning, solder bridges on 0201}}
+\tr{\td{Mask web} \td{>=4 mil between pads (green), >=5 mil other colors} \td{Solder bridges between IC pins}}
+\tr{\td{Outline closed} \td{Edge_Cuts must be single closed contour, no gaps} \td{Board cut to wrong shape or rejected}}
+\tr{\td{Drill units} \td{Must match gerber units (both metric or both imperial)} \td{Holes wrong size, components do not fit}}
+\tr{\td{Drill separation} \td{PTH and NPTH in separate files} \td{Mounting holes get plated with copper}}
+\tr{\td{Drill alignment} \td{Same coordinate origin as gerbers} \td{Holes miss pads, vias do not connect}}
+\tr{\td{Annular ring} \td{>=6 mil external, >=4 mil internal} \td{Drill wander breaks connection}}
+\tr{\td{Aspect ratio} \td{<=8:1 (board thickness / drill diameter)} \td{Plating voids, unreliable vias}}
+\tr{\td{Trace width} \td{>=6 mil (0.15mm) standard} \td{Over-etched open circuits}}
+\tr{\td{Trace spacing} \td{>=6 mil between traces and pads} \td{Short circuits}}
+\tr{\td{Copper balance} \td{30-70 pct coverage per layer} \td{Board warpage during reflow}}
+\tr{\td{Silk clearance} \td{>=0.15mm from pads, no overlap} \td{AOI failure, solder issues}}
+\tr{\td{Paste aperture} \td{Pad size times 90 pct for QFN/BGA} \td{Insufficient or excess solder}}
+\tr{\td{No macOS files} \td{Remove ._ and .DS_Store from zip} \td{Confuses CAM software}}
 }
 }
 

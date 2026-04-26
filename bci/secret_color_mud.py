@@ -179,7 +179,8 @@ def wrap(text: str) -> str:
 
 def hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
     value = hex_color.lstrip("#")
-    return tuple(int(value[index : index + 2], 16) for index in (0, 2, 4))
+    r, g, b = (int(value[index : index + 2], 16) for index in (0, 2, 4))
+    return (r, g, b)
 
 
 def swatch(hex_color: str, width: int = 6) -> str:
@@ -370,7 +371,7 @@ class SecretColorMud:
         self.cleared_cards: set[str] = set()
         self.random = random.Random(stable_seed(f"{name}:{start_room}"))
         self.aura_cache: dict[tuple[str, int], tuple[SecretColor, CytonEpoch]] = {}
-        self.journal = deque(maxlen=12)
+        self.journal: deque[str] = deque(maxlen=12)
         self.triad_complete = False
         self.message = ""
         self.set_message("Ride the forester graph. Close the gap between name-color and brain-color.")
@@ -673,9 +674,9 @@ class SecretColorMud:
         for score, hops, room_id, coherence_value in self.best_targets():
             room = self.rooms[room_id]
             marker = "quest" if room_id in QUEST_ROOMS else "world"
-            witnessed = "*" if room_id in self.witnessed else "-"
+            wit_mark = "*" if room_id in self.witnessed else "-"
             print(
-                f"{witnessed} {room_id:<12} {marker:<5} coh:{coherence_value:.1%} "
+                f"{wit_mark} {room_id:<12} {marker:<5} coh:{coherence_value:.1%} "
                 f"hops:{hops:<2} rank:{score:.2f} {room.title}"
             )
         print()

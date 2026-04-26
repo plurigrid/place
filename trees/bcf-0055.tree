@@ -168,5 +168,9 @@
 \li{LG OLED77C5PUA at 192.168.0.103 -- moves to 192.168.20.103 on IoT VLAN}
 \li{OCapN CapTP -- Layer 3 capability topology mirrors capability discipline}
 \li{Aptos -- Layer 5 attestation chain}
+\li{\ref{stk-0005} -- Topology: VLAN segmentation is a network topology}
+\li{\ref{stk-0029} -- Morphisms of Schemes: firewall rules as morphisms}
+\li{\ref{stk-0041} -- Etale Morphisms: capability attenuation as etale cover}
+\li{\ref{stk-0073} -- Topologies on Algebraic Spaces: mDNS/ARP/VLAN as etale/fppf/Zariski}
 }
 }

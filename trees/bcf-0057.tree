@@ -1,75 +1,100 @@
-\import{macros}
-\title{Artist Testimony: Color Gradient Sorting as Perceptual Practice}
-\taxon{testimony}
+\title{Vivarium Network Topology: Discovered Infrastructure}
+\taxon{experiment}
+\author{barton-rhodes}
 \date{2026-04-08}
-\author{zubyul}
-\meta{venue}{spoken, transcribed}
-\tag{color-perception}
-\tag{chromatic-vrf}
-\tag{bci}
+\import{macros}
+\tag{network}
+\tag{vivarium}
+\tag{thread}
+\tag{zigbee}
+\tag{matter}
+\tag{discovery}
+\meta{scope}{infrastructure}
+\meta{device-count}{52}
 
-\p{The game is technically trying to solve a puzzle, but the puzzle at the end has to be a good gradient of all the colors together. You move the tiles that are not marked as a dot — these unmarked tiles can be swapped around inside the whole grid. When swapping, the idea is to get each tile to match the colors on the surrounding tiles, and at the end you build the whole gradient.}
+\p{Empirical network discovery at Vivarium (San Francisco). 52 devices on a flat /24 LAN with no VLAN isolation. Three mesh protocols already active: Thread 1.3 (Apple), Zigbee (Hue), and Wi-Fi. This inventory feeds the alterstructure design (\ref{bcf-0055}).}
 
-\p{The goal is to get the colors arranged in a very smooth way that does not look like there is a pop of coloring — a color popping up out of the other ones. They all have a sequence.}
-
-\p{A darker goes to brighter, and from the brighter one tone can change to a different tone because it might combine two different families together. A yellow with a red will become orange. The orange kind of tone sits between the yellow and the red. It picks two colors together, mixes them.}
-
-\p{There is a lot of mixing and matching, but also making sure tiles are surrounded by colors that will progress over time instead of just having a color that totally changes the character or personality of the whole arrangement.}
-
-\subtree{
-\title{Perceptual Strategy}
-\taxon{analysis}
-
-\p{The solving process reveals a perceptual pipeline:}
-
-\ol{
-\li{Global scan: identify the fixed anchor dots and their color families}
-\li{Family clustering: group free tiles by hue family (warm, cool, neutral)}
-\li{Luminance sorting: within each family, order dark-to-bright}
-\li{Boundary negotiation: at family transitions (yellow to red to orange), place intermediate tones that bridge both families}
-\li{Smoothness verification: scan for "pops" — tiles that break the local gradient}
-}
-
-\p{This is exactly the perceptual task that engages V4 (color-selective cortex) and the ventral visual stream. The "pop detection" step is a salience computation — the same neural mechanism that drives visual search and oddball detection in EEG.}
-}
-
-\subtree{
-\title{BCI Bridge: EEG Channels for Color Perception}
-\taxon{specification}
-
-\p{Target channels on the Ultracortex Mark IV 16-channel montage for monitoring color gradient sorting:}
+\subtree{\title{Mesh Networks}
+\taxon{finding}
 
 \table{
-\tr{\th{Channel}\th{Position}\th{Region}\th{Role in Color Task}}
-\tr{\td{7}\td{O1}\td{Primary visual (left)}\td{Early color processing, luminance}}
-\tr{\td{8}\td{O2}\td{Primary visual (right)}\td{Early color processing, luminance}}
-\tr{\td{5}\td{P7}\td{Lateral occipitotemporal (left)}\td{V4 color selectivity, hue discrimination}}
-\tr{\td{6}\td{P8}\td{Lateral occipitotemporal (right)}\td{V4 color selectivity, hue discrimination}}
-\tr{\td{15}\td{P3}\td{Parietal (left)}\td{Spatial attention during tile placement}}
-\tr{\td{16}\td{P4}\td{Parietal (right)}\td{Spatial attention during tile placement}}
-\tr{\td{3}\td{C3}\td{Central (left)}\td{Motor planning for tile swaps}}
-\tr{\td{4}\td{C4}\td{Central (right)}\td{Motor execution for tile swaps}}
+\tr{\th{Protocol}\th{Coordinator}\th{IP}\th{Version}\th{Coverage}}
+\tr{\td{Thread}\td{Apple HomePod/TV}\td{192.168.0.231}\td{1.3.0}\td{Matter-native mesh, border router}}
+\tr{\td{Zigbee}\td{Philips Hue Bridge v2}\td{192.168.0.163}\td{BSB002}\td{Hue ecosystem lighting}}
+\tr{\td{Sub-1G}\td{(need Tapo H200)}\td{--}\td{--}\td{Battery camera mesh}}
 }
 
-\p{Primary channels: O1, O2, P7, P8 (occipital-parietal). These cover V1 through V4 — the ventral stream pathway from luminance to hue. The "pop" detection signal should appear as a P300-like oddball response when a misplaced tile is noticed, strongest at P7/P8.}
+\p{The Apple Thread border router at \code{Game-Room.local} advertises via \code{_meshcop._udp} on port 49153. It runs Thread 1.3.0 with DefaultDomain. This is the Matter backbone -- any Matter-compatible device (including the planned Tapo H200) joins through this border router.}
 
-\p{Secondary channels: P3, P4 for spatial reasoning during placement. C3, C4 for motor intention preceding each swap action.}
+\p{The Hue Bridge (bridgeid \code{ecb5fafffebec998}) runs Zigbee and bridges to HomeKit via the Apple ecosystem. It serves HTTPS on port 443 at \code{ecb5fabec998.local}.}
 }
 
-\subtree{
-\title{Frequency Signatures to Monitor}
-\taxon{specification}
-
-\p{Expected EEG signatures during color gradient sorting:}
+\subtree{\title{Infrastructure Devices}
+\taxon{finding}
 
 \table{
-\tr{\th{Band}\th{Range}\th{Expected Pattern}\th{Interpretation}}
-\tr{\td{Alpha (8–12 Hz)}\td{O1, O2}\td{Desynchronization during active scanning}\td{Visual cortex engagement}}
-\tr{\td{Gamma (30–50 Hz)}\td{P7, P8}\td{Bursts during color discrimination}\td{V4 hue-selective binding}}
-\tr{\td{Theta (4–8 Hz)}\td{P3, P4}\td{Sustained during spatial planning}\td{Working memory for tile layout}}
-\tr{\td{Beta (12–30 Hz)}\td{C3, C4}\td{Desync before swap, rebound after}\td{Motor intention and execution}}
-\tr{\td{P300 ERP}\td{P7, P8, Pz}\td{~300ms after "pop" detection}\td{Oddball salience — misplaced tile noticed}}
+\tr{\th{Device}\th{IP}\th{Role}\th{VLAN target}}
+\tr{\td{UniFi Dream Machine SE}\td{.0.1}\td{Gateway, firewall, future container host}\td{Router}}
+\tr{\td{local.vivarium.sh}\td{.0.9}\td{UniFi managed device}\td{10 (Trusted)}}
+\tr{\td{UniFi Access Hub Enterprise}\td{.0.33}\td{Physical access control}\td{20 (IoT)}}
+\tr{\td{UniFi Intercom}\td{.0.69}\td{Door intercom}\td{20 (IoT)}}
+}
 }
 
-\p{The key measurement: correlate gamma bursts at P7/P8 with the moment of correct tile placement. If color perception is guiding the sort, gamma power at V4 sites should peak just before the swap action (beta desync at C3/C4).}
+\subtree{\title{Key IoT Devices}
+\taxon{finding}
+
+\table{
+\tr{\th{Device}\th{IP}\th{Ports open}\th{Risk}\th{VLAN target}}
+\tr{\td{LG OLED77C5PUA}\td{.0.103}\td{3000, 3001, 7000, 18181, 36866}\td{High (CVE-2023-6317..6320 chain)}\td{20 (IoT)}}
+\tr{\td{Hue Bridge v2}\td{.0.163}\td{443}\td{Low}\td{20 (IoT)}}
+\tr{\td{Apple Thread BR}\td{.0.231}\td{49153}\td{Low (Apple auth)}\td{20 (IoT)}}
+\tr{\td{HP OfficeJet Pro 8120e}\td{mDNS}\td{HTTP, IPP}\td{Medium (print protocol)}\td{20 (IoT)}}
+}
+}
+
+\subtree{\title{mDNS Service Map}
+\taxon{finding}
+
+\p{Services broadcasting on the LAN, grouped by function:}
+
+\ul{
+\li{\strong{Smart home}: \code{_hue}, \code{_hap} (HomeKit), \code{_meshcop}/_trel/_srpl-tls (Thread), \code{_companion-link}}
+\li{\strong{Media}: \code{_airplay}, \code{_raop} (AirPlay audio)}
+\li{\strong{File sharing}: \code{_smb}, \code{_sftp-ssh}}
+\li{\strong{Remote access}: \code{_ssh}, \code{_rfb} (VNC), \code{_eppc} (Apple Remote Events), \code{_remotepairing}}
+\li{\strong{Printing}: \code{_ipp}, \code{_ipps}, \code{_pdl-datastream}, \code{_uscan}/_uscans}
+\li{\strong{Monitoring}: \code{_screenpipe}}
+}
+
+\p{Notable: \code{_screenpipe} is broadcasting -- this is the Screenpipe local AI recording service. Should be restricted to VLAN 10.}
+}
+
+\subtree{\title{Bluetooth Proximity}
+\taxon{finding}
+
+\p{BLE scan from workstation. RSSI indicates physical proximity:}
+
+\table{
+\tr{\th{Device}\th{RSSI}\th{Type}\th{Notes}}
+\tr{\td{Adv360 Pro}\td{connected}\td{Split keyboard}\td{Kinesis, primary input}}
+\tr{\td{hatchery}\td{-54 dBm}\td{BLE beacon}\td{Unknown. Close proximity. Investigate.}}
+\tr{\td{radhatter}\td{paired}\td{Unknown BLE}\td{No RSSI available}}
+}
+
+\p{The \code{hatchery} device at -54 dBm is within 2-3 meters. Identity unknown -- could be a development board, sensor, or someone else's device.}
+}
+
+\subtree{\title{Connections}
+\taxon{remark}
+
+\ul{
+\li{\ref{bcf-0055} -- Alterstructure design this inventory feeds}
+\li{LG TV detailed profile in project memory (lg-webos-tv.md)}
+\li{plurigrid/vivarium repo: inventory.md, deploy scripts}
+\li{\ref{stk-0033} -- Varieties: 52-device network as algebraic variety (points=devices, Zariski=VLANs)}
+\li{\ref{stk-0005} -- Topology: mDNS service broadcast defines the network topology}
+\li{\ref{stk-0065} -- Algebraic Spaces: devices as algebraic spaces quotiented by VLAN equivalence}
+\li{\ref{stk-0085} -- Simplicial Spaces: Cech nerve of the VLAN cover recovers full topology}
+}
 }

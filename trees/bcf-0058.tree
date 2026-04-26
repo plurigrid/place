@@ -1,59 +1,244 @@
-\title{ECU Zone Fill Fix: Altium Import Cleanup and Gerber Re-export}
-\taxon{resolution}
+\title{IRB and Ethical Oversight: Device Coverage Matrix}
+\taxon{reference}
 \author{monaduck1069}
-\date{2026-04-16}
 \import{macros}
-\tag{fnirs}
-\tag{hardware}
-\tag{pcb}
-\tag{kicad}
-\tag{gerber}
-\meta{board}{fNIRS ECU}
-\meta{blocker}{zone-fill-missing}
-\meta{status}{resolved}
+\date{2026-04-11}
+\tag{irb}
+\tag{ethics}
+\tag{regulatory}
+\tag{safety}
+\meta{scope}{bci-factory}
+\meta{status}{actionable}
 
-\p{The fNIRS ECU 4-layer PCB (112x112mm, STM32L476) was missing copper zone fills in the original gerber export. The Altium-to-KiCad import produced 171 zones, of which 131 were corrupt (93 on F.SilkS, 45 unnetted copper). KiCad's zone filler crashed with math overflow on the corrupt data. This tree documents the automated fix.}
+\p{Ethical oversight plan for all BCI Factory devices that interact with human subjects. Maps each device to its FDA classification, risk tier, and the IRB pathway required before use on humans. The goal: know exactly what permissions are needed before anyone sits in the chair.}
 
-\subtree{\title{Root Cause}
+\subtree{\title{Regulatory Framework}
 \taxon{remark}
-\p{The Altium .PcbDoc import into KiCad created zones on invalid layers (F.SilkS cannot have copper zones) and zones with no net assignment. These prevented the zone filler from computing valid copper pours. The original gerber export contained zero G36 region commands on any copper layer -- meaning no fills were rendered.}
-}
 
-\subtree{\title{Fix Procedure}
-\taxon{remark}
+\p{Three bodies of law govern BCI Factory operations:}
 
 \ol{
-\li{Ran cleanup-zones.py (pcbnew API) to delete 138 corrupt zones: 93 on F.SilkS + 45 unnetted copper. Kept 40 valid zones.}
-\li{Ran pcbnew ZONE_FILLER on the cleaned board. All 40 zones filled successfully, producing 41 filled_polygon entries.}
-\li{Exported gerbers via kicad-cli (pcbnew PLOT_CONTROLLER had a layer -1 bug). Exported drill files separately.}
-\li{Packaged as ecu_gerbers_refilled.zip (530 KB vs original 162 KB).}
+\li{\strong{FDA device classification} (21 CFR Part 882): determines whether a device needs 510(k) clearance, is exempt, or requires premarket approval (PMA). Most EEG and biofeedback devices are Class II, 510(k) exempt under 882.5050.}
+\li{\strong{Common Rule} (45 CFR 46): defines when human subjects research requires IRB review. Key test: is the activity a "systematic investigation designed to develop or contribute to generalizable knowledge" involving human subjects? If yes, IRB required regardless of funding source.}
+\li{\strong{FDA IDE regulations} (21 CFR 812): investigational device exemptions for devices not yet cleared. Significant risk (SR) devices need FDA approval of an IDE before any human study. Non-significant risk (NSR) devices need only IRB approval.}
+}
+
+\p{BCI Factory operates in \strong{two modes}: wellness demonstration (no IRB needed) and systematic research (IRB needed). The line between them is whether data is collected for generalizable knowledge or publication. This tree ensures we know exactly when we cross that line.}
+}
+
+\subtree{\title{Risk Tiers}
+\taxon{definition}
+
+\table{
+\tr{\th{Tier} \th{Description} \th{IRB Required?} \th{FDA Pathway} \th{Devices}}
+\tr{\td{0} \td{Wellness demo: no data retention, no publication, no medical claims} \td{No} \td{None (Class II exempt)} \td{EEG read-only, fNIRS read-only, eye tracking, HRV, body tracking, sEMG}}
+\tr{\td{1} \td{Non-interventional research: systematic data collection, publication intended} \td{Yes (expedited)} \td{None (using cleared devices)} \td{All READ devices when used for research}}
+\tr{\td{2} \td{Interventional, non-significant risk: neurostimulation within ITRUSST safety limits} \td{Yes (full board)} \td{NSR determination by IRB} \td{FUS within MI < 1.9, temp rise < 2C, S1/A1 targets only}}
+\tr{\td{3} \td{Interventional, significant risk: novel stimulation targets, exceeds safety limits, or novel device} \td{Yes (full board)} \td{IDE submission to FDA} \td{FUS to olfactory targets, NV diamond magnetometer, tongue electrodes}}
 }
 }
 
-\subtree{\title{Verification: G36 Region Counts}
+\subtree{\title{Device-by-Device IRB Coverage}
+\taxon{reference}
+
+\subtree{\title{READ Devices: Electrophysiological (EEG)}
+
+\table{
+\tr{\th{Device} \th{Tree} \th{FDA Class} \th{CFR} \th{Tier 0 (demo)} \th{Tier 1 (research)}}
+\tr{\td{OpenBCI Cyton 8ch + Ultracortex Mark IV} \td{\ref{bcf-0010}, \ref{bcf-0030}} \td{Class II, 510(k) exempt} \td{882.5050 (biofeedback)} \td{No IRB} \td{Commercial IRB, expedited}}
+\tr{\td{Cognionics HD-72 64ch} \td{\ref{bcf-0052}, \ref{bcf-0053}} \td{Class II, 510(k)} \td{882.1400 (EEG)} \td{No IRB} \td{Commercial IRB, expedited}}
+\tr{\td{Cognionics Quick-20} \td{\ref{bci-0016}} \td{Class II, 510(k)} \td{882.1400 (EEG)} \td{No IRB} \td{Commercial IRB, expedited}}
+}
+
+\p{All three EEG devices are non-invasive, use surface electrodes, and pose minimal risk (skin irritation from paste or pressure). Under Tier 0 (wellness demonstration), no IRB is required. Under Tier 1 (systematic research), an expedited review by a commercial IRB suffices because non-invasive EEG is minimal risk per 45 CFR 46.110.}
+}
+
+\subtree{\title{READ Devices: Hemodynamic (fNIRS)}
+
+\table{
+\tr{\th{Device} \th{Tree} \th{FDA Class} \th{Tier 0} \th{Tier 1}}
+\tr{\td{PLUX fNIRS Pioneer Kit (4ch)} \td{\ref{bcf-0011}} \td{Class II} \td{No IRB} \td{Expedited}}
+\tr{\td{PLUX 8ch Hub + 7 fNIRS + SpO2} \td{\ref{bcf-0033}} \td{Class II} \td{No IRB} \td{Expedited}}
+\tr{\td{NIRx NIRSport 2} \td{\ref{bcf-0032}} \td{Class II} \td{No IRB} \td{Expedited}}
+\tr{\td{Artinis Brite Lite MKIV} \td{\ref{bcf-0035}} \td{Class II} \td{No IRB} \td{Expedited}}
+\tr{\td{OpenNIRScap (DIY)} \td{\ref{bcf-0036}} \td{Unregulated (research tool)} \td{No IRB} \td{Expedited (but document LED power levels)}}
+}
+
+\p{fNIRS devices use low-power near-infrared LEDs (660nm, 950nm). Non-invasive, no ionizing radiation. The OpenNIRScap is a DIY build and not FDA-cleared, but fNIRS at these power levels is well within the non-significant risk category. For Tier 1 research, the IRB protocol should document LED irradiance values and confirm they are below IEC 62471 photobiological safety limits.}
+}
+
+\subtree{\title{READ Devices: Other Modalities}
+
+\table{
+\tr{\th{Device} \th{Tree} \th{Modality} \th{FDA Class} \th{Tier 0} \th{Tier 1}}
+\tr{\td{7invensun aSee-EVS} \td{\ref{bcf-0013}} \td{Eye tracking (oculomotor)} \td{Class I (non-diagnostic)} \td{No IRB} \td{Expedited}}
+\tr{\td{Body tracking (TBD)} \td{\ref{bcf-0014}} \td{Kinematic} \td{N/A (non-contact)} \td{No IRB} \td{Expedited}}
+\tr{\td{sEMG (TBD)} \td{\ref{bcf-0015}} \td{Muscular} \td{Class II (882.1610)} \td{No IRB} \td{Expedited}}
+\tr{\td{HRV (PPG/watch)} \td{\ref{bci-0018}} \td{Cardiovascular} \td{Wellness device} \td{No IRB} \td{Expedited}}
+}
+
+\p{All non-invasive, minimal risk. Eye tracking uses event-based vision sensor, no laser. Body tracking is camera-based, no contact. sEMG is surface electrodes only. HRV via PPG wristband is consumer wellness.}
+}
+
+\subtree{\title{WRITE Devices: Neurostimulation}
+
+\table{
+\tr{\th{Device} \th{Tree} \th{Modality} \th{FDA Class} \th{Tier} \th{IRB Pathway}}
+\tr{\td{Rigol AWG + 300kHz FUS transducer (S1/A1 targets)} \td{\ref{bcf-0056}, \ref{bci-0019}} \td{Focused ultrasound} \td{Class II-III} \td{Tier 2 (NSR)} \td{Full board review, NSR determination}}
+\tr{\td{Rigol AWG + FUS (olfactory targets)} \td{\ref{bci-0019}} \td{Focused ultrasound} \td{Class III} \td{Tier 3 (SR)} \td{Full board + FDA IDE}}
+\tr{\td{Tongue electrodes} \td{\ref{bcf-0056}} \td{Gustatory electrical} \td{Class II-III} \td{Tier 2-3} \td{Full board, risk depends on current levels}}
+\tr{\td{Haptic (vibrotactile, TBD)} \td{\ref{bcf-0016}} \td{Mechanical} \td{Class I (if external)} \td{Tier 1} \td{Expedited (non-invasive mechanical)}}
+}
+
+\p{\strong{FUS is the critical regulatory boundary.} Per ITRUSST consensus (2025):}
+\ul{
+\li{Mechanical index (MI or MItc) must not exceed 1.9}
+\li{Temperature rise must not exceed 2C (absolute temp < 39C)}
+\li{Thermal dose must not exceed 2 CEM43 in brain tissue}
+\li{ISPTA must stay within FDA diagnostic ultrasound limits (720 mW/cm2)}
+\li{Pulsed mode only, never continuous wave for stimulation}
+\li{Max 30 minutes per cortical target per day}
+}
+
+\p{If all ITRUSST parameters are met, the IRB can make a \strong{non-significant risk (NSR)} determination, and no FDA IDE is needed. The IRB alone oversees the study. If any parameter is exceeded or a novel target (olfactory bulb) is used, the device becomes \strong{significant risk (SR)} and requires an IDE submission to FDA before any human use.}
+}
+
+\subtree{\title{Novel/Concept Devices}
+
+\table{
+\tr{\th{Device} \th{Tree} \th{Modality} \th{Tier} \th{Notes}}
+\tr{\td{NV Diamond Magnetometer} \td{\ref{bcf-0031}} \td{MEG (magnetic)} \td{Tier 1-2} \td{Passive magnetic sensor. If read-only, Tier 1 expedited. If combined with excitation field, needs full review.}}
+\tr{\td{Braille display (Thread)} \td{\ref{horse-0008}} \td{Tactile output} \td{Tier 0} \td{Non-contact with body. No IRB implications.}}
+\tr{\td{nRF5340 BLE-Thread bridge} \td{\ref{horse-0008}} \td{Transport} \td{N/A} \td{Data transport only. No human interaction.}}
+}
+}
+}
+
+\subtree{\title{Recommended Commercial IRB}
+\taxon{reference}
+
+\p{BCI Factory has no university affiliation. A \strong{commercial independent IRB} is the correct pathway. Based on research:}
+
+\subtree{\title{Solutions IRB (Recommended for Tier 1)}
+\meta{url}{https://www.solutionsirb.com}
+\p{AAHRPP-accredited independent IRB specializing in non-traditional research fields including wearable neurotechnology and startup research. Offers concierge service for first-time applicants. Best fit for BCI Factory's EEG/fNIRS research protocols.}
+\ul{
+\li{Accreditation: AAHRPP (Association for the Accreditation of Human Research Protection Programs)}
+\li{Specialization: non-traditional, startup, wearable technology research}
+\li{Service: concierge onboarding for first-time submitters}
+\li{Estimated cost: $1,500-3,000 for initial protocol review}
+}
+}
+
+\subtree{\title{Advarra (Recommended for Tier 2-3)}
+\meta{url}{https://www.advarra.com}
+\p{Largest commercial IRB in the US (est. 1983). Deep CNS/neurology expertise. AAHRPP accredited. FDA and OHRP registered (IORG 0000635, FWA 00023875). Board meets daily. Required for the FUS protocol due to significant risk determination complexity.}
+\ul{
+\li{Accreditation: AAHRPP}
+\li{Specialization: CNS, neurological devices, interventional studies}
+\li{Board meetings: daily (M-F)}
+\li{Estimated cost: $1,791 initial study review (WCG 2024 schedule as reference)}
+\li{Platform: CIRBI (paperless submission)}
+}
+}
+
+\subtree{\title{WCG IRB (Alternative)}
+\meta{url}{https://www.wcgclinical.com}
+\p{Second-largest commercial IRB. Published fee schedule. Suitable for either tier.}
+\ul{
+\li{Initial study review: $1,791}
+\li{Per-PI review: $1,479}
+\li{Exemption review: $1,362}
+\li{Amendment with consent revision: $949}
+\li{Continuing review: $1,791/year}
+}
+}
+
+\subtree{\title{CLEAR Review Board (Community-Led Alternative)}
+\meta{url}{https://www.clearirb.org}
+\p{Nonprofit independent IRB (501(c)(3) via JustDatalytics, EIN 33-4856340) that centers community voices in research review. Includes people with lived experience on review panels. Novel model aligned with BCI Factory's community ethos. Newer organization -- verify OHRP registration before relying on for FDA-regulated studies.}
+}
+}
+
+\subtree{\title{What We Need Before Sitting Anyone Down}
+\taxon{protocol}
+
+\subtree{\title{Tier 0 Requirements (Today: Wellness Demos)}
+\p{No IRB required. Still need:}
+\ol{
+\li{\strong{Informed consent form}: "I understand this is a wellness demonstration, not medical diagnosis or treatment. No raw brain data is stored. I may stop at any time."}
+\li{\strong{Signage}: "This is not a medical device. Not intended to diagnose, treat, cure, or prevent any disease."}
+\li{\strong{Safety protocol}: electrode cleaning between users (70\% isopropyl wipe), paste handling (single-use applicator tips), session time limit (30 min max for dry electrodes, 60 min for arch/TPU)}
+\li{\strong{Contraindication screening}: ask before seating -- epilepsy history, implanted devices (pacemaker, cochlear implant, DBS), open scalp wounds, skin allergies to silver/nickel}
+\li{\strong{Data handling}: per \ref{bcf-0030} -- spectral summaries only, random session ID, 24h TTL, no internet, no PII}
+\li{\strong{IEEE Std 2010-2023} compliance: recommended practice for EEG neurofeedback systems (referenced in \ref{std-0006})}
+}
+}
+
+\subtree{\title{Tier 1 Requirements (Research with READ Devices)}
+\p{Triggered when: collecting data systematically for publication or generalizable knowledge.}
+\ol{
+\li{All Tier 0 requirements}
+\li{\strong{Commercial IRB protocol submission} to Solutions IRB or equivalent}
+\li{\strong{Research protocol document}: hypothesis, methods, sample size, data management plan}
+\li{\strong{Full informed consent} per 45 CFR 46.116: purpose, procedures, risks, benefits, alternatives, confidentiality, voluntary participation, right to withdraw}
+\li{\strong{OHRP Federalwide Assurance (FWA)}: BCI Factory must register an FWA with OHRP if conducting HHS-funded research. For self-funded research reviewed by commercial IRB, the IRB's own FWA covers.}
+\li{\strong{Data security plan}: encryption at rest, access controls, de-identification procedures}
+}
+}
+
+\subtree{\title{Tier 2 Requirements (FUS Within ITRUSST Limits)}
+\p{Triggered when: any device writes energy into the brain.}
+\ol{
+\li{All Tier 0 and Tier 1 requirements}
+\li{\strong{Full board IRB review} at Advarra or equivalent with CNS expertise}
+\li{\strong{ITRUSST parameter sheet}: documented MI, temperature modeling, duty cycle, ISPTA for each stimulation protocol}
+\li{\strong{NSR determination letter} from IRB}
+\li{\strong{Stopping rules}: EEG watchdog for afterdischarge (per \ref{bci-0019}), pain reporting, immediate halt protocol}
+\li{\strong{Operator training}: documented training on FUS equipment, emergency procedures, ITRUSST guidelines}
+\li{\strong{Equipment calibration}: hydrophone verification of acoustic output before each session block}
+\li{\strong{Session limits}: 30 min max per cortical target per day, minimum 48h between sessions on same target}
+}
+}
+
+\subtree{\title{Tier 3 Requirements (Significant Risk / Novel)}
+\p{Triggered when: novel target (olfactory), exceeds ITRUSST limits, or novel device (NV magnetometer with excitation).}
+\ol{
+\li{All Tier 0, 1, and 2 requirements}
+\li{\strong{IDE submission to FDA} (21 CFR 812)}
+\li{\strong{Pre-submission meeting} with FDA CDRH (recommended)}
+\li{\strong{Non-clinical safety data}: bench testing, computational modeling, animal data if applicable}
+\li{\strong{Data Safety Monitoring Board (DSMB)}: independent safety oversight committee}
+\li{\strong{ClinicalTrials.gov registration}}
+}
+}
+}
+
+\subtree{\title{Timeline}
 \taxon{remark}
 
 \table{
-\tr{\th{Layer} \th{G36 Regions} \th{File Size} \th{Lines} \th{Nets}}
-\tr{\td{F_Cu} \td{21} \td{1.08 MB} \td{45,629} \td{3V3, VBATT, MCU_GND, USB_GND, VDD1, 5V_ISO}}
-\tr{\td{B_Cu} \td{2} \td{612 KB} \td{25,447} \td{MCU_GND, USB_GND}}
-\tr{\td{In1_Cu} \td{11} \td{54 KB} \td{2,339} \td{3V3, VBATT}}
-\tr{\td{In2_Cu} \td{0} \td{44 KB} \td{1,882} \td{(none -- no zones in original Altium import)}}
+\tr{\th{Phase} \th{When} \th{What} \th{Devices} \th{Tier}}
+\tr{\td{Now} \td{2026-04-11} \td{Draft consent form and safety protocol for wellness demos} \td{Cyton 8ch, HD-72} \td{0}}
+\tr{\td{Q2 2026} \td{By June} \td{Submit Tier 1 protocol to Solutions IRB for EEG research} \td{Cyton, HD-72, Quick-20} \td{1}}
+\tr{\td{Q3 2026} \td{By Sept} \td{Submit fNIRS protocol amendment when hardware arrives} \td{PLUX, NIRSport} \td{1}}
+\tr{\td{Q4 2026} \td{By Dec} \td{Submit FUS protocol to Advarra, request NSR determination} \td{Rigol AWG + transducer} \td{2}}
+\tr{\td{2027+} \td{TBD} \td{IDE if pursuing olfactory FUS or NV magnetometer excitation} \td{FUS (olfactory), NV diamond} \td{3}}
+}
 }
 
-\p{Total: 34 G36 regions across 3 of 4 copper layers. The original export had 0 on all layers.}
-}
-
-\subtree{\title{In2_Cu Caveat}
-\taxon{remark}
-\p{The Altium import never created zone definitions for In2_Cu. This layer has traces only, no copper pour. If a power plane fill is required on In2_Cu, zones must be created manually in the KiCad GUI and gerbers re-exported. For the current design, the board is functional without In2_Cu fills.}
-}
-
-\subtree{\title{Files}
-\taxon{remark}
+\subtree{\title{References}
+\taxon{reference}
 \ul{
-\li{Refilled gerbers: assets/gerbers/opennirscap-v2/ecu_gerbers_refilled.zip (530 KB)}
-\li{Original gerbers: assets/gerbers/opennirscap-v2/ecu_gerbers.zip (162 KB, retained for reference)}
-\li{Cleanup script: github.com/tonykim07/fNIRS -- cleanup-zones.py in hardware/fNIRS_ECU/}
+\li{21 CFR 882.5050 -- Biofeedback device (Class II, 510(k) exempt)}
+\li{21 CFR 882.1400 -- Electroencephalograph (Class II, 510(k))}
+\li{45 CFR 46 -- Protection of Human Subjects (Common Rule)}
+\li{21 CFR 812 -- Investigational Device Exemptions}
+\li{IEEE Std 2010-2023 -- Recommended Practice for EEG Neurofeedback Systems}
+\li{ITRUSST Consensus on Biophysical Safety for Transcranial Ultrasound Stimulation (2025, Brain Stimulation 18(6):1896-1905)}
+\li{ITRUSST Practical Guide to TUS (2025, Clinical Neurophysiology 171:192-226)}
+\li{Furnari et al. "Neurofeedback: potential for abuse and regulatory frameworks" (2024, Phil Trans R Soc B 379:20230099)}
+\li{BMC Medical Ethics "Ethical challenges in EEG neurofeedback" (2026, 27:43)}
+\li{FDA Guidance: Significant Risk and Nonsignificant Risk Medical Device Studies (2018)}
 }
 }

@@ -1,0 +1,116 @@
+\title{Closed-Loop BCI: FUS Stimulation + EEG Recording}
+\taxon{design}
+\author{barton-rhodes}
+\date{2026-04-08}
+\import{macros}
+\tag{fus}
+\tag{eeg}
+\tag{closed-loop}
+\tag{neurofeedback}
+\tag{gf3}
+\meta{modality}{neurostimulation+electrophysiological}
+\meta{scope}{bci-factory}
+
+\p{Closed-loop architecture connecting focused ultrasound stimulation (\ref{bcf-0056}) with EEG recording (\ref{bcf-0052}, \ref{bcf-0053}). The HD-72 64ch EEG reads cortical evoked responses; the Rigol AWG + 300kHz transducer writes to the same cortical targets. The loop closes through the processing pipeline, creating a read-write brain-computer interface.}
+
+\subtree{\title{Read-Write Channel Pairing}
+\taxon{design}
+
+\table{
+\tr{\th{Cortex}\th{FUS target}\th{EEG channels (10-20)}\th{Signal}\th{Latency}}
+\tr{\td{S1 (touch)}\td{Somatosensory}\td{C3, C4, CP3, CP4}\td{Somatosensory evoked potential (SEP)}\td{20-50ms}}
+\tr{\td{V1 (sight)}\td{Visual}\td{O1, O2, Oz, POz}\td{Visual evoked potential (VEP)}\td{75-150ms}}
+\tr{\td{A1 (hearing)}\td{Auditory}\td{T7, T8, C5, C6}\td{Auditory evoked potential (AEP)}\td{10-100ms}}
+\tr{\td{OlfBulb (smell)}\td{Olfactory bulb}\td{Fp1, Fp2, AF3, AF4}\td{Olfactory evoked potential (OEP)}\td{200-500ms}}
+}
+
+\p{The HD-72 (\ref{bcf-0052}) covers all four targets simultaneously with its 64-channel montage. FUS stimulates one target at a time (sequential beam steering). The EEG confirms whether the stimulation produced the expected evoked potential.}
+}
+
+\subtree{\title{Closed-Loop Pipeline}
+\taxon{design}
+
+\pre{\startverb
+FUS transducer (300kHz)          HD-72 64ch EEG
+    |                                |
+    v                                v
+Rigol AWG waveform           Delta decoder (bcf-0053)
+    |                                |
+    v                                v
+Cortical target              64ch -> LSL stream
+    |                                |
+    +------ skull + cortex ----------+
+    |        (the brain)             |
+    v                                v
+Evoked response              nk.erp_process()
+                                     |
+                                     v
+                             Evoked potential detected?
+                                     |
+                            +--------+--------+
+                            |                 |
+                         YES (trit +1)     NO (trit -1)
+                            |                 |
+                            v                 v
+                    Adjust: amplitude    Adjust: beam angle
+                    or target next       or increase power
+                    cortical region      within safety limits
+                            |                 |
+                            +--------+--------+
+                                     |
+                                     v
+                              Next FUS pulse
+                              (closed loop)
+\stopverb}
+}
+
+\subtree{\title{GF(3) Trit Classification of Stimulation Response}
+\taxon{definition}
+
+\table{
+\tr{\th{Response}\th{Trit}\th{EEG signature}\th{Action}}
+\tr{\td{Evoked}\td{+1}\td{Significant ERP in target channels, p < 0.05 vs baseline}\td{Stimulation effective. Log and proceed.}}
+\tr{\td{Ambiguous}\td{0}\td{Weak ERP, near noise floor}\td{Increase power or adjust coupling. Retry.}}
+\tr{\td{No response}\td{-1}\td{No ERP above baseline}\td{Reposition transducer. Check coupling gel. Verify target coordinates.}}
+}
+
+\p{The trit feeds back into beam steering decisions. This is the same GF(3) classification used for HRV in vibesnipe (\ref{bci-0018}) -- the autonomic trit and the cortical trit are independent channels that can be combined in the goblin swarm coplay.}
+}
+
+\subtree{\title{Safety Constraints}
+\taxon{remark}
+
+\ul{
+\li{\strong{ISPTA limit}: spatial-peak temporal-average intensity below 720 mW/cm2 (FDA diagnostic ultrasound limit)}
+\li{\strong{Duty cycle}: pulsed mode only, never continuous wave for stimulation}
+\li{\strong{Session duration}: max 30 minutes per cortical target per day}
+\li{\strong{EEG watchdog}: if afterdischarge detected (sustained high-amplitude oscillation post-stimulus), immediately halt FUS and alert operator}
+\li{\strong{No olfactory FUS without IRB}: only 2 studies exist (Chizhov). S1 and A1 are the safe starting targets.}
+}
+}
+
+\subtree{\title{Integration with Vivarium Network}
+\taxon{remark}
+
+\p{The FUS rig and HD-72 sit on VLAN 10 (Trusted) in the alterstructure (\ref{bcf-0055}). The closed-loop pipeline runs on the DGX (\ref{bcf-0057} inventory). LSL multicast carries both EEG streams and FUS trigger signals within VLAN 10.}
+
+\p{Data flow: HD-72 serial (3 Mbaud, FTDI) -> workstation -> LSL -> DGX -> NeuroKit2 ERP detection -> FUS control signal -> Rigol AWG (SCPI over ethernet or USB-TMC).}
+}
+
+\subtree{\title{Connections}
+\taxon{remark}
+
+\ul{
+\li{\ref{bcf-0056} -- FUS hardware: Rigol AWG + 300kHz transducer + tongue electrodes}
+\li{\ref{bcf-0052} -- HD-72 64ch EEG pipeline design}
+\li{\ref{bcf-0053} -- HD-72 serial protocol (delta decoder)}
+\li{\ref{bcf-0055} -- Alterstructure: VLAN 10 for BCI rigs}
+\li{\ref{bcf-0057} -- Vivarium inventory: DGX, workstations on VLAN 10}
+\li{\ref{bci-0018} -- HRV trit: independent autonomic channel alongside cortical trit}
+\li{\ref{bcf-0054} -- Trans-Pentad: FUS stimulation is transduction (+1), EEG recording is also transduction (+1), the closed loop is transitivity (0)}
+\li{\ref{stk-0030} -- Cohomology of Schemes: evoked potentials as cohomology classes persisting across trials}
+\li{\ref{stk-0051} -- Local Cohomology: ERP source localization computes cortical support}
+\li{\ref{stk-0087} -- Formal Algebraic Spaces: EEG linearization around stimulus onset = formal neighborhood}
+\li{\ref{stk-0091} -- Deformation Theory: BCI calibration as infinitesimal deformation of default model}
+}
+}

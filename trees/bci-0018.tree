@@ -145,5 +145,8 @@ Polar H10 (BLE R-R intervals)     Cyton/Cognionics (EEG stream)
 \li{NeuroKit2 skill: \code{asi/skills/neurokit2/} -- processing library}
 \li{Vibesnipe INTENT_PLAN: coplay system where goblins ingest environment signals}
 \li{Task Force (1996): HRV standards of measurement -- 5-min short-term protocol}
+\li{\ref{stk-0018} -- Modules on Sites: HRV metrics over time windows = sections of a sheaf on the site of intervals}
+\li{\ref{stk-0020} -- Cohomology of Sheaves: ERP averaging as derived functor (cohomological residue after noise)}
+\li{\ref{stk-0083} -- Quotients of Groupoids: trit orbits under GF(3) action on player states}
 }
 }
