@@ -1,0 +1,141 @@
+{
+  "title": "Information Interaction Sites: 48h Snapshot",
+  "generated_at": "2026-04-29T20:05:05Z",
+  "window": {
+    "start": "2026-04-27T20:05:05Z",
+    "end": "2026-04-29T20:05:05Z",
+    "hours": 48
+  },
+  "redaction_policy": {
+    "public_fields": [
+      "aggregate_counts",
+      "system_classes",
+      "capture_roles",
+      "gf3_roles"
+    ],
+    "private_fields": [
+      "message_bodies",
+      "room_ids",
+      "direct_message_titles",
+      "bearer_tokens",
+      "process_ids",
+      "exact_private_paths"
+    ]
+  },
+  "chat_inventory": {
+    "total_chats": 425,
+    "pages": 17,
+    "hot_chats_48h": 49,
+    "type_split": {
+      "group": 34,
+      "single": 15
+    },
+    "account_classes": [
+      {
+        "class": "signal_bridge",
+        "hot_chats": 30,
+        "unread_pressure": 594
+      },
+      {
+        "class": "telegram_bridge",
+        "hot_chats": 11,
+        "unread_pressure": 1486
+      },
+      {
+        "class": "beeper_hosted_matrix",
+        "hot_chats": 3,
+        "unread_pressure": 971
+      },
+      {
+        "class": "whatsapp_bridge",
+        "hot_chats": 3,
+        "unread_pressure": 548
+      },
+      {
+        "class": "twitter_x_bridge",
+        "hot_chats": 2,
+        "unread_pressure": 2
+      }
+    ]
+  },
+  "project_sites": [
+    {
+      "site": "ies_runtime_and_orchestration",
+      "messages": 48,
+      "senders": 9,
+      "chats": 5
+    },
+    {
+      "site": "gay_jl_and_runtime_semantics",
+      "messages": 42,
+      "senders": 7,
+      "chats": 2
+    },
+    {
+      "site": "letters_and_messaging",
+      "messages": 29,
+      "senders": 4,
+      "chats": 5
+    },
+    {
+      "site": "plurigrid_and_propagators",
+      "messages": 20,
+      "senders": 1,
+      "chats": 1
+    },
+    {
+      "site": "health_grant_work",
+      "messages": 10,
+      "senders": 2,
+      "chats": 2
+    },
+    {
+      "site": "bci_and_neurotechnology",
+      "messages": 10,
+      "senders": 2,
+      "chats": 1
+    },
+    {
+      "site": "boxxy_and_horse",
+      "messages": 6,
+      "senders": 2,
+      "chats": 2
+    }
+  ],
+  "local_data_mutation_sites": [
+    {
+      "role": "large_cohort_ducklake",
+      "approx_bytes": 219164672
+    },
+    {
+      "role": "bci_ducklake",
+      "approx_bytes": 12333056
+    },
+    {
+      "role": "agent_metadata_ducklake",
+      "approx_bytes": 9449472
+    },
+    {
+      "role": "long_archive_duckdb",
+      "approx_bytes": 5517312
+    },
+    {
+      "role": "episode_window_duckdb",
+      "approx_bytes": 536576
+    }
+  ],
+  "capture_attempt_classes": [
+    "desktop_messaging",
+    "remote_messaging_mcp",
+    "desktop_messaging_mcp",
+    "automation_agent_sessions",
+    "local_session_log_scan",
+    "aptos_mcp"
+  ],
+  "gf3_conservation": {
+    "minus": "time cutoff checks, deduplication, source inventory",
+    "ergodic": "cross-system aggregation, project-site mapping, redaction boundary",
+    "plus": "Forester tree, compact JSON snapshot, PR branch",
+    "sum_mod_3": 0
+  }
+}

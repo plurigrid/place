@@ -1,0 +1,85 @@
+\title{Information Interaction Sites: 48h Snapshot}
+\date{2026-04-29}
+\taxon{observation}
+\author{codex}
+\tag{interaction-sites}
+\tag{beeper}
+\tag{gf3}
+\tag{redacted-snapshot}
+
+\import{macros}
+
+\p{This tree records a bounded 48 hour interaction-region snapshot captured from local interaction systems and reduced to public aggregate shape. The private substrate stays local: no chat titles, room ids, bearer tokens, direct-message names, message bodies, or raw session paths are published here.}
+
+\subtree{\title{Window}
+\table{
+\tr{\th{Field}\th{Value}}
+\tr{\td{Start}\td{2026-04-27T20:05:05Z}}
+\tr{\td{End}\td{2026-04-29T20:05:05Z}}
+\tr{\td{Window size}\td{48 hours}}
+\tr{\td{Raw chat inventory}\td{425 chats across 17 pages}}
+\tr{\td{Hot chats in window}\td{49}}
+\tr{\td{Prior message sample}\td{75 messages from 50 active chats and 21 senders}}
+}
+}
+
+\subtree{\title{Largest live chat sites}
+\p{The live chat region is represented by account class and unread pressure, not by private room identity.}
+\table{
+\tr{\th{Account class}\th{Hot chats}\th{Unread pressure}}
+\tr{\td{Signal bridge}\td{30}\td{594}}
+\tr{\td{Telegram bridge}\td{11}\td{1486}}
+\tr{\td{Beeper-hosted matrix}\td{3}\td{971}}
+\tr{\td{WhatsApp bridge}\td{3}\td{548}}
+\tr{\td{Twitter/X bridge}\td{2}\td{2}}
+}
+\p{The type split was 34 group interaction sites and 15 single-party interaction sites.}
+}
+
+\subtree{\title{Largest project sites}
+\p{A prior in-window Beeper-to-project map reduced 50 active chats to project-facing interaction sites. Counts below are message and sender aggregates only.}
+\table{
+\tr{\th{Project site}\th{Messages}\th{Senders}\th{Chats}}
+\tr{\td{ies runtime and orchestration}\td{48}\td{9}\td{5}}
+\tr{\td{Gay.jl and runtime semantics}\td{42}\td{7}\td{2}}
+\tr{\td{letters and messaging}\td{29}\td{4}\td{5}}
+\tr{\td{plurigrid and propagators}\td{20}\td{1}\td{1}}
+\tr{\td{health grant work}\td{10}\td{2}\td{2}}
+\tr{\td{BCI and neurotechnology}\td{10}\td{2}\td{1}}
+\tr{\td{boxxy and horse}\td{6}\td{2}\td{2}}
+}
+}
+
+\subtree{\title{Largest local data mutation sites}
+\p{The local storage region is reported by role and approximate size. Absolute private paths are intentionally omitted.}
+\table{
+\tr{\th{Storage role}\th{Approximate size}}
+\tr{\td{Large cohort DuckLake}\td{219 MB}}
+\tr{\td{BCI DuckLake}\td{12 MB}}
+\tr{\td{Agent metadata DuckLake}\td{9.4 MB}}
+\tr{\td{Long archive DuckDB}\td{5.5 MB}}
+\tr{\td{Episode-window DuckDB}\td{0.54 MB}}
+}
+}
+
+\subtree{\title{Capture attempts observed}
+\p{The region included live desktop messaging, a remote messaging MCP, a desktop messaging MCP, automation-agent session capture, local session-log scans, and Aptos MCP processes. Publication boundary: command-line secrets, process ids, room ids, and raw transcript text are private evidence, not part of this tree.}
+}
+
+\subtree{\title{GF(3) conservation}
+\table{
+\tr{\th{Stalk}\th{Role}\th{This snapshot}}
+\tr{\td{MINUS (-1)}\td{validators and analyzers}\td{time cutoff checks, deduplication, source inventory}}
+\tr{\td{ERGODIC (0)}\td{coordinators and synthesizers}\td{cross-system aggregation, project-site mapping, redaction boundary}}
+\tr{\td{PLUS (+1)}\td{generators and executors}\td{Forester tree, compact JSON snapshot, PR branch}}
+}
+\p{Conservation check: (-1) + 0 + (+1) = 0 mod 3.}
+}
+
+\subtree{\title{Public/private boundary}
+\ol{
+\li{Keep raw message bodies, room ids, exact DM titles, bearer tokens, and private path suffixes out of public commits.}
+\li{Publish aggregate counts, system classes, capture roles, and reproducible redaction policy.}
+\li{Keep local evidence files available for audit, but treat this tree and \code{bci/stages/interaction-sites-48h.json} as the PR-safe snapshot.}
+}
+}
