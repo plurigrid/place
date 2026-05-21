@@ -27,11 +27,11 @@ before casting a vote.}
 
 \table{
   \tr{\th{ID} \th{Device} \th{Status} \th{Cost} \th{Modality} \th{Channels} \th{Sim params} \th{URL}}
-  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{$419} \td{fNIRS} \td{24} \td{infect:3,saturation:50,stim:0,alpha_suppress:0.4} \td{\link{https://opennirscap.github.io}}}
-  \tr{\td{DEV-EEG-003} \td{Muse S (Gen 2)} \td{want} \td{$400} \td{dry EEG} \td{4} \td{infect:1,saturation:20,stim:0,alpha_suppress:0.7} \td{\link{https://choosemuse.com}}}
+  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{$419} \td{fNIRS} \td{24} \td{infect:3,saturation:50,stim:0,alpha_suppress:0.4} \td{https://opennirscap.github.io}}
+  \tr{\td{DEV-EEG-003} \td{Muse S (Gen 2)} \td{want} \td{$400} \td{dry EEG} \td{4} \td{infect:1,saturation:20,stim:0,alpha_suppress:0.7} \td{https://choosemuse.com}}
   \tr{\td{DEV-USTIM-001} \td{Focused ultrasound neuromod rig} \td{want} \td{unfunded} \td{tFUS} \td{1} \td{infect:2,saturation:80,stim:1,alpha_suppress:0.1} \td{n/a}}
-  \tr{\td{DEV-MAG-004} \td{QuSpin QZFM magnetometer} \td{want} \td{$5000} \td{OPM-MEG} \td{1} \td{infect:1,saturation:40,stim:0,alpha_suppress:0.2} \td{\link{https://quspin.com}}}
-  \tr{\td{DEV-EEG-004} \td{OpenBCI Ultracortex Mark IV} \td{want} \td{$999} \td{wet EEG} \td{16} \td{infect:2,saturation:30,stim:0,alpha_suppress:0.5} \td{\link{https://shop.openbci.com}}}
+  \tr{\td{DEV-MAG-004} \td{QuSpin QZFM magnetometer} \td{want} \td{$5000} \td{OPM-MEG} \td{1} \td{infect:1,saturation:40,stim:0,alpha_suppress:0.2} \td{https://quspin.com}}
+  \tr{\td{DEV-EEG-004} \td{OpenBCI Ultracortex Mark IV} \td{want} \td{$999} \td{wet EEG} \td{16} \td{infect:2,saturation:30,stim:0,alpha_suppress:0.5} \td{https://shop.openbci.com}}
 }
 }
 
