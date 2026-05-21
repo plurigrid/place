@@ -1,5 +1,5 @@
 [forest]
-trees = ["trees", "localcharts/forest/trees", "bci/stages", "stacks-trees"]
+trees = ["trees", "localcharts/forest/trees", "bci/stages", "stacks-trees", "skill-trees"]
 assets = ["assets", "localcharts/forest/assets"]
 url = "https://bci.horse/"
 home = "output"

@@ -1,4 +1,6 @@
+// @ts-ignore
 import { UI } from "./quiver/ui.js"
+// @ts-ignore
 import { DOM } from "./quiver/dom.js"
 import { onMount } from "solid-js"
 import "./quiver/main.css"
