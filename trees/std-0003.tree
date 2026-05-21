@@ -9,7 +9,7 @@
 \p{BCI Factory is not a medical device manufacturer, a clinical research site, or a healthcare provider. The following regulatory positions apply:}
 
 \subtree{\title{FDA General Wellness}
-\p{Consumer EEG devices used for wellness, education, and self-exploration fall under the FDA's General Wellness Policy (updated January 2026). BCI Factory does not diagnose, treat, cure, or prevent any disease or condition. All language on bci.horse and bcifactory.io must avoid medical claims.}
+\p{Consumer EEG devices used for wellness, education, and self-exploration fall under the FDA's General Wellness Policy (updated January 2026). BCI Factory does not diagnose, treat, cure, or prevent any disease or condition. All public BCI language must avoid medical claims.}
 \p{\strong{Prohibited language:} "therapeutic," "treatment," "healing," "diagnose," "cure," "medical-grade."}
 \p{\strong{Permitted language:} "exploration," "self-observation," "signal acquisition," "wellness," "education," "open hardware research."}}
 

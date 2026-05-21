@@ -1,0 +1,48 @@
+\title{Whisper-λ — loop reflection at iter 17}
+\taxon{reflection}
+\date{2026-05-16}
+\author{eternal-loop-iter17}
+\tag{whisper-lambda}
+\tag{loop-reflection}
+
+\p{At iter 17 the eternal /loop reaches an inflection point. The crypto core is structurally complete in working Python sketches with QRNG-rooted property tests. The remaining open slices (MLS, voice, libsignal FFI differential) are orthogonal — none is a logical successor in the way X3DH was for Double Ratchet.}
+
+\subtree{
+\title{What the loop produced in 16 iters}
+\ul{
+\li{\strong{8 design axes} closed (iters 1-6) — host language, linearity, handler depth, transport, group keying, verification, voice strategy, identity.}
+\li{\strong{8 forest trees} on the bci.horse forest: 0064 (device), 0065 (sealed-sender), 0066 (diff-fuzz scaffold), 0067 (trit-stratified), 0068 (chain ratchet), 0069 (Double Ratchet), 0070 (overview), 0071 (X3DH), 0072 (this reflection).}
+\li{\strong{4 implementation slices} with passing QRNG-seeded property tests: sealed-sender, chain ratchet, Double Ratchet, X3DH. End-to-end composition demonstrated.}
+\li{\strong{3 feedback memories} saved: bit-identical-wrong-test (iter9), qrng-entropy-for-fuzz (iter11), skill-rules-semantic-check (iter5).}
+\li{\strong{Zero skill swaps} from iter1-2 triage (23 S / 23 n / 15 ?). One concept addition (QRNG-as-entropy at iter11).}
+\li{\strong{Five bugs caught} by the test surface — three protocol-relevant (DR symmetric init, DR rotation-on-send-only, sender-cert spec hole) and two trivial (Python typos).}
+}
+}
+
+\subtree{
+\title{What was useful that surprised me}
+\ul{
+\li{The iter1-2 triage was right. 14 iters of substantive work, zero swaps. The 23/23/23 → 23/23/15 shrink in iter2 was the only adjustment.}
+\li{Bit-identical-with-reference is the WRONG test for an intentionally-divergent re-implementation. Discovered in iter9 by writing a criterion that couldn't possibly pass.}
+\li{QRNG MCPs aligned with the GF(3) trit triad (qrng-{minus,ergo,plus}). Trit-stratified fuzz produced a useful NEGATIVE result: trit labels are convention not discriminator.}
+\li{Each new stateful axis adds bug-classes the prior axes couldn't expose. Iter13's chain-only test couldn't have found iter14's two DH-rotation bugs.}
+\li{Sortition derangement of the skill triage (iter2) was the right way to stress-test it — the derangement's surprising-by-construction structure made the kept items the ones that genuinely earned their tier.}
+}
+}
+
+\subtree{
+\title{Cadence change at iter 17}
+\p{Iters 1-16 ran at ~25-min self-paced cadence. Each iter added value, with monotonically decreasing surprise. From iter 17 forward: heartbeat drops to 60 min (the runtime maximum). This respects "eternal" while acknowledging that another vertical slice in 25 minutes will not be as informative as another vertical slice in an hour after the user has had time to redirect.}
+\p{The loop can also be ended cleanly by the user invoking nothing — the next /loop arg from them is the only commit point. If the user re-enters with a specific direction (e.g. "do MLS now" or "stop"), the loop responds.}
+}
+
+\subtree{
+\title{Open question to the user (iter 18+)}
+\p{Three orthogonal paths remain. The loop will continue self-pacing through them unless redirected:}
+\ul{
+\li{\strong{MLS-over-captp TreeKEM} — exercises the captp distinguishing claim for group messaging.}
+\li{\strong{Voice split-plane sealed handler} — tests handler containment in a non-crypto context.}
+\li{\strong{libsignal FFI differential-fuzz} — replaces the deferred criterion 3' with a real cross-impl property check.}
+}
+\p{Default order if not redirected: MLS (highest design relevance) → voice → libsignal-FFI. But the loop's own assessment is that NONE of these is as informative-per-iter as iters 13-14 were; the crypto core is the spine, the rest is connective tissue.}
+}

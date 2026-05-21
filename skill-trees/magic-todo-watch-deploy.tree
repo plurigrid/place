@@ -15,7 +15,7 @@
 \li{\strong{Bundle ID}: \code{\startverb horse.bci.MagicWorldWatch\stopverb}}
 \li{\strong{Watch Bundle}: \code{\startverb horse.bci.MagicWorldWatch.watchkitapp\stopverb}}
 \li{\strong{Team}: \code{\startverb FLLV2L2D4K\stopverb}}
-\li{\strong{Device (#ee2b49-bci.horse)}: \code{\startverb 00008150-00123D3E0C46401C\stopverb}}
+\li{\strong{Device (#ee2b49-bci.place)}: \code{\startverb 00008150-00123D3E0C46401C\stopverb}}
 }
 }
 

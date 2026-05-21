@@ -100,11 +100,11 @@
 }
 
 \subtree{\title{Connection to BCI Factory}
-\p{The bci.horse pipeline ([[bcf-0001]], [[bcf-0022]]) instantiates the necessity filtration:}
+\p{The bci.place pipeline ([[bcf-0001]], [[bcf-0022]]) instantiates the necessity filtration:}
 \ul{
   \li{bci.blue ([[bcf-0019]]): afferent sieve = the filtration operator. Eliminates possible electrode states, keeps necessary ones. Plays the MINUS role.}
   \li{bci.red ([[bcf-0020]]): efferent cosieve = the dual filtration. Eliminates possible motor commands, keeps necessary ones. Plays the PLUS role.}
-  \li{bci.horse ([[bcf-0021]]): the crossover boundary = the cliff. Rank is preserved (rider's intent is legible), margin collapses (trit 0 equilibrium). The rider emerges when the necessity filtration stabilizes.}
+  \li{bci.place ([[bcf-0021]]): the crossover boundary = the cliff. Rank is preserved (rider's intent is legible), margin collapses (trit 0 equilibrium). The rider emerges when the necessity filtration stabilizes.}
   \li{Tropical derangements ([[bcf-0026]]): the derangement count equals the number of totally mixed Nash equilibria. The tropical lift replaces discrete trits with continuous spectral power, and the derangement condition becomes: no electrode channel stays at resting-state maximum.}
 }
 \p{The trit-tick ([[bcf-0017]], [[bcf-0018]]) is the temporal quantum of the necessity filtration: each trit-tick is one step of #{\mathcal{N}_i \to \mathcal{N}_{i+1}}.}

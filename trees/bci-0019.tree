@@ -11,6 +11,8 @@
 \meta{modality}{neurostimulation+electrophysiological}
 \meta{scope}{bci-factory}
 
+\p{Status: closed-loop design direction combining aspirational FUS stimulation with high-channel EEG references. Validate against actual loaned hardware and safety review before implementation claims.}
+
 \p{Closed-loop architecture connecting focused ultrasound stimulation (\ref{bcf-0056}) with EEG recording (\ref{bcf-0052}, \ref{bcf-0053}). The HD-72 64ch EEG reads cortical evoked responses; the Rigol AWG + 300kHz transducer writes to the same cortical targets. The loop closes through the processing pipeline, creating a read-write brain-computer interface.}
 
 \subtree{\title{Read-Write Channel Pairing}

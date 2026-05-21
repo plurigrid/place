@@ -1,0 +1,72 @@
+\title{Whisper-λ: MLS-over-captp TreeKEM (agreement layer)}
+\taxon{implementation}
+\date{2026-05-16}
+\author{eternal-loop-iter18}
+\tag{whisper-lambda}
+\tag{mls}
+\tag{treekem}
+\tag{group-messaging}
+
+\p{Fifth vertical slice (after [[bcf-0065]], [[bcf-0068]], [[bcf-0069]], [[bcf-0071]]). The first slice that exercises group messaging rather than 1:1. Validates the agreement layer of TreeKEM under add/remove operations. The captp-sealed-object wrapping (the design's distinguishing claim for group keying) is straightforward to layer on top.}
+
+\subtree{
+\title{What is in this slice}
+\p{Minimal TreeKEM over a balanced binary tree of power-of-2 leaves. Each member knows the full path-secret tree (a simplification — production MLS encrypts updated secrets only to affected subtrees). Operations:}
+\ul{
+\li{\code{init(leaves)} — bottom-up HKDF derives internal nodes; root → group_secret.}
+\li{\code{add(new_leaf)} — append, pad to next power of 2 with blanks, rebuild.}
+\li{\code{remove(idx, fresh_blank_seed)} — replace leaf with HKDF(blank_seed), rebuild.}
+}
+\p{Group secret = HKDF(root_node_secret, "tk-group-secret").}
+}
+
+\subtree{
+\title{Properties (5 — group dynamics specific)}
+\ol{
+\li{\strong{Init agreement}: all four members with the same leaf secrets compute the same group secret.}
+\li{\strong{Add propagation}: after Add(eve), all five members (original four + eve) compute the same new gs.}
+\li{\strong{Remove propagation}: after Remove(carol), the remaining three agree, and the new gs differs from the old.}
+\li{\strong{Removed-member-cannot-compute}: carol's pre-removal state doesn't help her compute the post-removal gs — she needs the fresh blank_seed she's by definition not sent.}
+\li{\strong{Distinct blanks → distinct group secrets}: removing the same member with two different blank seeds yields two different group secrets. Confirms entropy injection is real.}
+}
+}
+
+\subtree{
+\title{Iter18 first-run result}
+\pre{\startverb
+init-agreement                : 4/4 PASS
+add-propagation               : 4/4 PASS
+remove-propagation            : 4/4 PASS
+removed-member-cannot-compute : 4/4 PASS
+distinct blank → distinct gs  : 4/4 PASS
+
+Total: 20/20  SHAKE: 3200 bytes from 64-byte QRNG seed
+Bug count this iter: 0
+\stopverb}
+}
+
+\subtree{
+\title{MLS-over-captp — the wrapping}
+\p{What this slice does NOT yet show: each TreeKEM operation as a captp cap invocation on a sealed group object. That's the design's distinguishing claim. Sketch:}
+\pre{\startverb
+sealed object Group {
+  state tree : TreeKEM
+  state membership : Set<Swissnum>
+  
+  cap add(new_pub: Bytes32, attest_cert: SenderCert) : CommitMsg
+  cap remove(member_swiss: Swissnum, justification: Bytes) : CommitMsg
+  cap derive_msg_key(epoch: u64) : MessageKey      // for fan-out encryption
+}
+
+// Each cap invocation is signed by the invoker's swissnum-cert (from bcf-0065 v2).
+// CommitMsg is a syrup record distributed to all members (out of band — captp pub/sub).
+// Sturdy-ref to the Group object can be REVOKED by the admin handler →
+// effectively boots a member without re-distributing the tree.
+\stopverb}
+\p{The bcf-0066 differential-fuzz scaffold applies here too: a uniform GroupImpl interface (init/add/remove/derive) with the four agreement properties above, runnable against any backend.}
+}
+
+\subtree{
+\title{Skill triage at iter 18}
+\p{Still zero swaps from iter1-2. MLS pulled from the same S-tier slots as everything else (property-based-testing, constant-time-analysis, zeroize-audit, captp, syrup). No new feedback memories. The iter17 prediction held: MLS produces lower informative-per-iter than iters 13-14, even though all 20 properties passed.}
+}

@@ -1,0 +1,73 @@
+\title{Whisper-λ: trit-stratified fuzz}
+\taxon{methodology}
+\date{2026-05-16}
+\author{eternal-loop-iter12}
+\tag{whisper-lambda}
+\tag{differential-fuzz}
+\tag{qrng}
+\tag{gf3}
+\tag{trit-stratified}
+
+\p{Extension of [[bcf-0066]]'s differential-fuzz scaffold to all three trit-aligned QRNG MCPs (qrng-minus, qrng-ergo, qrng-plus). Tests whether the GF(3) labeling discipline manifests as a behavioral discriminator for the SealedSender properties, or is purely a naming convention for independent witnesses.}
+
+\subtree{
+\title{Per-trit sample stats (sanity)}
+\pre{\startverb
+trit   | mean   | std    | chi²    | lag-1 ac | H_min   | seq
+-------|--------|--------|---------|----------|---------|---------
+minus  |  115.6 |   79.3 |   232.0 |  -0.044  |  3.147  | 1782965
+ergo   |  116.6 |   72.1 |   284.0 |  +0.004  |  2.957  | 1778595
+plus   |  118.8 |   74.3 |   224.0 |  -0.041  |  2.769  | 1785640
+\stopverb}
+\p{All chi² in 200-300 range against E[chi²]=255 — well within noise. H_min varies by 0.38 b/B across the three units (hardware variation; SHAKE-256 compresses uniformly so downstream uniform).}
+}
+
+\subtree{
+\title{Trit × impl × property results}
+\pre{\startverb
+trit   | impl     | roundtrip | tamper | wrong-recip
+-------|----------|-----------|--------|--------------
+minus  | gcm-siv  | 6/6       | 6/6    | 6/6
+minus  | gcm      | 6/6       | 6/6    | 6/6
+ergo   | gcm-siv  | 6/6       | 6/6    | 6/6
+ergo   | gcm      | 6/6       | 6/6    | 6/6
+plus   | gcm-siv  | 6/6       | 6/6    | 6/6
+plus   | gcm      | 6/6       | 6/6    | 6/6
+
+ALL 18 CELLS PERFECT.  (3 trits × 2 impls × 3 props × 6 trials = 108 successful checks)
+\stopverb}
+}
+
+\subtree{
+\title{Verdict — useful negative result}
+\p{No trit-differential signal observed. This is the EXPECTED outcome and a positive design artifact:}
+\ol{
+\li{Three independent physical entropy sources are statistically interchangeable as fuzz seeds.}
+\li{The GF(3) trit labels (minus/ergo/plus) are a CONVENTION for naming entropy lanes — they don't smuggle in structure that the crypto could secretly depend on.}
+\li{The three lanes really are three independent witnesses; trit-stratified fuzz multiplies the entropy budget without multiplying the structure.}
+}
+\p{Negative-result usefulness: if a future revision of the crypto introduced a subtle bias keyed on trit (e.g. a backdoor keyed on entropy-source identity), this test would catch it. Today it costs nothing; on a backdoor day it would matter.}
+}
+
+\subtree{
+\title{Triage state after 12 iters}
+\p{Skill triage (locked S-tier from iter1, locked n-tier and ?-tier from iter2, plus one concept addition from iter11):}
+\ul{
+\li{S-tier: 23 skills, unchanged across 12 iters.}
+\li{n-tier: 23 skills (pump-*, paypal, airbnb, etc.), confirmed-irrelevant across 12 iters.}
+\li{?-tier: 15 skills (shrunk from 23 in iter2), unchanged since.}
+\li{Concept addition (not a skill — no \code{qrng} entry exists in the inventory): "physical-entropy seeding for differential fuzz" via QRNG MCPs.}
+}
+\p{12 iters of design + impl + validation. \strong{Zero skill swaps. One concept addition.} The iter1-2 triage was right.}
+}
+
+\subtree{
+\title{Iter13 question}
+\p{The transport, envelope, sender-cert, and differential-fuzz scaffold are all validated. Next slice: STATEFUL crypto.}
+\ul{
+\li{\strong{(a)} Ratchet step. Heart of Signal Protocol. First test of effect-handler discipline under mutation. Adds the negative-replay property (second decode raises ConsumedCap).}
+\li{\strong{(b)} Voice split-plane sealed-handler boundary. Tests whether sealed handlers actually contain ambient C++ behavior.}
+\li{\strong{(c)} MLS-over-captp TreeKEM update. Tests group keying as cap invocations.}
+}
+\p{Lean (a) — ratchet is the highest-leverage stateful test and exercises Granule grades on mutation, the design's distinguishing claim.}
+}

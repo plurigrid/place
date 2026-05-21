@@ -17,6 +17,8 @@
 \meta{repo}{https://github.com/tonykim07/fNIRS}
 \import{macros}
 
+\p{Status: current open fNIRS build target, reported as partially assembled in the bench inventory. Historical PLUX and NIRx pages remain references, not the current build path.}
+
 \p{OpenNIRScap. Open-source, wearable, 24-channel fNIRS cap from the University of Toronto (Kim et al., May 2025). 35 mm source-detector separation for cortical depth sensitivity. Validated hemodynamic response detection during cognitive tasks. Replaces bcf-0012 as the primary open-source fNIRS build target.}
 
 \subtree{\title{Architecture}

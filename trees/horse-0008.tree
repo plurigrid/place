@@ -19,7 +19,7 @@
   \tr{\td{0} \td{Router-embedded} \td{TBR integrated into Wi-Fi mesh (eero, Deco, Nest Wifi)}}
 }
 
-\p{Conservation: hub(+1) + mesh(-1) + router(0) = 0. The transport layer mirrors the BCI rooms: bci.red(+1), bci.blue(-1), bci.horse(0).}
+\p{Conservation: hub(+1) + mesh(-1) + router(0) = 0. The transport layer mirrors the BCI rooms: bci.red(+1), bci.blue(-1), bci.place(0).}
 }
 
 \subtree{

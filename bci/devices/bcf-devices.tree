@@ -8,55 +8,70 @@
 
 \import{macros}
 
-\p{Canonical device ledger for the BCI Factory daily vote.
-Devices with status \code{want} or \code{building} enter the daily rotation pool.
+\p{Working device ledger for the BCI Factory daily vote and bench inventory. This is based on current reported state and needs photo/model verification after the next office inventory pass.
+Devices with status \code{want}, \code{building}, or \code{aspirational} may enter the daily possible-world rotation pool.
 Each day, a date-seeded selection picks two devices for bci.red vs bci.blue.
 Voters simulate each device's world via the embedded WASM gain-of-function kernel
 before casting a vote.}
 
 \subtree{\title{Schema}
 \p{Each device record: \code{id, name, status, cost_usd, modality, channels, sim_params, url, notes}.}
-\p{Status values: \code{own}, \code{building}, \code{on-order}, \code{want}, \code{lent-to-us}, \code{lent-from-us}, \code{dont-want}.}
-\p{Only \code{want} and \code{building} enter the daily vote rotation.}
+\p{Status values: \code{own}, \code{building}, \code{needs-repair}, \code{loaned-to-us}, \code{on-order}, \code{want}, \code{aspirational}, \code{dont-want}.}
+\p{Only \code{want}, \code{building}, and \code{aspirational} enter the possible-world vote rotation.}
 }
 
-\subtree{\title{Rotation pool (votable)}
+\subtree{\title{Possible-world rotation pool}
 \taxon{remark}
 
 \table{
   \tr{\th{ID} \th{Device} \th{Status} \th{Cost} \th{Modality} \th{Channels} \th{Sim params} \th{URL}}
-  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{$419} \td{fNIRS} \td{24} \td{infect:3,saturation:50,stim:0,alpha_suppress:0.4} \td{\link{https://opennirscap.github.io}}}
-  \tr{\td{DEV-EEG-003} \td{Muse S (Gen 2)} \td{want} \td{$400} \td{dry EEG} \td{4} \td{infect:1,saturation:20,stim:0,alpha_suppress:0.7} \td{\link{https://choosemuse.com}}}
-  \tr{\td{DEV-USTIM-001} \td{Focused ultrasound neuromod rig} \td{want} \td{unfunded} \td{tFUS} \td{1} \td{infect:2,saturation:80,stim:1,alpha_suppress:0.1} \td{n/a}}
-  \tr{\td{DEV-MAG-004} \td{QuSpin QZFM magnetometer} \td{want} \td{$5000} \td{OPM-MEG} \td{1} \td{infect:1,saturation:40,stim:0,alpha_suppress:0.2} \td{\link{https://quspin.com}}}
-  \tr{\td{DEV-EEG-004} \td{OpenBCI Ultracortex Mark IV} \td{want} \td{$999} \td{wet EEG} \td{16} \td{infect:2,saturation:30,stim:0,alpha_suppress:0.5} \td{\link{https://shop.openbci.com}}}
+  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{$419} \td{fNIRS} \td{24} \td{infect:3,saturation:50,stim:0,alpha_suppress:0.4} \td{\code{https://opennirscap.github.io}}}
+  \tr{\td{DEV-EEG-003} \td{Muse S (Gen 2)} \td{want} \td{$400} \td{dry EEG} \td{4} \td{infect:1,saturation:20,stim:0,alpha_suppress:0.7} \td{\code{https://choosemuse.com}}}
+  \tr{\td{DEV-USTIM-001} \td{Focused ultrasound neuromod rig} \td{aspirational} \td{unfunded} \td{tFUS} \td{1} \td{infect:2,saturation:80,stim:1,alpha_suppress:0.1} \td{n/a}}
+  \tr{\td{DEV-MAG-004} \td{QuSpin QZFM magnetometer} \td{want} \td{$5000} \td{OPM-MEG} \td{1} \td{infect:1,saturation:40,stim:0,alpha_suppress:0.2} \td{\code{https://quspin.com}}}
+  \tr{\td{DEV-EEG-004} \td{OpenBCI Ultracortex Mark IV} \td{want} \td{$999} \td{wet EEG} \td{16} \td{infect:2,saturation:30,stim:0,alpha_suppress:0.5} \td{\code{https://shop.openbci.com}}}
 }
 }
 
-\subtree{\title{Owned / operational}
+\subtree{\title{Current reported inventory}
 \taxon{remark}
 
 \table{
   \tr{\th{ID} \th{Device} \th{Status} \th{Location} \th{Notes}}
-  \tr{\td{DEV-EEG-001} \td{OpenBCI Cyton 8-channel} \td{own} \td{222 Dore} \td{Operational}}
-  \tr{\td{DEV-EEG-002} \td{EEG headset (4ch wet)} \td{own} \td{222 Dore} \td{Operational}}
-  \tr{\td{DEV-XR-001} \td{XREAL glasses (x3)} \td{own} \td{222 Dore} \td{Operational}}
-  \tr{\td{DEV-GPU-001} \td{DGX Spark GX10} \td{own} \td{222 Dore} \td{Operational}}
-  \tr{\td{DEV-SOL-001} \td{Soldering kit} \td{own} \td{222 Dore} \td{Operational}}
+  \tr{\td{DEV-EEG-001} \td{OpenBCI Cyton + Daisy} \td{own} \td{222 Dore} \td{Verify assembly and channel count}}
+  \tr{\td{DEV-EEG-002} \td{Portable wet EEG, 4 sensors} \td{needs-repair} \td{222 Dore} \td{Gel available}}
+  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{222 Dore} \td{Partially assembled}}
+  \tr{\td{DEV-MAG-001} \td{Quantum GEM / Uncut Gem} \td{building} \td{222 Dore} \td{Partially assembled; verify exact board state}}
+  \tr{\td{DEV-ENT-001} \td{Entropy sensors} \td{own} \td{222 Dore} \td{Three units reported}}
+  \tr{\td{DEV-EEG-005} \td{Cognitronix/Cognionics 64/72 channel EEG} \td{loaned-to-us} \td{222 Dore} \td{Verify exact make, channel count, and loan terms}}
+  \tr{\td{DEV-XR-001} \td{XREAL glasses (x3)} \td{own} \td{222 Dore} \td{Verify current use}}
+  \tr{\td{DEV-GPU-001} \td{DGX Spark GX10} \td{own} \td{222 Dore} \td{Operational status needs current verification}}
+  \tr{\td{DEV-FAB-001} \td{3D printers and soldering supplies} \td{own} \td{222 Dore} \td{Repair and fabrication support}}
   \tr{\td{DEV-NET-001} \td{Starlink} \td{own} \td{222 Dore} \td{Operational}}
   \tr{\td{DEV-PWR-001} \td{CyberPower UPS (x3)} \td{own} \td{222 Dore} \td{Sine wave, surge}}
   \tr{\td{DEV-SBC-001} \td{Raspberry Pi} \td{own} \td{222 Dore} \td{Operational}}
 }
 }
 
-\subtree{\title{On order}
+\subtree{\title{Repair and spare parts}
 \taxon{remark}
 
 \table{
-  \tr{\th{ID} \th{Device} \th{Status} \th{Notes}}
-  \tr{\td{DEV-MAG-001} \td{Uncut Gem NV magnetometer (with diamond)} \td{on-order} \td{Full PCB}}
-  \tr{\td{DEV-MAG-002} \td{Uncut Gem NV magnetometer (no diamond)} \td{on-order} \td{Full PCB}}
-  \tr{\td{DEV-MAG-003} \td{Uncut Gem NV magnetometer (no diamond)} \td{on-order} \td{Full PCB}}
+  \tr{\th{Item} \th{Status} \th{Notes}}
+  \tr{\td{Wet EEG gel} \td{own} \td{Supports repair and extended wet EEG sessions}}
+  \tr{\td{Electrodes, chargers, adapters, printed parts} \td{want} \td{Useful extras for maintaining local and visiting setups}}
+}
+}
+
+\subtree{\title{Tracing and activity tracking}
+\taxon{remark}
+
+\p{Trace and activity materials are their own inventory lane, not repair hardware. The next office pass should separate paper/material trace supplies from wearable activity-tracking devices and software export paths.}
+
+\table{
+  \tr{\th{Item} \th{Status} \th{Notes}}
+  \tr{\td{Tracing supplies} \td{own} \td{Needs photo pass and storage location}}
+  \tr{\td{Activity-tracking supplies} \td{own} \td{Needs device/app/export verification}}
 }
 }
 

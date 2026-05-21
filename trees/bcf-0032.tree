@@ -34,6 +34,6 @@
 }
 \p{Pricing from public university procurement records (sole-source notices). NIRx quotes directly; no list price published.}}
 
-\subtree{\title{Why it matters for bci.horse}
+\subtree{\title{Why it matters for bci.place}
 \taxon{remark}
-\p{The NIRSport 2 is the gold standard for portable fNIRS in social neuroscience. Lieberman's hyperscanning work (Miao, Lieberman, Pluta 2025) demonstrates interpersonal neural coupling during naturalistic interaction -- exactly the kind of multi-brain recording that bci.horse aims to make accessible at $800 (bcf-0012) instead of $150,000. The signal quality gap is real but narrowing: the AFE4404 front-end in the DIY build uses the same modified Beer-Lambert deconvolution as NIRx's proprietary pipeline.}}
+\p{The NIRSport 2 is the gold standard for portable fNIRS in social neuroscience. Lieberman's hyperscanning work (Miao, Lieberman, Pluta 2025) demonstrates interpersonal neural coupling during naturalistic interaction -- exactly the kind of multi-brain recording that bci.place aims to make accessible at $800 (bcf-0012) instead of $150,000. The signal quality gap is real but narrowing: the AFE4404 front-end in the DIY build uses the same modified Beer-Lambert deconvolution as NIRx's proprietary pipeline.}}

@@ -18,7 +18,7 @@
   \li{\strong{Walk in. Sit down. See your brain. No appointment.} The protocol is 2 minutes ([[bcf-0030]]). The hardware is on a hook. The paste is in a squeeze bottle.}
   \li{\strong{Your neural signature is your passport.} Your name seeds a color. Your brain produces another color. The gap between them is yours — not your genome, not your credit score, not your follower count. Your passport is gay ([[horse-0001]]).}
   \li{\strong{Shitty signal is better than no signal.} Two channels railed out of eight is still six channels of real cortical data ([[bcf-0040]]). The ratio of a $10 BCI to no BCI is not 1:5000. It is 1:0.}
-  \li{\strong{GF(3) conservation}: \code{bci.blue(-1) + bci.red(+1) + bci.horse(0) = 0}. Inhibition, activation, and crossover sum to nothing. What remains is the rider.}
+  \li{\strong{GF(3) conservation}: \code{bci.blue(-1) + bci.red(+1) + bci.place(0) = 0}. Inhibition, activation, and crossover sum to nothing. What remains is the rider.}
 }
 }
 

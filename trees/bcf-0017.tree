@@ -10,6 +10,8 @@
 \meta{trit-tick-hz}{3528000000}
 \meta{flick-hz}{705600000}
 
+\p{Status: project-owned synchronization design. Validate this page against the current trit-tick and brainfloj repos before treating constants, implementation claims, or integration details as publication-ready.}
+
 \p{Each modality receives a trit assignment in #{GF(3) = \{0, 1, 2\}}. Temporal alignment via arithmetic in the three-element Galois field.}
 
 \subtree{\title{The trit-tick}
@@ -40,8 +42,8 @@
   \li{Each device stamps events with its GF(3) phase (0, 1, or 2) within the current sample window}
   \li{Synchronization is verified by checking that trit sums across modalities satisfy the constraint equations}
   \li{\strong{Composable}: adding or removing a modality means adding or removing one trit assignment. No global reconfiguration}
-  \li{\strong{Mix-and-match}: any subset of the stack can synchronize without the full stack being present}
+  \li{\strong{Mix-and-match}: any modeled subset can synchronize without the entire kit being present}
   \li{\strong{Flick-compatible}: since 5 trit-ticks = 1 flick, the scheme inherits flick's exact divisibility by all standard multimedia rates (24, 25, 30, 48, 50, 60, 90, 100, 120 fps and 8/16/22.05/24/32/44.1/48/88.2/96/176.4/192 kHz)}
 }
-\p{This replaces traditional master-clock architectures with a distributed, algebraic synchronization scheme. The math is trivial (addition mod 3). The consequence is profound: the stack is not a fixed system but a composable kit.}
+\p{This replaces traditional master-clock architectures with a distributed, algebraic synchronization scheme. The math is trivial (addition mod 3). The consequence is profound: the modeled kit is composable rather than fixed.}
 }

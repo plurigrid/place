@@ -200,7 +200,7 @@ uV = value * (1e6 / 2^32)
 
 \subtree{\title{Streaming Status}
 \taxon{protocol}
-\p{\strong{LIVE STREAMING CONFIRMED.} Open-source decoder at \code{cgx_legacy_decode.py}. Validated: 2006 samples in 5.1s at 333 Hz, 100\% counter continuity, 64 EEG + 3 ACC channels decoded. All downstream tools ready: LSL outlet, CSV writer, DuckDB ingest, bci.horse display.}
+\p{\strong{LIVE STREAMING CONFIRMED.} Open-source decoder at \code{cgx_legacy_decode.py}. Validated: 2006 samples in 5.1s at 333 Hz, 100\% counter continuity, 64 EEG + 3 ACC channels decoded. All downstream tools ready: LSL outlet, CSV writer, DuckDB ingest, bci.place display.}
 \p{Bidirectional control established: Claude Code 2.1.94 installed in Parallels Windows 11 VM (ARM64) for CGX Acquisition GUI automation. macOS-side Python decoder for live serial streaming.}
 }
 

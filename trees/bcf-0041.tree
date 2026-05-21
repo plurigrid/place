@@ -24,7 +24,7 @@
 \subtree{
 \title{2. SvelteKit — Web Presence}
 
-\p{\code{worlds/bcifactory.org/}. SvelteKit 5 with Three.js interactive floor plan of 250 Dore. Hardware comparison table. Responsive layout. The public interface at \code{bcifactory.org}. Renders for humans in browsers.}
+\p{\code{worlds/bcifactory.org/}. SvelteKit 5 with Three.js interactive floor plan of 250 Dore. Hardware comparison table. Responsive layout. This is a worlds/ design resource and possible browser renderer, not the current source of truth.}
 }
 
 \subtree{
@@ -66,12 +66,12 @@
 \table{
   \tr{\th{System} \th{Role} \th{Consumes} \th{Produces}}
   \tr{\td{Forester} \td{Source of truth} \td{Human knowledge} \td{Trees, HTML}}
-  \tr{\td{SvelteKit} \td{Public interface} \td{Forest content} \td{Web pages, 3D views}}
+  \tr{\td{SvelteKit} \td{Possible browser renderer} \td{Forest content} \td{Web pages, 3D views}}
   \tr{\td{Ratzilla} \td{Kiosk interface} \td{Forest content} \td{Terminal UI}}
   \tr{\td{NATS} \td{Data transport} \td{Device streams} \td{Formatted messages}}
   \tr{\td{BrainFlow} \td{Hardware bridge} \td{EEG samples} \td{Brain-color}}
   \tr{\td{OCaml} \td{Verification} \td{Device specs} \td{Type-checked rankings}}
 }
 
-\p{Forester is the source of truth. SvelteKit renders for browsers. Ratzilla renders for terminals. NATS moves data between them. BrainFlow bridges wetware to software. OCaml proves the structure is consistent.}
+\p{Forester is the source of truth for this site. SvelteKit is a browser-renderer design direction. Ratzilla renders for terminals. NATS moves data between them. BrainFlow bridges wetware to software. OCaml proves the structure is consistent.}
 }

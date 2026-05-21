@@ -49,7 +49,7 @@
   \tr{\th{Phase} \th{Instruction} \th{Room} \th{Trit} \th{Duration}}
   \tr{\td{REST} \td{Eyes closed, breathe} \td{bci.blue} \td{-1} \td{10s (~2500 samples)}}
   \tr{\td{MOTOR} \td{Imagine squeezing left hand} \td{bci.red} \td{+1} \td{10s (~2500 samples)}}
-  \tr{\td{FREE} \td{Whatever you want} \td{bci.horse} \td{0} \td{10s (~2500 samples)}}
+  \tr{\td{FREE} \td{Whatever you want} \td{bci.place} \td{0} \td{10s (~2500 samples)}}
 }
 
 \p{GF(3) conservation: REST(-1) + MOTOR(+1) + FREE(0) = 0.}
