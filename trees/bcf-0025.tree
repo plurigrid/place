@@ -8,7 +8,7 @@
 \tag{expansion}
 \tag{kernel}
 
-\p{\strong{Transparency} in bci.horse operates at three levels: the on-chain stats page ([[horse-0007]]) costs zero gas to read, the forester source is public, and the expansion property of the content graph is measurable. This tree quantifies connectivity and maps external participation that should be reflected in the transparency surface.}
+\p{\strong{Transparency} in bci.place operates at three levels: the on-chain stats page ([[horse-0007]]) costs zero gas to read, the forester source is public, and the expansion property of the content graph is measurable. This tree quantifies connectivity and maps external participation that should be reflected in the transparency surface.}
 
 \subtree{\title{Graph expansion property (measured 2026-03-30)}
 \table{
@@ -38,7 +38,7 @@
 
 \p{\strong{Kernel fellowship confirmation}: POAP collection at \code{collectors.poap.xyz/scan/horsefacts.eth} contains timestamped attendance tokens. KB4 ran Aug--Oct 2021, KB5 ran Jan--Mar 2022. horsefacts.eth's hackathon activity spans both windows. \em{Direct POAP verification recommended to confirm KB4/KB5 badges.}}
 
-\p{Relevance to bci.horse: the \strong{invariant testing methodology} (property-based verification of smart contract invariants via Foundry fuzzing) directly parallels the GF(3) conservation invariant in the bci.horse pipeline ([[bcf-0022]]). The commit-reveal pattern (\code{horsefacts/commit-reveal}) is the same cryptographic primitive used in trit-tick synchronization ([[bcf-0017]]). The \strong{zkhorse} team name is not accidental.}
+\p{Relevance to bci.place: the \strong{invariant testing methodology} (property-based verification of smart contract invariants via Foundry fuzzing) directly parallels the GF(3) conservation invariant in the bci.place pipeline ([[bcf-0022]]). The commit-reveal pattern (\code{horsefacts/commit-reveal}) is the same cryptographic primitive used in trit-tick synchronization ([[bcf-0017]]). The \strong{zkhorse} team name is not accidental.}
 }
 
 \subtree{\title{Transparency metrics to include}
@@ -46,7 +46,7 @@
   \li{\strong{On-chain transparency} ([[horse-0007]]): zero-gas view functions for \code{global_stats}, \code{accrued_balance}, \code{visitor_trits}. The stats page IS the decode.}
   \li{\strong{Expansion property}: #{h(G) \geq 5} for content subgraph. Measurable. Verifiable from forester source.}
   \li{\strong{Cross-reference integrity}: 80 wiki-links, 64 transclusions, 5 refs — zero broken references (validated 2026-03-30).}
-  \li{\strong{External participation graph}: Kernel KB4/KB5 fellows → Code4rena wardens → EthCC speakers → current \code{tempo} contributors. horsefacts.eth's trajectory from invariant testing to zk security to temporal protocols mirrors the bci.horse pipeline's progression from sheaf theory to on-chain proofs.}
+  \li{\strong{External participation graph}: Kernel KB4/KB5 fellows → Code4rena wardens → EthCC speakers → current \code{tempo} contributors. horsefacts.eth's trajectory from invariant testing to zk security to temporal protocols mirrors the bci.place pipeline's progression from sheaf theory to on-chain proofs.}
   \li{\strong{Witness transparency} ([[horse-0006]]): drand-timestamped receipts #{(r, t, \sigma)}. Public, immutable, zero-knowledge-compatible via WorldID gate.}
   \li{\strong{CI transparency}: forester build status. Currently broken (stub binary, 1084 bytes vs expected ~10MB). 5 consecutive deploy failures. Tracked.}
 }

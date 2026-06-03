@@ -11,6 +11,8 @@
 \meta{product}{Rigol AWG + 300kHz FUS transducer}
 \meta{price}{$3500 (ultrasound) + $7000 (tongue electrodes)}
 
+\p{Status: aspirational multi-sensory stimulation architecture. Keep it as a design direction, not current inventory.}
+
 \p{A single focused ultrasound rig covering four sensory cortices via beam steering, plus a tongue electrode array for taste. Total BOM: ~$10,500 for all five senses. The key insight is that one 300kHz transducer can target multiple cortical regions by changing the beam angle and coupling point — no need for separate hardware per modality.}
 
 \image{fus-multisensory-arch.png}

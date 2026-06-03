@@ -1,0 +1,136 @@
+\title{Whisper-λ}
+\taxon{device}
+\date{2026-05-15}
+\author{eternal-loop}
+\tag{whisper-lambda}
+\tag{signal-protocol}
+\tag{effekt}
+\tag{granule}
+
+\p{A brand-new language to reimplement Signal Protocol — voice, reactions, admin — under one typed effect discipline. Effekt-style lexical handlers ⊕ Granule grades for key linearity ⊕ libsodium FFI primitives ⊕ OCaml-5/WASM target.}
+
+\p{See [[bcf-0070]] for the consolidated overview of all six trees (bcf-0064..0069) under the Whisper-λ track.}
+
+\subtree{
+\title{Core commitments}
+\ul{
+\li{Effekt-style \em{lexical} effect handlers. No ambient-handler interception path. Sealed sender becomes a sealed handler.}
+\li{Granule grades for keys. Grade ≤1 enforces use-once at the type level; zeroize-on-drop is a grade obligation.}
+\li{OCaml-5 IR target (native handlers) ⊕ WASM stack-switching (browser/admin).}
+\li{Primitives via libsodium FFI — X25519, Ed25519, AES-GCM-SIV, HMAC.}
+\li{Double Ratchet reimplemented in-language to bring its state under the type system.}
+}
+}
+
+\subtree{
+\title{Handler discipline}
+\p{Mixed-depth, intentionally.}
+\ul{
+\li{\strong{Shallow} handlers for ratchet primitives — each \code{step} resumes exactly once, matching the step-wise ratchet structure. No captured continuation lingers.}
+\li{\strong{Deep} handlers for the admin session — device-link shell resumes many times; revocability via the hermes-approval-as-revocable pattern.}
+}
+}
+
+\subtree{
+\title{Group keying: MLS-over-captp}
+\p{Iter4 commit. Tradeoffs considered:}
+\ul{
+\li{\strong{Sender Keys} (classical Signal) — battle-tested but doesn't exercise the new language's distinguishing capabilities.}
+\li{\strong{MLS} (RFC 9420) — modern, well-specified, but the transport is incidental and any language could host it.}
+\li{\strong{MLS-over-captp} — picked. MLS tree-update messages travel as captp sealed-sender envelopes with revocable sturdy refs. The TreeKEM updates are themselves capability invocations on a sealed group object. This is the only choice where Whisper-λ's effect-typed transport carries semantic weight.}
+}
+}
+
+\subtree{
+\title{Design axes — taxonomy v2}
+\ul{
+\li{Effect substrate: \strong{Effekt-lexical} (vs Koka-rows · Unison-abilities · OCaml-5-native)}
+\li{Linearity: \strong{Granule grades} (vs Rust ownership · Clean uniqueness · Idris-QTT)}
+\li{Handler depth: \strong{mixed} (shallow primitives, deep sessions)}
+\li{Transport: \strong{captp+syrup}}
+\li{Group keying: \strong{MLS-over-captp}}
+\li{Verification: \strong{Wycheproof+QC+Dafny} two-track}
+\li{Voice stack: \em{open} — leaning native Opus+SRTP+ICE in-language with libwebrtc as escape hatch}
+\li{Identity: \em{open} — leaning swissnum-as-identity, phone optional shim}
+}
+}
+
+\subtree{
+\title{Iter5 question}
+\p{Pick the \strong{voice stack}. Native Opus+SRTP+ICE in Whisper-λ gives a uniform effect story but is many KLOC of new crypto-adjacent code. libwebrtc binding ships immediately but pulls in C++ ambient handlers (the thing Effekt-lexical is supposed to prevent). Pion-port to Whisper-λ is the middle path — Go's pure-Go WebRTC, but Go's runtime model is alien to Granule grades.}
+}
+
+\subtree{
+\title{Iter5 commit — voice stack}
+\p{Three-band decision, picked the middle band:}
+\ul{
+\li{\strong{Native Opus+SRTP+ICE in Whisper-λ} — uniform effect story but ~30 KLOC of crypto-adjacent code to write and verify.}
+\li{\strong{libwebrtc binding (whole stack)} — ships fast but C++ pulls in ambient handlers and global mutable state; defeats Effekt-lexical's whole point.}
+\li{\strong{Pion-port} — Go's pure-Go WebRTC, but Go's runtime model (GC + goroutines) is alien to Granule grades.}
+}
+\p{\strong{Picked: split-plane.} Call setup (SDP, ICE, DTLS handshake, key derivation) is implemented natively in Whisper-λ — small, type-system-relevant, exercises shallow handlers per offer/answer round. Media plane (Opus encode/decode, SRTP framing, jitter buffer, NACK) is libwebrtc behind a \strong{sealed handler boundary}: every libwebrtc callback goes through a single handler in Whisper-λ that re-establishes the linear invariants and re-grades the key material. The ambient C++ handler-soup stays inside the sealed envelope; nothing leaks to the rest of the program.}
+\p{This preserves the invariant where it matters (key handling, replay protection, group-state coherence) while not blocking on rewriting Opus.}
+}
+
+\subtree{
+\title{Open axes after iter5}
+\ul{
+\li{Identity: phone · username · DID · \strong{captp swissnum} (leaning swissnum-as-canonical-identity; phone-number is a recovery shim, not a primary identifier).}
+\li{Storage encryption: per-record envelope · whole-DB · \strong{per-record over captp-sealed-store} (matches the sealed-handler discipline).}
+\li{Reaction semantics: out-of-band message · in-band protocol-typed event · \strong{capability invocation} (an emoji reaction is a one-shot capability on the message swissnum).}
+}
+}
+
+\subtree{
+\title{Iter6 commit — identity, storage, reactions}
+\p{Three axes closed in one iter because they all collapse onto the same capability-first decision.}
+
+\subtree{
+\title{Identity}
+\p{\strong{Swissnum-canonical.} Every entity (user, device, group, message) is identified at the protocol level by an unguessable captp swissnum. Phone number is a \em{recovery shim only} — recovery means: prove possession of phone X via SMS, then submit a "claim swissnum Y" message countersigned by the existing key. Username is a \em{display layer} — resolvable via a directory service but never authoritative.}
+\p{DID was considered and rejected: imports too much social/legal complexity (verifiable credentials, DID methods, controller agreements) for a protocol whose identity goal is "unguessable bytes I can prove I hold." Swissnum is exactly that, minus the W3C apparatus.}
+}
+
+\subtree{
+\title{Storage encryption}
+\p{\strong{Per-record envelope over captp-sealed-store.} Every stored record (message, contact entry, group state) is sealed under a per-record DEK. Each DEK has grade ≤1 per session and is re-derived from the user's master via HKDF. The DEK lives behind a captp sealed object; reads go through capability invocation, not memory dereference. Whole-DB encryption was rejected as monolithic (one compromise = full leak); per-record without sealing was rejected as too easy to leak via accidental reference.}
+}
+
+\subtree{
+\title{Reaction semantics}
+\p{\strong{Reaction = one-shot capability invocation on the message swissnum.} Each message exposes a reaction-cap; an emoji reaction is an invocation that delivers a typed \code{Reacted(emoji, sender_swissnum)} event over the same MLS-over-captp transport. Cross-device sync is automatic via the message-state log.}
+\p{Strictly better than Signal's current reactions, which are out-of-band protobuf fields appended to messages and racy on multi-device. Here the reaction \em{is} a message in the same transport, just typed differently and capability-targeted at a specific prior message.}
+}
+}
+
+\subtree{
+\title{Closed-axes summary}
+\p{All eight design axes from taxonomy v2 now have commits:}
+\ol{
+\li{Effect substrate → \strong{Effekt-lexical}}
+\li{Linearity → \strong{Granule grades}}
+\li{Handler depth → \strong{mixed} (shallow primitives, deep sessions)}
+\li{Transport → \strong{captp+syrup}}
+\li{Group keying → \strong{MLS-over-captp}}
+\li{Verification → \strong{Wycheproof+QC+Dafny} two-track}
+\li{Voice stack → \strong{split-plane} (native setup, sealed libwebrtc media)}
+\li{Identity → \strong{swissnum-canonical} (phone shim only)}
+}
+\p{Plus emergent commits:}
+\ul{
+\li{Storage → \strong{per-record envelope over captp-sealed-store}}
+\li{Reactions → \strong{one-shot capability invocation on message swissnum}}
+}
+}
+
+\subtree{
+\title{Iter7 pivot — from design to vertical slice}
+\p{Design surface is now closed. Iter7 picks the first \em{implementation} vertical: which slice gets the first end-to-end pass?}
+\ul{
+\li{\strong{X3DH handshake} — smallest crypto-complete slice; exercises Granule grades on first contact.}
+\li{\strong{Double Ratchet step} — heart of the protocol; needs X3DH first as input.}
+\li{\strong{Sealed-sender envelope round-trip over captp} — exercises the transport before any crypto.}
+\li{\strong{libwebrtc sealed-handler proof-of-concept} — exercises the seal boundary on a non-crypto path.}
+}
+\p{Lean: \strong{sealed-sender over captp}. It's the bet — that captp+syrup can carry Signal envelopes — and it's testable without any of the X3DH/ratchet machinery. If this slice doesn't fit, the entire transport choice has to be revisited; better to find out early.}
+}

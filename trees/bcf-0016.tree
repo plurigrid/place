@@ -9,4 +9,6 @@
 \meta{frequency-khz}{300}
 \meta{resolution-mm}{3}
 
+\p{Status: focused-ultrasound write-channel research option. This is not current owned bench hardware unless separately confirmed in [[bcf-devices]].}
+
 \p{300kHz focused probe with gel coupling pad. Low-intensity focused ultrasound (LIFU) for transcranial neuromodulation. Mechanical pressure waves at sub-thermal intensities. Spatial resolution ~3mm at 300kHz, penetration depth sufficient for cortical targets. This is the \strong{write channel} — everything else is read. Closed-loop BCI means measuring a state and then changing it.}

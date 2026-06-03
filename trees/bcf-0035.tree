@@ -13,7 +13,7 @@
 
 \p{Artinis Brite Lite. Wireless, wearable, research-grade fNIRS. 8 channels standard, expandable to 10 with flexibility package. Adjustable interoptode distance (10--55 mm) enables proper 30 mm source-detector separation for cortical depth sensitivity. Neoprene headcap covers full head; multi-power gain control adapts to different skin tones, hair types, and ages. 150 Hz sampling, Bluetooth or offline recording, integrated 6-axis IMU. Upgradeable to full Brite (27 channels) when needs grow.}
 
-\subtree{\title{Why Brite Lite for bci.horse}
+\subtree{\title{Why Brite Lite for bci.place}
 \taxon{remark}
 \p{Calibration reference for the walk-up fleet. The Brite Lite provides known-good commercial signal quality against which open-source builds (OpenNIRScap, bcf-0036) are validated. One Brite Lite (~$6k) plus three OpenNIRScap units ($1,257 total) gives four simultaneous fNIRS stations for under $8k -- the cost of one mid-range commercial system.}}
 

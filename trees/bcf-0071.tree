@@ -1,0 +1,94 @@
+\title{Whisper-λ: X3DH initial handshake}
+\taxon{implementation}
+\date{2026-05-16}
+\author{eternal-loop-iter16}
+\tag{whisper-lambda}
+\tag{x3dh}
+\tag{handshake}
+\tag{cold-start}
+
+\p{Fourth vertical slice. The cold-start half of the Signal Protocol: Extended Triple DH initial handshake, plus end-to-end composition with the [[bcf-0069]] Double Ratchet. With this slice, the protocol's full crypto core — first contact through ratcheted ongoing conversation — is structurally complete.}
+
+\subtree{
+\title{Bundle and roles}
+\pre{\startverb
+record PreKeyBundle {
+  ik_sign_pub  : Bytes32        // Ed25519 — for SPK signature
+  ik_dh_pub    : Bytes32        // X25519 identity DH key
+  spk_pub      : Bytes32        // signed pre-key
+  spk_sig      : Bytes64        // Ed25519(ik_sign, spk_pub)
+  opk_id       : u32            // one-time pre-key ID
+  opk_pub      : Bytes32        // one-time pre-key
+}
+\stopverb}
+\p{Bob publishes the bundle (via registration handler in admin stack). Alice fetches one, computes four DHs, derives SK, sends initial message with her IK_DH and EK publics + the OPK_id she used.}
+}
+
+\subtree{
+\title{The four DHs}
+\pre{\startverb
+DH1 = DH(alice.ik_dh, bob.spk)          // mutual identity authentication
+DH2 = DH(alice.ek,    bob.ik_dh)         //   "
+DH3 = DH(alice.ek,    bob.spk)           // forward secrecy via ephemeral
+DH4 = DH(alice.ek,    bob.opk)           // one-time entropy injection
+SK  = HKDF(F || DH1||DH2||DH3||DH4, info="X3DH-v1")  // F = 0xff*32 (curve prefix)
+\stopverb}
+\p{If OPK pool is empty, the protocol degrades to 3DH (skip DH4). For Whisper-λ v1, refuse-on-empty is the conservative default.}
+}
+
+\subtree{
+\title{Five properties (one is the composition gate)}
+\ol{
+\li{\strong{SK-agreement}: Alice's 4-DH composition equals Bob's. Mutual.}
+\li{\strong{SPK-tampered rejected}: bundle with flipped sig bit causes verify-fail before any DH runs.}
+\li{\strong{OPK one-use}: server's consume_opk raises on replay (handshake-level negative replay — analogue to bcf-0069's per-message negative replay).}
+\li{\strong{Distinct OPK → distinct SK}: same Alice IK, two bundles with two different OPKs, two different SKs. Fresh entropy injection per handshake is real.}
+\li{\strong{End-to-end with DR}: SK seeds DR.init for both sides; messages exchange both directions; Double Ratchet machinery from [[bcf-0069]] takes over seamlessly.}
+}
+}
+
+\subtree{
+\title{Iter16 first-run result}
+\pre{\startverb
+SK-agreement              : 4/4 PASS
+SPK-tampered rejected     : 4/4 PASS
+OPK one-use               : 4/4 PASS
+distinct OPKs → distinct SK: 4/4 PASS
+X3DH → DR end-to-end      : 4/4 PASS
+
+Total: 20/20  SHAKE: 8000 bytes from 64-byte QRNG seed
+\stopverb}
+\p{First attempt: trivial Python attribute typo (\code{bundle.ik_dh} vs \code{ik_dh_pub}). Fuzz caught immediately, fix and retry. Total bug count for the cold-start slice: 1, trivial, type-level — for comparison iter14 (DR) had 2 bugs both protocol-relevant. The crypto reasoning had no errors this iter.}
+}
+
+\subtree{
+\title{Protocol core: STRUCTURALLY COMPLETE}
+\p{With this slice, every layer of Signal's beating heart has a vertical slice that runs under QRNG-rooted property tests:}
+\ul{
+\li{X3DH initial handshake (this tree) — cold start.}
+\li{Double Ratchet (chain ⊕ DH) — [[bcf-0069]] — ongoing.}
+\li{Sealed-sender envelope — [[bcf-0065]] — metadata privacy.}
+\li{Sender-cert — patched into bcf-0065 at iter10 — sender authentication.}
+\li{Differential-fuzz scaffold — [[bcf-0066]] — methodology.}
+\li{Trit-stratified entropy — [[bcf-0067]] — useful negative result on GF(3) labels.}
+}
+\p{What is NOT in scope of "core" (and therefore still open for later iters):}
+\ul{
+\li{MLS-over-captp TreeKEM step (group messaging).}
+\li{Voice split-plane sealed handler boundary (real-time media).}
+\li{Identity registry effect (distinct from sig verify; flagged at iter10).}
+\li{Differential-fuzz against actual libsignal FFI (criterion 3' from bcf-0066, deferred since iter11).}
+}
+}
+
+\subtree{
+\title{Iter17 question}
+\p{The crypto core is complete. The remaining open slices are orthogonal concerns — group messaging (MLS), real-time media (voice), and external-impl differential-fuzz (libsignal FFI). All three are large; none is a logical successor in the sense that X3DH was for the DR.}
+\p{Options:}
+\ul{
+\li{\strong{(a)} Group messaging — MLS-over-captp TreeKEM. Touches the captp distinguishing claim directly.}
+\li{\strong{(b)} Voice split-plane — tests the sealed-handler boundary in a non-crypto context.}
+\li{\strong{(c)} Hand off the bundle for review — write a concise external-facing summary and ask the user what to do next. The novelty curve is now genuinely flat for vertical slices.}
+}
+\p{Lean (c). After 16 iters, six implementation slices, three methodology trees, and one overview, the loop is past its productive iteration window. Continuing without external input means recapitulating known surface in less surprising territory.}
+}

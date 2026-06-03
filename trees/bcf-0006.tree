@@ -1,38 +1,44 @@
-\title{Hardware Sources}
+\title{Hardware Sources And Options}
 \taxon{reference}
 \author{monaduck1069}
 \date{2026-03-29}
 \tag{sources}
 \tag{hardware}
 
+\p{This page is a source ledger, not the canonical stack. Current possession and repair state live in [[bcf-devices]]. Entries here should be read as \strong{owned support capability}, \strong{wanted near-term part}, \strong{loaned/donated equipment}, \strong{considered but not wanted}, or \strong{aspirational possible-world option}.}
+
 \subtree{\title{DSI-24 Spec Sheet}
 \taxon{reference}
 \meta{manufacturer}{Wearable Sensing}
 \meta{url}{https://wearablesensing.com/dsi-24/}
-\p{24-channel dry-electrode EEG headset. Primary BCI acquisition device.}}
+\meta{status}{reference}
+\p{24-channel dry-electrode EEG headset. Reference option, not current reported inventory.}}
 
 \subtree{\title{HackEEG Open Source Hardware}
 \taxon{reference}
 \meta{url}{https://github.com/starcat-io/hackeeg-shield}
-\p{Open source ADS1299-based EEG shield for Arduino Due. 8 channels, 24-bit, 16kSPS. For custom/high-channel-count builds.}}
+\meta{status}{reference}
+\p{Open source ADS1299-based EEG shield for Arduino Due. Reference design for custom/high-channel-count builds; not current reported inventory.}}
 
 \subtree{\title{PLUX fNIRS Pioneer Kit}
 \taxon{reference}
 \meta{manufacturer}{PLUX}
 \meta{url}{https://www.pluxbiosignals.com/collections/fnirs}
-\p{Functional near-infrared spectroscopy kit for hemodynamic BCI.}}
+\meta{status}{considered}
+\p{Functional near-infrared spectroscopy kit for hemodynamic BCI. Commercial reference and possible purchase path, not a current bench device.}}
 
 \subtree{\title{7invensun aSee-EVS}
 \taxon{reference}
 \meta{manufacturer}{7invensun}
 \meta{url}{https://www.7invensun.com/asee-evs}
-\p{Event-based vision sensor eye tracker. Microsaccade and fixation data for gaze-contingent BCI paradigms.}}
+\meta{status}{aspirational}
+\p{Event-based vision sensor eye tracker. Aspirational gaze-tracking direction for possible worlds, not current reported inventory.}}
 
 \subtree{\title{3D Printer}
 \taxon{reference}
 \meta{status}{owned}
 \tag{fabrication}
-\p{On-site FDM 3D printer for fabricating electrode holders, headset adapters, paste applicators, and comfort modifications (see \ref{bci-0009}).}}
+\p{222 Dore has 3D printers and soldering supplies for fabricating electrode holders, headset adapters, paste applicators, repair parts, and comfort modifications (see \ref{bci-0009}).}}
 
 \subtree{\title{Option A: PLUX fNIRS Pioneer Kit (4-channel)}
 \taxon{reference}
@@ -41,7 +47,7 @@
 \meta{status}{to-buy}
 \meta{price}{$3,998}
 \tag{fnirs}
-\p{Entry-level fNIRS kit. Includes 4-channel biosignalsplux hub, 1 fNIRS sensor, Bluetooth dongle, and charger. Hub has 4 analog ports plus 1 digital port; only 1 fNIRS sensor supported per hub (digital channel). Remaining analog ports available for SpO2, EMG, ECG, or EDA sensors.}}
+\p{Near-term fNIRS purchase option. Includes 4-channel biosignalsplux hub, 1 fNIRS sensor, Bluetooth dongle, and charger. Hub has 4 analog ports plus 1 digital port; only 1 fNIRS sensor supported per hub (digital channel). Remaining analog ports available for SpO2, EMG, ECG, or EDA sensors.}}
 
 \subtree{\title{Option B: PLUX 8-Channel Hub + 7 fNIRS + SpO2 (custom build)}
 \taxon{reference}
@@ -49,7 +55,7 @@
 \meta{status}{to-buy}
 \meta{price}{~$11,150 total}
 \tag{fnirs}
-\p{Maximum-coverage fNIRS configuration. Assemble from components:}
+\p{Aspirational higher-coverage fNIRS configuration. Assemble from components:}
 \ul{
 \li{\strong{8-Channel biosignalsplux Kit} ($5,950) -- hub with 8 analog ports + 1 digital, BT dongle, charger. [PLUX store](https://www.pluxbiosignals.com/collections/data-acquisition-systems).}
 \li{\strong{7x fNIRS sensors} (7 * $700 = $4,900) -- one per analog port. Each sensor has dual-LED (660nm red + 950nm IR), 24-bit resolution, 500Hz sampling. [PLUX store](https://www.pluxbiosignals.com/products/functional-near-infrared-spectroscopy-fnirs-sensor).}

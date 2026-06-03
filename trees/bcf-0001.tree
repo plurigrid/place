@@ -3,27 +3,49 @@
 \author{monaduck1069}
 \date{2026-03-29}
 \meta{institution}{BCI Factory}
-\meta{url}{https://bcifactory.io}
+\meta{url}{https://bci.place}
 
-\p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{222 Dore Street, San Francisco} — two upstairs offices with a BCI bench — producing open hardware, open data, and open firmware for neural signal acquisition at commodity prices. Expansion into \strong{250 Dore Street} (14,543 SF, immediately available for lease next door) is the next phase.}
+\p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{222 Dore Street, San Francisco} — two upstairs offices with a BCI bench, 3D printers, soldering supplies, and a changing bench inventory. This forest separates current inventory, loaned or donated equipment, wanted equipment, rejected options, and possible-world design directions.}
 
 \p{Shitty signal is better than no signal. A $10 BCI with noise is infinitely more useful than a $50k BCI you can't touch.}
 
-\p{For the sheaf-theoretic pipeline mathematics, see [[bci-0001]]. For the portal experience (three rooms, rider protocol, T-55 pipeline), see [[horse-0001]]. For walk-up self-serve readings, see [[bcf-0030]]. For electrode augmentation for extended sessions, see [[bci-0009]].}
+\p{Contact: yuzu@plurigrid.com. Current public direction: \code{https://bci.place}.}
 
-\transclude{bcf-0002}
-\transclude{bcf-0003}
-\transclude{bcf-0004}
-\transclude{bcf-0005}
+\subtree{\title{Current Map}
+\transclude{bcf-devices}
 \transclude{bcf-0006}
-\transclude{bcf-0008}
-\transclude{bcf-0030}
+\transclude{bcf-0004}
 \transclude{bcf-0037}
-\transclude{bci-0009}
-\transclude{std-0001}
-\transclude{bcf-0038}
-\transclude{bcf-0039}
-\transclude{bcf-0040}
-\transclude{bcf-0041}
+}
+
+\subtree{\title{Possible Worlds}
+\p{Portal rooms, self-serve readings, and communal economics are design worlds for comparison and voting. They are not the canonical current stack.}
+\transclude{horse-0001}
+\transclude{bcf-0030}
+\transclude{bcf-0008}
 \transclude{bcf-0042}
 \transclude{bcf-0043}
+}
+
+\subtree{\title{Innovation And Comfort}
+\transclude{bci-0009}
+\transclude{bcf-0036}
+}
+
+\subtree{\title{Mathematics And Protocols}
+\transclude{bci-0001}
+\transclude{bcf-0003}
+\transclude{bcf-0005}
+\transclude{bcf-0040}
+}
+
+\subtree{\title{Resources And Surviving Stubs}
+\transclude{bcf-0038}
+\transclude{bcf-0039}
+\transclude{bcf-0041}
+}
+
+\subtree{\title{Standards}
+\transclude{std-0001}
+\transclude{bcf-0002}
+}

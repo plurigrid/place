@@ -1,0 +1,94 @@
+\title{Whisper-λ: Double Ratchet slice (chain ⊕ DH)}
+\taxon{implementation}
+\date{2026-05-16}
+\author{eternal-loop-iter14}
+\tag{whisper-lambda}
+\tag{double-ratchet}
+\tag{post-compromise-security}
+\tag{forward-secrecy}
+
+\p{Third vertical slice (after [[bcf-0065]] sealed-sender, [[bcf-0068]] chain-only). Composes two stateful effects: DH ratchet (axis = direction changes) and chain ratchet (axis = messages within a chain). The Double Ratchet's two-axis structure is the heart of the Signal Protocol.}
+
+\subtree{
+\title{State}
+\pre{\startverb
+record DoubleRatchet {
+  RK          : Bytes^1[32]    // root key, advances on each DH step
+  CKs, CKr    : Bytes^1[32]?   // sending/receiving chain keys
+  Ns, Nr, PN  : u64            // sending#, receiving#, prev-chain-length
+  my_dh       : DH-keypair     // own current
+  their_pub   : Bytes[32]      // peer's last-seen public
+  consumed    : Set<(Bytes, u64)>   // replay-detect
+  cached      : Map<(Bytes, u64), Bytes>   // out-of-order msg keys
+}
+\stopverb}
+}
+
+\subtree{
+\title{Crucial protocol invariant: rotation-on-send-only}
+\p{The first attempted impl rotated DH on BOTH receive (\code{dh1}) AND immediately again (\code{dh2}: generate new my_dh, derive new CKs). This desynced the two parties' root keys after the first ping-pong. Fix: receive does ONLY \code{dh1} (advance RK, derive CKr from peer's new pub + my current priv). The \code{dh2} step (generate new my_dh, derive new CKs from new my_priv + same peer pub) is deferred to the next \code{encrypt()}. \strong{Rotation happens on send, not on receive.} This matches the Signal Double Ratchet spec.}
+\p{The fuzz caught this immediately on the ping-pong property (5/5 fail under buggy impl, 5/5 pass under fixed). The differential-fuzz scaffold is paying off even with a single implementation under test.}
+}
+
+\subtree{
+\title{Effect signatures}
+\pre{\startverb
+effect DR {
+  def encrypt(plaintext: Bytes^1): Envelope
+  def decrypt(env: Envelope^1): Result<Bytes^1, ConsumedCap | InvalidTag>
+}
+
+// encrypt:  if CKs is None → rotate_send (new my_dh, dh2, new CKs)
+//           advance CKs by one step → mk
+//           AEAD-seal with mk
+//
+// decrypt:  parse (their_pub, PN, idx)
+//           if (their_pub, idx) ∈ consumed → ConsumedCap
+//           if their_pub ≠ stored: cache outstanding from old CKr, then
+//                                   on_recv_rotation (dh1 only; CKs := None)
+//           advance CKr to idx (caching skipped keys)
+//           AEAD-open; on success: consumed ∪= {(their_pub, idx)}
+\stopverb}
+}
+
+\subtree{
+\title{Properties (5 total, 2 new)}
+\ol{
+\li{One-direction: N msgs, all decrypt.}
+\li{\strong{Ping-pong}: alternate send/recv, both sides rotate DH on each turn (NEW).}
+\li{\strong{Direction-change distinct}: CKs before direction-change ≠ CKs after (NEW; the post-compromise security gate).}
+\li{Replay across DH: replay-detection survives multiple DH rotations.}
+\li{Tamper-detect.}
+}
+}
+
+\subtree{
+\title{Iter14 first-run result}
+\pre{\startverb
+one-direction       : 5/5 PASS
+ping-pong           : 5/5 PASS
+dir-change distinct : 5/5 PASS
+replay-across-DH    : 5/5 PASS
+tamper-detect       : 5/5 PASS
+
+Total: 25/25  SHAKE consumed: 2745 bytes (from 64-byte QRNG seed)
+\stopverb}
+\p{Two bug-finds caught by the test surface: (1) Bob's initial CKr was None; (2) rotation-on-recv-and-send was doubled. Both classes invisible to iter13's chain-only test — \strong{each new stateful axis adds bug-classes the prior axes couldn't expose}. This is the differential-fuzz scaffold paying off.}
+}
+
+\subtree{
+\title{What the slice proves}
+\ul{
+\li{Two stateful effects (DH-step, chain-step) compose correctly under Effekt-style deep handlers.}
+\li{The design's claim that "state is the type of the handler frame" survives composition.}
+\li{The Granule grade-^1 discipline applies uniformly: RK, CKs, CKr are all consumed and replaced per step; old keys drop to zeroize.}
+\li{The negative-replay property generalizes across DH rotations — receiver's consumed set is keyed on (their_pub, idx), so the same idx under different DH eras is distinct.}
+}
+}
+
+\subtree{
+\title{Iter15 question — and a novelty-curve note}
+\p{Surface coverage so far: sealed-sender envelope, sender-cert, chain ratchet, Double Ratchet (chain ⊕ DH). Remaining big slices: voice split-plane sealed handler, MLS-over-captp TreeKEM, identity registry effect, X3DH initial handshake.}
+\p{\strong{Novelty observation}: iters 1-6 closed the design surface (8 axes). Iters 7-12 validated transport + envelope + cert + scaffold. Iters 13-14 added the stateful crypto core. Each iter still added value, but the surprise-per-iter is monotonically decreasing — the design is converging. Iter15 could be (a) X3DH for the missing handshake half, (b) voice split-plane for a totally orthogonal concern, or (c) PAUSE and consolidate the seven bcf-0064..0069 trees into a single coherent narrative document.}
+\p{Lean (c) for one iter: consolidation produces a higher-leverage artifact than another slice; the slices are well-scoped enough that interpolation is now useful. Then iter16 resumes vertical slices.}
+}

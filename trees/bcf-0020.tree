@@ -9,7 +9,7 @@
 \meta{trit}{+1}
 \meta{band}{beta}
 
-\p{\strong{Claim}: the bci.red subsystem is causally closed — every cause of every event within bci.red is itself within bci.red, given an initial decoded intent from the bci.horse crossover.}
+\p{\strong{Claim}: the bci.red subsystem is causally closed — every cause of every event within bci.red is itself within bci.red, given an initial decoded intent from the bci.place crossover.}
 
 \subtree{\title{Definition of bci.red}
 \p{bci.red is the efferent/activation room of the BCI Factory ([[horse-0001]]). Its defining property: trit #{= +1}, associated with beta burst. A visitor is in bci.red when they \emph{act} on the system ([[horse-0007]]).}
@@ -34,7 +34,7 @@
   \li{\strong{Staking → rebalancing}: red-team GAY staking ([[horse-0007]]) is a function of efferent predictions. The GF(3) auto-rebalancing adjusts red rewards based on the proportion of red vs blue visits — this is an internal economic feedback within the efferent subsystem.}
 }
 
-\p{The critical boundary: \strong{the initial decoded intent enters bci.red from bci.horse} (the crossover, trit 0). This is the one input from outside. Once the intent is inside bci.red, all subsequent causation is internal. The crossover provides the initial condition; bci.red provides the dynamics.}
+\p{The critical boundary: \strong{the initial decoded intent enters bci.red from bci.place} (the crossover, trit 0). This is the one input from outside. Once the intent is inside bci.red, all subsequent causation is internal. The crossover provides the initial condition; bci.red provides the dynamics.}
 }
 
 \subtree{\title{Formal statement}

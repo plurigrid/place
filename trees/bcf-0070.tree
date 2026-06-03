@@ -1,0 +1,84 @@
+\title{Whisper-λ — Overview}
+\taxon{overview}
+\date{2026-05-16}
+\author{eternal-loop-iter15}
+\tag{whisper-lambda}
+\tag{signal-protocol}
+\tag{overview}
+\tag{consolidation}
+
+\p{Canonical entry point for the Whisper-λ design + implementation track. Synthesizes six iter-emitted trees ([[bcf-0064]] through [[bcf-0069]]) into one narrative arc: DESIGN → VALIDATE → IMPLEMENT → COMPOSE.}
+
+\subtree{
+\title{Premise}
+\p{Reimplement the Signal Protocol — voice, reactions, full admin stack — in a brand-new language whose distinguishing claim is that capability discipline, effect handlers, and linear types eliminate whole bug-classes statically that Signal-the-existing-impl catches dynamically.}
+\p{Whisper-λ commits: Effekt-style lexical effect handlers ⊕ Granule grades for key linearity ⊕ OCaml-5 IR target with WASM stack-switching for browser ⊕ libsodium FFI for primitives ⊕ captp/syrup transport substrate.}
+}
+
+\subtree{
+\title{Phase I — Design (iters 1-6)}
+\p{Eight design axes opened and closed in six iterations:}
+\ol{
+\li{Effect substrate → \strong{Effekt-lexical}}
+\li{Linearity → \strong{Granule grades}}
+\li{Handler depth → \strong{mixed} (shallow for primitives, deep for sessions)}
+\li{Transport → \strong{captp+syrup}}
+\li{Group keying → \strong{MLS-over-captp}}
+\li{Verification → \strong{Wycheproof + property-based + Dafny} two-track}
+\li{Voice stack → \strong{split-plane} (native call-setup, sealed libwebrtc for media)}
+\li{Identity → \strong{swissnum-canonical} (phone is a recovery shim)}
+}
+\p{Plus two emergent commits: storage = per-record envelope over captp-sealed-store; reactions = one-shot capability invocation on message swissnum.}
+\p{See: }
+\transclude{bcf-0064}
+}
+
+\subtree{
+\title{Phase II — Validate (iters 7-12)}
+\p{Transport + envelope + scaffold validated against real test vectors before any vertical slice was attempted. Iter9 falsified an early criterion-3 ("bit-identical with libsignal") because Whisper-λ uses GCM-SIV instead of CTR+HMAC by design. Lesson saved: for re-implementations that intentionally diverge, byte-equality is the wrong test; differential property-equivalence is right.}
+\p{Iter10 patched a real spec hole bcf-0065 v1 had: no sender-identity attestation. Sender-cert added.}
+\p{Iter11 introduced QRNG-rooted entropy (qrng-{minus,ergo,plus} MCPs, trit-aligned with the GF(3) session-seed discipline). 128-byte QRNG sample → SHAKE-256 stream for unlimited deterministic bytes still rooted in physical entropy.}
+\p{Iter12 ran trit-stratified fuzz across all three QRNG streams: 18/18 cells perfect — \em{useful negative result} confirming GF(3) trit labels are a naming convention for independent witnesses, not behavioral discriminators.}
+\p{See: }
+\transclude{bcf-0065}
+\transclude{bcf-0066}
+\transclude{bcf-0067}
+}
+
+\subtree{
+\title{Phase III — Implement & Compose (iters 13-14)}
+\p{Iter13: chain ratchet, the first STATEFUL crypto slice. Negative-replay property witnessed 8/8 — the design's claim that "key consumed" is a type-level fact has its concrete dynamic counterpart in working code. 32/32 total across four properties.}
+\p{Iter14: full Double Ratchet (chain ⊕ DH). Composes two stateful effects. Two real bugs caught by the test surface — neither could have surfaced in iter13's chain-only impl. Each new stateful axis adds bug-classes the prior axes couldn't expose: the differential-fuzz scaffold is paying off even with a single implementation under test.}
+\p{Both bugs were spec-relevant: (1) Bob's symmetric init of CKr was missing; (2) DH rotation must happen on send, not on receive — Signal-spec-specific knowledge that the property fuzz caught immediately. 25/25 after fixes.}
+\p{See: }
+\transclude{bcf-0068}
+\transclude{bcf-0069}
+}
+
+\subtree{
+\title{Skill triage — 14 iters, zero swaps, one concept addition}
+\p{Iter1 produced an initial skill triage of 23 most-useful / 23 least-useful / 23 most-uncertain skills from the inventory. Iter2 stress-tested it via sortition derangement (each item randomly reassigned to a different tier; reflection on the adversarial set) and shrunk the ?-tier from 23 to 15.}
+\p{Across all 14 iterations of design + implementation + validation, the locked S-tier (23) and n-tier (23) have not changed. The ?-tier (15) has not lost or gained members. The only material refinement was an iter11 \em{concept addition} — "physical-entropy seeding for differential fuzz" via QRNG MCPs — which did NOT introduce a new skill (no \code{qrng} skill exists in the inventory), only sharpened the rationale for the already-S-tier \code{property-based-testing}.}
+\p{Zero skill swaps across 14 iters of substantive work is strong evidence the iter1-2 triage was right. The exogenous QRNG affordance was the one thing the original triage couldn't have predicted — and even that mapped cleanly onto an existing S-tier slot.}
+}
+
+\subtree{
+\title{Open slices}
+\p{Not yet implemented:}
+\ul{
+\li{X3DH initial handshake (first contact, before any ratchet exists).}
+\li{Voice split-plane sealed handler boundary (sealed handler containment of ambient libwebrtc).}
+\li{MLS-over-captp TreeKEM step (group keying as cap invocations).}
+\li{Registry effect (issuer-pub lookup distinct from sig verify — iter10 marked this as a real gap).}
+\li{Differential-fuzz against an actual libsignal FFI shim (criterion 3' from bcf-0066, deferred since iter11).}
+}
+}
+
+\subtree{
+\title{Novelty curve}
+\p{Iters 1-6: design surface, 8 axes closed (high surprise per iter, large commits).}
+\p{Iters 7-12: validation scaffolding (medium surprise, mostly methodology).}
+\p{Iters 13-14: stateful crypto (medium-high surprise — two real bugs caught).}
+\p{Iter15: consolidation pass (low surprise — this tree).}
+\p{Suggested cadence change: rather than 25-min self-paced wake-ups, drop to weekly review cadence via cloud schedule. The marginal value of each iter is now genuinely lower than the cache-cost of waking; design+impl iteration is past the point where 25min granularity earns its keep.}
+}

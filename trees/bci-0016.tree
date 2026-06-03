@@ -100,7 +100,7 @@ for the Quick-20 to participate in the full trit-tick → helek pipeline.}
       temporal (T3/T4/T5/T6) — inhibition, alpha suppression, afferent decode}
   \li{\strong{bci.red} (+1): Quick-20 covers occipital (O1/O2/Oz) and parietal (P3/P4/Pz)
       — activation, beta burst, SSVEP, efferent motor imagery}
-  \li{\strong{bci.horse} (0): The \em{crossover} channels (C3/C4/Cz) sit at the
+  \li{\strong{bci.place} (0): The \em{crossover} channels (C3/C4/Cz) sit at the
       boundary — sensorimotor cortex where afferent meets efferent}
 }
 

@@ -1,0 +1,150 @@
+\title{Whisper-λ: sealed-sender slice}
+\taxon{implementation}
+\date{2026-05-15}
+\author{eternal-loop}
+\tag{whisper-lambda}
+\tag{sealed-sender}
+\tag{captp}
+\tag{syrup}
+\tag{vertical-slice}
+
+\p{First implementation vertical slice for [[bcf-0064]]. Validates that captp+syrup can carry Signal-style sealed-sender envelopes without requiring X3DH or the Double Ratchet to exist. If this slice doesn't fit, the entire transport choice in bcf-0064 must be revisited.}
+
+\subtree{
+\title{Why this slice first}
+\ul{
+\li{It is \em{the bet}: the design's distinguishing claim is that captp's sealed/sturdy/revocable primitives subsume Signal's hand-rolled sealed-sender envelope mechanism. Either captp gives this for free, or it doesn't.}
+\li{No prerequisite crypto state machine — no ratchet, no X3DH. Just one envelope, one round trip.}
+\li{Failure here is a transport-axis falsification, not a coding slog. We get an early signal on the riskiest assumption.}
+}
+}
+
+\subtree{
+\title{Effect signature sketch (Effekt-flavored pseudosyntax)}
+\pre{\startverb
+effect SealedSender {
+  def seal(payload: Bytes^1, recipient: SwissNum): SealedEnvelope^1
+  def unseal(env: SealedEnvelope^1, my_swiss: SwissNum^1): (SenderSwiss, Bytes^1)
+}
+
+// Grade ^1 = used at most once. The ephemeral sender key inside seal()
+// is grade ^1; it must not leak out of the sealed envelope.
+//
+// The unseal handler is *shallow*: it resumes the caller with the
+// (sender, payload) pair exactly once; no captured continuation lingers.
+
+handler captp_sealed_sender = SealedSender {
+  def seal(payload, recipient) = {
+    let eph = generate_keypair()        // eph.priv : Bytes^1
+    let shared = x25519(eph.priv, recipient.pubkey)
+    let aead_key = hkdf(shared, "ss-aead-v1")
+    let ct = aead_seal(aead_key, payload, AD=eph.pub ++ recipient.swiss)
+    resume(SealedEnvelope { eph_pub: eph.pub, ct: ct })
+    // eph.priv falls out of scope; Granule's grade ≤1 + drop = zeroize
+  }
+  def unseal(env, my_swiss) = {
+    let shared = x25519(my_swiss.priv, env.eph_pub)
+    let aead_key = hkdf(shared, "ss-aead-v1")
+    let payload = aead_open(aead_key, env.ct, AD=env.eph_pub ++ my_swiss.pub)
+    let sender = recover_sender_from_signature(payload)
+    resume((sender, strip_sender_sig(payload)))
+  }
+}
+\stopverb}
+}
+
+\subtree{
+\title{Syrup wire format}
+\p{One record, no schemas required — syrup is self-describing.}
+\pre{\startverb
+sealed-envelope = <record sealed-envelope-v1
+                    <eph-pub Bytes32>
+                    <ct Bytes>>
+\stopverb}
+\p{eph-pub is 32 bytes (X25519). ct is the AEAD ciphertext (AD = eph-pub ++ recipient swissnum). No length prefix needed; syrup's record encoding is self-delimiting.}
+}
+
+\subtree{
+\title{Test vector sources}
+\ul{
+\li{\strong{libsignal-rust} sealed-sender tests (file: \code{signal-protocol/tests/sealed_sender.rs}) — extract the (eph-priv, recipient-priv, plaintext, ciphertext) tuples, re-encode in syrup, expect bit-identical AEAD output for a chosen test vector.}
+\li{Wycheproof X25519+HKDF+AEAD vectors — apply at the primitive level before composing the envelope.}
+\li{Property test: \code{forall msg, recip. unseal(seal(msg, recip)) ≡ (sender, msg)} — under Hypothesis-style generation with Hedgehog-style shrinking.}
+}
+}
+
+\subtree{
+\title{Pass criteria for iter8}
+\ol{
+\li{Wycheproof X25519 + HKDF-SHA256 + AES-GCM-SIV all pass via FFI shim.}
+\li{Syrup encode/decode round-trip property check passes.}
+\li{One libsignal-rust sealed-sender vector decodes bit-identically through the captp_sealed_sender handler.}
+\li{The shallow-handler invariant holds: no captured continuation references the ephemeral private key after seal() returns.}
+}
+\p{If 1+2 pass but 3 fails, the gap is the AD construction or sender-signature framing — recoverable. If 4 fails, the handler discipline is wrong — back to bcf-0064.}
+}
+
+\subtree{
+\title{Skill recruitment (no tier shift)}
+\p{This slice draws from the S-tier locked in iter1: \code{captp}, \code{syrup}, \code{zig-syrup-bci}, \code{wycheproof}, \code{property-based-testing}, \code{constant-time-analysis}, \code{zeroize-audit}. From the iter2-shrunk ?-tier: \code{parametrised-optics-cybernetics} (the seal/unseal pair is a bidirectional optic) and \code{bisimulation-game} (against libsignal-rust as reference).}
+\p{No dropped ?-tier skill was needed. The tier triage from iter1-2 holds under this slice — first falsification check of the triage itself.}
+}
+
+\subtree{
+\title{Iter10 patch — sender-cert spec hole}
+\p{Iter9 audit found bcf-0065 v1 had no story for how a recipient verifies WHO sent a sealed envelope. Patching now.}
+
+\subtree{
+\title{Sender certificate}
+\p{A \code{SenderCert} is issued by the registration handler at device-registration time and re-issued before expiry. It binds a sender swissnum to a public identity key, with a typed expiry.}
+\pre{\startverb
+sender-cert-v1 = <record sender-cert-v1
+                    <sender-swiss Bytes>
+                    <sender-pub Bytes32>      // Ed25519 pub
+                    <issuer Bytes>            // registration handler's swissnum
+                    <expiry-ns u64>           // unix nanos
+                    <sig Bytes64>>            // Ed25519(issuer-priv, body)
+\stopverb}
+}
+
+\subtree{
+\title{Effect signature delta}
+\pre{\startverb
+effect Registry {
+  def known_issuer_pub(): Bytes32   // returns the registration handler's Ed25519 pub
+}
+
+effect SealedSender {
+  def seal(payload: Bytes^1, my_cert: SenderCert, my_id_priv: Bytes^1,
+           recipient: SwissNum): SealedEnvelope^1
+  def unseal(env: SealedEnvelope^1, my_swiss: SwissNum^1)
+           : Result<(SenderCert, Bytes^1)>
+}
+
+// In seal():  inner = encode_record("authed-payload", [my_cert, sign(my_id_priv, payload), payload])
+//             ct = aead_seal(key, inner, AD = eph_pub ++ recipient.swiss)
+// In unseal(): decrypt → parse inner → verify sig under cert.sender_pub
+//                                   → verify cert.sig under known_issuer_pub
+//                                   → verify cert.expiry > now()
+\stopverb}
+\p{The cert lives \em{inside} the AEAD ciphertext, not as a separate envelope field. This binds the cert to the recipient (via AEAD's AD = recipient.swiss) and to the payload (same AEAD). Matches Signal's choice for the same reason.}
+}
+
+\subtree{
+\title{Sender-cert verification — pass criteria delta}
+\p{Replace iter7's criterion 3 (bit-identical libsignal vector — falsified in iter9) with:}
+\ol{
+\li{\strong{3a (validity).} For a freshly issued cert with expiry in the future, \code{unseal} returns Ok(cert, msg) and the cert verifies under \code{known_issuer_pub()}.}
+\li{\strong{3b (expiry).} For a cert with expiry-ns in the past, \code{unseal} returns Err(\code{CertExpired}). Test by constructing a cert with expiry = now - 1ns.}
+\li{\strong{3c (tampered cert sig).} For a cert with its sig field flipped one bit, \code{unseal} returns Err(\code{CertSigInvalid}).}
+\li{\strong{3d (wrong issuer).} For a cert signed by an unknown Ed25519 key, \code{unseal} returns Err(\code{UnknownIssuer}).}
+\li{\strong{3' (differential property).} \code{forall msg, recipient, valid_cert: unseal(seal(msg, valid_cert, sender_priv, recipient)) ≡ Ok(valid_cert, msg)}. Under Hypothesis-style generation.}
+}
+\p{Criteria 3a-d are runnable in iter11 against the Python sketch from iter8 + this cert addition. Criterion 3' is the differential-fuzz that needs both Whisper-λ and a libsignal FFI shim; defer to iter12 or later.}
+}
+
+\subtree{
+\title{Skill recruitment delta}
+\p{Sender-cert work draws additionally from S-tier: \code{implementing-digital-signatures-with-ed25519} (already locked S in iter1), \code{implementing-jwt-signing-and-verification} (S, for the cert-with-expiry pattern). No new tier shifts.}
+}
+}

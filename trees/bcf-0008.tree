@@ -1,23 +1,25 @@
-\title{Economics}
+\title{Possible-world Economics}
 \taxon{document}
 \author{monaduck1069}
 \date{2026-03-29}
 \tag{economics}
 \tag{access}
 
+\p{This is an aspirational economics page. It describes one possible world for voting and planning; it is not the current operating policy for every recording session, device, or dataset.}
+
 \p{The marginal cost of letting one more person see their own brain activity should approach zero. Every dollar spent on a BCI that only one person can use is a dollar wasted. Every hour spent on software that only runs on one vendor's hardware is an hour wasted.}
 
-\p{The factory model means: build it once, replicate it everywhere, keep the cost at $10/unit and drive it lower.}
+\p{The factory model possible world means: build it once, replicate it everywhere, and drive the cost down while keeping repairability visible.}
 
-\subtree{\title{Unit Economics}
+\subtree{\title{Aspirational Unit Economics}
 \ul{
   \li{ADS1299 chip: ~$25}
-  \li{HackEEG 8-channel board BOM: ~$10 in passives + MCU}
+  \li{ADS1299-class open EEG reference boards: low-cost passives + MCU, not current inventory}
   \li{Full DIY fNIRS array: <$800 for whole-cortex coverage}
   \li{PLUX Pioneer Kit (commercial fNIRS): ~EUR 2,450}
   \li{GoPro 6-cam rig: existing consumer hardware}
   \li{Apple Watch (autonomic): participant's own device, $0 marginal}
 }}
 
-\subtree{\title{Data Economics}
-\p{Communal recording sessions produce shared datasets by default. No data silo. No per-subject licensing. The RentAHuman bounty model pays participants to contribute motor imagery, SSVEP, and P300 data to open datasets. Data flows from person to commons, not person to company. GAY token accrual model: [[horse-0006]], [[horse-0007]]. Open games for economic coordination: [[bci-0006]].}}
+\subtree{\title{Aspirational Data Economics}
+\p{In this possible world, communal recording sessions can produce shared datasets by explicit consent. No data silo. No per-subject licensing. The RentAHuman bounty model pays participants to contribute motor imagery, SSVEP, and P300 data to open datasets. Data flows from person to commons, not person to company. GAY token accrual model: [[horse-0006]], [[horse-0007]]. Open games for economic coordination: [[bci-0006]].}}

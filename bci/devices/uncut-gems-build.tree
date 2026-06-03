@@ -1,0 +1,27 @@
+\title{Uncut Gem NV magnetometer build state}
+\taxon{device}
+\tag{uncut-gems}
+\tag{quantum}
+\tag{magnetometer}
+\tag{latex-diagram}
+\tag{hardware-flow}
+\tag{state-machine}
+\tag{counterfactual-fixed-board}
+\tag{dense-proof-matrix}
+
+\p{Uncut Gem is modeled as a dense board-flow artifact for the Quantum Village NV-center magnetometer. Companion PDF/source: \code{p/place/bci/devices/uncut-gems-state-machine.tex}.}
+
+\p{Verdict: identity is fixed as an NV diamond magnetometer, not EEG/fNIRS/BCI; local build is partial; open blockers are wrong stocked SMA for J1, unverified U2/U3 RF amp population, unproven laser/diamond/antenna/photodiode geometry, and unproven ODMR trace; success requires rail, boot, PLL, RF, optomechanical, detector, trace, and optional INA333 comparison proofs.}
+
+\ul{
+  \li{Whole-device flow: B0 safe off -> B1 power -> B2 ESP32/USB -> B3 PLL -> B4 RF gain -> B5 optomechanics -> B6 photodiode -> B7 TIA/ADC -> B8 trace QA, with reversible B9 INA333 branch and failed-proof rollback to B0.}
+  \li{Actual board states: B0 no powered emission; B1 stable 5 V/3.3 V rails; B2 boot log and OLED alive; B3 PLL lock or known output; B4 correct SMA, RF continuity, sane bias; B5 visible laser/diamond/antenna alignment; B6 dark/light contrast; B7 unsaturated ADC baseline; B8 repeatable ODMR dip candidate; B9 lower-noise rework with no RF regression.}
+  \li{Counterfactual fixed board: F0 observed SMA/RF/acquisition faults; F1 connector correction; F2 locked RF amplifier/bias/matching topology; F3 integrated quiet analog front end; F4 partitioned RF, laser, analog return, and detector layout; F5 J6/TP1/TP2/MUX_OUT/RF DNP debug contract; F6 optomechanical constraints encoded in board/mechanical assembly; F7 released main PCB reaches B8 without B9.}
+  \li{BOM/build gates: stocked vertical SMA is not J1; U2/U3 require inspection before RF claim; laser/diamond/antenna/photodiode must co-locate before detector claims; INA333 daughterboard is optional reversible acquisition isolation, not a fixed-board substitute.}
+  \li{Proof checklist: identity, buildability, RF generation, optical/detector path, ODMR claim, and INA333 improvement each require evidence and roll back to B0/B1/B4/B5/B6/B7/B9 as appropriate.}
+  \li{Evidence: \ref{bcf-0031}, \ref{bcf-0036}, \ref{scan-0087}, upstream \code{QuantumVillage/UncutGem}, local gerber archive \code{p/place/assets/gerbers/opennirscap-v2/uncutgem_gerbers.zip}, rendered PDF at \code{p/place/build/latex/uncut-gems/uncut-gems-state-machine.pdf}, and this dense tree.}
+}
+
+\p{Safety: Uncut Gem is a laser and RF instrument, not a BCI. Eye safety, RF handling, exposed-power work, and detector saturation must be verified before powered experimentation.}
+
+\p{Dense criterion: a state advances only when its exit proof exists; failed proof returns to the nearest upstream board state rather than being hidden in firmware or prose.}

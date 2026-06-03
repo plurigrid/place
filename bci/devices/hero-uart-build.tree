@@ -1,0 +1,24 @@
+\title{Hero Pill Dispenser UART build state}
+\taxon{device}
+\tag{hero-uart}
+\tag{uart}
+\tag{pill-dispenser}
+\tag{cc3220}
+\tag{esp32}
+\tag{hardware-flow}
+\tag{state-machine}
+\tag{counterfactual-fixed-board}
+\tag{dense-proof-matrix}
+\tag{firmware-extraction}
+\p{Hero is modeled as a dense hardware-interface state artifact for the Hero Smart Pill Dispenser, Xiamen Zayata M115 and M111 with FCC IDs 2AN4DM115 and 2AN4DM111. Primary MCU is the TI CC3220 SimpleLink Cortex-M4 on M115 and M111, with ESP32 on sibling variants. UART debug pads bridge the hardware plane to the firmware and console plane. Companion PDF source: \code{p/place/bci/devices/hero-uart-state-machine.tex}.}
+\p{Verdict: identity is fixed as a mains-powered consumer pill dispenser carrying an unpopulated UART debug header; the local build is at access stage; open blockers are unconfirmed pad identification, unproven 3.3 V level match, and an unverified hero shell response; success requires pad-ID, joint-quality, strain-relief, null-modem-wiring, link-parameter, and console-response proofs.}
+\ul{
+\li{Whole-device flow: U0 power-safe stop to U1 locate pads to U2 meter audit to U3 solder three to U4 strain relief to U5 cross-wire to U6 terminal to U7 console to U8 firmware extract, with a fault edge from a garbled or silent U7 back to U2.}
+\li{Actual board states: U0 unit unplugged from mains and no serial adapter attached; U1 candidate TX, RX, and GND pads located on silkscreen and traced; U2 multimeter audit of pad continuity and idle levels; U3 three clean solder joints; U4 mechanical strain relief on the tap; U5 null-modem cross-wiring at 3.3 V with device TX to adapter RX, device RX to adapter TX, common GND, and no VCC; U6 terminal at 115200 8N1; U7 a responding hero shell prompt; U8 captured boot logs and a firmware-extraction vector.}
+\li{Counterfactual fixed access: H0 names the faults of pad ambiguity and link silence; H1 confirms the pad map against the M115 and M111 layouts; H2 locks the 3.3 V level and null-modem orientation; H3 documents the adapter, baud, and framing contract; H4 reaches a repeatable hero shell session; H5 releases a firmware image and console transcript reached without rework.}
+\li{Hard safety rule: the dispenser is mains-powered by its own AC adapter; never wire VCC to the serial adapter, since back-feeding power damages the MCU and the adapter; only TX, RX, and GND are tapped.}
+\li{BOM and build gates: a 3.3 V USB-UART adapter, three fine wires, and flux are required; pad identity must be confirmed before soldering; level and orientation must be confirmed before any powered connection.}
+\li{Proof checklist: identity, pad identification, joint quality, wiring orientation, link parameters, and console response each require evidence and roll back to the nearest upstream state rather than being assumed.}
+\li{Evidence: FCC grantee filings for 2AN4DM115 and 2AN4DM111, the Hero device teardown, upstream firmware references, the companion tex at \code{p/place/bci/devices/hero-uart-state-machine.tex}, and this dense tree.}
+}
+\p{Dense criterion: a state advances only when its exit proof exists; a failed proof returns to the nearest upstream hardware state rather than being hidden in firmware or prose.}

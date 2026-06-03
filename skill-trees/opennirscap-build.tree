@@ -157,7 +157,7 @@
 }
 
 \subtree{
-\title{bci.horse Integration}
+\title{bci.place Integration}
 \ul{
 \li{Tree: bcf-0036 in plurigrid/horse}
 \li{Inventory ID: planned, not yet ordered}
@@ -195,7 +195,7 @@
 \subtree{
 \title{Related Skills}
 \ul{
-\li{\code{\startverb forester\stopverb} — bci.horse forest publishing (bcf-0036 is this device's tree)}
+\li{\code{\startverb forester\stopverb} — bci.place forest publishing (bcf-0036 is this device's tree)}
 \li{\code{\startverb reverse-engineering\stopverb} — MCP servers for Ghidra/radare2/IDA if binary analysis needed}
 \li{\code{\startverb binary-triage\stopverb} — systematic binary survey workflow}
 \li{\code{\startverb performing-firmware-extraction-with-binwalk\stopverb} — firmware extraction from embedded devices}
@@ -257,7 +257,7 @@ PLUX has emitter+detector in one housing = short path = scalp oximetry. NIRSport
 }
 
 \subtree{
-\title{The strategy for bci.horse}
+\title{The strategy for bci.place}
 \pre{\startverb
 Build 3x OpenNIRScap ($1,257) as the walk-up fNIRS fleet. If/when a commercial reference is acquired (Artinis Brite Lite ~$6k or Cortivision Spectrum C23), use it to validate OpenNIRScap signal quality. The AFE4404 in the earlier DIY spec (bcf-0012) uses the same modified Beer-Lambert deconvolution as NIRx's proprietary pipeline — the physics is identical, only the engineering precision differs.
 \stopverb}
@@ -277,8 +277,8 @@ Build 3x OpenNIRScap ($1,257) as the walk-up fNIRS fleet. If/when a commercial r
 \li{Artinis Brite Lite: https://www.artinis.com/brite-lite}
 \li{Cortivision Spectrum C23: https://www.cortivision.com/spectrum-23/}
 \li{PLUX fNIRS sensor datasheet: https://support.pluxbiosignals.com/wp-content/uploads/2021/10/biosignalsplux-FNIRS-Datasheet.pdf}
-\li{bci.horse source-detector physics tree: bcf-0034 in plurigrid/horse}
-\li{bci.horse fNIRS comparison: bcf-0032 (NIRSport), bcf-0035 (Brite Lite), bcf-0036 (OpenNIRScap)}
+\li{bci.place source-detector physics tree: bcf-0034 in plurigrid/horse}
+\li{bci.place fNIRS comparison: bcf-0032 (NIRSport), bcf-0035 (Brite Lite), bcf-0036 (OpenNIRScap)}
 }
 }
 }

@@ -11,7 +11,7 @@
 
 \p{\strong{The trit field #{\mathbb{F}_3}}:}
 \ul{
-  \li{Three rooms: bci.blue (-1), bci.red (+1), bci.horse (0). Sum = 0 in #{\mathbb{F}_3}.}
+  \li{Three rooms: bci.blue (-1), bci.red (+1), bci.place (0). Sum = 0 in #{\mathbb{F}_3}.}
   \li{Four stages: each preserves the trit sum modulo 3.}
   \li{SplitMix64 deterministic hash maps names to colors in #{\mathbb{F}_3}-balanced triads.}
 }

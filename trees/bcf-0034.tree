@@ -19,7 +19,7 @@
 }
 \p{Per Strangman et al. (PLOS ONE 2013): for every 10 mm increase in source-detector separation up to ~45 mm, gray matter sensitivity increases ~4\%. Depth sensitivity decreases exponentially: S = 0.75 * 0.85^depth. The standard research separation is 30 mm.}}
 
-\subtree{\title{Implications for the bci.horse stack}
+\subtree{\title{Implications for bci.place fNIRS options}
 \taxon{remark}
 
 \subtree{\title{PLUX biosignalsplux fNIRS sensor (bcf-0011, bcf-0033)}

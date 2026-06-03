@@ -6,7 +6,7 @@
 \tag{safety}
 \tag{disclaimer}
 
-\p{The following disclaimer must be visible at the self-serve station (bcf-0030) and on the bci.horse landing page.}
+\p{The following disclaimer must be visible at the self-serve station (bcf-0030) and on the bci.place landing page.}
 
 \subtree{\title{Disclaimer Text}
 
@@ -26,5 +26,5 @@
 
 \p{If you have a neurological condition, seizure disorder, or implanted device (pacemaker, cochlear implant, deep brain stimulator), consult your physician before using EEG equipment.}
 
-\p{Questions: hello@bcifactory.io}
+\p{Questions: yuzu@plurigrid.com}
 }

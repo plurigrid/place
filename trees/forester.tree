@@ -90,7 +90,7 @@
 
 \subtree{
 \title{skill2tree.hy Conversion Lessons (2026-04-04)}
-\p{Bugs fixed during the session that converted 2053 skills to .tree files for bci.horse:}
+\p{Bugs fixed during the session that converted 2053 skills to .tree files for bci.place:}
 
 \ol{
 \li{Path.parent and Path.name are properties, not methods. In Hy, use dot-attribute syntax, not method-call syntax.}
@@ -108,7 +108,7 @@
 }
 
 \subtree{
-\title{bci.horse Repo}
+\title{bci.place Repo}
 \p{plurigrid/horse on GitHub. CI via nix build with texliveFull. Deploy to Cloudflare Pages.}
 
 \p{Tree prefixes: bcf- for BCI Factory content, skill-trees/ for converted skills.}

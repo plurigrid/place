@@ -69,7 +69,7 @@ where #{F} is the Uhlmann fidelity.}
 quantum devices have stalks in #{(\mathcal{H}, d_B)}. The restriction map from quantum
 to classical is the \strong{partial trace} — decoherence collapses the density matrix
 to a classical color. The three rooms ([[horse-0001]]) map: bci.blue = ground state
-#{|0\rangle}, bci.red = excited state #{|1\rangle}, bci.horse = superposition
+#{|0\rangle}, bci.red = excited state #{|1\rangle}, bci.place = superposition
 #{α|0\rangle + β|1\rangle} — the shimmer is literal quantum coherence.}
 
 \p{Practical timeline: quantum dot single-photon sources at room temperature exist
