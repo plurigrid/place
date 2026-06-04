@@ -25,7 +25,6 @@ before casting a vote.}
 
 \table{
   \tr{\th{ID} \th{Device} \th{Status} \th{Cost} \th{Modality} \th{Channels} \th{Sim params} \th{URL}}
-  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{$419} \td{fNIRS} \td{24} \td{infect:3,saturation:50,stim:0,alpha_suppress:0.4} \td{\code{https://opennirscap.github.io}}}
   \tr{\td{DEV-EEG-003} \td{Muse S (Gen 2)} \td{want} \td{$400} \td{dry EEG} \td{4} \td{infect:1,saturation:20,stim:0,alpha_suppress:0.7} \td{\code{https://choosemuse.com}}}
   \tr{\td{DEV-USTIM-001} \td{Focused ultrasound neuromod rig} \td{aspirational} \td{unfunded} \td{tFUS} \td{1} \td{infect:2,saturation:80,stim:1,alpha_suppress:0.1} \td{n/a}}
   \tr{\td{DEV-MAG-004} \td{QuSpin QZFM magnetometer} \td{want} \td{$5000} \td{OPM-MEG} \td{1} \td{infect:1,saturation:40,stim:0,alpha_suppress:0.2} \td{\code{https://quspin.com}}}
@@ -39,9 +38,9 @@ before casting a vote.}
 \table{
   \tr{\th{ID} \th{Device} \th{Status} \th{Location} \th{Notes}}
   \tr{\td{DEV-EEG-001} \td{OpenBCI Cyton + Daisy} \td{own} \td{222 Dore} \td{Verify assembly and channel count}}
-  \tr{\td{DEV-EEG-002} \td{Portable wet EEG, 4 sensors} \td{needs-repair} \td{222 Dore} \td{Gel available}}
-  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{building} \td{222 Dore} \td{Partially assembled}}
-  \tr{\td{DEV-MAG-001} \td{Quantum GEM / Uncut Gem} \td{building} \td{222 Dore} \td{Partially assembled; verify exact board state}}
+  \tr{\td{DEV-EEG-002} \td{Portable wet EEG, 4 sensors} \td{own} \td{222 Dore} \td{Fixed (ref 36450); gel available}}
+  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{own} \td{222 Dore} \td{Built (ref 36628)}}
+  \tr{\td{DEV-MAG-001} \td{Quantum GEM / Uncut Gem} \td{own} \td{222 Dore} \td{Built (ref 36628)}}
   \tr{\td{DEV-ENT-001} \td{Entropy sensors} \td{own} \td{222 Dore} \td{Three units reported}}
   \tr{\td{DEV-EEG-005} \td{Cognitronix/Cognionics 64/72 channel EEG} \td{loaned-to-us} \td{222 Dore} \td{Verify exact make, channel count, and loan terms}}
   \tr{\td{DEV-XR-001} \td{XREAL glasses (x3)} \td{own} \td{222 Dore} \td{Verify current use}}
@@ -81,6 +80,7 @@ before casting a vote.}
 \table{
   \tr{\th{ID} \th{Device} \th{Status} \th{Reason}}
   \tr{\td{DEV-FNIRS-002} \td{NIRx Brite 8ch fNIRS} \td{dont-want} \td{Optode spacing insufficient to penetrate scalp to cortex}}
+\tr{\td{DEV-FNIRS-003} \td{PLUX biosignalsplux fNIRS} \td{dont-want} \td{Rejected (ref 36453); not desired or planned anywhere. fNIRS need is met by built OpenNIRScap DEV-FNIRS-001}}
 }
 }
 
