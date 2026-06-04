@@ -5,4 +5,4 @@
 \tag{fnirs}
 \tag{hardware}
 \meta{modality}{hemodynamic}
-\p{fNIRS hemodynamic acquisition. The canonical built device is the OpenNIRScap DIY stack: see \ref{bcf-0036} for the device and [[openfnirs-build]] for build state; current possession is tracked in [[bcf-devices]]. PLUX biosignalsplux fNIRS was rejected (ref 36453) and is not planned.}
+\p{fNIRS hemodynamic acquisition. The canonical built device is the OpenNIRScap DIY stack: see \ref{bcf-0036} for the device and [[openfnirs-build]] for build state; current possession is tracked in [[bcf-devices]]. PLUX biosignalsplux fNIRS was rejected and is not planned.}

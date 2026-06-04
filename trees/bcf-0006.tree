@@ -62,4 +62,4 @@
 \subtree{\title{PLUX biosignalsplux fNIRS — rejected}
 \taxon{reference}
 \meta{status}{dont-want}
-\p{PLUX biosignalsplux fNIRS (Pioneer Kit and 8-channel custom build) is rejected (ref 36453) and is not desired or planned. The fNIRS need is met by the built OpenNIRScap stack; see \ref{bcf-0036} and [[bcf-devices]].}}
+\p{PLUX biosignalsplux fNIRS (Pioneer Kit and 8-channel custom build) is rejected and is not desired or planned. The fNIRS need is met by the built OpenNIRScap stack; see \ref{bcf-0036} and [[bcf-devices]].}}
