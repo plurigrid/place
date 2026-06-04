@@ -12,7 +12,6 @@
 \p{Contact: yuzu@plurigrid.com. Current public direction: \code{https://bci.place}.}
 
 \subtree{\title{Current Map}
-\transclude{bcf-devices}
 \transclude{bcf-0006}
 \transclude{bcf-0004}
 \transclude{bcf-0037}
