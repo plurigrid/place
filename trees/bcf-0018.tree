@@ -8,11 +8,13 @@
 \tag{flick}
 \tag{gf3}
 
+\p{Status: project-owned derivation to validate against the current trit-tick and brainfloj implementation before treating it as current software documentation.}
+
 \p{The trit-tick is not a free parameter. It is forced by three constraints already present in the forest.}
 
 \subtree{\title{Constraint 1: GF(3) conservation (from [[horse-0003]], [[bci-stage-4]])}
 \p{The pipeline's end-to-end invariant ([[horse-0003]], [[bci-stage-4]]) requires: ##{\sum_{i} \mathrm{trit}(U_i) \equiv 0 \pmod{3}} Every temporal window in which trits are summed must divide evenly into three phases. If the clock quantum does not divide by 3, the conservation check has a rounding residue and the invariant fails at the boundary.}
-\p{\strong{Requirement}: the base time unit #{q} must satisfy #{f_s / q \equiv 0 \pmod{3}} for every sample rate #{f_s} in the stack.}
+\p{\strong{Requirement}: the base time unit #{q} must satisfy #{f_s / q \equiv 0 \pmod{3}} for every sample rate in the modeled synchronization kit.}
 }
 
 \subtree{\title{Constraint 2: multimedia compatibility (the flick)}
@@ -22,9 +24,9 @@
 }
 
 \subtree{\title{Constraint 3: BCI sample rates}
-\p{From the hardware inventory ([[bcf-0010]], [[bcf-0011]], [[bcf-0012]], [[bcf-0013]]):}
+\p{From current and aspirational device references ([[bcf-0010]], [[bcf-0011]], [[bcf-0012]], [[bcf-0013]]):}
 \ul{
-  \li{EEG (Cyton/HackEEG): 250 Hz, 500 Hz ([[bcf-0010]])}
+  \li{EEG (Cyton and ADS1299-class references): 250 Hz, 500 Hz ([[bcf-0010]])}
   \li{fNIRS: 10 Hz ([[bcf-0011]], [[bcf-0012]])}
   \li{Eye tracking: 1000 Hz effective ([[bcf-0013]])}
   \li{Face EMG: 1000 Hz ([[bcf-0015]])}
@@ -58,5 +60,5 @@
 }
 
 \subtree{\title{Result}
-\p{The trit-tick is forced: ##{\boxed{1 \text{ trit-tick} = \tfrac{1}{5} \text{ flick} = \tfrac{1}{3{,}528{,}000{,}000} \text{ s} \approx 0.2834 \text{ ns}}} It is the GCD-compatible quantum of the GF(3) conservation law ([[horse-0003]]) with the full BCI hardware stack ([[bcf-0003]]) and the flick multimedia standard (\ref{bib-flick}). The same conservation law governs the triadic structure of supertile levels and SMEC embedding training phases ([[bcf-0027]]).}
+\p{The trit-tick is forced: ##{\boxed{1 \text{ trit-tick} = \tfrac{1}{5} \text{ flick} = \tfrac{1}{3{,}528{,}000{,}000} \text{ s} \approx 0.2834 \text{ ns}}} It is the GCD-compatible quantum of the GF(3) conservation law ([[horse-0003]]) with the modeled BCI synchronization kit ([[bcf-0003]]) and the flick multimedia standard (\ref{bib-flick}). The same conservation law governs the triadic structure of supertile levels and SMEC embedding training phases ([[bcf-0027]]).}
 }

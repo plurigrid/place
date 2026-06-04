@@ -31,7 +31,7 @@
 \subtree{
 \title{worlds/bcifactory.org/ — SvelteKit Site}
 
-\p{SvelteKit 5 web presence. Three.js interactive floor plan of the 250 Dore expansion. Hardware comparison table. Responsive layout. The public face of BCI Factory at \code{bcifactory.org}.}
+\p{SvelteKit 5 site stub and design resource. Three.js interactive floor plan of the 250 Dore expansion. Hardware comparison table. Responsive layout. Keep this as a worlds/ resource and design direction, not the current public source of truth.}
 }
 
 \subtree{

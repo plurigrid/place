@@ -1,0 +1,9 @@
+\title{250 Dore — freehold purchase}
+\taxon{inventory-item}
+\meta{category}{bcf-0004}
+\meta{status}{want}
+\meta{cost-range}{?-? USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-250-dore-purchase-sim}
+
+\p{Long-horizon: Factory owns its space.}

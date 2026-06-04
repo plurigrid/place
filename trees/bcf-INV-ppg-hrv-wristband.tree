@@ -1,0 +1,9 @@
+\title{PPG HRV wristband}
+\taxon{inventory-item}
+\meta{category}{bcf-0014}
+\meta{status}{want}
+\meta{cost-range}{50-300 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-ppg-hrv-wristband-sim}
+
+\p{Consumer wearable.}

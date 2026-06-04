@@ -24,7 +24,7 @@
 \p{Brain signals made visible in real-time, projected into shared space. Not trapped on one person's laptop. When someone's motor cortex activates, the room sees it. EEG topomaps on the wall. ERPs on the table. The signal belongs to the space, not the screen.}}
 
 \subtree{\title{Agency}
-\p{$10/unit open hardware. HackEEG: open source, ADS1299-based, stackable to 32 channels. The bill of materials is public. The schematics are public. The firmware is public. Agency means the hardware exists at a price point where anyone can modify it, break it, and rebuild it.}}
+\p{Open, repairable hardware is the target. ADS1299-class projects such as HackEEG remain useful references, but they are not current inventory. Agency means the hardware path is cheap enough for people to modify it, break it, rebuild it, and compare alternatives against the devices actually on the bench.}}
 
 \subtree{\title{Physical Reality}
 \p{Actual electrodes on actual heads. Conductive gel on skin. Impedance checks with ohm meters. Photons from LEDs entering cortical tissue and scattering off hemoglobin. This is wet science. The artifact is not a dashboard — it is a person wearing a device in a room with other people.}}

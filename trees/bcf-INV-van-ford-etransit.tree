@@ -1,0 +1,9 @@
+\title{Ford E-Transit AWD}
+\taxon{inventory-item}
+\meta{category}{bcf-0004}
+\meta{status}{want}
+\meta{cost-range}{50000-60000 USD}
+\meta{url}{https://www.ford.com/commercial-trucks/e-transit/}
+\meta{sim-params-addr}{bcf-INV-van-ford-etransit-sim}
+
+\p{Cargo van, 126mi EPA, needs gennys/solar at BM.}

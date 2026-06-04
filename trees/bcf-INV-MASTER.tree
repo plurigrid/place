@@ -1,0 +1,45 @@
+\title{BCI Factory Inventory Ledger (Master)}
+\taxon{register}
+\author{monaduck1069}
+\date{2026-04-19}
+\import{macros}
+\meta{description}{Canonical per-item ledger for BCI Factory candidate objects. Feeds bci.red/bci.blue daily rotation pool.}
+
+\subtree{\title{Mission}
+\p{The BCI Factory is fundamentally a place where people come to prove and test their theories in a safe environment. This ledger catalogs the objects that make that possible: devices to record from and write to brains, services like IRB oversight, infrastructure like the 250 Dore space and a portable EV van, and a loaner-parts pool that any visitor can borrow from.}
+}
+
+\p{Status vocabulary: own | building | on-order | want | lent-to-us | lent-from-us | dont-want | defer | ? (pending).}
+
+\p{Rotation rule: at 00:00 UTC the vote-agg Worker picks 2 items from status=want whose cost ranges overlap within 1.5x. Today's pair is at GET votes.bci.horse/items (or OSC_ENDPOINT/items). Vote payload is {pair_id, side, final_state_hash, seed} where final_state_hash commits to the WASM gain-of-function simulation state the voter reached — vote endorses a WORLD, not just a purchase.}
+
+\subtree{\title{Ledger entries}
+\transclude{bcf-INV-openbci-cyton-ultracortex}
+\transclude{bcf-INV-dsi-24}
+\transclude{bcf-INV-hackeeg}
+\transclude{bcf-INV-openbci-daisy}
+\transclude{bcf-INV-second-cyton-daisy-rig}
+\transclude{bcf-INV-nirx-nirsport-2}
+\transclude{bcf-INV-artinis-brite-lite-mkiv}
+\transclude{bcf-INV-opennirscap}
+\transclude{bcf-INV-aSee-evs}
+\transclude{bcf-INV-nv-diamond-mag}
+\transclude{bcf-INV-fus-s1-a1}
+\transclude{bcf-INV-fus-olfactory}
+\transclude{bcf-INV-tongue-electrodes}
+\transclude{bcf-INV-vibrotactile-haptic}
+\transclude{bcf-INV-muse-s-gen2}
+\transclude{bcf-INV-cognionics-hd72}
+\transclude{bcf-INV-ppg-hrv-wristband}
+\transclude{bcf-INV-braille-thread}
+\transclude{bcf-INV-solutions-irb-year}
+\transclude{bcf-INV-liability-insurance}
+\transclude{bcf-INV-van-vw-id-buzz}
+\transclude{bcf-INV-van-ford-etransit}
+\transclude{bcf-INV-250-dore-month}
+\transclude{bcf-INV-250-dore-purchase}
+\transclude{bcf-INV-faraday-cage-250-dore}
+\transclude{bcf-INV-electrode-supplies}
+\transclude{bcf-INV-domain-renewals-10yr}
+\transclude{bcf-INV-loaner-parts-pool}
+}

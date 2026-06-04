@@ -64,7 +64,7 @@ Cognionics HD-72 (USB HID)
       -> pylsl capture to CSV
         -> nanoclj-zig (brainfloj-read path 64 1)
           -> DuckDB ies_messages.duckdb (interactions table)
-            -> bci.horse transclusion (this tree)
+            -> bci.place transclusion (this tree)
 \stopverb}
 }
 

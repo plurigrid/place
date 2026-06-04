@@ -1,0 +1,9 @@
+\title{Conductive gel + paste + electrodes}
+\taxon{inventory-item}
+\meta{category}{bcf-0010}
+\meta{status}{want}
+\meta{cost-range}{100-500 USD/month}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-electrode-supplies-sim}
+
+\p{Consumable per-session inventory.}

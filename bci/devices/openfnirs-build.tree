@@ -1,0 +1,34 @@
+\title{OpenFNIRS build state}
+\taxon{device}
+\tag{openfnirs}
+\tag{fnirs}
+\tag{eeg}
+\tag{software}
+\tag{latex-diagram}
+\tag{hardware-flow}
+\tag{state-machine}
+\tag{counterfactual-fixed-board}
+\tag{dense-proof-matrix}
+\tag{exopriors}
+\tag{multiplayer-bci}
+
+\p{\strong{Status: BUILT} — 2026-06.}
+\p{OpenFNIRS is modeled as a dense fNIRS board-flow artifact spanning sensor modules, ECU, ST-LINK adapter, cap/cables, STM32 firmware, Python host, and the fNIRS+EEG multiplayer exoprior layer. Companion PDF/source: \code{p/place/bci/devices/openfnirs-state-machine.tex}.}
+
+\p{Verdict: identity is fixed as an open, non-invasive fNIRS stack; local build is partial; open blockers are five-of-eight J1 connectors, unknown SW1 fit, unknown TMUX population, and incomplete ST-LINK adapter headers; success requires connector, analog, power, mux, firmware, USB frame, host MBLL/CBSI, cap-fit, optical, and isolation proofs.}
+
+\ul{
+  \li{Whole-stack flow: N0 safe stop -> N1 inventory -> N2 sensor J1 -> N3 sensor analog -> N4 ECU power/USB -> N5 SWD/adapter -> N6 mux/header map -> N7 emit 660/940 -> N8 detect -> N9 USB CDC -> N10 host MBLL/CBSI -> N11 cap/safety -> N12 release QA; failed release proof rolls back to N0.}
+  \li{Actual board states: N0 bench-only safe stop; N1 population map; N2 eight known J1 orientations; N3 dark/light sensor response; N4 3.3 V, reset, USB proof; N5 fresh flash without improvised wires; N6 mux truth table plus ADC response; N7 LED current/optical bound; N8 non-saturated ADC samples; N9 serial frame log; N10 controlled plots/files; N11 safety checklist; N12 full evidence bundle.}
+  \li{Counterfactual fixed stack: CF0 blockers named; CF1 all sensors populated and mapped; CF2 C3/R1/R2 and analog behavior locked; CF3 ECU power/reset/USB footprint-correct; CF4 mux/channel order matches BOM, silkscreen, and firmware; CF5 programming path complete; CF6 USB frame contract names channel, wavelength, timing, scale, and cap position; CF7 human-use gate explicit; CF8 released dataset stack.}
+  \li{Disentangled fNIRS+EEG exoprior model: EEG projects fast intent/attention/artifact evidence; fNIRS projects slow workload, fatigue, prefrontal engagement, recovery, and group-readiness evidence; behavior and world state separate trait, task, role, and social metadata.}
+  \li{Exoprior counterfactuals: delayed/shuffled EEG should collapse fast action confidence; delayed/shuffled fNIRS should degrade pacing/trust priors, not controls; swapped-player tests identity leakage; hidden social state tests metadata leakage; injected motion/contact/light artifacts must route to artifact state rather than cognition.}
+  \li{Fusion rule: fit \code{P(action | EEG, world)} and \code{P(capacity | fNIRS, behavior, world)} separately; late-fuse derived latents only; released multiplayer tokens are intent confidence, workload, fatigue trend, readiness, role, objective pressure, trust, and artifact state.}
+  \li{BOM/build gates: sensor boards require eight J1 total and verified C3/R1/R2; ECU requires U3 rail, J2 enumeration, and SW1 fit-check; mux/bus requires T1M-10 headers and TMUX inspection; ST-LINK adapter requires HTSW plus second FTSH; unmatched parts are set aside; host frame contract must match channel/wavelength/cap map.}
+  \li{Proof checklist: board stack complete, electrical acquisition, optical timing, host validity, and human-readiness each require evidence and have rollback states N1/N2/N5, N4/N6/N8, N7/N9, N9/N10, and N0/N11 respectively.}
+  \li{Evidence: \code{p/place/assets/gerbers/opennirscap-v2/ecu_gerbers.zip}, \code{sensor_module_gerbers.zip}, \code{stlink_gerbers.zip}, \code{p/place/trees/bcf-0036.tree}, \code{p/place/bci/stages/forester-bci-factory.tree}, rendered PDF at \code{p/place/build/latex/openfnirs/openfnirs-state-machine.pdf}, and upstream \code{github.com/tonykim07/fNIRS}.}
+}
+
+\p{Safety: this is a non-invasive fNIRS build-state artifact only. No clinical or human-subject readiness is claimed until optical power, electrical isolation, cabling, fit, and data-quality proofs pass.}
+
+\p{Dense criterion: no final fNIRS, fNIRS+EEG, or multiplayer-BCI exoprior claim until sensor, ECU, programmer, host, cap, optical power, isolation, signal provenance, and counterfactual disentangling proofs are all present and label-consistent.}

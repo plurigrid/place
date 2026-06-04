@@ -1,10 +1,12 @@
-\title{Electrode Augmentation for Extended Sessions}
+\title{Innovation / Comfort: Electrode Augmentation for Extended Sessions}
 \author{monaduck1069}
 \import{macros}
 \date{2026-03-31}
 \taxon{reference}
+\tag{innovation}
+\tag{comfort}
 
-\p{For a BCI Factory rider ([[horse-0001]]) who sits for hours — neurofeedback loops, flam3 diffusion sessions, hyperscanning — the electrode-scalp interface is the comfort bottleneck. Wet gel dries out and itches after 30 minutes. Rigid dry pins create pressure hotspots that become painful by 20 minutes. The question: \strong{what is the best someone can do with a 3D printer and commodity parts to stay comfortable for 2+ hour sessions while maintaining usable signal?}}
+\p{This is comfort and fabrication research, not the current canonical stack. For a participant who sits for hours — neurofeedback loops, flam3 diffusion sessions, hyperscanning — the electrode-scalp interface is the comfort bottleneck. Wet gel dries out and itches after 30 minutes. Rigid dry pins create pressure hotspots that become painful by 20 minutes. The question: \strong{what is the best someone can do with a 3D printer and commodity parts to stay comfortable for 2+ hour sessions while maintaining usable signal?}}
 
 \subtree{
 \title{Comfort-First Ranking}

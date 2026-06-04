@@ -54,7 +54,7 @@ BRAIN_EFFECTS = {
 QUEST_ROOMS = {
     "bcf-0019": "bci.blue",
     "bcf-0020": "bci.red",
-    "bcf-0021": "bci.horse",
+    "bcf-0021": "bci.place",
 }
 
 

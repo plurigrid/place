@@ -1,6 +1,6 @@
 [forest]
-trees = ["trees", "localcharts/forest/trees", "bci/stages", "stacks-trees", "skill-trees"]
+trees = ["trees", "localcharts/forest/trees", "bci/stages", "bci/devices", "stacks-trees", "skill-trees"]
 assets = ["assets", "localcharts/forest/assets"]
-url = "https://bci.horse/"
+url = "https://bci.place/"
 home = "output"
 root = "bcf-0001"

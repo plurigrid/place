@@ -1,0 +1,9 @@
+\title{Second OpenBCI Cyton + Daisy rig}
+\taxon{inventory-item}
+\meta{category}{bcf-0010}
+\meta{status}{want}
+\meta{cost-range}{1650 USD}
+\meta{url}{https://shop.openbci.com/}
+\meta{sim-params-addr}{bcf-INV-second-cyton-daisy-rig-sim}
+
+\p{Second full rig so two subjects can record simultaneously.}

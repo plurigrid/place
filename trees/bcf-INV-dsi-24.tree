@@ -1,0 +1,9 @@
+\title{DSI-24 Wireless EEG (Wearable Sensing)}
+\taxon{inventory-item}
+\meta{category}{bcf-0010}
+\meta{status}{want}
+\meta{cost-range}{12000-18000 USD}
+\meta{url}{https://wearablesensing.com/dsi-24/}
+\meta{sim-params-addr}{bcf-INV-dsi-24-sim}
+
+\p{Research dry EEG.}

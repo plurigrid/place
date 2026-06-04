@@ -1,0 +1,9 @@
+\title{Loaner-parts pool (spares for borrowing)}
+\taxon{inventory-item}
+\meta{category}{bcf-0004}
+\meta{status}{want}
+\meta{cost-range}{500-5000 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-loaner-parts-pool-sim}
+
+\p{Spares for visitors to borrow: electrodes, cables, LiPos, connectors, extra optode holders, spare JLCPCB boards. Core to the Factory mission: a place where people come to prove/test theories in a safe environment.}

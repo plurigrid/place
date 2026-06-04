@@ -262,7 +262,7 @@
     \title{Channels from BCF inventory (already owned)}
     \table{
       \tr{\th{Channel}\th{BCF Source}\th{Device}\th{Value}}
-      \tr{\td{EEG 6+ ch}\td{[[bcf-0010]]}\td{Cyton + DSI-24 + HackEEG}\td{1200 USD}}
+      \tr{\td{EEG 6+ ch}\td{[[bcf-0010]]}\td{Cyton + Daisy plus ADS1299-class references}\td{1200 USD}}
       \tr{\td{EOG 2 ch}\td{[[bcf-0010]]}\td{Cyton extra electrodes}\td{30 USD}}
       \tr{\td{EMG chin}\td{[[bcf-0015]]}\td{Facial EMG montage}\td{15 USD}}
       \tr{\td{ECG 1-lead}\td{[[bcf-0010]]}\td{Cyton shared board}\td{15 USD}}
@@ -318,6 +318,8 @@
 
 \subtree{
   \title{Beyond PSG: fNIRS hemodynamic channel}
-  \p{The OpenNIRScap 24-channel cap ([[bcf-0036]], on order) adds cortical hemodynamic measurement that no clinical sleep lab performs during polysomnography.}
+  \p{The OpenNIRScap 24-channel cap ([[bcf-0036]], partially assembled) is an aspirational hemodynamic channel for sleep and PSG-adjacent experiments.}
   \p{[[bcf-0032]] NIRx NIRSport 2 (50K–120K USD, research grade) and [[bcf-0031]] NV diamond magnetometer (1K USD) provide further modalities unavailable in any PSG configuration.}
-  \p{This positions the BCI Factory stack as a superset of clinical PSG — measuring electrical, hemodynamic, and magnetic brain signals simultaneously during sleep.}
+  \p{This positions one possible-world BCI setup as a superset of clinical PSG — measuring electrical, hemodynamic, and magnetic brain signals simultaneously during sleep.}
+}
+}

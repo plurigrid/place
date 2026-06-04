@@ -1,0 +1,75 @@
+\title{Whisper-λ: chain-ratchet slice}
+\taxon{implementation}
+\date{2026-05-16}
+\author{eternal-loop-iter13}
+\tag{whisper-lambda}
+\tag{double-ratchet}
+\tag{stateful}
+\tag{linear-types}
+
+\p{Second implementation vertical slice (after [[bcf-0065]] sealed-sender). First STATEFUL slice: the chain (symmetric) half of the Double Ratchet. Tests whether Whisper-λ's effect-handler discipline survives mutation; introduces the negative-replay property to the fuzz scaffold.}
+
+\subtree{
+\title{The slice}
+\p{One direction of the symmetric ratchet, no DH layer yet (deferred to bcf-0069). State:}
+\pre{\startverb
+record ChainRatchet {
+  chain_key  : Bytes^1     // grade ^1: consumed each step
+  idx        : u64         // monotone counter
+  consumed   : Set<u64>    // receiver-only; nil on sender
+}
+\stopverb}
+\p{Operations (Effekt-flavored, deep handler — the ratchet state lives in the handler frame):}
+\pre{\startverb
+effect Chain {
+  def encrypt(plaintext: Bytes^1): Envelope
+  def decrypt(env: Envelope^1): Result<Bytes^1, ConsumedCap | InvalidTag>
+}
+
+// Encrypt:  HKDF(chain_key) → (message_key, next_chain_key)
+//           chain_key dropped (zeroize); next becomes new chain_key
+//           AEAD-seal with message_key
+// Decrypt:  if idx ∈ consumed: raise ConsumedCap   ← KEY INVARIANT
+//           else advance chain_key to idx (cache skipped keys for out-of-order)
+//           AEAD-open; on success: consumed += idx
+\stopverb}
+}
+
+\subtree{
+\title{Properties — four total, one is new}
+\ol{
+\li{\strong{In-order roundtrip}: send n msgs, recv n msgs in order, all match.}
+\li{\strong{Out-of-order roundtrip}: send n msgs, recv in reverse order — works via cached-key forward skip.}
+\li{\strong{Negative-replay (NEW STATEFUL)}: after decrypt(env) succeeds, second decrypt(env) raises \code{ConsumedCap}. This property fundamentally requires state; it is the first property in this scaffold that cannot be checked by a stateless function.}
+\li{\strong{Tamper-detect}: single bit flip → AEAD raises.}
+}
+}
+
+\subtree{
+\title{Iter13 first-run result (QRNG-seeded, N=8 each)}
+\pre{\startverb
+in-order roundtrip   : 8/8  PASS
+out-of-order roundtrip: 8/8  PASS
+negative-replay       : 8/8  PASS  ← key new property
+tamper-detect         : 8/8  PASS
+
+Total: 32/32. SHAKE bytes consumed: 2052.
+\stopverb}
+}
+
+\subtree{
+\title{What the negative-replay property proves about the design}
+\p{This is the moment the design's distinguishing claim earns its keep. In a non-linear language, "key consumed" is a runtime convention — a set lookup, a flag, a checkbox. In Whisper-λ with Granule grades, "key consumed" is the same statement as "the value has been moved out of its binding" — checked at compile time, not at decrypt time. The Python sim's \code{consumed} set is a runtime proxy for what the type system would enforce statically.}
+\p{Iter9 audited the static invariant for sealed-sender (eph.priv consumed). Iter13 demonstrates the dynamic counterpart: monotone chain advancement IS the type of receiver state.}
+}
+
+\subtree{
+\title{Iter14 question}
+\p{The chain ratchet is the symmetric half. The full Double Ratchet needs the DH half — direction-change generates a new DH pair, root key advances on DH exchange, new chain key seeded from new root. Three options:}
+\ul{
+\li{\strong{(a)} DH ratchet slice (bcf-0069) — completes the Double Ratchet.}
+\li{\strong{(b)} Cross-impl differential between two distinct chain implementations (e.g. one using ChaCha20-Poly1305 instead of AES-GCM).}
+\li{\strong{(c)} Voice split-plane sealed handler boundary test — wholly different concern.}
+}
+\p{Lean (a) — completes the protocol's beating heart, exercises DH on top of the chain, validates that two stateful effects compose under Effekt-style handlers.}
+}

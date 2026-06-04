@@ -61,7 +61,7 @@
 \tr{\td{\ref{stk-0037} More on Morphisms}\td{Protocol bridges}\td{Smooth, unramified, etale morphisms classify protocol bridges: zig-syrup to Nashator (smooth), Nashator to Goblins (etale), EEG to LSL (unramified).}}
 \tr{\td{\ref{stk-0040} More on Groupoid Schemes}\td{Nashator game trees}\td{Groupoid schemes encode symmetries. Nashator backward induction traverses the groupoid of game states. The Nashator on :9999 is a groupoid scheme evaluator.}}
 \tr{\td{\ref{stk-0043} Intersection Theory}\td{\ref{bci-0020} Commentariat}\td{Intersection numbers count how things meet. Commentariat temperature is an intersection number: how do community opinions meet the tree's claims?}}
-\tr{\td{\ref{stk-0080} Bootstrap}\td{Forester self-hosting}\td{The bootstrap theorem: algebraic spaces can be constructed from schemes via etale descent. The bci.horse forest bootstraps from LaTeX (stacks-project) via forester descent.}}
+\tr{\td{\ref{stk-0080} Bootstrap}\td{Forester self-hosting}\td{The bootstrap theorem: algebraic spaces can be constructed from schemes via etale descent. The bci.place forest bootstraps from LaTeX (stacks-project) via forester descent.}}
 \tr{\td{\ref{stk-0085} Simplicial Spaces}\td{Cech nerve of VLAN topology}\td{The Cech nerve of the VLAN cover (Trusted, IoT, Guest) is a simplicial space. Its geometric realization recovers the full network topology.}}
 }
 }

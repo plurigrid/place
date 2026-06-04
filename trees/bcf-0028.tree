@@ -1,4 +1,4 @@
-\title{Mathematical parallels across the bci.horse forest}
+\title{Mathematical parallels across the bci.place forest}
 \taxon{reference}
 \author{monaduck1069}
 \import{macros}
@@ -11,7 +11,7 @@
 \tag{gf3}
 \tag{lattice}
 
-\p{Six mathematical structures recur across the bci.horse forest. They are not independent: each is a different projection of a single object --- a \strong{GF(3)-graded open game on a Heyting algebra whose Nash equilibria are counted by tropical derangements and whose obstructions are detected by Cech cohomology}. This tree maps the parallels.}
+\p{Six mathematical structures recur across the bci.place forest. They are not independent: each is a different projection of a single object --- a \strong{GF(3)-graded open game on a Heyting algebra whose Nash equilibria are counted by tropical derangements and whose obstructions are detected by Cech cohomology}. This tree maps the parallels.}
 
 \subtree{\title{The six structures}
 \table{
@@ -123,5 +123,5 @@
   \tr{\td{LaTeX render} \td{#{\mathcal{N}_2 \to \mathcal{N}_3}} \td{Malformed math}}
   \tr{\td{HTML emit} \td{#{\mathcal{N}_3 \to \mathcal{N}_4}} \td{Structural inconsistencies}}
 }
-\p{The output forest is the set of \em{necessary} trees --- those that survive all four stages. A broken reference is an #{H^1} obstruction: a local section (one tree's wiki-link) that cannot be glued into a global section (the rendered forest). Our 0 broken references ([[bcf-0025]]) means #{H^1 = 0} for the bci.horse content graph --- the forest is cohomologically trivial, which is exactly the condition for successful deployment.}
+\p{The output forest is the set of \em{necessary} trees --- those that survive all four stages. A broken reference is an #{H^1} obstruction: a local section (one tree's wiki-link) that cannot be glued into a global section (the rendered forest). Our 0 broken references ([[bcf-0025]]) means #{H^1 = 0} for the bci.place content graph --- the forest is cohomologically trivial, which is exactly the condition for successful deployment.}
 }

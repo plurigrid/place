@@ -1,0 +1,9 @@
+\title{7invensun aSee-EVS eye tracker}
+\taxon{inventory-item}
+\meta{category}{bcf-0013}
+\meta{status}{want}
+\meta{cost-range}{500-1500 USD}
+\meta{url}{https://7invensun.com/}
+\meta{sim-params-addr}{bcf-INV-aSee-evs-sim}
+
+\p{Event-based vision sensor, low-latency.}

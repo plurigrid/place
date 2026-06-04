@@ -27,7 +27,7 @@
   \li{Characterization of Eeta wins in Tamari lattices}
 }
 
-\p{The lattice structure maps onto bci.horse: the \strong{subobject lattice} of the pipeline category ([[1kjla]], [[s40lq]]) is a Heyting algebra where Ungar moves correspond to \strong{descent operations} — restricting a sheaf section to a smaller open set ([[horse-0004]]). Each stage of the pipeline is an Ungar move: coarsening the electrode montage, restricting the spectral window, descending to a smaller support.}
+\p{The lattice structure maps onto bci.place: the \strong{subobject lattice} of the pipeline category ([[1kjla]], [[s40lq]]) is a Heyting algebra where Ungar moves correspond to \strong{descent operations} — restricting a sheaf section to a smaller open set ([[horse-0004]]). Each stage of the pipeline is an Ungar move: coarsening the electrode montage, restricting the spectral window, descending to a smaller support.}
 }
 
 \subtree{\title{Tropical structure}

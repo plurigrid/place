@@ -1,0 +1,9 @@
+\title{Artinis Brite Lite MKIV}
+\taxon{inventory-item}
+\meta{category}{bcf-0035}
+\meta{status}{want}
+\meta{cost-range}{5000-8000 USD}
+\meta{url}{https://www.artinis.com/brite-lite}
+\meta{sim-params-addr}{bcf-INV-artinis-brite-lite-mkiv-sim}
+
+\p{8-10ch, 10-55mm adjustable interoptode.}

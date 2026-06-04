@@ -12,7 +12,7 @@
 \meta{origin}{trans_trinity.jl (Gay.jl)}
 \meta{gf5-sum}{0}
 
-\p{Five modalities of the prefix \em{trans-} (across, through, beyond), extending the Trans-Trinity of \code{trans_trinity.jl} (Loregian 2-transducers + DMBD + Gay.jl coloring) into a pentad. Each modality names a distinct way structure crosses a boundary. Together they classify the morphism types in the bci.horse stack.}
+\p{Five modalities of the prefix \em{trans-} (across, through, beyond), extending the Trans-Trinity of \code{trans_trinity.jl} (Loregian 2-transducers + DMBD + Gay.jl coloring) into a pentad. Each modality names a distinct way structure crosses a boundary. Together they classify morphism types in the bci.place model.}
 
 \subtree{\title{Pentad Diagram}
 \taxon{remark}
@@ -46,7 +46,7 @@
 
 \p{\strong{Signal to representation.} A 2-transducer \code{(Q, t) : A -> B} converts input words over alphabet \code{A} to output words over \code{B}, mediated by a state category \code{Q} whose objects carry morphisms (not just identity). After Loregian (arXiv:2509.06769).}
 
-\p{Instances in the stack:}
+\p{Instances in this model:}
 \ul{
 \li{BCI: EEG voltage -> neural features (HD-72 64ch pipeline, \ref{bcf-0052})}
 \li{CETI: cetacean vocalization -> symbolic parse}
@@ -64,7 +64,7 @@
 
 \p{\strong{Operadic embedding.} One structure includes another by reference, not by copy. Ted Nelson's original: a document includes a passage from another document, which remains live-linked to its source. Categorically: operadic substitution \code{self.substitute(box, other)}.}
 
-\p{Instances in the stack:}
+\p{Instances in this model:}
 \ul{
 \li{Forester \code{ref} mechanism (\ref{bcf-0052}): this tree transcluding the HD-72 pipeline}
 \li{Aella term-graph DPO rewriting: CRDT merge = transclusion of concurrent edits}
@@ -82,7 +82,7 @@
 
 \p{\strong{Composition.} If \code{f : A -> B} and \code{g : B -> C} then \code{f ; g : A -> C}. The most basic categorical operation. Transitivity is what makes a preorder into something you can reason along.}
 
-\p{Instances in the stack:}
+\p{Instances in this model:}
 \ul{
 \li{Markov blanket factorization: \code{p(s,z|b) = p(s|b) p(z|b)} -- conditional independence is transitive through the blanket (\code{nanoclj-zig/src/transitivity.zig})}
 \li{Boris-hedges ParaLens: \code{play ; coplay} composition through 6-wire diagrams}
@@ -100,7 +100,7 @@
 
 \p{\strong{Conditions of possibility.} Kant: the transcendental is not what is experienced but what makes experience possible. The keyboard before the keystroke. The type system before the program. The Markov blanket before the inference.}
 
-\p{Instances in the stack:}
+\p{Instances in this model:}
 \ul{
 \li{Transcendental keyboard (\code{asi/skills/transcendental-keyboard/}): Emacs keybindings as precondition for all editing}
 \li{Ordered locale: the way-below relation \code{<<} is the transcendental structure -- it determines which opens are computably reachable before you ask about any particular open}
@@ -116,7 +116,7 @@
 
 \p{\strong{Capability flow across trust membranes.} Blood transfusion: typed fluid crossing a biological membrane, compatibility checked at the boundary. In distributed systems: capability tokens flowing across trust boundaries with attenuation.}
 
-\p{Instances in the stack:}
+\p{Instances in this model:}
 \ul{
 \li{zig-syrup <-> Nashator wire: 4-byte BE + JSON-RPC 2.0 crossing process boundary on :9999}
 \li{Goblins CapTP: sturdyrefs attenuating as they cross vat boundaries}

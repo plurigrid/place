@@ -1,0 +1,9 @@
+\title{OpenBCI Daisy Expansion (owned)}
+\taxon{inventory-item}
+\meta{category}{bcf-0010}
+\meta{status}{own}
+\meta{cost-range}{450 USD}
+\meta{url}{https://shop.openbci.com/products/daisy-module}
+\meta{sim-params-addr}{bcf-INV-openbci-daisy-sim}
+
+\p{Already own one. Extends Cyton to 16ch.}

@@ -21,4 +21,5 @@
 \meta{sps}{250/500/1k/2k/4k/8k/16k}
 \meta{open-source}{true}
 \meta{unit-cost}{$10}
-\p{Open source. ADS1299 analog front-end on an Arduino Due shield. 8 channels per board, stackable to 32 channels (4 boards). 24-bit resolution. Hardware is discontinued but design files are fully open — PCB layouts, schematics, firmware, all on GitHub. This is the $10/unit path: the ADS1299 is a $25 chip, the rest is passives and a microcontroller.}}
+\meta{status}{reference}
+\p{Open-source ADS1299 analog front-end on an Arduino Due shield. 8 channels per board, stackable to 32 channels (4 boards). 24-bit resolution. Hardware is discontinued but design files are fully open — PCB layouts, schematics, firmware, all on GitHub. This is a reference design, not current reported inventory.}}

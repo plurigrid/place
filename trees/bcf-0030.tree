@@ -5,6 +5,8 @@
 \taxon{protocol}
 \meta{institution}{BCI Factory}
 
+\p{This is a self-serve possible world. It is a protocol design for walk-up readings, not a claim that the kiosk is currently deployed with this exact hardware and data policy.}
+
 \p{Walk in. Sit down. See your brain. No appointment. No operator. No signup.}
 
 \subtree{
@@ -56,7 +58,7 @@
   \tr{\th{Phase} \th{Duration} \th{Instruction} \th{Room} \th{Trit}}
   \tr{\td{Rest} \td{10s} \td{Eyes closed, breathe} \td{bci.blue} \td{-1}}
   \tr{\td{Active} \td{10s} \td{Eyes open, imagine squeezing left hand} \td{bci.red} \td{+1}}
-  \tr{\td{Free} \td{10s} \td{Whatever you want} \td{bci.horse} \td{0}}
+  \tr{\td{Free} \td{10s} \td{Whatever you want} \td{bci.place} \td{0}}
 }
 
 \p{The oscilloscope renders your waveform live. You see your brain in real-time. The spectral decomposition runs on-device — delta, theta, alpha, beta, gamma bands separated and colored.}

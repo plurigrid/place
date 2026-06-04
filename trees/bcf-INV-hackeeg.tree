@@ -1,0 +1,9 @@
+\title{HackEEG (TI ADS1299 breakout)}
+\taxon{inventory-item}
+\meta{category}{bcf-0010}
+\meta{status}{want}
+\meta{cost-range}{300-500 USD}
+\meta{url}{https://starcat.io/products/hackeeg}
+\meta{sim-params-addr}{bcf-INV-hackeeg-sim}
+
+\p{Arduino-compatible ADS1299.}

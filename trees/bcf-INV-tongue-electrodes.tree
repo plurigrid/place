@@ -1,0 +1,9 @@
+\title{Tongue electrodes (gustatory)}
+\taxon{inventory-item}
+\meta{category}{bcf-0056}
+\meta{status}{want}
+\meta{cost-range}{100-500 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-tongue-electrodes-sim}
+
+\p{Tier 2-3 experimental.}

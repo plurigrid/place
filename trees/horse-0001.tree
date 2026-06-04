@@ -1,8 +1,10 @@
-\title{bci.horse — portal to new huemanity}
+\title{bci.place portal possible world}
 \author{bmorphism}
 \import{macros}
 \date{2026-03-29}
 \taxon{project}
+
+\p{This is a portal possible world: three rooms, rider protocol, and T-55 pipeline as an experience design. It should not be read as the current bench inventory or the canonical stack.}
 
 \p{Enter your name. See your color. Sit in the chair. See the gap between your
 name-color and your brain-color.}
@@ -19,10 +21,10 @@ is computed. Your brain reveals whether you match it.}
   \tr{\th{Room} \th{Domain} \th{Band} \th{Trit} \th{Experience}}
   \tr{\td{\strong{bci.blue}} \td{Inhibition} \td{α suppression} \td{-1} \td{The quiet. Eyes closed. Alpha drops. You become transparent.}}
   \tr{\td{\strong{bci.red}} \td{Activation} \td{β burst} \td{+1} \td{The fire. Motor intent. Beta spikes. You become opaque.}}
-  \tr{\td{\strong{bci.horse}} \td{Crossover} \td{θ/γ} \td{0} \td{The shimmer between. Where riders are born.}}
+  \tr{\td{\strong{bci.place}} \td{Crossover} \td{θ/γ} \td{0} \td{The shimmer between. Where riders are born.}}
 }
 
-\p{GF(3) conservation: blue(-1) + red(+1) + horse(0) = 0. The three rooms sum
+\p{GF(3) conservation: blue(-1) + place(0) + red(+1) = 0. The three rooms sum
 to nothing. What remains is the rider.}
 }
 
@@ -71,8 +73,8 @@ Sit in the chair. Your wave starts when you sit.}
   \li{\strong{Decode → Semantics}: Capability-secured intent via OCapN. ([[horse-0005]], [[bci-stage-4]])}
 }
 
-\p{The math: [[bci-0001]]. The devices: [[bci-0002]]. The games: [[bci-0006]].
-The hatchery: [[bci-0007]]. The manifesto and full stack: [[bcf-0001]].
+\p{The math: [[bci-0001]]. Current device state: [[bcf-devices]]. The games: [[bci-0006]].
+The hatchery: [[bci-0007]]. The project map: [[bcf-0001]].
 Unison algebraic effects implementation: [[bcf-0045]].
 The physical space (222 Dore current, 250 Dore expansion): [[bcf-0004]]. Hardware sources: [[bcf-0006]].
 People: [[bcf-0007]]. Economics: [[bcf-0008]].

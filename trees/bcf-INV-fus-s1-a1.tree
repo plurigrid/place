@@ -1,0 +1,9 @@
+\title{Rigol AWG + 300kHz FUS (S1/A1)}
+\taxon{inventory-item}
+\meta{category}{bcf-0016}
+\meta{status}{want}
+\meta{cost-range}{3000-6000 USD}
+\meta{url}{}
+\meta{sim-params-addr}{bcf-INV-fus-s1-a1-sim}
+
+\p{Tier 2 NSR, ITRUSST MI<1.9.}

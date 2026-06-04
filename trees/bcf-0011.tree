@@ -1,15 +1,8 @@
-\title{fNIRS: Hemodynamic (4-Channel Hub)}
+\title{fNIRS: Hemodynamic}
 \taxon{device}
 \author{monaduck1069}
 \date{2026-04-03}
 \tag{fnirs}
 \tag{hardware}
 \meta{modality}{hemodynamic}
-\meta{manufacturer}{PLUX}
-\meta{product}{biosignalsplux fNIRS Pioneer Kit}
-\meta{sku}{820201013}
-\meta{price}{$3,998}
-\meta{fnirs-sensors}{3}
-\meta{control-sensor}{1 SpO2}
-
-\p{biosignalsplux 4-channel hub configured for fNIRS. 3 fNIRS sensors for cortical hemodynamic measurement + 1 SpO2 sensor as systemic blood oxygenation control. Dual-wavelength (660 nm red / 860 nm infrared) per sensor site. Wireless Bluetooth, 16-bit, up to 3 kHz per channel, ~10 hr battery.}
+\p{fNIRS hemodynamic acquisition. The canonical built device is the OpenNIRScap DIY stack: see \ref{bcf-0036} for the device and [[openfnirs-build]] for build state; current possession is tracked in [[bcf-devices]]. PLUX biosignalsplux fNIRS was rejected and is not planned.}

@@ -1,4 +1,4 @@
-\title{bci.horse: the crossover as initial condition}
+\title{bci.place: the crossover as initial condition}
 \taxon{theorem}
 \author{monaduck1069}
 \import{macros}
@@ -9,10 +9,10 @@
 \meta{trit}{0}
 \meta{band}{theta-gamma}
 
-\p{bci.horse is the trit-0 crossover — not a third subsystem but the \strong{boundary morphism} between the two causally closed rooms.}
+\p{bci.place is the trit-0 crossover — not a third subsystem but the \strong{boundary morphism} between the two causally closed rooms.}
 
 \subtree{\title{The crossover is not causally closed}
-\p{Unlike bci.blue ([[bcf-0019]]) and bci.red ([[bcf-0020]]), bci.horse is deliberately \emph{not} causally closed. It is the site where afferent observation (bci.blue, trit #{-1}) is transformed into efferent intent (bci.red, trit #{+1}). This transformation is the \strong{rider's birth} ([[bci-0007]]):}
+\p{Unlike bci.blue ([[bcf-0019]]) and bci.red ([[bcf-0020]]), bci.place is deliberately \emph{not} causally closed. It is the site where afferent observation (bci.blue, trit #{-1}) is transformed into efferent intent (bci.red, trit #{+1}). This transformation is the \strong{rider's birth} ([[bci-0007]]):}
 \ol{
   \li{Descended brain state arrives from Stage 3 (bci.blue's output)}
   \li{The gap between name-color and brain-color is measured (30-second decoherence threshold)}

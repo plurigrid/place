@@ -1,4 +1,4 @@
-\title{Commentariat: Trit-Weighted Annotation Layer for bci.horse}
+\title{Commentariat: Trit-Weighted Annotation Layer for bci.place}
 \taxon{design}
 \author{barton-rhodes}
 \date{2026-04-08}
@@ -10,7 +10,7 @@
 \tag{capability}
 \meta{scope}{social}
 
-\p{A commentary system for the bci.horse forest where every annotation carries a GF(3) trit: \strong{+1} (extends), \strong{0} (questions), \strong{-1} (contests). The commentariat is not a forum -- it is a structured peer review protocol where the aggregate trit signal per tree node produces a legible quality gradient across the forest.}
+\p{A commentary system for the bci.place forest where every annotation carries a GF(3) trit: \strong{+1} (extends), \strong{0} (questions), \strong{-1} (contests). The commentariat is not a forum -- it is a structured peer review protocol where the aggregate trit signal per tree node produces a legible quality gradient across the forest.}
 
 \subtree{\title{Why Not Just GitHub Issues?}
 \taxon{remark}

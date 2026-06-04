@@ -1,0 +1,58 @@
+\title{Whisper-λ: differential-fuzz scaffold}
+\taxon{methodology}
+\date{2026-05-16}
+\author{eternal-loop-iter11}
+\tag{whisper-lambda}
+\tag{differential-fuzz}
+\tag{criterion-3-prime}
+\tag{qrng}
+
+\p{Companion to [[bcf-0065]]. Replaces the falsified bit-identical criterion (iter9) with a property-equivalence fuzz, runnable across heterogeneous SealedSender implementations.}
+
+\subtree{
+\title{Uniform interface}
+\p{A SealedSenderImpl is anything with \code{seal(msg, recipient_pub, sender_id_priv_seed) → env} and \code{unseal(env, recipient_priv_seed) → msg}. Wire shape of \code{env} is impl-private — the scaffold doesn't compare bytes, only behavior.}
+}
+
+\subtree{
+\title{Properties (criterion 3')}
+\ol{
+\li{\strong{Roundtrip.} ∀ msg, recipient, sender: unseal(seal(msg, recipient.pub, sender), recipient.priv) == msg.}
+\li{\strong{Tamper-detect.} A single-bit flip anywhere in env makes unseal raise.}
+\li{\strong{Wrong-recipient.} unseal(seal(_, R.pub, _), R'.priv) for R ≠ R' raises.}
+\li{\strong{Replay (stateful).} For non-ratchet slices: same env decoded twice yields same msg. For ratchet: NEGATIVE — second decode raises ConsumedCap.}
+}
+}
+
+\subtree{
+\title{Entropy source: QRNG-rooted SHAKE-256 stream}
+\p{Naive approach: take 128-byte sample from qrng-ergo MCP, consume directly. Fails — exhausted at trial 4 of impl A. Fix: feed QRNG bytes as SHAKE-256 seed; XOF gives unlimited deterministic stream rooted in QRNG entropy. Best of both: physical-entropy provenance, deterministic replay if a failure surfaces, unbounded length for long runs.}
+\p{Three QRNG MCPs available (qrng-{minus, ergo, plus}) align with worlds/ GF(3) trit triad. Iter11 used ergo (seq 1778595, H_min 2.957 b/B). Future runs can sample minus and plus too for trit-stratified property tests.}
+}
+
+\subtree{
+\title{Iter11 first-run result}
+\p{Two stub implementations exercised, 8 QRNG-seeded trials each:}
+\ul{
+\li{\strong{GcmSivImpl} — AES-256-GCM-SIV, HKDF-derived deterministic nonce (Whisper-λ v1 choice).}
+\li{\strong{GcmImpl} — AES-256-GCM, random 12-byte nonce in envelope (libsignal-like).}
+}
+\p{\strong{Results}: both impls 8/8 on roundtrip, 8/8 on tamper-detect, 8/8 on wrong-recipient. SHAKE-256 consumed 1250 bytes from 128-byte QRNG seed. Differential verdict: property holds on both.}
+}
+
+\subtree{
+\title{Skill triage delta — first material shift in 11 iters}
+\p{QRNG as entropy source for differential property-fuzz wasn't on iter1's S-tier radar. The closest existing skill is \code{property-based-testing} (S-tier), which the QRNG complements rather than replaces. Adding a CONCEPT — "physical-entropy seeding for differential fuzz" — to the rationale; no new skill name (no \code{qrng} skill exists in the inventory). Saved as feedback memory.}
+\p{This is the first time in 11 iterations of design + impl that an exogenous affordance materially refined the triage. The iter1-2 triage has been remarkably stable — strong signal it was right.}
+}
+
+\subtree{
+\title{Iter12 question}
+\p{Three options:}
+\ul{
+\li{\strong{(a)} Wire scaffold into Hypothesis for automated shrinking on failure cases.}
+\li{\strong{(b)} Add the stateful negative-replay property — requires modeling a ratchet step.}
+\li{\strong{(c)} Sample all three QRNG streams (minus/ergo/plus) and run trit-stratified fuzz where each trial is tagged with its source-trit. First test of whether the GF(3) discipline shows up as a behavioral signal.}
+}
+\p{Lean (c) — it directly exercises the design's GF(3) commitment and uses all three new affordances.}
+}

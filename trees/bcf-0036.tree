@@ -15,7 +15,8 @@
 \meta{price-jlcpcb}{$220--$320 (JLCPCB assembly)}
 \meta{open-source}{true}
 \meta{repo}{https://github.com/tonykim07/fNIRS}
-\import{macros}
+
+\p{Status: built. Current possession and status are the Device Ledger [[bcf-devices]]; the build and proof record is [[openfnirs-build]]. Historical PLUX and NIRx pages are rejected references, not the build path.}
 
 \p{OpenNIRScap. Open-source, wearable, 24-channel fNIRS cap from the University of Toronto (Kim et al., May 2025). 35 mm source-detector separation for cortical depth sensitivity. Validated hemodynamic response detection during cognitive tasks. Replaces bcf-0012 as the primary open-source fNIRS build target.}
 

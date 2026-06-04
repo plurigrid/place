@@ -4,45 +4,6 @@
 \date{2026-04-04}
 \tag{inventory}
 \tag{hardware}
-
 \import{macros}
-\p{Physical assets owned by or on loan to BCI Factory. Last updated 2026-04-04.}
-
-\subtree{\title{Owned}
-\taxon{remark}
-
-
-\table{
-  \tr{\th{ID} \th{Item} \th{Qty} \th{Status} \th{Location}}
-  \tr{\td{EEG-001} \td{OpenBCI Cyton 8-channel} \td{1} \td{operational} \td{222 Dore}}
-  \tr{\td{EEG-002} \td{EEG headset (4 independent wet sensors)} \td{1} \td{operational} \td{222 Dore}}
-  \tr{\td{SOL-001} \td{Soldering kit} \td{1} \td{operational} \td{222 Dore}}
-  \tr{\td{XR-001} \td{XREAL glasses} \td{3} \td{operational} \td{222 Dore}}
-  \tr{\td{CTL-001} \td{PlayStation controllers} \td{3} \td{operational} \td{222 Dore}}
-  \tr{\td{PRJ-001} \td{Projector} \td{1} \td{operational} \td{222 Dore}}
-  \tr{\td{SBC-001} \td{Raspberry Pi} \td{1} \td{operational} \td{222 Dore}}
-  \tr{\td{NET-001} \td{Starlink} \td{1} \td{operational} \td{222 Dore}}
-  \tr{\td{PWR-001} \td{CyberPower UPS (sine wave, surge)} \td{3} \td{operational} \td{222 Dore}}
-  \tr{\td{GPU-001} \td{DGX Spark (GX10)} \td{TBD} \td{operational} \td{222 Dore}}
-}
-}
-
-\subtree{\title{On order}
-\taxon{remark}
-
-\table{
-  \tr{\th{ID} \th{Item} \th{Qty} \th{Status} \th{Notes}}
-  \tr{\td{QSM-001} \td{Uncut Gem NV magnetometer (full PCB)} \td{1} \td{on order} \td{With diamond}}
-  \tr{\td{QSM-002} \td{Uncut Gem NV magnetometer (full PCB)} \td{1} \td{on order} \td{No diamond}}
-  \tr{\td{QSM-003} \td{Uncut Gem NV magnetometer (full PCB)} \td{1} \td{on order} \td{No diamond}}
-}
-}
-
-\subtree{\title{Planned}
-\taxon{remark}
-
-\table{
-  \tr{\th{Item} \th{Qty} \th{Est. Cost} \th{Notes}}
-  \tr{\td{OpenNIRScap DIY fNIRS (bcf-0036)} \td{1} \td{$419} \td{Parts list ready}}
-}
-}
+\p{Physical assets owned by or on loan to BCI Factory. The canonical device inventory and status is the Device Ledger, transcluded here so there is one source of truth, never a second divergent list.}
+\transclude{bcf-devices}
