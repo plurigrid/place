@@ -1,0 +1,6 @@
+\title{OpenBCI Cyton + Daisy}
+\taxon{device}
+\meta{dev-id}{DEV-EEG-001}
+\meta{status}{own}
+\meta{location}{222 Dore}
+\p{Status: \strong{own}. Verify assembly and channel count.}

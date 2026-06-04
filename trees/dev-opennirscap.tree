@@ -1,0 +1,6 @@
+\title{OpenNIRScap DIY fNIRS}
+\taxon{device}
+\meta{dev-id}{DEV-FNIRS-001}
+\meta{status}{own}
+\meta{location}{222 Dore}
+\p{Status: \strong{own}. Built. Device: [[bcf-0036]]; build record: [[openfnirs-build]].}

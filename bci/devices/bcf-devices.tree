@@ -35,21 +35,18 @@ before casting a vote.}
 \subtree{\title{Current reported inventory}
 \taxon{remark}
 
-\table{
-  \tr{\th{ID} \th{Device} \th{Status} \th{Location} \th{Notes}}
-  \tr{\td{DEV-EEG-001} \td{OpenBCI Cyton + Daisy} \td{own} \td{222 Dore} \td{Verify assembly and channel count}}
-  \tr{\td{DEV-EEG-002} \td{Portable wet EEG, 4 sensors} \td{own} \td{222 Dore} \td{Fixed; gel available}}
-  \tr{\td{DEV-FNIRS-001} \td{OpenNIRScap DIY fNIRS} \td{own} \td{222 Dore} \td{Built}}
-  \tr{\td{DEV-MAG-001} \td{Quantum GEM / Uncut Gem} \td{own} \td{222 Dore} \td{Built}}
-  \tr{\td{DEV-ENT-001} \td{Entropy sensors} \td{own} \td{222 Dore} \td{Three units reported}}
-  \tr{\td{DEV-EEG-005} \td{Cognitronix/Cognionics 64/72 channel EEG} \td{loaned-to-us} \td{222 Dore} \td{Verify exact make, channel count, and loan terms}}
-  \tr{\td{DEV-XR-001} \td{XREAL glasses (x3)} \td{own} \td{222 Dore} \td{Verify current use}}
-  \tr{\td{DEV-GPU-001} \td{DGX Spark GX10} \td{own} \td{222 Dore} \td{Operational status needs current verification}}
-  \tr{\td{DEV-FAB-001} \td{3D printers and soldering supplies} \td{own} \td{222 Dore} \td{Repair and fabrication support}}
-  \tr{\td{DEV-NET-001} \td{Starlink} \td{own} \td{222 Dore} \td{Operational}}
-  \tr{\td{DEV-PWR-001} \td{CyberPower UPS (x3)} \td{own} \td{222 Dore} \td{Sine wave, surge}}
-  \tr{\td{DEV-SBC-001} \td{Raspberry Pi} \td{own} \td{222 Dore} \td{Operational}}
-}
+\transclude{dev-cyton}
+\transclude{dev-portable-eeg}
+\transclude{dev-opennirscap}
+\transclude{dev-uncutgem}
+\transclude{dev-entropy}
+\transclude{dev-cognionics}
+\transclude{dev-xreal}
+\transclude{dev-dgx}
+\transclude{dev-fab}
+\transclude{dev-starlink}
+\transclude{dev-ups}
+\transclude{dev-rpi}
 }
 
 \subtree{\title{Repair and spare parts}
