@@ -13,7 +13,7 @@
 \subtree{\title{Current Map}
 \transclude{bcf-0006}
 \transclude{bcf-0004}
-\transclude{bcf-0037}
+\transclude{bcf-devices}
 }
 
 \subtree{\title{Possible Worlds}
