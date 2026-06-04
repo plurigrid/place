@@ -9,7 +9,7 @@
 \tag{counterfactual-fixed-board}
 \tag{dense-proof-matrix}
 
-\p{\strong{Status: BUILT} — 2026-06. The dense state machine below is retained as the build and proof record.}
+\p{\strong{Status: BUILT} — 2026-06.}
 \p{Uncut Gem is modeled as a dense board-flow artifact for the Quantum Village NV-center magnetometer. Companion PDF/source: \code{p/place/bci/devices/uncut-gems-state-machine.tex}.}
 
 \p{Verdict: identity is fixed as an NV diamond magnetometer, not EEG/fNIRS/BCI; local build is partial; open blockers are wrong stocked SMA for J1, unverified U2/U3 RF amp population, unproven laser/diamond/antenna/photodiode geometry, and unproven ODMR trace; success requires rail, boot, PLL, RF, optomechanical, detector, trace, and optional INA333 comparison proofs.}

@@ -12,7 +12,7 @@
 \tag{exopriors}
 \tag{multiplayer-bci}
 
-\p{\strong{Status: BUILT} — 2026-06. The dense state machine below is retained as the build and proof record.}
+\p{\strong{Status: BUILT} — 2026-06.}
 \p{OpenFNIRS is modeled as a dense fNIRS board-flow artifact spanning sensor modules, ECU, ST-LINK adapter, cap/cables, STM32 firmware, Python host, and the fNIRS+EEG multiplayer exoprior layer. Companion PDF/source: \code{p/place/bci/devices/openfnirs-state-machine.tex}.}
 
 \p{Verdict: identity is fixed as an open, non-invasive fNIRS stack; local build is partial; open blockers are five-of-eight J1 connectors, unknown SW1 fit, unknown TMUX population, and incomplete ST-LINK adapter headers; success requires connector, analog, power, mux, firmware, USB frame, host MBLL/CBSI, cap-fit, optical, and isolation proofs.}
