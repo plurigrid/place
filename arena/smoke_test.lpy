@@ -1,0 +1,52 @@
+;; Smoke-test: inject synthetic DT-26 events, verify witness accrual.
+
+(ns arena.smoke-test
+  (:require [arena.arena   :as arena]
+            [arena.witness :as w]))
+
+(defn fake-event [L trit]
+  {:t (System/currentTimeMillis) :trit trit :L L :latency_ms 500})
+
+(defn reset! []
+  (reset! arena/state
+          {:trits [] :events [] :sum 0 :by-letter {} :witnesses 0})
+  (reset! w/gay {:total 0 :by-worldid {} :log []}))
+
+(defn inject! [events]
+  (doseq [ev events]
+    (swap! arena/state arena/merge-trial ev)))
+
+(defn run-full-alphabet-test []
+  (reset!)
+  ;; 26 trials, one per letter, trits cycling -1,0,1 (sums to 0 mod 3 every 3)
+  (let [letters "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        events  (map-indexed (fn [i L]
+                               (fake-event (str L) (- (mod i 3) 1)))
+                             letters)]
+    (inject! events)
+    (let [r (w/maybe-accrue! "worldid:test-1")]
+      (println "full-alphabet:" r)
+      (assert (pos? (:accrued r)) "should accrue on full alphabet")
+      (assert (not (:bonus r))   "no cluster bonus when all 26 letters hit")
+      r)))
+
+(defn run-cluster-resonance-test []
+  (reset!)
+  ;; 26 trials drawn only from {S, Y, Z, W} — parrot-fixed-point cluster
+  (let [cluster "SYZW"
+        events  (for [i (range 26)]
+                  (fake-event (str (nth cluster (mod i 4)))
+                              (- (mod i 3) 1)))]
+    (inject! events)
+    ;; this window has ONLY 4 distinct letters, so coherent? fails min-cover=13
+    ;; test with relaxed threshold
+    (binding [w/*min-cover* 4]
+      (let [r (w/maybe-accrue! "worldid:test-2")]
+        (println "cluster-resonance:" r)
+        (assert (:bonus r) "should bonus when all letters in one cluster")
+        r))))
+
+(defn -main [& _]
+  (run-full-alphabet-test)
+  (run-cluster-resonance-test)
+  (println "✓ all smoke tests pass"))
