@@ -19,7 +19,7 @@
   \tr{\td{Heyting algebra} \td{[[bcf-0019]], [[bcf-0020]]} \td{Subobject lattice of pipeline category; sieve/cosieve duality}}
   \tr{\td{Open games} \td{[[bcf-0022]]} \td{Play/coplay lens; rider = Nash equilibrium}}
   \tr{\td{Tropical derangements} \td{[[bcf-0026]]} \td{Counting totally mixed equilibria; no channel at resting max}}
-  \tr{\td{Necessity filtration} \td{[[bcf-0027]]} \td{Cohomological obstruction; Cech H1 detects margin collapse}}
+  \tr{\td{Necessity filtration} \td{—} \td{Cohomological obstruction; Cech H1 detects margin collapse}}
   \tr{\td{GF(3) conservation} \td{[[bcf-0018]]} \td{Trit-tick quantum; sum of trits = 0 mod 3 at every resolution}}
   \tr{\td{Ungar games} \td{[[bcf-0026]]} \td{Descent = lattice meet; pipeline stages as Ungar moves}}
 }
@@ -69,7 +69,7 @@
 }
 
 \subtree{\title{Parallel 4: Necessity filtration = Cech cohomology obstruction}
-\p{The necessity filtration ([[bcf-0027]]) is a descending chain: ##{\mathcal{P} = \mathcal{N}_0 \supseteq \mathcal{N}_1 \supseteq \cdots \supseteq \mathcal{N}_k}}
+\p{The necessity filtration is a descending chain: ##{\mathcal{P} = \mathcal{N}_0 \supseteq \mathcal{N}_1 \supseteq \cdots \supseteq \mathcal{N}_k}}
 
 \p{Each step eliminates \em{possible} elements that fail an extension test, keeping \em{necessary} ones. The obstruction to global sections is a nontrivial Cech #{H^1} class:}
 \ul{
@@ -95,7 +95,7 @@
 \ul{
   \li{Per trit-tick ([[bcf-0018]]): 3 phases per sample window}
   \li{Per rider birth ([[bcf-0021]]): blue observation + crossover + red action = balanced}
-  \li{Per monotile ([[bcf-0027]]): reflected (1/3) + transfer + unreflected (2/3)}
+  \li{Per monotile: reflected (1/3) + transfer + unreflected (2/3)}
   \li{Per derangement ([[bcf-0026]]): no block preserved + all blocks shifted}
 }
 }

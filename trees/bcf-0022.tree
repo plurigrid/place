@@ -90,7 +90,7 @@
   \tr{\td{Equilibrium} \td{#{0}} \td{Gap measurement → best response check} \td{neutral (crossover)}}
   \tr{\td{Coplay} \td{#{+1}} \td{Stage 4 → effector → stimulate} \td{contravariant (brain → world)}}
 }
-\p{Conservation: #{(-1) + 0 + (+1) = 0}. Every sample window has exactly 3 GF(3) phases ([[bcf-0018]]), so the open game is \strong{balanced} at every temporal resolution. The play-coplay structure instantiates the necessity filtration: play eliminates possible electrode states (MINUS), coplay eliminates possible motor commands (PLUS), equilibrium is the cliff ([[bcf-0027]]).}
+\p{Conservation: #{(-1) + 0 + (+1) = 0}. Every sample window has exactly 3 GF(3) phases ([[bcf-0018]]), so the open game is \strong{balanced} at every temporal resolution. The play-coplay structure instantiates the necessity filtration: play eliminates possible electrode states (MINUS), coplay eliminates possible motor commands (PLUS), equilibrium is the cliff.}
 }
 
 \subtree{\title{Connection to categorical systems theory}
