@@ -7,3 +7,4 @@
 \meta{status}{own}
 \meta{location}{222 Dore}
 \p{Status: \strong{own}. Built. Device: [[bcf-0036]]; build record: [[openfnirs-build]].}
+\p{The trit-tick sync places fNIRS at 10 Hz (352,800,000 trit-ticks) — see [[bcf-0017]]; it resolves the hemodynamic_delay (2s) scale in the temporal sheaf [[bci-0017]], a necessary neighbor.}
