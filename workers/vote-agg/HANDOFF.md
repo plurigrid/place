@@ -1,8 +1,8 @@
-# Handoff: vote-agg Worker (votes.bci.horse) — currently DOWN
+# Handoff: vote-agg Worker (votes.bci.place) — currently DOWN
 
 ## Status (verified 2026-06-10)
 - `https://bci.red` → 200 (live UI)  ·  `https://bci.blue` → 200 (live UI)
-- `https://votes.bci.horse/items` → **HTTP 000 (not responding)**
+- `https://votes.bci.place/items` → **HTTP 000 (not responding)**
 - No Worker source exists in `plurigrid/place` (this repo). Either it lives in another
   repo (e.g. plurigrid/asi) or was never shipped. The device ledger (`bci/devices/bcf-devices.tree`,
   `trees/bcf-INV-MASTER.tree`) describes it in present tense regardless.
@@ -20,9 +20,9 @@
 
 ## Deploy recipe (Cloudflare Workers)
 - `wrangler.jsonc` here sets name=`vote-agg`, a `[triggers] crons=["0 0 * * *"]`, KV binding `VOTES`,
-  and custom domain route `votes.bci.horse/*`.
+  and custom domain route `votes.bci.place/*`.
 - `export CLOUDFLARE_API_TOKEN=... CLOUDFLARE_ACCOUNT_ID=...` then `npx wrangler deploy`.
-- Custom domain `votes.bci.horse` must be a zone on the account; add as `custom_domain` route.
+- Custom domain `votes.bci.place` must be a zone on the account; add as `custom_domain` route.
 - `src/index.js` here is a working skeleton implementing the 4 endpoints + KV tally.
 
 ## Open questions for the human

@@ -5,5 +5,5 @@
   "observability": { "enabled": true },
   "triggers": { "crons": ["0 0 * * *"] },
   "kv_namespaces": [{ "binding": "VOTES", "id": "REPLACE_WITH_KV_ID" }],
-  "routes": [{ "pattern": "votes.bci.horse/*", "custom_domain": true }]
+  "routes": [{ "pattern": "votes.bci.place", "custom_domain": true }]
 }

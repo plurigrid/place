@@ -1,4 +1,4 @@
-// vote-agg Worker — votes.bci.horse
+// vote-agg Worker — votes.bci.place
 // Implements daily rotation triggers, GET /items, POST /vote, and GET /health.
 
 const CORS = {
