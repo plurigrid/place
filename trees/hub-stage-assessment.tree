@@ -1,0 +1,23 @@
+\title{Lifecycle: assessment}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{15 skills in the assessment stage.}
+\ul{
+\li{[[auditing-aws-s3-bucket-permissions]]}
+\li{[[auditing-azure-active-directory-configuration]]}
+\li{[[auditing-cloud-with-cis-benchmarks]]}
+\li{[[auditing-gcp-iam-permissions]]}
+\li{[[auditing-kubernetes-cluster-rbac]]}
+\li{[[auditing-terraform-infrastructure-for-security]]}
+\li{[[auditing-tls-certificate-transparency-logs]]}
+\li{[[prioritizing-vulnerabilities-with-cvss-scoring]]}
+\li{[[scanning-container-images-with-grype]]}
+\li{[[scanning-containers-with-trivy-in-cicd]]}
+\li{[[scanning-docker-images-with-trivy]]}
+\li{[[scanning-infrastructure-with-nessus]]}
+\li{[[scanning-kubernetes-manifests-with-kubesec]]}
+\li{[[scanning-network-with-nmap-advanced]]}
+\li{[[validating-backup-integrity-for-recovery]]}
+}

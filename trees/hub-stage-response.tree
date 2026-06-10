@@ -1,0 +1,26 @@
+\title{Lifecycle: response}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{18 skills in the response stage.}
+\ul{
+\li{[[acquiring-disk-image-with-dd-and-dcfldd]]}
+\li{[[collecting-indicators-of-compromise]]}
+\li{[[collecting-open-source-intelligence]]}
+\li{[[collecting-threat-intelligence-with-misp]]}
+\li{[[collecting-volatile-evidence-from-compromised-host]]}
+\li{[[containing-active-breach]]}
+\li{[[eradicating-malware-from-infected-systems]]}
+\li{[[extracting-browser-history-artifacts]]}
+\li{[[extracting-config-from-agent-tesla-rat]]}
+\li{[[extracting-credentials-from-memory-dump]]}
+\li{[[extracting-iocs-from-malware-samples]]}
+\li{[[extracting-memory-artifacts-with-rekall]]}
+\li{[[extracting-windows-event-logs-artifacts]]}
+\li{[[investigating-insider-threat-indicators]]}
+\li{[[investigating-phishing-email-incident]]}
+\li{[[investigating-ransomware-attack-artifacts]]}
+\li{[[recovering-deleted-files-with-photorec]]}
+\li{[[recovering-from-ransomware-attack]]}
+}
