@@ -42,6 +42,9 @@ before casting a vote.}
 \transclude{dev-entropy}
 \transclude{dev-cognionics}
 \transclude{dev-xreal}
+\transclude{dev-tv}
+\transclude{dev-camera}
+\transclude{dev-smartplug}
 \transclude{dev-dgx}
 \transclude{dev-fab}
 \transclude{dev-starlink}

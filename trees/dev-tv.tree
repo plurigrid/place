@@ -1,0 +1,9 @@
+\title{TV / display}
+\taxon{device}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\meta{dev-id}{DEV-DISP-001}
+\meta{status}{own}
+\meta{location}{222 Dore}
+\p{Status: \strong{own}. Display for the compute/AV station at 222 Dore; grouped with the computers ([[dev-dgx]]) and XREAL glasses [[dev-xreal]].}

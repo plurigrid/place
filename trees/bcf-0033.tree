@@ -1,5 +1,5 @@
 \title{fNIRS: Hemodynamic (8-Channel Hub)}
-\taxon{device}
+\taxon{rejected}
 \author{monaduck1069}
 \date{2026-04-03}
 \tag{fnirs}
@@ -13,3 +13,4 @@
 \meta{control-sensor}{1 SpO2}
 
 \p{biosignalsplux 8-channel hub configured for fNIRS. 7 fNIRS sensors for cortical hemodynamic measurement + 1 SpO2 sensor as systemic blood oxygenation control. Same dual-wavelength sensors as the 4-channel kit (bcf-0011) but more than double the spatial coverage. Hub and sensors sold separately.}
+\p{\strong{REJECTED reference.} Not a current device — PLUX biosignalsplux was rejected; see [[bcf-0011]].}

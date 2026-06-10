@@ -1,0 +1,9 @@
+\title{Cameras (x3)}
+\taxon{device}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\meta{dev-id}{DEV-CAM-001}
+\meta{status}{own}
+\meta{location}{222 Dore}
+\p{Status: \strong{own}. Three cameras for markerless body-tracking capture at 222 Dore; bench complement to the 6x GoPro 250 Dore rig [[bcf-0014]].}
