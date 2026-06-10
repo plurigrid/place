@@ -12,7 +12,7 @@
 \meta{device}{Cognionics HD-72 64CH 1702HDG}
 \meta{dongle-serial}{AI1B2OSR}
 \meta{port}{/dev/cu.usbserial-AI1B2OSR}
-\meta{status}{streaming-partial}
+\meta{status}{loaned-to-us}
 
 \p{Live acquisition log for the Cognionics HD-72 (\ref{bcf-0052}). Protocol reverse-engineered from \code{labstreaminglayer/App-Cognionics} and confirmed empirically. Key discovery: the device uses FTDI serial (not USB HID) and requires continuous 0x11 keepalive to sustain streaming.}
 
@@ -216,3 +216,4 @@ bcf-0030 (Cyton 8ch, reference)
 \stopverb}
 \p{The chain goes: landscape to pipeline design to empirical data to game-theoretic analysis. Each tree transcludes the next via ref links.}
 }
+\p{\strong{Update 2026-06-10.} The HD-72 streams fine; the earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Current status: loaned-to-us, operational.}

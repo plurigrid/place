@@ -15,7 +15,7 @@
 \meta{electrode-type}{dry}
 \meta{interface}{USB (FTDI)}
 \meta{dongle-serial}{AI1B2OSR}
-\meta{status}{enumerated-not-streaming}
+\meta{status}{loaned-to-us}
 
 \p{Cognionics HD-72 64-channel dry EEG headset detected at USB. Device enumerated as \code{Cognionics HD-72 64CH 1702HDG@00100000}. Research-grade wireless dry EEG -- 8x the channel count of the Cyton 8ch (\ref{bcf-0030}).}
 
@@ -107,3 +107,4 @@ Cognionics HD-72 (USB HID)
 \subtree{\title{Morgan Hough Connection}
 \p{Morgan Hough (Frontier Tower neurotech channel) has access to dry electrode systems and organizes NeurotechSF. The HD-72 is exactly the class of device he works with. Follow-up action: share this tree + probe protocol as conversation starter for the Sunday Gemma 4 x BCI event.}
 }
+\p{\strong{Update 2026-06-10.} The HD-72 streams fine; the earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Current status: loaned-to-us, operational.}
