@@ -89,27 +89,27 @@ before casting a vote.}
 \p{The following additional candidates come from the per-item trees in \code{trees/bcf-INV-*.tree}. Each \code{id} is the slug after \code{bcf-INV-}.}
 \table{
 \tr{\th{slug} \th{Item} \th{Category} \th{Status} \th{Cost}}
-\tr{\td{\ref{bcf-INV-250-dore-month}} \td{250 Dore — 1 month rent} \td{bcf-0004} \td{want} \td{?-? USD/mo}}
-\tr{\td{\ref{bcf-INV-250-dore-purchase}} \td{250 Dore — freehold purchase} \td{bcf-0004} \td{want} \td{?-? USD}}
-\tr{\td{\ref{bcf-INV-aSee-evs}} \td{7invensun aSee-EVS eye tracker} \td{bcf-0013} \td{want} \td{500-1500 USD}}
-\tr{\td{\ref{bcf-INV-artinis-brite-lite-mkiv}} \td{Artinis Brite Lite MKIV} \td{bcf-0035} \td{want} \td{5000-8000 USD}}
-\tr{\td{\ref{bcf-INV-domain-renewals-10yr}} \td{Domain renewals (bci.place/red/blue + plurigrid.org, 10yr)} \td{bcf-0001} \td{want} \td{500-1500 USD}}
-\tr{\td{\ref{bcf-INV-dsi-24}} \td{DSI-24 Wireless EEG (Wearable Sensing)} \td{bcf-0010} \td{want} \td{12000-18000 USD}}
-\tr{\td{\ref{bcf-INV-electrode-supplies}} \td{Conductive gel + paste + electrodes} \td{bcf-0010} \td{want} \td{100-500 USD/month}}
-\tr{\td{\ref{bcf-INV-faraday-cage-250-dore}} \td{Faraday cage / RF shielding} \td{bcf-0004} \td{want} \td{5000-20000 USD}}
-\tr{\td{\ref{bcf-INV-fus-s1-a1}} \td{Rigol AWG + 300kHz FUS (S1/A1)} \td{bcf-0016} \td{want} \td{3000-6000 USD}}
-\tr{\td{\ref{bcf-INV-hackeeg}} \td{HackEEG (TI ADS1299 breakout)} \td{bcf-0010} \td{want} \td{300-500 USD}}
-\tr{\td{\ref{bcf-INV-liability-insurance}} \td{Research + general liability insurance} \td{bcf-0058} \td{want} \td{2000-6000 USD/yr}}
-\tr{\td{\ref{bcf-INV-loaner-parts-pool}} \td{Loaner-parts pool (spares for borrowing)} \td{bcf-0004} \td{want} \td{500-5000 USD}}
-\tr{\td{\ref{bcf-INV-muse-s-gen2}} \td{Muse S Gen 2} \td{bcf-0010} \td{want} \td{250-400 USD}}
-\tr{\td{\ref{bcf-INV-nirx-nirsport-2}} \td{NIRx NIRSport 2} \td{bcf-0032} \td{want} \td{50000-120000 USD}}
-\tr{\td{\ref{bcf-INV-ppg-hrv-wristband}} \td{PPG HRV wristband} \td{bcf-0014} \td{want} \td{50-300 USD}}
-\tr{\td{\ref{bcf-INV-second-cyton-daisy-rig}} \td{Second OpenBCI Cyton + Daisy rig} \td{bcf-0010} \td{want} \td{1650 USD}}
-\tr{\td{\ref{bcf-INV-solutions-irb-year}} \td{Solutions IRB yearly access} \td{bcf-0058} \td{want} \td{3000-5000 USD/yr}}
-\tr{\td{\ref{bcf-INV-tongue-electrodes}} \td{Tongue electrodes (gustatory)} \td{bcf-0056} \td{want} \td{100-500 USD}}
-\tr{\td{\ref{bcf-INV-van-ford-etransit}} \td{Ford E-Transit AWD} \td{bcf-0004} \td{want} \td{50000-60000 USD}}
-\tr{\td{\ref{bcf-INV-van-vw-id-buzz}} \td{VW ID. Buzz Pro S 4Motion} \td{bcf-0004} \td{want} \td{65000-75000 USD}}
-\tr{\td{\ref{bcf-INV-vibrotactile-haptic}} \td{Vibrotactile haptic array} \td{bcf-0016} \td{want} \td{50-300 USD}}
+\tr{\td{\code{bcf-INV-250-dore-month}} \td{250 Dore — 1 month rent} \td{bcf-0004} \td{want} \td{?-? USD/mo}}
+\tr{\td{\code{bcf-INV-250-dore-purchase}} \td{250 Dore — freehold purchase} \td{bcf-0004} \td{want} \td{?-? USD}}
+\tr{\td{\code{bcf-INV-aSee-evs}} \td{7invensun aSee-EVS eye tracker} \td{bcf-0013} \td{want} \td{500-1500 USD}}
+\tr{\td{\code{bcf-INV-artinis-brite-lite-mkiv}} \td{Artinis Brite Lite MKIV} \td{bcf-0035} \td{want} \td{5000-8000 USD}}
+\tr{\td{\code{bcf-INV-domain-renewals-10yr}} \td{Domain renewals (bci.place/red/blue + plurigrid.org, 10yr)} \td{bcf-0001} \td{want} \td{500-1500 USD}}
+\tr{\td{\code{bcf-INV-dsi-24}} \td{DSI-24 Wireless EEG (Wearable Sensing)} \td{bcf-0010} \td{want} \td{12000-18000 USD}}
+\tr{\td{\code{bcf-INV-electrode-supplies}} \td{Conductive gel + paste + electrodes} \td{bcf-0010} \td{want} \td{100-500 USD/month}}
+\tr{\td{\code{bcf-INV-faraday-cage-250-dore}} \td{Faraday cage / RF shielding} \td{bcf-0004} \td{want} \td{5000-20000 USD}}
+\tr{\td{\code{bcf-INV-fus-s1-a1}} \td{Rigol AWG + 300kHz FUS (S1/A1)} \td{bcf-0016} \td{want} \td{3000-6000 USD}}
+\tr{\td{\code{bcf-INV-hackeeg}} \td{HackEEG (TI ADS1299 breakout)} \td{bcf-0010} \td{want} \td{300-500 USD}}
+\tr{\td{\code{bcf-INV-liability-insurance}} \td{Research + general liability insurance} \td{bcf-0058} \td{want} \td{2000-6000 USD/yr}}
+\tr{\td{\code{bcf-INV-loaner-parts-pool}} \td{Loaner-parts pool (spares for borrowing)} \td{bcf-0004} \td{want} \td{500-5000 USD}}
+\tr{\td{\code{bcf-INV-muse-s-gen2}} \td{Muse S Gen 2} \td{bcf-0010} \td{want} \td{250-400 USD}}
+\tr{\td{\code{bcf-INV-nirx-nirsport-2}} \td{NIRx NIRSport 2} \td{bcf-0032} \td{want} \td{50000-120000 USD}}
+\tr{\td{\code{bcf-INV-ppg-hrv-wristband}} \td{PPG HRV wristband} \td{bcf-0014} \td{want} \td{50-300 USD}}
+\tr{\td{\code{bcf-INV-second-cyton-daisy-rig}} \td{Second OpenBCI Cyton + Daisy rig} \td{bcf-0010} \td{want} \td{1650 USD}}
+\tr{\td{\code{bcf-INV-solutions-irb-year}} \td{Solutions IRB yearly access} \td{bcf-0058} \td{want} \td{3000-5000 USD/yr}}
+\tr{\td{\code{bcf-INV-tongue-electrodes}} \td{Tongue electrodes (gustatory)} \td{bcf-0056} \td{want} \td{100-500 USD}}
+\tr{\td{\code{bcf-INV-van-ford-etransit}} \td{Ford E-Transit AWD} \td{bcf-0004} \td{want} \td{50000-60000 USD}}
+\tr{\td{\code{bcf-INV-van-vw-id-buzz}} \td{VW ID. Buzz Pro S 4Motion} \td{bcf-0004} \td{want} \td{65000-75000 USD}}
+\tr{\td{\code{bcf-INV-vibrotactile-haptic}} \td{Vibrotactile haptic array} \td{bcf-0016} \td{want} \td{50-300 USD}}
 }
 }
 \subtree{\title{Device builds}
@@ -122,3 +122,4 @@ before casting a vote.}
 \tr{\td{\ref{hero-uart-build}} \td{Hero pill dispenser UART tap} \td{DEV-HERO-001} \td{U0-U8 plus H0-H5}}
 }
 }
+\p{Services (IRB, insurance) live in [[bcf-0058]]; space + vehicles in [[bcf-0004]]. The retired April procurement ledger (bcf-INV-MASTER) is fully folded into this Device Ledger.}
