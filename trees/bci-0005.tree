@@ -16,8 +16,9 @@ For desired full-brain signal #{F : A \to \mathrm{Vect}}, the right Kan extensio
 
 ##{\mathrm{ran}_H F(b) = \int_{a:A} H(a,b) \to F(a)}
 
-is the optimal signal reconstruction from 8 channels. The universal property
-guarantees it is the best approximation in the categorical sense.}
+is the categorically universal reconstruction from 8 channels. The universal
+property makes it canonical in the categorical sense; whether this coincides
+with the statistically optimal (e.g. MMSE) reconstruction is not established here.}
 }
 
 \subtree{
@@ -29,8 +30,8 @@ Kan lift
 
 ##{\mathrm{lift}_K F(a,b) = \int^{c:C} K(b,c) \times F(a,c)}
 
-answers: what is the minimal montage that can detect the pattern? This is
-the electrode optimization problem solved universally.}
+answers: what is the minimal montage that can detect the pattern? This is a categorical formulation of the electrode optimization problem; it
+names the universal construction but does not by itself compute a montage.}
 }
 
 \subtree{
