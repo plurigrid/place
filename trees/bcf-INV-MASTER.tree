@@ -12,7 +12,7 @@
 
 \p{Status vocabulary: own | building | on-order | want | lent-to-us | lent-from-us | dont-want | defer | ? (pending).}
 
-\p{Rotation rule: at 00:00 UTC the vote-agg Worker picks 2 items from status=want whose cost ranges overlap within 1.5x. Today's pair is at GET votes.bci.horse/items (or OSC_ENDPOINT/items). Vote payload is {pair_id, side, final_state_hash, seed} where final_state_hash commits to the WASM gain-of-function simulation state the voter reached — vote endorses a WORLD, not just a purchase.}
+\p{Rotation rule: at 00:00 UTC the vote-agg Worker picks 2 items from status=want whose cost ranges overlap within 1.5x. Today's pair is at GET votes.bci.horse/items (or OSC_ENDPOINT/items). Vote payload is {pair_id, side, final_state_hash, seed} where final_state_hash commits to the simulation state the voter reached — vote endorses a WORLD, not just a purchase.}
 
 \subtree{\title{Ledger entries}
 \transclude{bcf-INV-openbci-cyton-ultracortex}
