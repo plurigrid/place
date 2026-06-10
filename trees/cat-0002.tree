@@ -1,0 +1,12 @@
+\title{Foundations: the category axioms, transcluded}
+\taxon{reference}
+\import{macros}
+
+\p{Every categorical tree in this forest rests on one base definition: the
+generalized algebraic theory of categories. It is transcluded inline below, so
+this page always shows the live definition rather than a stale copy of it.}
+
+\transclude{cat-0001}
+
+\p{Downstream trees that presuppose #{\mathbb{T}_{\mathsf{Cat}}}: [[dbl-000A]]
+(double Lawvere theories) and [[cgt-0001]] (compositional game theory for BCI).}
