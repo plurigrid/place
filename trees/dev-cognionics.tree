@@ -6,4 +6,4 @@
 \meta{dev-id}{DEV-EEG-005}
 \meta{status}{loaned-to-us}
 \meta{location}{222 Dore}
-\p{Status: \strong{loaned-to-us}. Verify exact make, channel count, and loan terms.}
+\p{Status: \strong{loaned-to-us}, operational. The HD-72 streams fine as of 2026-06-10; earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Verify exact make, channel count, and loan terms.}

@@ -216,4 +216,4 @@ bcf-0030 (Cyton 8ch, reference)
 \stopverb}
 \p{The chain goes: landscape to pipeline design to empirical data to game-theoretic analysis. Each tree transcludes the next via ref links.}
 }
-\p{\strong{Update 2026-06-10.} The HD-72 streams fine; the earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Current status: loaned-to-us, operational.}
+\p{\strong{Update 2026-06-10.} The HD-72 streams fine; the earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Device status is tracked in the ledger — see [[dev-cognionics]].}

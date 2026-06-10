@@ -396,3 +396,5 @@
 \def\rpar{#{\startverb)\stopverb}}
 \def\lsqb{#{\startverb[\stopverb}}
 \def\rsqb{#{\startverb]\stopverb}}
+
+\def\plannedbanner{\p{\strong{Planned.} This is design intent — the end-to-end neurofeedback pipeline is not yet evidenced running on the bench. The hardware items exist; the closed loop is a plan.}}

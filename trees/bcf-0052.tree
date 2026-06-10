@@ -107,4 +107,4 @@ Cognionics HD-72 (USB HID)
 \subtree{\title{Morgan Hough Connection}
 \p{Morgan Hough (Frontier Tower neurotech channel) has access to dry electrode systems and organizes NeurotechSF. The HD-72 is exactly the class of device he works with. Follow-up action: share this tree + probe protocol as conversation starter for the Sunday Gemma 4 x BCI event.}
 }
-\p{\strong{Update 2026-06-10.} The HD-72 streams fine; the earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Current status: loaned-to-us, operational.}
+\p{Streaming verified during bring-up (2026-06-10); see the acquisition log [[bcf-0053]] and ledger status [[dev-cognionics]].}
