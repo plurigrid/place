@@ -3,6 +3,7 @@
 \author{monaduck1069}
 \date{2026-04-07}
 \import{macros}
+\p{Temporal placement: this modality resolves the write-channel timescale of the temporal sheaf [[bci-0017]]; sample windows tile into GF(3) phases per [[bcf-0017]].}
 \tag{fus}
 \tag{ultrasound}
 \tag{stimulation}
