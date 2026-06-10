@@ -9,7 +9,7 @@
 \import{macros}
 
 \p{Working device ledger for the BCI Factory daily vote and bench inventory. This is based on current reported state and needs photo/model verification after the next office inventory pass.
-Devices with status \code{want}, \code{building}, or \code{aspirational} may enter the daily possible-world rotation pool.
+Devices with status \code{want} or \code{aspirational} may enter the daily possible-world rotation pool.
 Each day, a date-seeded selection picks two devices for bci.red vs bci.blue.
 Voters simulate each device's world via the embedded WASM gain-of-function kernel
 before casting a vote.}
@@ -17,7 +17,7 @@ before casting a vote.}
 \subtree{\title{Schema}
 \p{Each device record: \code{id, name, status, cost_usd, modality, channels, sim_params, url, notes}.}
 \p{Status values: \code{own}, \code{building}, \code{needs-repair}, \code{loaned-to-us}, \code{on-order}, \code{want}, \code{aspirational}, \code{dont-want}.}
-\p{Only \code{want}, \code{building}, and \code{aspirational} enter the possible-world vote rotation.}
+\p{Only \code{want} and \code{aspirational} enter the possible-world vote rotation.}
 }
 
 \subtree{\title{Possible-world rotation pool}

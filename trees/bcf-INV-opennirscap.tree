@@ -1,7 +1,7 @@
 \title{OpenNIRScap (UofT Kim et al.)}
 \taxon{inventory-item}
 \meta{category}{bcf-0036}
-\meta{status}{building}
+\meta{status}{own}
 \meta{cost-range}{419 USD BOM}
 \meta{url}{https://github.com/tonykim07/fNIRS}
 \meta{sim-params-addr}{bcf-INV-opennirscap-sim}
