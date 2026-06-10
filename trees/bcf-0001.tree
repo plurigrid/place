@@ -7,15 +7,22 @@
 \p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{222 Dore Street, San Francisco}. This forest separates current inventory, loaned or donated equipment, wanted equipment, rejected options, and possible-world design directions.}
 \p{Contact: yuzu@plurigrid.com. Current public direction: \code{https://bci.place}.}
 \subtree{\title{Current Map}
-\ul{\li{[[bcf-devices]]}\li{[[bcf-0006]]}\li{[[bcf-0004]]}}}
+\ul{\li{[[bcf-devices]]}\li{[[bcf-0009]]}\li{[[bcf-0006]]}\li{[[bcf-0004]]}\li{[[horse-000A]]}}}
 \subtree{\title{Possible Worlds}
 \p{Design worlds for comparison and voting; not the canonical current stack.}
 \ul{\li{[[horse-0001]]}\li{[[bcf-0030]]}\li{[[bcf-0008]]}\li{[[bcf-0042]]}\li{[[bcf-0043]]}}}
 \subtree{\title{Innovation And Comfort}
 \ul{\li{[[bci-0009]]}\li{[[bcf-0036]]}}}
 \subtree{\title{Mathematics And Protocols}
-\ul{\li{[[bci-0001]]}\li{[[bcf-0003]]}\li{[[bcf-0005]]}\li{[[bcf-0040]]}}}
+\ul{\li{[[bci-0001]]}\li{[[bcf-0003]]}\li{[[bcf-0005]]}\li{[[bcf-0040]]}\li{[[bci-0017]]}\li{[[bcf-0050]]}}
+\p{Theory foundations (the forest as a sheaf on a stack):}
+\ul{\li{[[hub-categorical-systems]]}\li{[[hub-doctrines]]}\li{[[hub-morphisms]]}\li{[[hub-outcome-logic]]}\li{[[hub-capability-security]]}\li{[[hub-researchers]]}\li{[[hub-bibliography]]}}}
 \subtree{\title{Resources And Surviving Stubs}
 \ul{\li{[[bcf-0038]]}\li{[[bcf-0039]]}\li{[[bcf-0041]]}}}
 \subtree{\title{Standards}
 \ul{\li{[[std-0001]]}\li{[[bcf-0002]]}}}
+\subtree{\title{Secure Messaging}
+\p{Whisper-\(\lambda\): a Signal-class messaging stack built in the forest, anchored to the capability-security foundations.}
+\ul{\li{[[bcf-0070]]}\li{[[bcf-0069]]}\li{[[bcf-0071]]}\li{[[bcf-0073]]}\li{[[hub-capability-security]]}}}
+\subtree{\title{BCI Landscape}
+\ul{\li{[[bcf-0051]]}}}
