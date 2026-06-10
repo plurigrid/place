@@ -1,0 +1,44 @@
+\title{Category}
+\taxon{definition}
+\import{macros}
+
+\p{We take the definition of a \define{category} from its most successful
+mathematical model: the generalized algebraic theory #{\mathbb{T}_{\mathsf{Cat}}}
+whose models are exactly categories. This is the presentation that
+AlgebraicJulia (Catlab) and CatColab actually execute, and on which every
+acset in this forest rests --- an acset is a copresheaf on a finitely-presented
+instance of it.}
+
+\p{The theory #{\mathbb{T}_{\mathsf{Cat}}} has two sorts and two operations:}
+
+\ul{
+\li{a sort #{\mathrm{Ob}} of objects;}
+\li{for each pair #{a, b : \mathrm{Ob}}, a sort #{\mathrm{Hom}(a,b)} of
+morphisms, with #{f : \mathrm{Hom}(a,b)} written #{f : a \to b};}
+\li{an identity #{\mathrm{id}_a : \mathrm{Hom}(a,a)} for each #{a : \mathrm{Ob}};}
+\li{a composite #{g \circ f : \mathrm{Hom}(a,c)} for each #{f : \mathrm{Hom}(a,b)}
+and #{g : \mathrm{Hom}(b,c)}.}
+}
+
+\p{These are subject to three equations, quantified over all composable morphisms:}
+
+##{
+(h \circ g) \circ f = h \circ (g \circ f),
+\qquad
+\mathrm{id}_b \circ f = f,
+\qquad
+f \circ \mathrm{id}_a = f.
+}
+
+\p{The first is associativity; the latter two are the left and right unit laws.
+A \define{model} of #{\mathbb{T}_{\mathsf{Cat}}} valued in #{\mathsf{Set}} ---
+the sorts #{\mathrm{Ob}} and #{\mathrm{Hom}(a,b)} interpreted as sets --- is
+precisely a small category. The rest of the hierarchy ([[dbl-000A]],
+[[cgt-0001]]) consists of further models, or morphisms of models, over this
+base.}
+
+\p{Why this model rather than the textbook prose: #{\mathbb{T}_{\mathsf{Cat}}}
+is a generalized algebraic theory (Cartmell), so its morphisms, models, and
+free constructions are all mechanically computable. That computability --- not
+Mac Lane's set-theoretic phrasing --- is what makes it the version worth
+transcluding and running.}
