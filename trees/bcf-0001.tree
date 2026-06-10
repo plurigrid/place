@@ -22,7 +22,7 @@
 \subtree{\title{Standards}
 \ul{\li{[[std-0001]]}\li{[[bcf-0002]]}}}
 \subtree{\title{Secure Messaging}
-\p{Whisper-\(\lambda\): a Signal-class messaging stack built in the forest, anchored to the capability-security foundations.}
+\p{Whisper-λ: a Signal-class messaging stack built in the forest, anchored to the capability-security foundations.}
 \ul{\li{[[bcf-0070]]}\li{[[bcf-0069]]}\li{[[bcf-0071]]}\li{[[bcf-0073]]}\li{[[hub-capability-security]]}}}
 \subtree{\title{BCI Landscape}
 \ul{\li{[[bcf-0051]]}}}
