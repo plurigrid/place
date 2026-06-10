@@ -1,7 +1,7 @@
 \title{NV Diamond Magnetometer (Uncut Gem)}
 \taxon{inventory-item}
 \meta{category}{bcf-0031}
-\meta{status}{own}
+\meta{status}{building}
 \meta{cost-range}{130 USD x3}
 \meta{url}{}
 \meta{sim-params-addr}{bcf-INV-nv-diamond-mag-sim}
