@@ -1,10 +1,11 @@
 \title{VARMBLIXT + BILRESA: Matter Ambient Feedback over Thread}
 \author{bmorphism}
 \import{macros}
+\meta{status}{own}
 \date{2026-04-03}
 \taxon{definition}
 
-\p{The IKEA VARMBLIXT lamp (Matter over Thread) and BILRESA remote (2 buttons × 3 actions) are the ambient-feedback output of the BCI Factory — the output modality that closes the neurofeedback loop through environmental lighting.}
+\p{The IKEA VARMBLIXT lamp (Matter over Thread) and BILRESA remote (2 buttons × 3 actions) are owned inventory of the BCI Factory. \strong{Planned use:} ambient feedback that would close the neurofeedback loop via environmental lighting. No brain-state-to-lamp pipeline runs yet; the responsivity below is design intent, not a measured capability.}
 
 \subtree{
 \title{Pipeline Integration}
@@ -36,7 +37,6 @@
   \tr{\td{2} \td{Double} \td{Color Temp Cool} \td{-1}}
 }
 
-}
 }
 
 \subtree{
