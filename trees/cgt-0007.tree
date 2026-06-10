@@ -12,7 +12,7 @@ trit assignment and improve its local objective without violating the global
 conservation law. This is precisely the definition of Nash equilibrium in
 the composed game #{G_1 \mathbin{;} G_2 \mathbin{;} G_3 \mathbin{;} G_4}.}
 
-\p{From the double-categorical perspective, GF(3) conservation is a
+\p{GF(3) conservation is a
 \strong{tabulator condition} (cf. [[dbl-0002]]): the trit assignment is the
 tabulator of the profunctor #{m : \mathrm{Signals} \proto \mathrm{Intents}},
 and the equilibrium is the universal property that the comparison map
