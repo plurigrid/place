@@ -11,3 +11,7 @@ bun.lock
 
 # Generated/vendored artifacts
 node_modules/
+
+workers/**/.wrangler/
+workers/**/node_modules/
+.wrangler/
