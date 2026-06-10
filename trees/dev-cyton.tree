@@ -7,4 +7,3 @@
 \meta{status}{own}
 \meta{location}{222 Dore}
 \p{Status: \strong{own}. Verify assembly and channel count.}
-\p{The trit-tick sync places this device at 250 Hz (14,112,000 trit-ticks/sample) — see [[bcf-0017]]; its ADS1299 resolves the eeg_sample scale in the temporal sheaf [[bci-0017]].}

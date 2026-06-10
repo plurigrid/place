@@ -7,4 +7,3 @@
 \meta{status}{own}
 \meta{location}{222 Dore}
 \p{Status: \strong{own}. Fixed; gel available.}
-\p{Resolves the eeg_sample / alpha_cycle scales of the temporal sheaf [[bci-0017]]; synchronized via the GF(3) trit-tick [[bcf-0017]].}

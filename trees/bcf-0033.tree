@@ -1,4 +1,3 @@
-\p{Temporal placement: this modality resolves the hemodynamic_delay (2s) scale of the temporal sheaf [[bci-0017]]; sample windows tile into GF(3) phases per [[bcf-0017]].}
 \title{fNIRS: Hemodynamic (8-Channel Hub)}
 \taxon{rejected}
 \author{monaduck1069}

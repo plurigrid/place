@@ -7,4 +7,3 @@
 \meta{status}{loaned-to-us}
 \meta{location}{222 Dore}
 \p{Status: \strong{loaned-to-us}. Verify exact make, channel count, and loan terms.}
-\p{High-density EEG: resolves spatial alpha_cycle where 8ch undersamples — see the temporal sheaf [[bci-0017]]; synchronized via [[bcf-0017]].}

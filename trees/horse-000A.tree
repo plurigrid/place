@@ -4,7 +4,7 @@
 \date{2026-04-03}
 \taxon{definition}
 
-\p{The IKEA VARMBLIXT lamp (Matter over Thread) and BILRESA remote (2 buttons × 3 actions) form the \strong{ambient feedback sheaf} of the BCI Factory — the output modality that closes the neurofeedback loop through environmental lighting.}
+\p{The IKEA VARMBLIXT lamp (Matter over Thread) and BILRESA remote (2 buttons × 3 actions) are the ambient-feedback output of the BCI Factory — the output modality that closes the neurofeedback loop through environmental lighting.}
 
 \subtree{
 \title{Pipeline Integration}
@@ -18,13 +18,13 @@
   \tr{\td{+1} \td{0° (red)} \td{Activation / beta burst} \td{+1}}
 }
 
-\p{The lamp IS the bci.red/bci.blue/bci.place room state made ambient. Visitors see the trit without needing the oscilloscope.}
+\p{The lamp surfaces the room state as ambient color. Visitors see the trit without needing the oscilloscope.}
 }
 
 \subtree{
 \title{BILRESA Command Matrix}
 
-\p{The BILRESA remote provides manual override — 6 commands at trit parity 0:}
+\p{The BILRESA remote provides manual override (6 commands):}
 
 \table{
   \tr{\th{Button} \th{Action} \th{ZCL Command} \th{Trit}}
@@ -36,7 +36,7 @@
   \tr{\td{2} \td{Double} \td{Color Temp Cool} \td{-1}}
 }
 
-\p{Sum: 0 + 1 + 1 + 0 + (-1) + (-1) = 0. \strong{GF(3) conserved.}}
+}
 }
 
 \subtree{
@@ -54,5 +54,5 @@
 \subtree{
 \title{Thread Transport}
 
-\p{VARMBLIXT joins the Thread mesh as a \strong{Sleepy End Device} — it wakes on command, updates color, returns to sleep. The HomePod TBR ([[horse-0008]]) routes Matter commands from the pipeline to the lamp. No cloud dependency. Local mesh latency < 50ms — well within the 20ms neurofeedback window.}
+\p{VARMBLIXT joins the Thread mesh as a \strong{Sleepy End Device} — it wakes on command, updates color, returns to sleep. The HomePod TBR ([[horse-0008]]) routes Matter commands from the pipeline to the lamp. No cloud dependency. Local mesh latency is low (no cloud dependency).}
 }
