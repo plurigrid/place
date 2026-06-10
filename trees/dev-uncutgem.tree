@@ -4,6 +4,6 @@
 \author{monaduck1069}
 \date{2026-06-04}
 \meta{dev-id}{DEV-MAG-001}
-\meta{status}{own}
+\meta{status}{building}
 \meta{location}{222 Dore}
-\p{Status: \strong{own}. Built. Device: [[bcf-0031]]; build record: [[uncut-gems-build]].}
+\p{Status: \strong{building}. Partial build, blockers open (see [[uncut-gems-build]]). Device: [[bcf-0031]]; build record: [[uncut-gems-build]].}
