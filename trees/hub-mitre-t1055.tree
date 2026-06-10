@@ -1,0 +1,28 @@
+\title{ATT&CK T1055}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{20 skills addressing MITRE ATT&CK technique T1055.}
+\ul{
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[building-red-team-c2-infrastructure-with-havoc]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-malware-incident-response]]}
+\li{[[detecting-evasion-techniques-in-endpoint-logs]]}
+\li{[[detecting-fileless-malware-techniques]]}
+\li{[[detecting-process-hollowing-technique]]}
+\li{[[detecting-process-injection-techniques]]}
+\li{[[detecting-t1055-process-injection-with-sysmon]]}
+\li{[[executing-red-team-exercise]]}
+\li{[[hunting-advanced-persistent-threats]]}
+\li{[[hunting-for-process-injection-techniques]]}
+\li{[[implementing-continuous-security-validation-with-bas]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[implementing-siem-use-cases-for-detection]]}
+\li{[[implementing-threat-modeling-with-mitre-attack]]}
+\li{[[mapping-mitre-attack-techniques]]}
+\li{[[performing-memory-forensics-with-volatility3-plugins]]}
+\li{[[performing-threat-hunting-with-elastic-siem]]}
+\li{[[performing-threat-hunting-with-yara-rules]]}
+}

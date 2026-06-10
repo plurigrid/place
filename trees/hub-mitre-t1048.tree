@@ -1,0 +1,15 @@
+\title{ATT&CK T1048}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{7 skills addressing MITRE ATT&CK technique T1048.}
+\ul{
+\li{[[building-detection-rule-with-splunk-spl]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[hunting-for-data-exfiltration-indicators]]}
+\li{[[hunting-for-dns-tunneling-with-zeek]]}
+\li{[[implementing-continuous-security-validation-with-bas]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[performing-purple-team-atomic-testing]]}
+}

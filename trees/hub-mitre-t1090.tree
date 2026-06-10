@@ -1,0 +1,13 @@
+\title{ATT&CK T1090}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{5 skills addressing MITRE ATT&CK technique T1090.}
+\ul{
+\li{[[building-c2-infrastructure-with-sliver-framework]]}
+\li{[[building-red-team-c2-infrastructure-with-havoc]]}
+\li{[[hunting-for-domain-fronting-c2-traffic]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[performing-purple-team-atomic-testing]]}
+}

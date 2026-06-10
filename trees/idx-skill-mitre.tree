@@ -1,0 +1,56 @@
+\title{Skills by ATT&CK Technique}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{Security skills grouped by MITRE ATT&CK technique.}
+\ul{
+\li{[[hub-mitre-t1059]] (33)}
+\li{[[hub-mitre-t1003]] (26)}
+\li{[[hub-mitre-t1558]] (23)}
+\li{[[hub-mitre-t1021]] (22)}
+\li{[[hub-mitre-t1071]] (22)}
+\li{[[hub-mitre-t1078]] (21)}
+\li{[[hub-mitre-t1566]] (21)}
+\li{[[hub-mitre-t1053]] (20)}
+\li{[[hub-mitre-t1055]] (20)}
+\li{[[hub-mitre-t1547]] (17)}
+\li{[[hub-mitre-t1550]] (13)}
+\li{[[hub-mitre-t1087]] (11)}
+\li{[[hub-mitre-t1218]] (10)}
+\li{[[hub-mitre-t1574]] (10)}
+\li{[[hub-mitre-t1041]] (10)}
+\li{[[hub-mitre-t1098]] (9)}
+\li{[[hub-mitre-t1110]] (9)}
+\li{[[hub-mitre-t1546]] (9)}
+\li{[[hub-mitre-t1105]] (8)}
+\li{[[hub-mitre-t1070]] (8)}
+\li{[[hub-mitre-t1068]] (8)}
+\li{[[hub-mitre-t1486]] (7)}
+\li{[[hub-mitre-t1048]] (7)}
+\li{[[hub-mitre-t1573]] (7)}
+\li{[[hub-mitre-t1543]] (7)}
+\li{[[hub-mitre-t1548]] (7)}
+\li{[[hub-mitre-t1204]] (7)}
+\li{[[hub-mitre-t1047]] (7)}
+\li{[[hub-mitre-t1036]] (5)}
+\li{[[hub-mitre-t1090]] (5)}
+\li{[[hub-mitre-t1537]] (5)}
+\li{[[hub-mitre-t1136]] (5)}
+\li{[[hub-mitre-t1567]] (5)}
+\li{[[hub-mitre-t1069]] (5)}
+\li{[[hub-mitre-t1197]] (4)}
+\li{[[hub-mitre-t1140]] (4)}
+\li{[[hub-mitre-t1490]] (4)}
+\li{[[hub-mitre-t1583]] (4)}
+\li{[[hub-mitre-t1572]] (4)}
+\li{[[hub-mitre-t1018]] (4)}
+\li{[[hub-mitre-t1190]] (4)}
+\li{[[hub-mitre-t1016]] (4)}
+\li{[[hub-mitre-t1569]] (4)}
+\li{[[hub-mitre-t1570]] (4)}
+\li{[[hub-mitre-t1552]] (4)}
+\li{[[hub-mitre-t1557]] (4)}
+\li{[[hub-mitre-t1127]] (4)}
+\li{[[hub-mitre-t1134]] (4)}
+}

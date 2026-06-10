@@ -1,0 +1,34 @@
+\title{Skill hub: bloodhound}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{26 security skills using bloodhound.}
+\ul{
+\li{[[analyzing-active-directory-acl-abuse]]}
+\li{[[analyzing-prefetch-files-for-execution-history]]}
+\li{[[auditing-azure-active-directory-configuration]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[conducting-domain-persistence-with-dcsync]]}
+\li{[[conducting-internal-network-penetration-test]]}
+\li{[[conducting-internal-reconnaissance-with-bloodhound-ce]]}
+\li{[[containing-active-breach]]}
+\li{[[deploying-active-directory-honeytokens]]}
+\li{[[detecting-dcsync-attack-in-active-directory]]}
+\li{[[detecting-lateral-movement-in-network]]}
+\li{[[detecting-lateral-movement-with-splunk]]}
+\li{[[executing-active-directory-attack-simulation]]}
+\li{[[executing-red-team-exercise]]}
+\li{[[exploiting-active-directory-with-bloodhound]]}
+\li{[[exploiting-constrained-delegation-abuse]]}
+\li{[[exploiting-kerberoasting-with-impacket]]}
+\li{[[hunting-for-dcsync-attacks]]}
+\li{[[implementing-attack-path-analysis-with-xm-cyber]]}
+\li{[[performing-active-directory-bloodhound-analysis]]}
+\li{[[performing-active-directory-compromise-investigation]]}
+\li{[[performing-active-directory-penetration-test]]}
+\li{[[performing-active-directory-vulnerability-assessment]]}
+\li{[[performing-credential-access-with-lazagne]]}
+\li{[[performing-kerberoasting-attack]]}
+\li{[[performing-lateral-movement-detection]]}
+}

@@ -1,0 +1,18 @@
+\title{ATT&CK T1041}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{10 skills addressing MITRE ATT&CK technique T1041.}
+\ul{
+\li{[[analyzing-ransomware-network-indicators]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-malware-incident-response]]}
+\li{[[executing-red-team-exercise]]}
+\li{[[hunting-for-data-exfiltration-indicators]]}
+\li{[[implementing-continuous-security-validation-with-bas]]}
+\li{[[implementing-threat-modeling-with-mitre-attack]]}
+\li{[[performing-purple-team-atomic-testing]]}
+\li{[[performing-purple-team-exercise]]}
+}

@@ -1,0 +1,13 @@
+\title{ATT&CK T1136}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{5 skills addressing MITRE ATT&CK technique T1136.}
+\ul{
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[detecting-privilege-escalation-in-kubernetes-pods]]}
+\li{[[exploiting-nopac-cve-2021-42278-42287]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[performing-purple-team-atomic-testing]]}
+}

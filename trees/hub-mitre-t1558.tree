@@ -1,0 +1,31 @@
+\title{ATT&CK T1558}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{23 skills addressing MITRE ATT&CK technique T1558.}
+\ul{
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[conducting-domain-persistence-with-dcsync]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-internal-network-penetration-test]]}
+\li{[[conducting-pass-the-ticket-attack]]}
+\li{[[conducting-post-incident-lessons-learned]]}
+\li{[[detecting-golden-ticket-attacks-in-kerberos-logs]]}
+\li{[[detecting-golden-ticket-forgery]]}
+\li{[[detecting-kerberoasting-attacks]]}
+\li{[[detecting-lateral-movement-in-network]]}
+\li{[[detecting-mimikatz-execution-patterns]]}
+\li{[[executing-active-directory-attack-simulation]]}
+\li{[[executing-red-team-exercise]]}
+\li{[[exploiting-active-directory-certificate-services-esc1]]}
+\li{[[exploiting-constrained-delegation-abuse]]}
+\li{[[exploiting-kerberoasting-with-impacket]]}
+\li{[[exploiting-nopac-cve-2021-42278-42287]]}
+\li{[[implementing-siem-use-cases-for-detection]]}
+\li{[[performing-active-directory-compromise-investigation]]}
+\li{[[performing-kerberoasting-attack]]}
+\li{[[performing-lateral-movement-detection]]}
+\li{[[performing-purple-team-atomic-testing]]}
+}

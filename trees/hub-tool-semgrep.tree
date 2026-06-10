@@ -1,0 +1,30 @@
+\title{Skill hub: semgrep}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{22 security skills using semgrep.}
+\ul{
+\li{[[audit-prep-assistant]]}
+\li{[[building-devsecops-pipeline-with-gitlab-ci]]}
+\li{[[building-vulnerability-dashboard-with-defectdojo]]}
+\li{[[burp-suite]]}
+\li{[[codeql]]}
+\li{[[designing-workflow-skills]]}
+\li{[[detecting-serverless-function-injection]]}
+\li{[[fix-review]]}
+\li{[[implementing-devsecops-security-scanning]]}
+\li{[[implementing-github-advanced-security-for-code-scanning]]}
+\li{[[implementing-semgrep-for-custom-sast-rules]]}
+\li{[[integrating-sast-into-github-actions-pipeline]]}
+\li{[[move-smart-contract-audit]]}
+\li{[[performing-android-app-static-analysis-with-mobsf]]}
+\li{[[performing-web-application-vulnerability-triage]]}
+\li{[[sarif-parsing]]}
+\li{[[securing-serverless-functions]]}
+\li{[[semgrep]]}
+\li{[[semgrep-rule-creator]]}
+\li{[[semgrep-rule-variant-creator]]}
+\li{[[testing-handbook-generator]]}
+\li{[[variant-analysis]]}
+}

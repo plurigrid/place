@@ -1,0 +1,15 @@
+\title{ATT&CK T1047}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{7 skills addressing MITRE ATT&CK technique T1047.}
+\ul{
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[detecting-lateral-movement-with-splunk]]}
+\li{[[detecting-living-off-the-land-attacks]]}
+\li{[[performing-lateral-movement-detection]]}
+\li{[[performing-lateral-movement-with-wmiexec]]}
+\li{[[performing-purple-team-atomic-testing]]}
+\li{[[performing-purple-team-exercise]]}
+}

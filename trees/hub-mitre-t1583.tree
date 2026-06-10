@@ -1,0 +1,12 @@
+\title{ATT&CK T1583}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{4 skills addressing MITRE ATT&CK technique T1583.}
+\ul{
+\li{[[building-red-team-c2-infrastructure-with-havoc]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-spearphishing-simulation-campaign]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+}

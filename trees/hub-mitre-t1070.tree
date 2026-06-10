@@ -1,0 +1,16 @@
+\title{ATT&CK T1070}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{8 skills addressing MITRE ATT&CK technique T1070.}
+\ul{
+\li{[[detecting-evasion-techniques-in-endpoint-logs]]}
+\li{[[hunting-for-defense-evasion-via-timestomping]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[implementing-siem-use-cases-for-detection]]}
+\li{[[implementing-threat-modeling-with-mitre-attack]]}
+\li{[[implementing-velociraptor-for-ir-collection]]}
+\li{[[performing-purple-team-atomic-testing]]}
+\li{[[performing-purple-team-exercise]]}
+}

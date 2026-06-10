@@ -1,0 +1,34 @@
+\title{ATT&CK T1003}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{26 skills addressing MITRE ATT&CK technique T1003.}
+\ul{
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[building-detection-rule-with-splunk-spl]]}
+\li{[[building-detection-rules-with-sigma]]}
+\li{[[conducting-domain-persistence-with-dcsync]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-internal-network-penetration-test]]}
+\li{[[conducting-pass-the-ticket-attack]]}
+\li{[[detecting-container-escape-with-falco-rules]]}
+\li{[[detecting-credential-dumping-techniques]]}
+\li{[[detecting-dcsync-attack-in-active-directory]]}
+\li{[[detecting-mimikatz-execution-patterns]]}
+\li{[[detecting-t1003-credential-dumping-with-edr]]}
+\li{[[exploiting-nopac-cve-2021-42278-42287]]}
+\li{[[exploiting-zerologon-vulnerability-cve-2020-1472]]}
+\li{[[hunting-for-dcsync-attacks]]}
+\li{[[implementing-continuous-security-validation-with-bas]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[implementing-siem-use-cases-for-detection]]}
+\li{[[implementing-threat-modeling-with-mitre-attack]]}
+\li{[[implementing-velociraptor-for-ir-collection]]}
+\li{[[performing-active-directory-compromise-investigation]]}
+\li{[[performing-credential-access-with-lazagne]]}
+\li{[[performing-purple-team-atomic-testing]]}
+\li{[[performing-purple-team-exercise]]}
+\li{[[performing-threat-hunting-with-elastic-siem]]}
+}

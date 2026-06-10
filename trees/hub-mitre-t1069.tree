@@ -1,0 +1,13 @@
+\title{ATT&CK T1069}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{5 skills addressing MITRE ATT&CK technique T1069.}
+\ul{
+\li{[[conducting-internal-reconnaissance-with-bloodhound-ce]]}
+\li{[[exploiting-active-directory-with-bloodhound]]}
+\li{[[performing-active-directory-bloodhound-analysis]]}
+\li{[[performing-kerberoasting-attack]]}
+\li{[[performing-purple-team-atomic-testing]]}
+}

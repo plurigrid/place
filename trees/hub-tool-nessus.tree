@@ -1,0 +1,24 @@
+\title{Skill hub: nessus}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{16 security skills using nessus.}
+\ul{
+\li{[[analyzing-sbom-for-supply-chain-vulnerabilities]]}
+\li{[[building-vulnerability-dashboard-with-defectdojo]]}
+\li{[[building-vulnerability-scanning-workflow]]}
+\li{[[exploiting-vulnerabilities-with-metasploit-framework]]}
+\li{[[hardening-windows-endpoint-with-cis-benchmark]]}
+\li{[[implementing-patch-management-workflow]]}
+\li{[[performing-authenticated-vulnerability-scan]]}
+\li{[[performing-cve-prioritization-with-kev-catalog]]}
+\li{[[performing-endpoint-vulnerability-remediation]]}
+\li{[[performing-external-network-penetration-test]]}
+\li{[[performing-ics-asset-discovery-with-claroty]]}
+\li{[[performing-ot-vulnerability-scanning-safely]]}
+\li{[[performing-vulnerability-scanning-with-nessus]]}
+\li{[[performing-web-application-scanning-with-nikto]]}
+\li{[[scanning-infrastructure-with-nessus]]}
+\li{[[triaging-vulnerabilities-with-ssvc-framework]]}
+}
