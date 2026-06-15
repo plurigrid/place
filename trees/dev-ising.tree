@@ -6,6 +6,10 @@
 \meta{dev-id}{DEV-OIM-001}
 \meta{status}{design}
 \meta{location}{222 Dore}
-\p{Status: \strong{design}. Altium-first reverse-engineering package for the 8-node oscillator Ising machine (Bowring/Anderson/Tiffany), reconstructed from the paper/blog because author board files are not available. The KiCad reconstruction is locally verified openable and exportable (DRC clean, unrouted logical nets left explicit); exact MPNs, footprints, board spacing, and production routing remain unconfirmed pending an author response.}
-\p{Source lives in an external repo, not vendored into this forest: github.com/monaduck1069/bci-pcb-ising at ed7c029. A local working copy sits at bci/pcb/ising/ (its own git, gitignored here). The board-files request draft and provenance notes are under docs/ in that repo.}
-\p{Related: [[bci-indeterminate-spares]] (hardware-builds audit). This atom is the canonical forest reference for the OIM PCB; the design package itself is versioned in its own repo.}
+\meta{paper}{paper://bowring-anderson-tiffany-electronic-ising-machine}
+\meta{source}{bci://pcb=ising}
+\meta{external-repo}{repo://monaduck1069/bci-pcb-ising@ed7c029}
+\p{Status: \strong{design}. Canonical forest atom for \code{bci://pcb=ising}: an Altium-first reverse-engineering package for the 8-node oscillator Ising machine described by Bowring, Anderson, and Tiffany. The paper/source release does not include board fabrication files, so the package reconstructs from \code{paper://bowring-anderson-tiffany-electronic-ising-machine} and the public paper/blog description while an author board-files request remains pending.}
+\p{Design source is intentionally external to this forest: \code{repo://monaduck1069/bci-pcb-ising@ed7c029} (private at time of writing), with a local gitignored working copy at \code{bci/pcb/ising/}. The external package contains the Altium wrapper, Protel netlist, preliminary BOM, K8 coupling edge map, KiCad board, Gerbers, drill files, Matt board-request draft, and skill/resource provenance notes.}
+\p{Verification status: KiCad loads the reconstruction and the exported DRC report has zero rule violations; 205 unconnected logical items are left explicit to preserve the recovered netlist without inventing unpublished production routing. Exact MPNs, footprints, board-to-board spacing, startup-resistor values, and production copper routing remain unconfirmed pending author files or physical reverse engineering.}
+\p{Related forest evidence: [[bci-indeterminate-spares]] holds the hardware-build audit context and indeterminate spares notes. This atom should stay small: it names the OIM PCB and points to the evidence package rather than vendoring board sources into the forest.}
