@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">OpenNIRScap sensor module unfilled locations</title>
+  <desc id="desc">Diagram of the current sensor module based on physical-board photos, separating populated verification-only features from the empty J1 edge connector footprint.</desc>
+  <style>
+    .panel { fill: #171a1f; stroke: #d8dde6; stroke-width: 3; }
+    .board { fill: #0b0f14; stroke: #f2f4f8; stroke-width: 3; }
+    .empty { fill: #2f3742; stroke: #ffcc4d; stroke-width: 5; }
+    .pop { fill: #4c8f5b; stroke: #b9f7c4; stroke-width: 3; }
+    .note { fill: #f2f4f8; font-family: Arial, sans-serif; font-size: 28px; }
+    .small { fill: #d8dde6; font-family: Arial, sans-serif; font-size: 22px; }
+    .label { fill: #ffcc4d; font-family: Arial, sans-serif; font-size: 26px; font-weight: 700; }
+    .line { stroke: #ffcc4d; stroke-width: 3; fill: none; }
+  </style>
+  <rect width="1200" height="780" fill="#101318"/>
+  <text x="60" y="62" class="note">OpenNIRScap sensor module: empty-footprint map</text>
+  <text x="60" y="102" class="small">Use after microscope confirmation on the physical board.</text>
+
+  <g transform="translate(90 150)">
+    <text x="0" y="-25" class="note">Top side</text>
+    <circle cx="240" cy="240" r="210" class="board"/>
+    <rect x="170" y="148" width="140" height="58" rx="8" class="pop"/>
+    <text x="196" y="185" class="small">D1</text>
+    <rect x="160" y="255" width="160" height="86" rx="8" class="pop"/>
+    <text x="194" y="305" class="small">D2</text>
+    <rect x="92" y="100" width="44" height="96" rx="5" class="pop"/>
+    <rect x="345" y="100" width="44" height="96" rx="5" class="pop"/>
+    <text x="112" y="225" class="small">Top side populated; verify only.</text>
+  </g>
+
+  <g transform="translate(640 150)">
+    <text x="0" y="-25" class="note">Bottom side</text>
+    <circle cx="240" cy="240" r="210" class="board"/>
+    <rect x="112" y="160" width="145" height="105" rx="8" class="pop"/>
+    <text x="142" y="220" class="small">U1 AD8616</text>
+    <g transform="translate(185 350)">
+      <rect x="0" y="0" width="110" height="26" class="empty"/>
+      <rect x="0" y="34" width="110" height="26" class="empty"/>
+      <rect x="0" y="68" width="110" height="26" class="empty"/>
+      <rect x="0" y="102" width="110" height="26" class="empty"/>
+      <rect x="0" y="136" width="110" height="26" class="empty"/>
+      <rect x="0" y="170" width="110" height="26" class="empty"/>
+    </g>
+    <path d="M300 420 C430 455 470 515 500 590" class="line"/>
+    <text x="505" y="605" class="label">J1 empty</text>
+    <text x="505" y="640" class="small">Install T1M-06 only where required.</text>
+  </g>
+
+  <rect x="70" y="675" width="1060" height="60" rx="8" fill="#20252d" stroke="#596273"/>
+  <text x="95" y="713" class="small">5 T1M-06 in hand; buy 3 more only if completing all 8 sensor modules.</text>
+</svg>

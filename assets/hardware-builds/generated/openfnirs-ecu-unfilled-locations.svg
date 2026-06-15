@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-label="OpenFNIRS ECU Source-Spec Footprint Map">
+<style>text{font-family:Arial,Helvetica,sans-serif} .small{font-size:13px;fill:#334155}.tiny{font-size:11px;fill:#475569}.label{font-size:12px;font-weight:700;fill:#0f172a}.title{font-size:28px;font-weight:700;fill:#111827}.sub{font-size:14px;fill:#334155}.box{fill:#f8fafc;stroke:#94a3b8;stroke-width:1.2}.foot{font-size:12px;fill:#334155}</style>
+<rect width="1280" height="900" fill="#ffffff"/>
+<text x="40" y="44" class="title">OpenFNIRS ECU Source-Spec Footprint Map</text>
+<text x="40" y="70" class="sub">tonykim07/fNIRS hardware/fNIRS_ECU/fNIRS_PCB-PcbDoc.kicad_pcb</text>
+<rect x="40" y="105" width="860" height="740" rx="8" class="box"/>
+<rect x="135.5" y="120.0" width="649.0" height="700.0" rx="10" fill="#ecfdf5" stroke="#166534" stroke-width="2"/>
+<text x="143.5" y="142.0" class="small">KiCad footprint-coordinate envelope</text>
+<line x1="265.3" y1="120.0" x2="265.3" y2="820.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="135.5" y1="260.0" x2="784.5" y2="260.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="395.1" y1="120.0" x2="395.1" y2="820.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="135.5" y1="400.0" x2="784.5" y2="400.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="524.9" y1="120.0" x2="524.9" y2="820.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="135.5" y1="540.0" x2="784.5" y2="540.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="654.7" y1="120.0" x2="654.7" y2="820.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<line x1="135.5" y1="680.0" x2="784.5" y2="680.0" stroke="#cbd5e1" stroke-width="0.7"/>
+<circle cx="175.2" cy="120.0" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J4  at 66.500,-151.000</title></circle>
+<text x="185.2" y="112.0" class="label">J4</text>
+<circle cx="348.2" cy="120.0" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J6  at 90.500,-151.000</title></circle>
+<text x="358.2" y="112.0" class="label">J6</text>
+<circle cx="521.3" cy="120.0" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J8  at 114.500,-151.000</title></circle>
+<text x="531.3" y="112.0" class="label">J8</text>
+<circle cx="694.4" cy="120.0" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J10  at 138.500,-151.000</title></circle>
+<text x="704.4" y="112.0" class="label">J10</text>
+<circle cx="784.5" cy="210.1" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J  at 151.000,-138.500</title></circle>
+<text x="794.5" y="202.1" class="label">J</text>
+<circle cx="367.0" cy="217.3" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 93.100,-137.500</title></circle>
+<text x="377.0" y="209.3" class="label">U5</text>
+<circle cx="423.9" cy="217.3" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 101.000,-137.500</title></circle>
+<text x="433.9" y="209.3" class="label">U5</text>
+<circle cx="480.9" cy="217.3" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 108.900,-137.500</title></circle>
+<text x="490.9" y="209.3" class="label">U5</text>
+<circle cx="537.9" cy="217.3" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 116.800,-137.500</title></circle>
+<text x="547.9" y="209.3" class="label">U5</text>
+<circle cx="351.8" cy="272.2" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 91.000,-129.900</title></circle>
+<text x="361.8" y="264.2" class="label">TP8</text>
+<circle cx="135.5" cy="287.3" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP5 PC TEST POINT NATURAL at 61.000,-127.800</title></circle>
+<text x="145.5" y="279.3" class="label">TP5</text>
+<circle cx="164.4" cy="287.3" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP1 PC TEST POINT NATURAL at 65.000,-127.800</title></circle>
+<text x="174.4" y="279.3" class="label">TP1</text>
+<circle cx="351.8" cy="293.8" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 91.000,-126.900</title></circle>
+<text x="361.8" y="285.8" class="label">TP8</text>
+<circle cx="582.6" cy="307.5" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U6 LMV324A, Quad Low-Voltage Rail-to-Rail Output Operational Amplifier 14-SOIC -40 to 125 at 123.000,-125.000</title></circle>
+<text x="592.6" y="299.5" class="label">U6</text>
+<circle cx="444.1" cy="308.2" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U6 LMV324A, Quad Low-Voltage Rail-to-Rail Output Operational Amplifier 14-SOIC -40 to 125 at 103.800,-124.900</title></circle>
+<text x="454.1" y="300.2" class="label">U6</text>
+<circle cx="673.4" cy="309.6" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP9 PC TEST POINT NATURAL at 135.600,-124.700</title></circle>
+<text x="683.4" y="301.6" class="label">TP9</text>
+<circle cx="691.1" cy="309.6" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 138.050,-124.700</title></circle>
+<text x="739.1" y="301.6" class="label">TP8</text>
+<circle cx="708.8" cy="309.6" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 140.500,-124.700</title></circle>
+<text x="718.8" y="301.6" class="label">TP8</text>
+<circle cx="726.8" cy="309.6" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP26 PC TEST POINT NATURAL at 143.000,-124.700</title></circle>
+<text x="774.8" y="301.6" class="label">TP26</text>
+<circle cx="351.8" cy="315.4" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 91.000,-123.900</title></circle>
+<text x="361.8" y="307.4" class="label">TP8</text>
+<circle cx="351.8" cy="337.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 91.000,-120.900</title></circle>
+<text x="361.8" y="329.0" class="label">TP8</text>
+<circle cx="205.8" cy="339.9" r="6" fill="#b45309" stroke="#fff" stroke-width="1.6"><title>U3 3A Low Dropout Positive Regulators, 3-pin TO-263, Pb-Free at 70.750,-120.500</title></circle>
+<text x="215.8" y="331.9" class="label">U3</text>
+<circle cx="320.1" cy="352.2" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP24 PC TEST POINT NATURAL at 86.600,-118.800</title></circle>
+<text x="330.1" y="344.2" class="label">TP24</text>
+<circle cx="687.1" cy="365.9" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 137.500,-116.900</title></circle>
+<text x="697.1" y="357.9" class="label">U5</text>
+<circle cx="320.1" cy="370.5" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP4 PC TEST POINT NATURAL at 86.600,-116.267</title></circle>
+<text x="330.1" y="362.5" class="label">TP4</text>
+<circle cx="784.5" cy="383.2" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J5  at 151.000,-114.500</title></circle>
+<text x="794.5" y="375.2" class="label">J5</text>
+<circle cx="320.1" cy="388.7" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP7 PC TEST POINT NATURAL at 86.600,-113.733</title></circle>
+<text x="330.1" y="380.7" class="label">TP7</text>
+<circle cx="320.1" cy="407.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP3 PC TEST POINT NATURAL at 86.600,-111.200</title></circle>
+<text x="330.1" y="399.0" class="label">TP3</text>
+<circle cx="687.1" cy="422.9" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 137.500,-109.000</title></circle>
+<text x="697.1" y="414.9" class="label">U5</text>
+<circle cx="654.7" cy="440.2" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 133.000,-106.600</title></circle>
+<text x="664.7" y="432.2" class="label">TP8</text>
+<circle cx="610.7" cy="449.5" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U6 LMV324A, Quad Low-Voltage Rail-to-Rail Output Operational Amplifier 14-SOIC -40 to 125 at 126.900,-105.300</title></circle>
+<text x="620.7" y="441.5" class="label">U6</text>
+<circle cx="434.8" cy="469.7" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U1 Ultra-Low-Power ARM Cortex-M4 32-bit MCU+FPU, 512 KB Flash, 128 KB Internal RAM, 51 I/Os, 64-Pin LQFP, -40 to 85 degC, Tray at 102.500,-102.500</title></circle>
+<text x="444.8" y="461.7" class="label">U1</text>
+<circle cx="687.1" cy="479.8" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 137.500,-101.100</title></circle>
+<text x="697.1" y="471.8" class="label">U5</text>
+<circle cx="650.4" cy="523.8" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP8 PC TEST POINT NATURAL at 132.400,-95.000</title></circle>
+<text x="660.4" y="515.8" class="label">TP8</text>
+<circle cx="687.1" cy="536.8" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U5 IC SWITCH SINGLE 10VSSOP at 137.500,-93.200</title></circle>
+<text x="697.1" y="528.8" class="label">U5</text>
+<circle cx="362.7" cy="553.4" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J3 CONN HEADER SMD 14POS 1.27MM at 92.500,-90.900</title></circle>
+<text x="372.7" y="545.4" class="label">J3</text>
+<circle cx="784.5" cy="556.3" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J7  at 151.000,-90.500</title></circle>
+<text x="794.5" y="548.3" class="label">J7</text>
+<circle cx="545.8" cy="558.4" r="6" fill="#b45309" stroke="#fff" stroke-width="1.6"><title>SW1 SWITCH TACTILE SPST-NO 0.05A 24V at 117.900,-90.200</title></circle>
+<text x="555.8" y="550.4" class="label">SW1</text>
+<circle cx="426.8" cy="585.1" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP2 PC TEST POINT NATURAL at 101.400,-86.500</title></circle>
+<text x="436.8" y="577.1" class="label">TP2</text>
+<circle cx="449.9" cy="585.1" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP6 PC TEST POINT NATURAL at 104.600,-86.500</title></circle>
+<text x="497.9" y="577.1" class="label">TP6</text>
+<circle cx="149.2" cy="610.3" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U4 Simple, Miniature Single-Cell, Fully Integrated Li-Ion/Li-Polymer Charge Management Controller, 4.2V, 5-Pin SOT-23, Industrial Temperature, Tape and Reel at 62.900,-83.000</title></circle>
+<text x="159.2" y="602.3" class="label">U4</text>
+<circle cx="211.9" cy="624.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP13 PC TEST POINT NATURAL at 71.600,-81.100</title></circle>
+<text x="221.9" y="616.0" class="label">TP13</text>
+<circle cx="227.8" cy="624.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP11 PC TEST POINT NATURAL at 73.800,-81.100</title></circle>
+<text x="237.8" y="616.0" class="label">TP11</text>
+<circle cx="250.2" cy="624.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP14 PC TEST POINT NATURAL at 76.900,-81.100</title></circle>
+<text x="298.2" y="616.0" class="label">TP14</text>
+<circle cx="266.7" cy="624.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP25 PC TEST POINT NATURAL at 79.200,-81.100</title></circle>
+<text x="276.7" y="616.0" class="label">TP25</text>
+<circle cx="573.7" cy="631.1" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U7 Parallel I/O Port, 16-Bit, 16 I/O, CMOS, PDSO24 at 121.770,-80.125</title></circle>
+<text x="583.7" y="623.1" class="label">U7</text>
+<circle cx="721.4" cy="656.8" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP19 PC TEST POINT NATURAL at 142.249,-76.551</title></circle>
+<text x="731.4" y="648.8" class="label">TP19</text>
+<circle cx="721.4" cy="676.6" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP20 PC TEST POINT NATURAL at 142.249,-73.817</title></circle>
+<text x="731.4" y="668.6" class="label">TP20</text>
+<circle cx="721.4" cy="696.3" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP21 PC TEST POINT NATURAL at 142.249,-71.084</title></circle>
+<text x="731.4" y="688.3" class="label">TP21</text>
+<circle cx="573.7" cy="702.1" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U7 Parallel I/O Port, 16-Bit, 16 I/O, CMOS, PDSO24 at 121.770,-70.275</title></circle>
+<text x="583.7" y="694.1" class="label">U7</text>
+<circle cx="418.9" cy="709.9" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP15 PC TEST POINT NATURAL at 100.300,-69.200</title></circle>
+<text x="428.9" y="701.9" class="label">TP15</text>
+<circle cx="439.1" cy="709.9" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP16 PC TEST POINT NATURAL at 103.100,-69.200</title></circle>
+<text x="449.1" y="701.9" class="label">TP16</text>
+<circle cx="458.6" cy="709.9" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP17 PC TEST POINT NATURAL at 105.800,-69.200</title></circle>
+<text x="506.6" y="701.9" class="label">TP17</text>
+<circle cx="478.7" cy="709.9" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP18 PC TEST POINT NATURAL at 108.600,-69.200</title></circle>
+<text x="488.7" y="701.9" class="label">TP18</text>
+<circle cx="721.4" cy="716.0" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP22 PC TEST POINT NATURAL at 142.249,-68.351</title></circle>
+<text x="731.4" y="708.0" class="label">TP22</text>
+<circle cx="199.7" cy="716.3" r="6" fill="#7c3aed" stroke="#fff" stroke-width="1.6"><title>U8 Full/Low Speed USB Digital Isolator, 2 Channels, 5 kV rms, 3.1 to 5.5 V, -40 to 105 degC, 16-Pin SOIC (RW-16), RoHS, Reel at 69.900,-68.300</title></circle>
+<text x="209.7" y="708.3" class="label">U8</text>
+<circle cx="784.5" cy="729.3" r="6" fill="#0b6bcb" stroke="#fff" stroke-width="1.6"><title>J9  at 151.000,-66.500</title></circle>
+<text x="794.5" y="721.3" class="label">J9</text>
+<circle cx="721.4" cy="735.4" r="6" fill="#0f766e" stroke="#fff" stroke-width="1.6"><title>TP23 PC TEST POINT NATURAL at 142.249,-65.651</title></circle>
+<text x="731.4" y="727.4" class="label">TP23</text>
+<circle cx="328.0" cy="813.7" r="6" fill="#b45309" stroke="#fff" stroke-width="1.6"><title>SD1 Micro SD Connector, Pitch 1.1 mm, 8 Position, Height 1.4 mm, -25 to 85 degC, RoHS, Tape and Reel at 87.700,-54.800</title></circle>
+<text x="338.0" y="805.7" class="label">SD1</text>
+<circle cx="191.8" cy="820.0" r="6" fill="#b45309" stroke="#fff" stroke-width="1.6"><title>J2 USB, MINI, SMD, RA KME04-USBMU03A01 at 68.800,-53.925</title></circle>
+<text x="201.8" y="812.0" class="label">J2</text>
+<rect x="930" y="105" width="310" height="740" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+<text x="950" y="132" class="label">Spec-derived rows</text>
+<text x="950" y="156" class="tiny">J10 (138.5,-151.0) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="171" class="tiny">J8 (114.5,-151.0) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="186" class="tiny">J6 (90.5,-151.0) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="201" class="tiny">J4 (66.5,-151.0) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="216" class="tiny">J (151.0,-138.5) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="231" class="tiny">J9 (151.0,-66.5) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="246" class="tiny">J7 (151.0,-90.5) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="261" class="tiny">J5 (151.0,-114.5) SAMTEC_T1M-10-F-SH-L-K</text>
+<text x="950" y="276" class="tiny">U6 (103.8,-124.9) LMV324A, Quad Low-Voltage Rail</text>
+<text x="950" y="291" class="tiny">U6 (126.9,-105.3) LMV324A, Quad Low-Voltage Rail</text>
+<text x="950" y="306" class="tiny">U6 (123.0,-125.0) LMV324A, Quad Low-Voltage Rail</text>
+<text x="950" y="321" class="tiny">U5 (93.1,-137.5) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="336" class="tiny">U5 (108.9,-137.5) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="351" class="tiny">U5 (137.5,-116.9) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="366" class="tiny">U5 (137.5,-101.1) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="381" class="tiny">U5 (101.0,-137.5) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="396" class="tiny">U5 (116.8,-137.5) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="411" class="tiny">U5 (137.5,-109.0) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="426" class="tiny">U5 (137.5,-93.2) IC SWITCH SINGLE 10VSSOP</text>
+<text x="950" y="441" class="tiny">U1 (102.5,-102.5) Ultra-Low-Power ARM Cortex-M4 </text>
+<text x="950" y="456" class="tiny">SW1 (117.9,-90.2) SWITCH TACTILE SPST-NO 0.05A 2</text>
+<text x="950" y="471" class="tiny">U8 (69.9,-68.3) Full/Low Speed USB Digital Isola</text>
+<text x="950" y="486" class="tiny">U4 (62.9,-83.0) Simple, Miniature Single-Cell, F</text>
+<text x="950" y="501" class="tiny">U7 (121.8,-80.1) Parallel I/O Port, 16-Bit, 16 I</text>
+<text x="950" y="516" class="tiny">U7 (121.8,-70.3) Parallel I/O Port, 16-Bit, 16 I</text>
+<text x="950" y="531" class="tiny">U3 (70.8,-120.5) 3A Low Dropout Positive Regulat</text>
+<text x="950" y="546" class="tiny">J3 (92.5,-90.9) CONN HEADER SMD 14POS 1.27MM</text>
+<text x="950" y="561" class="tiny">J2 (68.8,-53.9) USB, MINI, SMD, RA KME04-USBMU03</text>
+<text x="950" y="576" class="tiny">SD1 (87.7,-54.8) Micro SD Connector, Pitch 1.1 m</text>
+<text x="950" y="591" class="tiny">TP1 (65.0,-127.8) PC TEST POINT NATURAL</text>
+<text x="950" y="606" class="tiny">TP2 (101.4,-86.5) PC TEST POINT NATURAL</text>
+<text x="950" y="621" class="tiny">TP3 (86.6,-111.2) PC TEST POINT NATURAL</text>
+<text x="950" y="636" class="tiny">TP4 (86.6,-116.3) PC TEST POINT NATURAL</text>
+<text x="950" y="651" class="tiny">TP5 (61.0,-127.8) PC TEST POINT NATURAL</text>
+<text x="950" y="666" class="tiny">TP6 (104.6,-86.5) PC TEST POINT NATURAL</text>
+<text x="950" y="681" class="tiny">TP7 (86.6,-113.7) PC TEST POINT NATURAL</text>
+<text x="950" y="696" class="tiny">TP8 (91.0,-120.9) PC TEST POINT NATURAL</text>
+<text x="950" y="711" class="tiny">TP8 (91.0,-126.9) PC TEST POINT NATURAL</text>
+<text x="950" y="726" class="tiny">TP8 (138.1,-124.7) PC TEST POINT NATURAL</text>
+<text x="950" y="741" class="tiny">TP8 (140.5,-124.7) PC TEST POINT NATURAL</text>
+<text x="950" y="756" class="tiny">TP8 (91.0,-123.9) PC TEST POINT NATURAL</text>
+<text x="950" y="790" class="label">Notes</text>
+<text x="950" y="808" class="tiny">Sensor-group header set is J4-J10 plus unnumbered</text>
+<text x="950" y="823" class="tiny">KiCad J; J3 is the SWD header footprint</text>
+<text x="950" y="838" class="tiny">5V INPUT is silkscreen near J2/U3, not a component f</text>
+<text x="40" y="875" class="foot">Generated from original spec files: tonykim07/fNIRS hardware/fNIRS_ECU/fNIRS_PCB-PcbDoc.kicad_pcb. This is not a photo-invented placement map; current photos remain incoming-condition evidence.</text>
+</svg>
