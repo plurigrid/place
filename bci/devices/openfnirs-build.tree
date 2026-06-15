@@ -9,6 +9,7 @@
 \author{monaduck1069}
 \date{2026-06-12}
 \import{macros}
+\p{Missing-location, silkscreen-only, and substituted parts for this build are tracked in the canonical ground-truth map: [[bci-swap-provenance]].}
 
 \table{
   \tr{\th{}\th{}}
@@ -96,6 +97,32 @@
   }
 }
 
+\subtree{
+\title{Substitutions and missing-location parts (this board)}
+\p{Actionable substitution decisions for the ECU, Sensor, and ST-LINK boards. Provenance (origin date, codex session, photo-packet span) is in the canonical [[bci-swap-provenance]] map. Final populate and verify calls rest with the build verifier.}
+\table{
+\tr{\th{Designator}\th{Replacement / sourced}\th{Note}}
+\tr{\td{ECU U1}\td{STM32L476RET6}\td{exact}}
+\tr{\td{ECU U3}\td{LM1085IS-3.3}\td{substitute for AMS1117-3.3}}
+\tr{\td{ECU U4}\td{MCP73831T}\td{exact}}
+\tr{\td{ECU U5}\td{TMUX1104DGSR}\td{verify stock}}
+\tr{\td{ECU U6}\td{LMV324AIDR}\td{AD8618 packet noted as wrong buy}}
+\tr{\td{ECU U7}\td{TCA9535PWR}\td{exact}}
+\tr{\td{ECU U8}\td{ADUM4160BRWZ}\td{exact}}
+\tr{\td{ECU J4–J10}\td{Samtec T1M-10-F-SH-L-K}\td{T1M-10 stock; 1×10 socket idx13 rejected}}
+\tr{\td{ECU J2}\td{Molex 67503-1020 Mini-B}\td{exact}}
+\tr{\td{ECU SW1}\td{TE FSM1LP 1825910-6}\td{substitute for generic reset}}
+\tr{\td{ECU 5v input}\td{— (silkscreen label)}\td{n/a}}
+\tr{\td{ECU SD1}\td{Micro SD connector}\td{exact (bin-check)}}
+\tr{\td{ECU U15/U16/U17}\td{— (none)}\td{invented; removed}}
+\tr{\td{ECU U?}\td{— (open)}\td{unresolved glare, packet 06}}
+\tr{\td{Sensor U1}\td{AD8616 SOIC-8}\td{kept; AD8618ARUZ rejected to spare}}
+\tr{\td{Sensor D2/D3}\td{VBPW34S + 0603 green LED}\td{verify}}
+\tr{\td{Sensor J1}\td{Samtec T1M-06-F-SH-L-K}\td{T1M-06 stock; short 5/8}}
+\tr{\td{ST-LINK J2}\td{FTSH-107-01-L-DV-K}\td{exact}}
+\tr{\td{ST-LINK J1}\td{HTSW-107-07-G-D}\td{exact}}
+}
+}
 \subtree{
   \title{Part images for location-fill decisions}
 

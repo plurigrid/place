@@ -9,6 +9,7 @@
 \author{monaduck1069}
 \date{2026-06-12}
 \import{macros}
+\p{Missing-location, silkscreen-only, and substituted parts for this build are tracked in the canonical ground-truth map: [[bci-swap-provenance]].}
 
 \table{
   \tr{\th{}\th{}}
@@ -93,6 +94,28 @@
   }
 }
 
+\subtree{
+\title{Substitutions and missing-location parts (this board)}
+\p{Actionable substitution decisions for the Uncut Gem board. Provenance (origin date, codex session, photo-packet span) is in the canonical [[bci-swap-provenance]] map. Final populate and verify calls rest with the build verifier.}
+\table{
+\tr{\th{Designator}\th{Replacement / sourced}\th{Note}}
+\tr{\td{C35}\td{100nF bypass}\td{exact}}
+\tr{\td{LED1}\td{indicator LED}\td{exact}}
+\tr{\td{R24}\td{0R jumper}\td{exact}}
+\tr{\td{R27/R29/R28}\td{10k 0603}\td{exact}}
+\tr{\td{TP1}\td{— (test point)}\td{no part}}
+\tr{\td{OLED1}\td{1×4 round-pin hdr X0049AQ117}\td{for 1×4 OLED header}}
+\tr{\td{D2/D3}\td{1N5819W Schottky}\td{C8598 intent; not 1N4148}}
+\tr{\td{PWR1/EN1/BOOT1}\td{SMD pushbuttons}\td{verify}}
+\tr{\td{GND/PD/2.5V}\td{— (silkscreen labels)}\td{no part}}
+\tr{\td{D4/PHOTO DIODE1}\td{MTCELL 1×3 socket + BPW34}\td{socket + photodiode}}
+\tr{\td{J1–J4}\td{Molex 73251-2120 SMA}\td{BOOBRIE SMA vertical THT REJECTED}}
+\tr{\td{U2/U3}\td{MMG3014NT1}\td{stock, 8 in hand}}
+\tr{\td{5V_SUPP1}\td{2×3 socket X001TJII3N}\td{power header}}
+\tr{\td{D1/D5/D6}\td{ESD9B5.0ST5G}\td{exact}}
+\tr{\td{J6}\td{Molex 73251-2200}\td{exact}}
+}
+}
 \subtree{
   \title{Part images for location-fill decisions}
 

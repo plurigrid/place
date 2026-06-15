@@ -1,0 +1,43 @@
+\title{BCI Swap-Provenance Map — Missing-Location & Substituted Parts}
+\taxon{reference}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-15}
+\p{Ground-truth provenance for every missing-location, silkscreen-only, or substituted part across the OpenFNIRS boards (ECU, Sensor, STLINK adapter) and the Uncut Gem NV-diamond board. Each row pairs the canonical designator with the replacement actually sourced, the origin date, the codex session that recorded the decision, and the photo-packet span (months 01–06) in which the part appears. Canonical surface: the build records [[openfnirs-build]] and [[uncut-gems-build]] link here rather than restating it.}
+\table{
+\tr{\th{Location}\th{Canon part}\th{Replacement item}\th{Origin}\th{Session}\th{Span}}
+\tr{\td{ECU 5v input}\td{silkscreen label}\td{n/a (silkscreen)}\td{2026-01-01}\td{019b7b67}\td{01–06}}
+\tr{\td{ECU SD1}\td{Micro SD connector}\td{exact Micro SD (bin-check)}\td{2026-01-01}\td{019b7bb7}\td{01–06}}
+\tr{\td{ECU U15/U16/U17}\td{none invented}\td{removed (invented)}\td{2026-01-01}\td{019b7b67}\td{01–06}}
+\tr{\td{Gem C35}\td{100nF bypass}\td{exact 100nF}\td{2026-01-01}\td{019b7bb1}\td{01–06}}
+\tr{\td{Gem LED1}\td{indicator LED}\td{exact indicator LED}\td{2026-01-01}\td{019b7bb1}\td{01–06}}
+\tr{\td{Gem R24}\td{0R jumper}\td{exact 0R}\td{2026-01-01}\td{019b7bb7}\td{01–06}}
+\tr{\td{Gem R27/R29/R28}\td{10k 0603}\td{exact 10k}\td{2026-01-01}\td{019b7bb7}\td{01–06}}
+\tr{\td{Gem TP1}\td{test point}\td{n/a (test point)}\td{2026-01-01}\td{019b7b67}\td{01–06}}
+\tr{\td{Sensor U1}\td{AD8616 SOIC-8}\td{AD8616 kept; AD8618ARUZ rejected→spare}\td{2026-01-18}\td{019bd0f8}\td{01,04,05,06}}
+\tr{\td{Gem OLED1}\td{1x4 OLED header}\td{1x4 round-pin hdr X0049AQ117}\td{2026-01-26}\td{019bfd56}\td{01–06}}
+\tr{\td{Gem D2/D3}\td{C8598 Schottky (not 1N4148)}\td{1N5819W Schottky (for C8598 intent)}\td{2026-02-02}\td{019c1d93}\td{02–06}}
+\tr{\td{Gem PWR1/EN1/BOOT1}\td{SMD pushbuttons}\td{exact pushbuttons (verify)}\td{2026-02-28}\td{019ca3d7}\td{02–06}}
+\tr{\td{Gem GND/PD/2.5V}\td{silkscreen labels}\td{n/a (labels)}\td{2026-03-11}\td{019cdbee}\td{03–06}}
+\tr{\td{ECU U3}\td{AMS1117-3.3 → LM1085IS-3.3}\td{LM1085IS-3.3 (sub for AMS1117-3.3)}\td{2026-04-21}\td{019db212}\td{04,05,06}}
+\tr{\td{Gem D4/PHOTO DIODE1}\td{1x3 socket + BPW34}\td{MTCELL 1x3 socket + BPW34}\td{2026-04-23}\td{019dbda7}\td{04,05,06}}
+\tr{\td{ECU U4}\td{MCP73831T}\td{exact MCP73831T}\td{2026-04-28}\td{019dd7a4}\td{04,05,06}}
+\tr{\td{ECU J4..J10}\td{Samtec T1M-10-F-SH-L-K}\td{T1M-10 stock; 1×10 socket idx13 rejected}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{ECU U1}\td{STM32L476RET6}\td{exact STM32L476RET6}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{ECU U5}\td{TMUX1104DGSR}\td{TMUX1104DGSR stock (verify)}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{ECU U6}\td{LMV324AIDR}\td{LMV324AIDR; AD8618 packet was wrong buy}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{ECU U7}\td{TCA9535PWR}\td{exact TCA9535PWR}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{ECU U8}\td{ADUM4160BRWZ}\td{exact ADUM4160BRWZ}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{Gem J1-J4}\td{Molex 73251-2120 SMA}\td{BOOBRIE SMA vertical THT — REJECTED}\td{2026-04-29}\td{019ddbf6}\td{04,05,06}}
+\tr{\td{Gem U2/U3}\td{MMG3014NT1}\td{MMG3014NT1 stock (8 in hand)}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{STLINK J2}\td{FTSH-107-01-L-DV-K}\td{FTSH-107-01-L-DV-K exact}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{Sensor D2/D3}\td{VBPW34S / 0603 green LED}\td{exact VBPW34S / green LED (verify)}\td{2026-04-29}\td{019ddbf6}\td{04,05,06}}
+\tr{\td{Sensor J1}\td{Samtec T1M-06-F-SH-L-K}\td{T1M-06 stock (short 5/8)}\td{2026-04-29}\td{019ddbfc}\td{04,05,06}}
+\tr{\td{Gem 5V_SUPP1}\td{2x3 power header}\td{2x3 socket X001TJII3N}\td{2026-05-04}\td{019df678}\td{05,06}}
+\tr{\td{ECU SW1}\td{TE FSM1LP 1825910-6}\td{FSM1LP tactile (sub for generic reset)}\td{2026-05-05}\td{019df9ed}\td{05,06}}
+\tr{\td{ECU J2}\td{Molex 67503-1020 Mini-B}\td{Molex 67503-1020 Mini-B exact}\td{2026-05-06}\td{019e000f}\td{05,06}}
+\tr{\td{Gem D1/D5/D6}\td{ESD9B5.0ST5G}\td{exact ESD9B5.0ST5G}\td{2026-05-06}\td{019dff4d}\td{05,06}}
+\tr{\td{Gem J6}\td{Molex 73251-2200}\td{Molex 73251-2200 exact}\td{2026-05-06}\td{019dff4d}\td{05,06}}
+\tr{\td{STLINK J1}\td{HTSW-107-07-G-D}\td{HTSW-107-07-G-D exact}\td{2026-05-06}\td{019e000f}\td{05,06}}
+\tr{\td{ECU U?}\td{unresolved glare}\td{unresolved (none)}\td{2026-06-11}\td{019eba31}\td{06}}
+}
