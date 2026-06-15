@@ -59,6 +59,7 @@ before casting a vote.}
   \tr{\th{Item} \th{Status} \th{Notes}}
   \tr{\td{Wet EEG gel} \td{own} \td{Supports repair and extended wet EEG sessions}}
   \tr{\td{Electrodes, chargers, adapters, printed parts} \td{want} \td{Useful extras for maintaining local and visiting setups}}
+  \tr{\td{\ref{bci-indeterminate-spares}} \td{building} \td{Canonical holding page for OpenNIRScap and Uncut Gem conditional, spare, and verify-before-buy parts}}
 }
 }
 
@@ -119,6 +120,7 @@ before casting a vote.}
 \tr{\th{Build} \th{Device} \th{Ledger ID} \th{State model}}
 \tr{\td{\ref{openfnirs-build}} \td{OpenfNIRS DIY fNIRS cap} \td{DEV-FNIRS-001} \td{N0-N12 plus CF0-CF8}}
 \tr{\td{\ref{uncut-gems-build}} \td{Uncut Gem NV magnetometer} \td{DEV-MAG-001 to 003} \td{B0-B9 plus F0-F7}}
+\tr{\td{\ref{bci-indeterminate-spares}} \td{BCI build evidence and indeterminate spares} \td{DEV-FNIRS-001 / DEV-MAG-001 to 003} \td{conditional parts, spare inventory, and visual bill-of-work anchors}}
 \tr{\td{\ref{hero-uart-build}} \td{Hero pill dispenser UART tap} \td{DEV-HERO-001} \td{U0-U8 plus H0-H5}}
 }
 }

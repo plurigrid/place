@@ -1,34 +1,291 @@
-\title{OpenFNIRS build state}
+\title{Bill of Work — OpenNIRScap (OpenFNIRS) Assembly & Bench Bring-Up}
 \taxon{device}
 \tag{openfnirs}
 \tag{fnirs}
 \tag{eeg}
-\tag{software}
 \tag{latex-diagram}
 \tag{hardware-flow}
-\tag{state-machine}
-\tag{counterfactual-fixed-board}
-\tag{dense-proof-matrix}
-\tag{exopriors}
-\tag{multiplayer-bci}
+\tag{hardware-builds}
+\author{monaduck1069}
+\date{2026-06-12}
+\import{macros}
 
-\p{\strong{Status: BUILDING (partial — blockers named below)} — 2026-06.}
-\p{OpenFNIRS is modeled as a dense fNIRS board-flow artifact spanning sensor modules, ECU, ST-LINK adapter, cap/cables, STM32 firmware, Python host, and the fNIRS+EEG multiplayer exoprior layer. Companion PDF/source: \code{p/place/bci/devices/openfnirs-state-machine.tex}.}
-
-\p{Verdict: identity is fixed as an open, non-invasive fNIRS stack; local build is partial; open blockers are five-of-eight J1 connectors, unknown SW1 fit, unknown TMUX population, and incomplete ST-LINK adapter headers; success requires connector, analog, power, mux, firmware, USB frame, host MBLL/CBSI, cap-fit, optical, and isolation proofs.}
-
-\ul{
-  \li{Whole-stack flow: N0 safe stop -> N1 inventory -> N2 sensor J1 -> N3 sensor analog -> N4 ECU power/USB -> N5 SWD/adapter -> N6 mux/header map -> N7 emit 660/940 -> N8 detect -> N9 USB CDC -> N10 host MBLL/CBSI -> N11 cap/safety -> N12 release QA; failed release proof rolls back to N0.}
-  \li{Actual board states: N0 bench-only safe stop; N1 population map; N2 eight known J1 orientations; N3 dark/light sensor response; N4 3.3 V, reset, USB proof; N5 fresh flash without improvised wires; N6 mux truth table plus ADC response; N7 LED current/optical bound; N8 non-saturated ADC samples; N9 serial frame log; N10 controlled plots/files; N11 safety checklist; N12 full evidence bundle.}
-  \li{Counterfactual fixed stack: CF0 blockers named; CF1 all sensors populated and mapped; CF2 C3/R1/R2 and analog behavior locked; CF3 ECU power/reset/USB footprint-correct; CF4 mux/channel order matches BOM, silkscreen, and firmware; CF5 programming path complete; CF6 USB frame contract names channel, wavelength, timing, scale, and cap position; CF7 human-use gate explicit; CF8 released dataset stack.}
-  \li{Disentangled fNIRS+EEG exoprior model: EEG projects fast intent/attention/artifact evidence; fNIRS projects slow workload, fatigue, prefrontal engagement, recovery, and group-readiness evidence; behavior and world state separate trait, task, role, and social metadata.}
-  \li{Exoprior counterfactuals: delayed/shuffled EEG should collapse fast action confidence; delayed/shuffled fNIRS should degrade pacing/trust priors, not controls; swapped-player tests identity leakage; hidden social state tests metadata leakage; injected motion/contact/light artifacts must route to artifact state rather than cognition.}
-  \li{Fusion rule: fit \code{P(action | EEG, world)} and \code{P(capacity | fNIRS, behavior, world)} separately; late-fuse derived latents only; released multiplayer tokens are intent confidence, workload, fatigue trend, readiness, role, objective pressure, trust, and artifact state.}
-  \li{BOM/build gates: sensor boards require eight J1 total and verified C3/R1/R2; ECU requires U3 rail, J2 enumeration, and SW1 fit-check; mux/bus requires T1M-10 headers and TMUX inspection; ST-LINK adapter requires HTSW plus second FTSH; unmatched parts are set aside; host frame contract must match channel/wavelength/cap map.}
-  \li{Proof checklist: board stack complete, electrical acquisition, optical timing, host validity, and human-readiness each require evidence and have rollback states N1/N2/N5, N4/N6/N8, N7/N9, N9/N10, and N0/N11 respectively.}
-  \li{Evidence: \code{p/place/assets/gerbers/opennirscap-v2/ecu_gerbers.zip}, \code{sensor_module_gerbers.zip}, \code{stlink_gerbers.zip}, \code{p/place/trees/bcf-0036.tree}, \code{p/place/bci/stages/forester-bci-factory.tree}, rendered PDF at \code{p/place/build/latex/openfnirs/openfnirs-state-machine.pdf}, and upstream \code{github.com/tonykim07/fNIRS}.}
+\table{
+  \tr{\th{}\th{}}
+  \tr{\td{Document}\td{BOW-ONC-2026-001, Rev D (2026-06-10)}}
+  \tr{\td{bci.place build ref}\td{OpenNIRScap v2 / bcf-0036}}
+  \tr{\td{Status}\td{Issued for quotation}}
+  \tr{\td{Quote basis}\td{Fixed price per work item WI-1…WI-9 — quotation table in §7}}
 }
 
-\p{Safety: this is a non-invasive fNIRS build-state artifact only. No clinical or human-subject readiness is claimed until optical power, electrical isolation, cabling, fit, and data-quality proofs pass.}
+\subtree{
+  \title{1. Scope}
 
-\p{Dense criterion: no final fNIRS, fNIRS+EEG, or multiplayer-BCI exoprior claim until sensor, ECU, programmer, host, cap, optical power, isolation, signal provenance, and counterfactual disentangling proofs are all present and label-consistent.}
+  \p{Turnkey assembly + bench bring-up of one (1) OpenNIRScap unit.}
+
+  \p{In scope: incoming board inspection, hand-solder of the called-out parts, header population, firmware flash with bci.place-supplied image, cap/cable integration, USB CDC frame capture, and bench bring-up evidence required for acceptance (§8). Not in scope: bare-PCB fabrication and factory SMT (procured separately by bci.place); new host-side software development; any human-subject use.}
+}
+
+\subtree{
+  \title{2. Build quantities (one unit, "fixed-board model")}
+
+  \table{
+    \tr{\th{Assembly}\th{Qty}}
+    \tr{\td{Sensor module}\td{8}}
+    \tr{\td{ECU}\td{1}}
+    \tr{\td{ST-LINK adapter board}\td{5}}
+  }
+}
+
+\subtree{
+  \title{3. Boards as received (mixed assembly condition)}
+
+  \p{Boards are bci.place-furnished and arrive in mixed condition. Confirm each against the WI-1 population map before adding parts:}
+
+  \table{
+    \tr{\th{Board}\th{As-received condition}\th{Assembler adds}}
+    \tr{\td{Sensor module ×8}\td{SMT-populated (op-amp + passives)}\td{Edge connector J1; bench-verify R1/R2/C1/C2/D1/D2 before any hand-add. U1 is AD8616 SOIC-8 placed by JLC; do not place AD8618ARUZ}}
+    \tr{\td{ECU ×1}\td{Partially populated — top side populated; bottom side nearly bare (intentional, 4-layer internal routing); ribbon-cable and SWD headers empty}\td{Power/USB parts, T1M-10 headers, mux inspection per WI-3}}
+    \tr{\td{ST-LINK adapter ×5}\td{Bare (unpopulated)}\td{All headers per WI-4}}
+  }
+
+  \p{⚠ A few component positions were cancelled at fab and shipped unpopulated. Treat any empty position as incoming board condition to reconcile against the population map — do not back-fill from the set-aside stock (§4) without an exact footprint/designator match.}
+}
+
+\subtree{
+  \title{Reference photos — current boards and visible unfilled locations}
+
+  \p{ECU (fNIRS ECU, Capstone Team): green ECU board with SENSOR GROUP 1-8 labels and reference designators visible. The map below is generated from the original OpenNIRScap GitHub KiCad coordinate source (\code{tonykim07/fNIRS/hardware/fNIRS_ECU/fNIRS_PCB-PcbDoc.kicad_pcb}); use the photo only for board identity, connector orientation, and incoming-condition verification.}
+
+  \image{hardware-builds/openfnirs/fnirs-ecu-green.png}
+
+  \image{hardware-builds/generated/openfnirs-ecu-unfilled-locations.svg}
+
+  \p{Sensor module (x8): use the current clear sensor photos for assembler-facing sensor identity, unfilled J1 evidence, and current board-condition checks. Historical audit captures are audit evidence only, not final assembly instructions.}
+
+  \image{hardware-builds/openfnirs/current-photos/sensor-module-top-clear-20260612.png}
+
+  \image{hardware-builds/openfnirs/current-photos/sensor-module-bottom-clear-20260612.png}
+
+  \image{hardware-builds/generated/openfnirs-sensor-unfilled-locations.svg}
+
+  \p{ST-LINK adapter boards: use the bare adapter-board packet photo and the source-spec adapter map generated from \code{tonykim07/fNIRS/hardware/STLINK_Breakout/STLINK_Breakout-PcbDoc.kicad_pcb}. The ST-LINK dongle/cable tooling photos are not adapter-board evidence and are not used as fill maps.}
+
+  \image{hardware-builds/bci-pasted/2026-06-12-packet/00-prior-stlink-breakout-boards.png}
+
+  \image{hardware-builds/generated/openfnirs-stlink-adapter-unfilled-locations.svg}
+}
+
+\subtree{
+  \title{Source-spec footprint map — populate, verify-only, and set-aside parts}
+
+  \table{
+    \tr{\th{Board}\th{Ref/location}\th{Board image evidence}\th{Part image / part-evidence image}\th{Current status}\th{Action}}
+    \tr{\td{Sensor module ×8}\td{J1, bottom edge, six-pad 1 mm footprint}\td{Current clear bottom photo + source-spec map}\td{T1M-06 connector stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/15-digikey-t1m-06-header-qty5.png}}\td{Empty by design; 5 T1M-06 in hand for 8 boards}\td{Buy 3× T1M-06-F-SH-L-K if completing all eight boards, then hand-solder all required J1 footprints}}
+    \tr{\td{Sensor module ×8}\td{R1/R2/C1/C2 top-side analog network}\td{Current clear top photo plus bench probing}\td{If a real open/missing site is found: 60.4k 0603 resistor stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/01-digikey-541-604khct-60k4-resistor.png} 3.9M 0603 resistor stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/05-digikey-541-3m90-3m9-resistor.png} 200pF 0603 capacitor stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/02-digikey-399-c0603c201-200pf-cap.png}}\td{Placement is verification-only unless microscope/probe check shows an actual missing part}\td{Probe each board; hand-add only if open/missing}}
+    \tr{\td{Sensor module ×8}\td{C3/U1/D3/Q1 bottom-side analog and indicator path}\td{Current clear bottom photo plus bench probing}\td{No current-fill image: the saved AD8618ARUZ image is spare/ECO evidence, not a placement instruction for current U1}\td{U1 is AD8616 SOIC-8; surrounding bottom-side locations appear populated or verification-only}\td{Do not place AD8618ARUZ; verify value/function before any rework}}
+    \tr{\td{Sensor module ×8}\td{D1/D2 top source/detector}\td{Current clear top photo plus optical/electrical evidence}\td{No current-fill image in the saved packet; use optical/electrical evidence before any diode claim}\td{Verify optically/electrically; not a purchase task unless bench evidence contradicts the board}\td{Record evidence; do not create a parts order from images alone}}
+    \tr{\td{ECU ×1}\td{Sensor-group headers J10/J8/J6/J4, unnumbered KiCad \code{J}, J9/J7/J5}\td{Source-spec ECU map + current ECU photo}\td{T1M-10 header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/16-digikey-sam11993-t1m-10-header-qty8.png}}\td{Header footprints exist in the KiCad coordinate source; no additional numbered header is created from the photo label}\td{Populate only the headers required by the channel/cable map, then record orientation and mux channel order}}
+    \tr{\td{ECU ×1}\td{U6 / unreadable U? / U5 / U1 y-axis sensor-side footprints}\td{Source-spec ECU map + current ECU photo}\td{No placement image until the glare-obscured designator and value are confirmed}\td{U6/U5/U1 are in the KiCad coordinate source; the unreadable photo label remains an inspection hold}\td{Microscope-inspect before any part placement; do not back-fill from stock by shape alone}}
+    \tr{\td{ECU ×1}\td{RESET / SW1 tactile switch}\td{Source-spec ECU map + current ECU photo + May 27 checklist}\td{FSM1LP tactile switch stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/07-digikey-fsm1lp-tactile-switch-qty3.png}}\td{SW1 footprint exists in the KiCad coordinate source; current photo verifies as-received condition}\td{Fit-check and solder only if body/pin geometry matches}}
+    \tr{\td{ECU ×1}\td{U8/U4/U7/U3 IC footprints}\td{Source-spec ECU map + current ECU photo + May 27 checklist}\td{LM1085 3.3 V regulator stock for U3: \image{hardware-builds/bci-pasted/2026-06-12-packet/08-mouser-lm1085is-3v3-regulator.png} TMUX1104 stock is verify-only unless a mux site is proven empty: \image{hardware-builds/bci-pasted/2026-06-12-packet/14-mouser-tmux1104dgsr-mux.png}}\td{Footprints exist in the KiCad coordinate source; current photo/microscope check decides as-received population}\td{Fit-check and place only after designator/value confirmation; prove 3.3 V rail before downstream population}}
+    \tr{\td{ECU ×1}\td{J3 SWD header}\td{Source-spec ECU map + current ECU photo + May 27 checklist}\td{FTSH-107 SMD header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/10-digikey-sam9449-ftsh-107-header.png}}\td{J3 exists in the KiCad coordinate source}\td{Populate SWD/header only as the BOM and flash path require; buy one extra FTSH if no spare is found}}
+    \tr{\td{ECU ×1}\td{5V INPUT silkscreen / USB port J2 / SD1}\td{Source-spec ECU map + current ECU photo + May 27 checklist}\td{Molex 67503-1020 Mini-B receptacle stock for J2: \image{hardware-builds/bci-pasted/2026-06-12-packet/09-mouser-molex-67503-1020-mini-b.png}}\td{J2 and SD1 exist in the KiCad coordinate source; 5V INPUT is silkscreen}\td{Install only matched power/USB/storage parts; prove USB +5 V, enumeration, and rail behavior before using the board}}
+    \tr{\td{ECU ×1}\td{Every source TP(n) coordinate}\td{Source-spec ECU map + current ECU photo}\td{No part image; test pads are not components}\td{TP footprints exist in the KiCad coordinate source}\td{Do not populate as parts; use for continuity, power, SWD, and bring-up evidence}}
+    \tr{\td{ST-LINK adapter ×5}\td{HTSW J1 and FTSH J2 header pads}\td{Source-spec adapter map + bare adapter-board packet photo}\td{Bare ST-LINK adapter boards: \image{hardware-builds/bci-pasted/2026-06-12-packet/00-prior-stlink-breakout-boards.png} FTSH-107 SMD header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/10-digikey-sam9449-ftsh-107-header.png} No saved HTSW image exists in the packet}\td{J1/J2 footprints are from the ST-LINK KiCad source; current photo verifies the adapter PCBs are bare}\td{Buy HTSW-107-07-G-D and one FTSH-107-01-L-DV-K; verify against the bare adapter PCB pads before soldering}}
+  }
+}
+
+\subtree{
+  \title{Part images for location-fill decisions}
+
+  \p{Use these saved packet images as the "what goes there" references for the location map above. Retake rows are intentionally omitted where the first selected image is clearer. A row marked "not in packet" needs procurement confirmation before the assembler can compare the physical part to the footprint.}
+
+  \table{
+    \tr{\th{Location / decision}\th{Part image}\th{Fit / use note}}
+    \tr{\td{Sensor module J1, bottom-edge 1 mm connector}\td{T1M-06 connector stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/15-digikey-t1m-06-header-qty5.png}}\td{Stocked quantity is five; buy three more before completing all eight sensors.}}
+    \tr{\td{ECU U3 regulator}\td{LM1085 3.3 V regulator stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/08-mouser-lm1085is-3v3-regulator.png}}\td{Fit-check TO-263 footprint, then prove the 3.3 V rail before downstream population.}}
+    \tr{\td{ECU J2 USB Mini-B}\td{Molex Mini-B receptacle stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/09-mouser-molex-67503-1020-mini-b.png}}\td{Solder only after footprint/orientation check; acceptance evidence is +5 V and USB enumeration.}}
+    \tr{\td{ECU SW1 reset tactile}\td{FSM1LP tactile switch stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/07-digikey-fsm1lp-tactile-switch-qty3.png}}\td{Footprint fit is an open hold; do not force-place if the switch body or pins do not match.}}
+    \tr{\td{ECU sensor-group / bus headers}\td{T1M-10 header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/16-digikey-sam11993-t1m-10-header-qty8.png}}\td{Populate only the headers required by the channel/cable map, then produce mux truth-table evidence.}}
+    \tr{\td{ECU TMUX inspection / possible replacement}\td{TMUX1104 mux stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/14-mouser-tmux1104dgsr-mux.png}}\td{Verify existing TMUX population before using the stock; stock is evidence, not an automatic place order.}}
+    \tr{\td{ST-LINK adapter FTSH J2 and ECU J3/SWD path}\td{FTSH-107 SMD header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/10-digikey-sam9449-ftsh-107-header.png}}\td{One extra FTSH is needed if no spare is found after adapter and ECU allocation.}}
+    \tr{\td{ST-LINK adapter HTSW J1}\td{not in saved packet}\td{Buy HTSW-107-07-G-D and inspect against the bare adapter boards before claiming flash-path readiness.}}
+  }
+}
+
+\subtree{
+  \title{4. bci.place-furnished material}
+
+  \p{All boards, components, headers, cables, and the cap are bci.place-furnished; the assembler quotes labor only. Known shortfalls at issue date (cross-referenced as holds B1–B4 in §9) — to be verified & let Yuliya know if actually missing:}
+
+  \table{
+    \tr{\th{Area}\th{Stock / evidence}\th{Action gate}}
+    \tr{\td{Sensor boards}\td{8 boards; T1M-06 ×5; C3/R1/R2 stock}\td{Need 8 J1 total (B1); probe-verify C3/R1/R2 before hand-add}}
+    \tr{\td{ECU power/USB}\td{LM1085 ×2; Mini-B ×2; tactile ×3}\td{Fit-check SW1 (B2); prove U3 rail and J2 enumeration}}
+    \tr{\td{ECU mux/bus}\td{T1M-10 ×8; TMUX1104 ×8; FTSH ×1}\td{Inspect mux population (B3); populate headers; map channel order}}
+    \tr{\td{ST-LINK adapter}\td{5 bare boards; HTSW missing; extra FTSH needed}\td{Procure/populate adapter headers (B4) before flash path is "ready"}}
+    \tr{\td{Set aside}\td{AD8618ARUZ, 1N5819W, S1SS mates, unmatched E4F}\td{Do not place without exact footprint/designator match}}
+  }
+
+  \p{No substitutions of bci.place-furnished material without written bci.place approval.}
+}
+
+\subtree{
+  \title{5. Workmanship & handling standards}
+
+  \ul{
+    \li{Hand-solder acceptance to IPC-A-610 Class 2.}
+    \li{ESD handling per ANSI/ESD S20.20 practice throughout.}
+    \li{bci.place can provide a working station at MOX, 1618 Mission Street, San Francisco, with a fan, air filter, soldering bench, and ESD wrist straps. The assembler may use their own qualified station instead.}
+    \li{First power-on of each board behind a current limit; no rework on powered boards.}
+    \li{Defective or damaged CFM: stop work on that item, photograph, report per §9 non-conformance. Do not rework existing factory SMT population without written go-ahead.}
+  }
+}
+
+\subtree{
+  \title{6. Work items}
+
+  \p{Each work item lists assembly tasks and acceptance evidence. Acceptance artifacts are deliverables and feed the WI-9 evidence bundle. Quote each WI as a separate line in §7 quotation table.}
+}
+
+\subtree{
+  \title{WI-1 — Inventory & kitting — qty 1 kit}
+
+  \ul{
+    \li{Count and map against the kit: 8 sensor boards, 1 ECU, 5 adapter boards, all headers, muxes, USB connector, regulator, switch.}
+    \li{Produce a population map recording each board's as-received condition (§3). Missing/unpopulated positions are tracked as assembly conditions, not footnotes.}
+    \li{Acceptance evidence: population map + shortfall list, signed.}
+  }
+}
+
+\subtree{
+  \title{WI-2 — Sensor module hand-assembly — qty 8 boards}
+
+  \ul{
+    \li{Hand-solder per board: J1 (Samtec T1M-06-F-SH-L-K, bottom-edge 6-pad).}
+    \li{Probe-verify R1 / R2 / C1 / C2 / C3 / D1 / D2 before hand-add. R1 and R2 are the only planned passive backups; C3 is shown as placed in the May 27 checklist but still gets value verification.}
+    \li{Do not place AD8618ARUZ at U1. Current canonical source says sensor U1 is AD8616 SOIC-8 and is already placed by JLC; AD8618ARUZ is set-aside spare stock.}
+    \li{Acceptance evidence: per-board dark/light analog response log + photo.}
+    \li{⚠ Hold B1: only 5 of 8 J1 connectors stocked — completion capped at 5 boards until parts arrive.}
+  }
+}
+
+\subtree{
+  \title{WI-3 — ECU assembly & power-up — qty 1}
+
+  \p{Ordered steps: 1. Footprint fit-check SW1 (hold B2). 2. Fit U3 (LM1085), J2 (USB Mini-B), SW1. 3. Prove the 3.3 V rail and J2 USB enumeration before further population. 4. Place 8× T1M-10 headers. 5. Inspect TMUX1104 ×8 population (hold B3). 6. Map mux select lines to channel order.}
+
+  \ul{
+    \li{Acceptance evidence: rail measurement, USB enumeration evidence, mux truth table + ADC response per channel.}
+  }
+}
+
+\subtree{
+  \title{WI-4 — ST-LINK adapter population — qty 5}
+
+  \ul{
+    \li{Boards arrive bare. Populate HTSW J1 and second FTSH J2 headers.}
+    \li{⚠ Hold B4: HTSW missing, extra FTSH needed — flash path is not "ready" until procured.}
+    \li{Acceptance evidence: 5 populated adapters, continuity-checked.}
+  }
+}
+
+\subtree{
+  \title{WI-5 — Firmware flash — qty 1}
+
+  \ul{
+    \li{Flash STM32L476 via SWD through the ST-LINK adapter (ECU J3 = reserved FTSH). bci.place supplies firmware image + expected hash.}
+    \li{Acceptance evidence: flash log with hash readback; fresh flash with no improvised wiring.}
+  }
+}
+
+\subtree{
+  \title{WI-6 — Emitter & detector bring-up — qty 1 unit}
+
+  \ul{
+    \li{STM32 timers / GPIO expander sequence 660/940 nm LEDs on the selected module; photodiode/TIA returns analog through the connector to the ECU ADC (DMA).}
+    \li{Acceptance evidence: LED current/optical within bound; non-saturated ADC samples.}
+  }
+}
+
+\subtree{
+  \title{WI-7 — USB CDC framing — qty 1 unit}
+
+  \ul{
+    \li{Frame channel, wavelength, timing, and ADC values to the host.}
+    \li{Acceptance evidence: serial frame log. Frame contract must match the channel/wavelength/cap map.}
+  }
+}
+
+\subtree{
+  \title{WI-8 — Cap & cable integration + safety — qty 1 unit}
+
+  \ul{
+    \li{Cable mates, strain relief, optode spacing (35 mm source–detector), skin-contact surfaces, shielding, USB isolation.}
+    \li{Acceptance evidence: completed safety checklist. Bench-safe ≠ body-safe — no human subject in this scope.}
+  }
+}
+
+\subtree{
+  \title{WI-9 — Release QA / evidence bundle — qty 1}
+
+  \ul{
+    \li{Compile: 8 sensor photos, ECU photo, adapter photo, BOM counts, firmware hash, channel map, and rail/optical/USB/host evidence.}
+    \li{Acceptance evidence: evidence bundle delivered for bci.place review.}
+  }
+}
+
+\subtree{
+  \title{7. Quotation summary (assembler to complete)}
+
+  \table{
+    \tr{\th{WI}\th{Description}\th{Qty}\th{Est. hours}\th{Price}}
+    \tr{\td{WI-1}\td{Inventory & kitting}\td{1 kit}\td{}\td{}}
+    \tr{\td{WI-2}\td{Sensor module hand-assembly}\td{8}\td{}\td{}}
+    \tr{\td{WI-3}\td{ECU assembly & power-up}\td{1}\td{}\td{}}
+    \tr{\td{WI-4}\td{ST-LINK adapter population}\td{5}\td{}\td{}}
+    \tr{\td{WI-5}\td{Firmware flash}\td{1}\td{}\td{}}
+    \tr{\td{WI-6}\td{Emitter & detector bring-up}\td{1}\td{}\td{}}
+    \tr{\td{WI-7}\td{USB CDC framing}\td{1}\td{}\td{}}
+    \tr{\td{WI-8}\td{Cap & cable integration + safety}\td{1}\td{}\td{}}
+    \tr{\td{WI-9}\td{Release QA / evidence bundle}\td{1}\td{}\td{}}
+    \tr{\td{}\td{Total}\td{}\td{}\td{}}
+  }
+
+  \p{Lead time from kit-complete: _ working days. Quote validity: _ days.}
+}
+
+\subtree{
+  \title{8. Acceptance criteria}
+
+  \table{
+    \tr{\th{Claim}\th{Evidence required}\th{If missing}}
+    \tr{\td{Board stack complete}\td{8 sensor photos, ECU photo, adapter photo, BOM counts}\td{Resolve missing inventory or population before acceptance}}
+    \tr{\td{Electrical acquisition}\td{3.3 V rail, reset, mux truth table, ADC dark/light samples}\td{Repair or rework the failed electrical stage before acceptance}}
+    \tr{\td{Optical fNIRS timing}\td{660/940 nm current + optical bounds + frame timing}\td{Repair emitter/detector timing before acceptance}}
+    \tr{\td{Host handoff}\td{USB frame log and bci.place-provided ingest output with channel, wavelength, and cap-position labels matching the hardware map}\td{Correct frame/channel mapping before acceptance}}
+  }
+
+  \p{Acceptance = bci.place review of the WI-9 evidence bundle within 5 working days of delivery.}
+}
+
+\subtree{
+  \title{9. Open blockers / holds (resolve at kickoff)}
+
+  \table{
+    \tr{\th{ID}\th{Blocker}\th{Blocks}\th{Owner}\th{Action}}
+    \tr{\td{B1}\td{Sensor J1: 5 of 8 stocked}\td{WI-2 (3 of 8 boards)}\td{bci.place}\td{Procure 3× T1M-06-F-SH-L-K}}
+    \tr{\td{B2}\td{SW1 footprint fit unknown}\td{WI-3}\td{Assembler, at kickoff}\td{Fit-check before placement}}
+    \tr{\td{B3}\td{TMUX1104 population unverified}\td{WI-3}\td{Assembler, at kickoff}\td{Inspect/confirm ×8}}
+    \tr{\td{B4}\td{Adapter HTSW missing; extra FTSH needed}\td{WI-4 → WI-5}\td{bci.place}\td{Procure headers before flash path is "ready"}}
+  }
+
+  \p{Non-conformance: any failed acceptance item or damaged CFM is reported with photos within 1 working day; the rework path is agreed in writing before proceeding.}
+}
+
+\subtree{
+  \title{10. Packaging & return}
+
+  \p{Finished assemblies returned in ESD packaging (original trays where available) with the digital WI-9 evidence bundle and the signed §7/§8 tables.}
+}
