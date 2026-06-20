@@ -93,7 +93,7 @@ AlgebraicJulia/Catlab.jl (foundation)
 \subtree{
 \title{ASI Integration Points}
 \subtree{
-\title{1. acsets / acsets-algebraic-databases / acsets-relational-thinking <-> ACSets Core}
+\title{1. acsets / acsets-algebraic-databases / acsets-relational-thinking to ACSets Core}
 \p{Model the ASI skill graph as an ACSet for relational querying:}
 
 \pre{\startverb
@@ -120,7 +120,7 @@ end
 }
 
 \subtree{
-\title{2. algebraic-rewriting / topos-adhesive-rewriting <-> DPO/SPO Rewriting}
+\title{2. algebraic-rewriting / topos-adhesive-rewriting to DPO/SPO Rewriting}
 \p{Double-pushout rewriting for safe skill graph mutation (MONOTONIC_SKILL_INVARIANT):}
 
 \pre{\startverb
@@ -140,7 +140,7 @@ new_skills = rewrite(add_bridge_rule, current_skills)
 }
 
 \subtree{
-\title{3. discopy / discopy-operads <-> Wiring Diagram Composition}
+\title{3. discopy / discopy-operads to Wiring Diagram Composition}
 \p{Catlab's wiring diagrams and DisCoPy's string diagrams are the same mathematical object:}
 
 \pre{\startverb
@@ -158,17 +158,17 @@ end
 }
 
 \subtree{
-\title{4. topos-catcolab / catcolab-* <-> CatColab Collaborative Modeling}
+\title{4. topos-catcolab / catcolab-* to CatColab Collaborative Modeling}
 \p{CatColab is the web frontend to Catlab. Skills: \code{\startverb catcolab-ologs\stopverb}, \code{\startverb catcolab-petri-nets\stopverb}, \code{\startverb catcolab-stock-flow\stopverb}, \code{\startverb catcolab-causal-loop\stopverb}, \code{\startverb catcolab-decapodes\stopverb}. All CatColab models are ACSets underneath.}
 }
 
 \subtree{
-\title{5. interaction-nets <-> Decorated Cospans / Hypergraph Categories}
+\title{5. interaction-nets to Decorated Cospans / Hypergraph Categories}
 \p{Decorated cospans give OpenGraph a hypergraph category structure. Operations: \code{\startverb compose\stopverb} (sequential), \code{\startverb otimes\stopverb} (parallel), \code{\startverb mcopy\stopverb} (fan-out), \code{\startverb mmerge\stopverb} (fan-in), \code{\startverb delete\stopverb}, \code{\startverb create\stopverb}. Interaction nets are the computational model; decorated cospans are the categorical semantics.}
 }
 
 \subtree{
-\title{6. crn-topology <-> AlgebraicPetri Reaction Networks}
+\title{6. crn-topology to AlgebraicPetri Reaction Networks}
 \pre{\startverb
 using AlgebraicPetri
 
@@ -185,7 +185,7 @@ open_sir = Open(sir_model, [:S], [:R])
 }
 
 \subtree{
-\title{7. dynamical-system-functor / coupled-system <-> AlgebraicDynamics}
+\title{7. dynamical-system-functor / coupled-system to AlgebraicDynamics}
 \pre{\startverb
 using AlgebraicDynamics, Catlab
 
@@ -201,22 +201,22 @@ solution = solve(ODEProblem(full_system, u0, tspan), Tsit5())
 }
 
 \subtree{
-\title{8. julia-scientific <-> Julia Runtime for Catlab}
+\title{8. julia-scientific to Julia Runtime for Catlab}
 \p{Catlab requires Julia >= 1.10. Entry points: \code{\startverb julia-scientific\stopverb}, \code{\startverb julia-gay\stopverb}. Enzyme.jl autodiff works with AlgebraicDynamics ODE solvers.}
 }
 
 \subtree{
-\title{9. topos-unified / topos-generate <-> Topos-Theoretic Foundations}
+\title{9. topos-unified / topos-generate to Topos-Theoretic Foundations}
 \p{Catlab implements presentable categories, limits/colimits, Kan extensions. The topos-theoretic skills (\code{\startverb topos-unified\stopverb}, \code{\startverb topos-generate\stopverb}, \code{\startverb effective-topos\stopverb}) provide the foundation that Catlab operationalizes in code.}
 }
 
 \subtree{
-\title{10. monad-bayes-asi-interleave <-> Fills Probabilistic Gap}
+\title{10. monad-bayes-asi-interleave to Fills Probabilistic Gap}
 \p{Catlab has \strong{no built-in probabilistic inference}. \code{\startverb monad-bayes-asi-interleave\stopverb} provides SMC/MCMC/PMMH/RMSMC stacks. The bridge: Catlab composes the model structure, monad-bayes performs inference on it.}
 }
 
 \subtree{
-\title{11. vertex-ai-protein-interleave <-> Protein Reaction Networks}
+\title{11. vertex-ai-protein-interleave to Protein Reaction Networks}
 \p{AlgebraicPetri reaction networks model biochemical pathways. Protein folding/docking pipelines from \code{\startverb vertex-ai-protein-interleave\stopverb} can use Catlab ACSets to represent reaction networks, pathway composition, and multi-target drug interaction graphs.}
 }
 }

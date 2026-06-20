@@ -2,6 +2,6 @@
 trees = ["trees", "localcharts/forest/trees", "bci/stages", "bci/devices", "stacks-trees", "skill-trees"]
 assets = ["assets", "theme", "localcharts/forest/assets"]
 theme = "theme"
-root = "bcf-0001"
+root = "index"
 base_url = "https://bci.place"
 host = "plurigrid"
