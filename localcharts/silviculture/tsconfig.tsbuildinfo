@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/Button.tsx","./src/Editor.tsx","./src/Pane.tsx","./src/Preview.tsx","./src/Quiver.tsx","./src/TopBar.tsx","./src/YSignal.ts","./src/cmdk.tsx","./src/index.tsx","./common/api.ts"],"version":"5.9.3"}
