@@ -9,6 +9,7 @@
 \import{macros}
 
 \p{We track the homology of the skill transclusion graph over 10 sampled snapshots of the main branch and 10 parallel branch tips. #{H_0} counts connected components (skills that can reach each other). #{H_1} counts independent cycles (redundant transclusion paths). Orphans are isolated fixed points.}
+\p{\strong{Update 2026-06-10, post-mesh.} Recomputed on the current graph: 4120 vertices, 11168 edges, #{H_0 = 4} components, #{H_1 = 7052} cycles, 3 degree-zero orphans. Orphan ratio fell from 64 percent to about zero; slop-flood inflation resolved. Now four connected components.}
 
 \subtree{
 \title{Filtration: Main Branch}

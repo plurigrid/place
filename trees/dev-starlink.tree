@@ -1,0 +1,9 @@
+\title{Starlink}
+\taxon{device}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-04}
+\meta{dev-id}{DEV-NET-001}
+\meta{status}{own}
+\meta{location}{222 Dore}
+\p{Status: \strong{own}. Operational.}

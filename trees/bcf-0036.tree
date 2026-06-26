@@ -397,3 +397,8 @@
 }
 
 }
+
+\subtree{\title{In current inventory}
+\taxon{remark}
+\transclude{dev-opennirscap}
+}

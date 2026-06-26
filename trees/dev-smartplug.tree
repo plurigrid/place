@@ -1,0 +1,9 @@
+\title{Smart plugs (x3)}
+\taxon{device}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\meta{dev-id}{DEV-PLUG-001}
+\meta{status}{own}
+\meta{location}{222 Dore}
+\p{Status: \strong{own}. Three Matter/Thread smart plugs for switched power control, grouped with the compute/AV gear (TV, computers). Thread sibling of the VARMBLIXT lamp [[horse-000A]].}

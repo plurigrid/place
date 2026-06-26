@@ -9,3 +9,7 @@
 \meta{fps}{120}
 
 \p{6x GoPro arranged for full skeleton markerless capture. Multi-view triangulation for 3D joint positions. Synchronized via GoPro Labs timecode. 120fps minimum for gesture and postural dynamics. The six-camera rig is sized for the full recording volume at 250 Dore's ground floor (expansion target). Current bench at 222 Dore uses a single camera.}
+\subtree{\title{In current inventory}
+\taxon{remark}
+\transclude{dev-camera}
+}

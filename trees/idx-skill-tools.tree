@@ -1,0 +1,37 @@
+\title{Skills by Tool}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{Security skills grouped by tool/platform.}
+\ul{
+\li{[[hub-tool-aws]] (271)}
+\li{[[hub-tool-azure]] (134)}
+\li{[[hub-tool-splunk]] (133)}
+\li{[[hub-tool-docker]] (112)}
+\li{[[hub-tool-sentinel]] (84)}
+\li{[[hub-tool-sigma]] (80)}
+\li{[[hub-tool-burp]] (79)}
+\li{[[hub-tool-gcp]] (78)}
+\li{[[hub-tool-kubernetes]] (75)}
+\li{[[hub-tool-crowdstrike]] (68)}
+\li{[[hub-tool-vault]] (58)}
+\li{[[hub-tool-yara]] (44)}
+\li{[[hub-tool-cobalt-strike]] (44)}
+\li{[[hub-tool-mimikatz]] (44)}
+\li{[[hub-tool-nmap]] (40)}
+\li{[[hub-tool-zeek]] (39)}
+\li{[[hub-tool-misp]] (38)}
+\li{[[hub-tool-okta]] (37)}
+\li{[[hub-tool-wireshark]] (35)}
+\li{[[hub-tool-suricata]] (35)}
+\li{[[hub-tool-ghidra]] (33)}
+\li{[[hub-tool-terraform]] (29)}
+\li{[[hub-tool-volatility]] (28)}
+\li{[[hub-tool-bloodhound]] (26)}
+\li{[[hub-tool-semgrep]] (22)}
+\li{[[hub-tool-trivy]] (22)}
+\li{[[hub-tool-snort]] (17)}
+\li{[[hub-tool-nessus]] (16)}
+\li{[[hub-tool-metasploit]] (14)}
+}

@@ -90,3 +90,8 @@
 \li{\strong{Total (first build): ~$1,010}}
 \li{\strong{Total (all 3 builds, 3 diamonds): ~$2,212}}
 }}
+
+\subtree{\title{In current inventory}
+\taxon{remark}
+\transclude{dev-uncutgem}
+}

@@ -220,7 +220,7 @@ Common errors and solutions in `references/TROUBLESHOOTING.md`.
 }
 
 \subtree{
-\title{Level 2: Instructions (~5000 tokens recommended, <500 lines hard limit)}
+\title{Level 2: Instructions (~5000 tokens recommended, under 500 lines hard limit)}
 \p{Loaded when skill is activated. Contains:}
 
 \ul{
@@ -343,7 +343,7 @@ skills-ref read-properties ./pdf
 \li{✓ \strong{compatibility} field is ≤500 chars (if present)}
 \li{✓ No unknown fields (only whitelisted: name, description, license, compatibility, metadata, allowed-tools)}
 \li{✓ \strong{Body} is ≤500 lines (hard limit)}
-\li{✓ \strong{Body} is ~<5000 tokens (advisory, for context efficiency)}
+\li{✓ \strong{Body} is about under 5000 tokens (advisory, for context efficiency)}
 \li{✓ No directory traversal in resource references (e.g., no \code{\startverb ../../etc/passwd\stopverb})}
 \li{✓ Metadata has no duplicate keys}
 }

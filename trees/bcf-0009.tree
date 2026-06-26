@@ -8,8 +8,6 @@
 
 \transclude{bcf-0010}
 \transclude{bcf-0011}
-\transclude{bcf-0033}
-\transclude{bcf-0012}
 \transclude{bcf-0032}
 \transclude{bcf-0013}
 \transclude{bcf-0014}
@@ -18,3 +16,4 @@
 \transclude{bcf-0031}
 \transclude{bcf-0017}
 \transclude{bcf-0056}
+\p{Rejected/superseded fNIRS (not in modality rotation): [[bcf-0012]] (DIY full-head, replaced by OpenNIRScap), [[bcf-0033]] (PLUX biosignalsplux).}

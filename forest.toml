@@ -3,4 +3,4 @@ trees = ["trees", "localcharts/forest/trees", "bci/stages", "bci/devices", "stac
 assets = ["assets", "localcharts/forest/assets"]
 url = "https://bci.place/"
 home = "output"
-root = "bcf-0001"
+root = "index"

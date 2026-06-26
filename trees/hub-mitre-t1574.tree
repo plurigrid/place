@@ -1,0 +1,18 @@
+\title{ATT&CK T1574}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{10 skills addressing MITRE ATT&CK technique T1574.}
+\ul{
+\li{[[analyzing-persistence-mechanisms-in-linux]]}
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[detecting-dll-sideloading-attacks]]}
+\li{[[detecting-privilege-escalation-attempts]]}
+\li{[[hunting-for-persistence-mechanisms-in-windows]]}
+\li{[[implementing-siem-use-cases-for-detection]]}
+\li{[[performing-privilege-escalation-on-linux]]}
+\li{[[performing-purple-team-atomic-testing]]}
+\li{[[vermillion-hunter]]}
+}

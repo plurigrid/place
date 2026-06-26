@@ -1,5 +1,5 @@
 \title{Whisper-λ — loop reflection at iter 17}
-\taxon{reflection}
+\taxon{whisper-lambda}
 \date{2026-05-16}
 \author{eternal-loop-iter17}
 \tag{whisper-lambda}
@@ -11,7 +11,7 @@
 \title{What the loop produced in 16 iters}
 \ul{
 \li{\strong{8 design axes} closed (iters 1-6) — host language, linearity, handler depth, transport, group keying, verification, voice strategy, identity.}
-\li{\strong{8 forest trees} on the bci.horse forest: 0064 (device), 0065 (sealed-sender), 0066 (diff-fuzz scaffold), 0067 (trit-stratified), 0068 (chain ratchet), 0069 (Double Ratchet), 0070 (overview), 0071 (X3DH), 0072 (this reflection).}
+\li{\strong{8 forest trees} on the bci.place forest: 0064 (device), 0065 (sealed-sender), 0066 (diff-fuzz scaffold), 0067 (trit-stratified), 0068 (chain ratchet), 0069 (Double Ratchet), 0070 (overview), 0071 (X3DH), 0072 (this reflection).}
 \li{\strong{4 implementation slices} with passing QRNG-seeded property tests: sealed-sender, chain ratchet, Double Ratchet, X3DH. End-to-end composition demonstrated.}
 \li{\strong{3 feedback memories} saved: bit-identical-wrong-test (iter9), qrng-entropy-for-fuzz (iter11), skill-rules-semantic-check (iter5).}
 \li{\strong{Zero skill swaps} from iter1-2 triage (23 S / 23 n / 15 ?). One concept addition (QRNG-as-entropy at iter11).}

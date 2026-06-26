@@ -29,7 +29,7 @@
 
 \subtree{\title{3D Printer}
 \taxon{reference}
-\meta{status}{owned}
+\meta{status}{own}
 \tag{fabrication}
 \p{222 Dore has 3D printers and soldering supplies for fabricating electrode holders, headset adapters, paste applicators, repair parts, and comfort modifications (see \ref{bci-0009}).}}
 
@@ -37,7 +37,7 @@
 \taxon{reference}
 \meta{manufacturer}{OpenBCI}
 \meta{url}{https://shop.openbci.com}
-\meta{status}{to-buy}
+\meta{status}{want}
 \tag{eeg}
 \tag{power}
 \p{USB LiPo charger for the Cyton board's 3.7V lithium polymer battery (JST 2-pin connector). Cyton accepts 3--6V DC battery input. Standard single-cell LiPo charger (e.g. Adafruit Micro-Lipo or equivalent) with JST-PH 2.0mm connector.}}
@@ -46,7 +46,7 @@
 \taxon{reference}
 \meta{manufacturer}{OpenBCI}
 \meta{url}{https://shop.openbci.com/products/5-mm-spike-electrode-pack-of-30}
-\meta{status}{to-buy}
+\meta{status}{want}
 \tag{eeg}
 \tag{electrodes}
 \p{Replacement dry comb electrodes for the Ultracortex Mark IV headset. 5mm flexible prongs, snap-fit onto standard Ultracortex electrode units. Pack of 30 covers full 16-channel Cyton+Daisy configuration with spares.}}
@@ -55,7 +55,7 @@
 \taxon{reference}
 \meta{manufacturer}{Weaver and Company}
 \meta{url}{https://www.weaverandcompany.com/ten20-paste/}
-\meta{status}{to-buy}
+\meta{status}{want}
 \tag{eeg}
 \tag{consumables}
 \p{Ten20 conductive neurodiagnostic electrode paste for wet EEG recordings. Used with cup electrodes or as contact enhancer for dry electrodes during extended sessions. Standard jar (8 oz / 228g).}}

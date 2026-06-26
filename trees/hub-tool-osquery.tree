@@ -1,0 +1,15 @@
+\title{Skill hub: osquery}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{7 skills using osquery.}
+\ul{
+\li{[[analyzing-linux-system-artifacts]]}
+\li{[[deploying-osquery-for-endpoint-monitoring]]}
+\li{[[detecting-fileless-attacks-on-endpoints]]}
+\li{[[hunting-advanced-persistent-threats]]}
+\li{[[hunting-for-persistence-mechanisms-in-windows]]}
+\li{[[performing-agentless-vulnerability-scanning]]}
+\li{[[performing-malware-persistence-investigation]]}
+}

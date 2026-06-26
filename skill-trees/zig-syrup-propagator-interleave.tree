@@ -155,12 +155,12 @@ const Trit = enum { minus, zero, plus };  // -1, 0, +1
 \subtree{
 \title{ASI Integration Points}
 \subtree{
-\title{propagator.zig <-> propagators skill}
+\title{propagator.zig to propagators skill}
 \p{Direct match. ASI \code{\startverb propagators\stopverb} skill provides the Radul-Sussman theory; \code{\startverb propagator.zig\stopverb} is the Zig implementation. CellValue lattice, bidirectional constraints, and scoped propagation patterns shared.}
 }
 
 \subtree{
-\title{neurofeedback_gate <-> reafference-corollary-discharge}
+\title{neurofeedback_gate to reafference-corollary-discharge}
 \pre{\startverb
 fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
     // EEG focus level -> display brightness via propagator constraint
@@ -171,7 +171,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{BCI propagator functions <-> bci-phenomenology}
+\title{BCI propagator functions to bci-phenomenology}
 \ul{
 \li{8ch EEG -> focus level -> \code{\startverb CellValue(f32)\stopverb} -> \code{\startverb neurofeedback_gate\stopverb} -> brightness}
 \li{Fisher-Rao distance on EEG manifold -> trit classification via continuation.zig}
@@ -181,7 +181,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{continuation.zig <-> abductive-monte-carlo}
+\title{continuation.zig to abductive-monte-carlo}
 \p{AGM belief revision IS abductive reasoning:}
 
 \ul{
@@ -193,7 +193,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{homotopy.zig <-> homotopy continuation skills, polynomial-dynamics}
+\title{homotopy.zig to homotopy continuation skills, polynomial-dynamics}
 \ul{
 \li{Polynomial system solving for CRN equilibria (\code{\startverb crn-topology\stopverb})}
 \li{Solution path tracking with GF(3) classification}
@@ -203,7 +203,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{QRTP <-> proof-of-frog, merkle-proof-validation}
+\title{QRTP to proof-of-frog, merkle-proof-validation}
 \ul{
 \li{Fountain coding = erasure-resilient data transport (cf. Proof-of-Frog offline validation)}
 \li{QR air-gap verification = merkle proof without network connectivity}
@@ -213,7 +213,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{passport.gay <-> gay-integration, gay-monte-carlo}
+\title{passport.gay to gay-integration, gay-monte-carlo}
 \ul{
 \li{GF(3) trit trajectories from homotopy paths = Gay.jl color fingerprints}
 \li{SplitMix64 seed from MAC -> color -> trit trajectory -> passport identity}
@@ -223,7 +223,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{geo.zig <-> osm-topology, geohash-coloring, duckdb-spatial}
+\title{geo.zig to osm-topology, geohash-coloring, duckdb-spatial}
 \ul{
 \li{OLC Plus Codes = spatial addressing for propagator networks}
 \li{Syrup-serialized coordinates feed adjacency_gate (spatial propagation)}
@@ -234,7 +234,7 @@ fn neurofeedback_gate(focus: Cell(f32), brightness: Cell(f32)) Propagator {
 }
 
 \subtree{
-\title{xev_io <-> nashator, zig-syrup wire protocol}
+\title{xev_io to nashator, zig-syrup wire protocol}
 \ul{
 \li{libxev completion-based I/O drives zig-syrup OCapN transport layer}
 \li{Nashator (:9999) uses same wire format: 4-byte BE + JSON-RPC 2.0}

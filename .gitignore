@@ -11,3 +11,18 @@ bun.lock
 
 # Generated/vendored artifacts
 node_modules/
+
+workers/**/.wrangler/
+workers/**/node_modules/
+.wrangler/
+
+# BCI build artifacts kept out of the forest (large/binary/external)
+*.duckdb
+*.pdf
+bci/devices/assembly-docs/bci-session-history-part-mentions.tsv
+**/github-redownloads/
+bci/pcb/
+# Emacs lock/backup
+*~
+\#*#
+.#*

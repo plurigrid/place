@@ -23,3 +23,10 @@
 \meta{unit-cost}{$10}
 \meta{status}{reference}
 \p{Open-source ADS1299 analog front-end on an Arduino Due shield. 8 channels per board, stackable to 32 channels (4 boards). 24-bit resolution. Hardware is discontinued but design files are fully open — PCB layouts, schematics, firmware, all on GitHub. This is a reference design, not current reported inventory.}}
+
+\subtree{\title{In current inventory}
+\taxon{remark}
+\transclude{dev-cyton}
+\transclude{dev-portable-eeg}
+\transclude{dev-cognionics}
+}

@@ -1,0 +1,116 @@
+T1M-10-F-SH-L-K
+T1M-10
+SAM11993
+sensor header
+J_sensor
+LMV324AIDR
+LMV324
+quad op-amp
+glare-obscured
+glare obscured
+unreadable
+rightmost label
+rightmost
+TMUX1104DGSR
+TMUX1104
+AnalogMux
+analog mux
+analog switch
+STM32L476RET6
+STM32L476
+FSM1LP
+1825910-6
+reset switch
+tactile reset
+ADUM4160BRWZ
+ADUM4160
+USB isolator
+MCP73831T
+MCP73831
+TCA9535PWR
+TCA9535
+AMS1117-3.3
+AMS1117
+LM1085IS-3.3
+LM1085
+U15
+U16
+U17
+invented/photo-callout
+photo-callout
+5v input
+5V input
+67503-1020
+0675031020
+Mini-B receptacle
+USB Mini-B
+Micro SD
+microSD
+SD1
+TP(n)
+test pads
+test pad
+HTSW-107-07-G-D
+HTSW-107
+FTSH-107-01-L-DV-K
+FTSH-107
+SAM9449
+T1M-06-F-SH-L-K
+T1M-06
+AD8616
+AD8618ARUZ
+AD8618
+SOIC-8
+SOIC-14
+VSMD66694
+VBPW34S
+BSD840NH
+73251-2120
+BOOBRIE
+edge-mount SMA
+vertical SMA
+73251-2200
+ADC_SIGNAL
+GALI-84
+MMG3014NT1
+MMG3014
+RF amp
+50R
+50 ohm
+D_Small
+1N5819W
+1N5819
+B5819W
+Schottky
+R24
+0R
+0 ohm
+OLED1
+OLED
+display interface
+5V_SUPP1
+2x3 socket
+2x3 board socket
+power header
+PWR1
+power LED
+EN1
+BOOT1
+R27
+R29
+R28
+10k
+LED1
+TP1
+C35
+100nF
+104 0603
+BPW34
+PHOTODIODE1
+photodiode
+GND/PD/2.5V
+MTCELL
+1x3 socket
+1x3
+ESD9B5.0ST5G
+ESD9B5

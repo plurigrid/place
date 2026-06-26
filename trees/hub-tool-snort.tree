@@ -1,0 +1,25 @@
+\title{Skill hub: snort}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{17 security skills using snort.}
+\ul{
+\li{[[analyzing-cobalt-strike-beacon-configuration]]}
+\li{[[analyzing-cobaltstrike-malleable-c2-profiles]]}
+\li{[[analyzing-malware-behavior-with-cuckoo-sandbox]]}
+\li{[[analyzing-network-traffic-of-malware]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[building-vulnerability-scanning-workflow]]}
+\li{[[conducting-man-in-the-middle-attack-simulation]]}
+\li{[[configuring-host-based-intrusion-detection]]}
+\li{[[configuring-pfsense-firewall-rules]]}
+\li{[[configuring-snort-ids-for-intrusion-detection]]}
+\li{[[configuring-suricata-for-network-monitoring]]}
+\li{[[detecting-network-scanning-with-ids-signatures]]}
+\li{[[extracting-iocs-from-malware-samples]]}
+\li{[[performing-arp-spoofing-attack-simulation]]}
+\li{[[performing-packet-injection-attack]]}
+\li{[[performing-ssl-stripping-attack]]}
+\li{[[yara-rule-authoring]]}
+}

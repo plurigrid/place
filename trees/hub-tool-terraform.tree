@@ -1,0 +1,37 @@
+\title{Skill hub: terraform}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{29 security skills using terraform.}
+\ul{
+\li{[[auditing-cloud-with-cis-benchmarks]]}
+\li{[[auditing-terraform-infrastructure-for-security]]}
+\li{[[aws-architecture-design]]}
+\li{[[building-red-team-c2-infrastructure-with-havoc]]}
+\li{[[cloudflare]]}
+\li{[[cloudflare-deploy]]}
+\li{[[configuring-aws-verified-access-for-ztna]]}
+\li{[[detecting-aws-guardduty-findings-automation]]}
+\li{[[how-to-publish-paks]]}
+\li{[[how-to-write-rulebooks]]}
+\li{[[implementing-aqua-security-for-container-scanning]]}
+\li{[[implementing-aws-config-rules-for-compliance]]}
+\li{[[implementing-aws-iam-permission-boundaries]]}
+\li{[[implementing-aws-macie-for-data-classification]]}
+\li{[[implementing-aws-security-hub-compliance]]}
+\li{[[implementing-canary-tokens-for-network-intrusion]]}
+\li{[[implementing-devsecops-security-scanning]]}
+\li{[[implementing-gcp-organization-policy-constraints]]}
+\li{[[implementing-infrastructure-as-code-security-scanning]]}
+\li{[[implementing-policy-as-code-with-open-policy-agent]]}
+\li{[[implementing-zero-trust-with-hashicorp-boundary]]}
+\li{[[migrating-bitnami-to-bitnami-legacy]]}
+\li{[[nextjs-on-aws]]}
+\li{[[osint-exposure-audit]]}
+\li{[[performing-container-security-scanning-with-trivy]]}
+\li{[[performing-sca-dependency-scanning-with-snyk]]}
+\li{[[scanning-docker-images-with-trivy]]}
+\li{[[securing-aws-lambda-execution-roles]]}
+\li{[[terrateam-usage-guide]]}
+}

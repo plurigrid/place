@@ -1,0 +1,9 @@
+\title{Cognitronix/Cognionics 64/72 channel EEG}
+\taxon{device}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-04}
+\meta{dev-id}{DEV-EEG-005}
+\meta{status}{loaned-to-us}
+\meta{location}{222 Dore}
+\p{Status: \strong{loaned-to-us}, operational. The HD-72 streams fine as of 2026-06-10; earlier enumerated-not-streaming / streaming-partial states were resolved during bring-up. Verify exact make, channel count, and loan terms.}

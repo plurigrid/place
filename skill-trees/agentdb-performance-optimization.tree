@@ -200,7 +200,7 @@ const adapter = await createAgentDBAdapter({
 
 \ul{
 \li{\strong{M} (connections): Higher = better recall, more memory}
-\li{Small datasets (<10K): M = 8}
+\li{Small datasets (under 10K): M = 8}
 \li{Medium datasets (10K-100K): M = 16}
 \li{Large datasets (>100K): M = 32}
 \li{\strong{efConstruction}: Higher = better index quality, slower build}
@@ -443,7 +443,7 @@ const adapter = await createAgentDBAdapter({
 \subtree{
 \title{Scaling Strategies}
 \subtree{
-\title{Small Scale (<10K vectors)}
+\title{Small Scale (under 10K vectors)}
 \pre{\startverb
 const adapter = await createAgentDBAdapter({
   quantizationType: 'none',    // Full precision

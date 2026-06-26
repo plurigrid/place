@@ -1,0 +1,17 @@
+\title{ATT&CK T1098}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{9 skills addressing MITRE ATT&CK technique T1098.}
+\ul{
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[conducting-cloud-penetration-testing]]}
+\li{[[conducting-domain-persistence-with-dcsync]]}
+\li{[[detecting-azure-service-principal-abuse]]}
+\li{[[detecting-email-forwarding-rules-attack]]}
+\li{[[hunting-for-t1098-account-manipulation]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[implementing-security-monitoring-with-datadog]]}
+\li{[[performing-active-directory-compromise-investigation]]}
+}

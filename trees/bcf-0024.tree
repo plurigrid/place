@@ -60,7 +60,7 @@
 }
 
 \subtree{\title{Necessity filtration and dimension-stable identity}
-\p{The 82 bits of EEG entropy are a dimension-stable #{k}-NN signature in the sense of [[bcf-0027]]: a brain-state fingerprint that survives the Matryoshka Cliff at every truncation dimension. The GF(3) triadic identity (Generator +1, Ergodic 0, Validator -1) maps exactly onto the grading of the necessity filtration: Generator = unreflected tiles / refine phase, Ergodic = transfer matrix / peak phase, Validator = reflected tiles / coarse phase / obstruction detector.}
+\p{The 82 bits of EEG entropy are a dimension-stable #{k}-NN signature: a brain-state fingerprint that survives the Matryoshka Cliff at every truncation dimension. The GF(3) triadic identity (Generator +1, Ergodic 0, Validator -1) maps exactly onto the grading of the necessity filtration: Generator = unreflected tiles / refine phase, Ergodic = transfer matrix / peak phase, Validator = reflected tiles / coarse phase / obstruction detector.}
 }
 
 \subtree{\title{Research numbers}

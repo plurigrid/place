@@ -102,7 +102,7 @@ gvm-cli socket --socketpath /run/gvmd/gvmd.sock --gmp-username admin --gmp-passw
     <type>usk</type>
     <login>scan_user</login>
     <key>
-      <private><![CDATA['"$(cat /home/scan_user/.ssh/id_rsa)"']]></private>
+      <private>$(cat /home/scan_user/.ssh/id_rsa)</private>
       <phrase>key_passphrase</phrase>
     </key>
   </create_credential>'

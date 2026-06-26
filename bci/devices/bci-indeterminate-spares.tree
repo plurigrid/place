@@ -1,0 +1,49 @@
+\title{BCI indeterminate spares and verification notes}
+\taxon{hardware-builds}
+\author{monaduck1069}
+\date{2026-06-12}
+\import{macros}
+
+\p{This is an audit holding page, not an assembler-facing placement list. A part is not missing just because it appears in the packet history or because a non-current audit capture highlights it. Human verification on the current physical board determines whether a part is unnecessary, spare, or actually needed.}
+
+\subtree{
+  \title{Current decision rule}
+
+  \ul{
+    \li{Use the current physical board photo and microscope inspection first.}
+    \li{Use schematic/BOM evidence second.}
+    \li{Use DuckDB and historical packet records only to explain why a part is in the packet.}
+    \li{Do not use non-current audit captures as assembly instructions.}
+  }
+}
+
+\subtree{
+  \title{OpenNIRScap}
+
+  \table{
+    \tr{\th{Claim or part}\th{Current status}\th{Assembler-facing consequence}}
+    \tr{\td{AD8618ARUZ}\td{Historical or spare op-amp packet item. Current sensor photos show U1 populated with AD8616.}\td{Do not place unless bci.place issues a separate ECO.}}
+    \tr{\td{D1/D2 and top-side passives}\td{Current sensor photos show these locations populated or verification-only.}\td{No placement task from old reference images.}}
+    \tr{\td{Sensor J1 T1M-06}\td{Current bottom-side photo shows the bottom-edge connector footprint unfilled. Five connectors are in hand for eight boards.}\td{If all eight sensor boards need this connector, buy three more and install after inspection.}}
+    \tr{\td{ST-LINK adapter headers}\td{Programming tool and cable images identify the kit, not a board defect.}\td{Populate only the adapter headers needed for programming/test.}}
+  }
+}
+
+\subtree{
+  \title{Uncut Gem}
+
+  \table{
+    \tr{\th{Claim or part}\th{Current status}\th{Assembler-facing consequence}}
+    \tr{\td{1N4148 / D2 / D3}\td{Current photos suggest diode/passive locations are populated or at least not proven missing.}\td{Do not buy or place based on historical claims alone. Verify under magnification.}}
+    \tr{\td{MMG3014 U2/U3}\td{Current board photos show the RF area substantially populated, and packet history says no new purchase is needed.}\td{Inspect, but do not treat as a procurement shortfall.}}
+    \tr{\td{Edge SMA footprints}\td{Unfilled edge footprints exist on the current board. BOOBRIE through-hole SMA parts may not match them.}\td{Install only after footprint fit and continuity verification.}}
+    \tr{\td{5V_SUPP1, OLED, SPI1, PD/GND}\td{Visible unfilled connector or option footprints on current board photos.}\td{Populate only when the current test/power/detector plan requires them.}}
+    \tr{\td{INA333 rework}\td{Current electronic-improvement work, not a missing native component.}\td{Use only after stock baseline confirms the ADC noise problem.}}
+  }
+}
+
+\subtree{
+  \title{DuckDB scope}
+
+  \p{The local DuckDB records are broad audit indexes. The current build-history database contains hundreds of indexed sources and tens of thousands of extracted mentions, but it is not a complete archive. Use it to recover provenance and open questions, then decide assembly actions from the current boards and current parts.}
+}

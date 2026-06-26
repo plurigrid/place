@@ -1,0 +1,369 @@
+#+title: BCI Build Task Record
+#+author: monaduck1069
+#+date: 2026-06-12
+
+* Canonical decision rule
+- Most recent user-confirmed Markdown bill of work sent to Barton is the evaluated canonical hypothesis; use history/DuckDB to examine counterfactuals, not to override it.
+- Central goal is to populate visibly unpopulated board parts in an electronically acceptable way, equivalent to or better than upstream GitHub-derived designs.
+- Duplicate-looking pasted part images are retakes of the same parts unless proven otherwise; disregard retake images from the record except as manifest rows.
+
+* Current canonical artifacts
+- Recovered prompt/desiderata ledger: [[file:bci-build-recovered-prompts-and-desiderata.md]]
+- OpenNIRScap evaluated bill of work: [[file:openfnirs-assembly-bill-of-work.with-photo-references.md]]
+- OpenNIRScap evaluated bill of work PDF: [[file:openfnirs-assembly-bill-of-work.with-photo-references.pdf]]
+- Uncut Gem evaluated bill of work: [[file:uncut-gem-assembly-bill-of-work.with-photo-references.md]]
+- Uncut Gem evaluated bill of work PDF: [[file:uncut-gem-assembly-bill-of-work.with-photo-references.pdf]]
+- Build-history DuckDB: [[file:bci-build-history.duckdb]]
+- Parts-history DuckDB: [[file:bci-parts-history.duckdb]]
+- Completion audit: [[file:bci-build-completion-audit.md]]
+- Session-history strong pattern list: [[file:bci-session-history-strong-patterns.txt]]
+- Session-history part mention summary: [[file:bci-session-history-part-mention-summary.tsv]]
+- Session-history all matching part mentions: [[file:bci-session-history-part-mentions.tsv]]
+- Pasted image manifest: [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/manifest.csv]]
+- Pasted image contact sheet: [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/contact-sheet.jpg]]
+
+* Current resolved claims
+| Claim | Device | Location | Status | Resolution |
+|-
+| packet-ad8618-spare | OpenNIRScap | Sensor module x8 / U1 counterfactual / spare stock | selected-spare | Do not place at current sensor U1; confirmed Markdown says U1 is AD8616 SOIC-8 placed by JLC. |
+| packet-t1m06-shortfall | OpenNIRScap | Sensor module x8 / J1 bottom-edge connector | current_shortfall | Five stocked for eight sensors; buy three more if x8 target remains. |
+| packet-mmg3014-stocked | Uncut Gem | Main PCB / U2/U3 RF amps | verify_population | Eight in hand covers U2/U3 across three boards if actual board inspection shows empty positions; no new buy. |
+| packet-boobrie-sma-caution | Uncut Gem | Main PCB / J1-J4/J6 SMA line | wrong_footprint_caution | Treat as cautionary/noncanonical substitute until edge-mount fit and continuity requirements are met. |
+| packet-schottky-verify | Uncut Gem | Main PCB / D2/D3 diode candidates | verify_role_footprint | Do not install as a guess; reconcile schematic/BOM/footprint first. |
+| packet-oled-candidate | Uncut Gem | Main PCB / OLED1/display candidate | indeterminate | Fit and pinout proof required before treating as OLED/display solution. |
+| packet-power-header-candidate | Uncut Gem | Main PCB / 5V_SUPP1 / power header candidate | partial_stock_verify | May help header population but does not by itself prove complete power-bank kit closure. |
+| recovered-compaction-context | Both | Prompt/history reconstruction | canonical_context | The recovered prompt ledger is the control artifact for post-compaction invariants; keep active assembler artifacts on current clear board evidence, neutral bci.place ownership language, and no approval-meta or prior-render provenance as instructions. |
+| regenerated-photo-pdfs | Both | Markdown companion PDFs | current_output | PDFs were regenerated from corrected Markdown on 2026-06-12 with local images embedded and stale forbidden terms absent by extracted-text verification. |
+| excluded-legacy-image-inventory | Uncut Gem | DuckDB image_inventory | audit_only | Legacy render and prior-device image rows remain as audit/history rows only and are not active assembler evidence. |
+
+* Manual missing-location resolution list
+# Enriched 2026-06-15 (loop): per-part swap session resolved by part-name query against the
+# session-history audit (bci-session-history-part-mention-summary.tsv + bci-parts-history.duckdb),
+# superseding the earlier blanket two-session citation. Each entry carries Canon (fresh-GitHub
+# backed) / Swap session (rollout uuid or history.jsonl session_id : line) / Photo item (2026-06-12
+# packet idx) / Reasoning. Audit index sessions kept for provenance:
+- Audit index: =019eba31-d56a-7a53-86a5-fb1d4b561ab9= (manual source, ~/.codex/history.jsonl:4361);
+  =019ecb23-a842-7133-9453-356b64e0f9e5= (current goal, ~/.codex/history.jsonl:4395).
+** OpenNIRScap ECU
+- =J4..J10= sensor-optode headers
+  Canon: Samtec =T1M-10-F-SH-L-K= (gh fNIRS =OptodeConnectors.SchDoc= / =fNIRS_PCB.PcbDoc= U_OptodeConnectors).
+  Swap session: =019e89f9= rollout-2026-06-02T13-14-35 (937 mention-lines / 60 files); note =4fa982685581ba92.txt:45=.
+  Photo item: packet =16= (t1m-10 sam11993 qty8) + retake =26=; non-canon alt =13= (stss-10 1x10 socket).
+  Reasoning: stocked T1M-10 x8 matches the 1x10 pin headers; the 1x10 socket (13) is wrong gender, set aside. =J11= dropped as noncanonical.
+- =U6= quad op-amp
+  Canon: =LMV324AIDR= (gh fNIRS ECU schematic).
+  Swap session: =019e1a4d-e1f0-7181-a373-ef13019802fc= (history.jsonl:3610); also =019ecb23=:58.
+  Photo item: packet =03= (ad8618aruz opamp) -- NOT a valid swap.
+  Reasoning: AD8618ARUZ in packet was a mistaken op-amp buy from old sensor reasoning, not an LMV324 substitute. Inspect population; buy/place exact LMV324AIDR only if empty.
+- =U?= unreadable designator
+  Canon: glare-obscured; unresolved from photo.
+  Swap session: =019ecc95-2a3d-7681-8f10-964f6b500d3d= rollout-2026-06-15T11-39-48:15.
+  Photo item: none (rightmost glare label).
+  Reasoning: no safe swap inference; microscope/readable board photo required.
+- =U5= analog mux
+  Canon: =TMUX1104DGSR= (gh fNIRS ECU mux bank).
+  Swap session: =019e89f9= rollout-2026-06-02:179; note =4fa982685581ba92.txt:46=.
+  Photo item: packet =14= (tmux1104dgsr) + retake =28=.
+  Reasoning: stocked TMUX1104DGSR is verify-only (fit/orientation), not blind placement; fills the mux positions if empty.
+- =U1= MCU
+  Canon: =STM32L476RET6= (gh fNIRS ECU).
+  Swap session: =019e1a4d= (history.jsonl:3610); also =019ecb23=:50.
+  Photo item: none (no MCU packet image).
+  Reasoning: no substitute; exact MCU or confirmed-populated board only.
+- =SW1= reset switch
+  Canon: SMD tactile reset (gh fNIRS); TE =FSM1LP= / =1825910-6= family.
+  Swap session: =019e89f9= rollout-2026-06-02:159; also =019eba31=; note =4fa982685581ba92.txt:24=.
+  Photo item: packet =07= (fsm1lp tactile qty3).
+  Reasoning: fit-check stocked FSM1LP against the reset pads; prove reset behavior before final placement.
+- =U8= USB isolator
+  Canon: =ADUM4160BRWZ= (gh fNIRS ECU).
+  Swap session: =019e1a4d= (history.jsonl:3610); also =019ecb23=:54.
+  Photo item: none.
+  Reasoning: no substitute; exact part or confirmed population.
+- =U4= battery charger
+  Canon: =MCP73831T= (gh fNIRS ECU).
+  Swap session: =019e1a4d= (history.jsonl:3610); also =019ecb23=:43.
+  Photo item: none.
+  Reasoning: no substitute; exact part or confirmed population.
+- =U7= I/O expander
+  Canon: =TCA9535PWR= (gh fNIRS ECU).
+  Swap session: =019e1a4d= (history.jsonl:3610); also =019ecb23=:50.
+  Photo item: none.
+  Reasoning: no substitute; exact part or confirmed population.
+- =U3= 3.3 V regulator
+  Canon: original BOM =AMS1117-3.3= site (gh fNIRS ECU).
+  Swap session: =019dff4d-8bc5-7942-a358-a26b1ccfe004= rollout-2026-05-06:187; note =4fa982685581ba92.txt:29=.
+  Photo item: packet =08= (lm1085is-3v3) + retake =25=.
+  Reasoning: stocked =LM1085IS-3.3= is the regulator-function candidate; package/pad mismatch risk (SOT-223 vs TO-263) -- fit-check and prove 3.3 V rail before downstream population.
+- =U15= / =U16= / =U17=
+  Canon: none -- no canonical source-map row in fresh GitHub schematics.
+  Swap session: =019eba31= rollout-2026-06-11T21-58-08:131.
+  Photo item: none.
+  Reasoning: invented/photo-callout designators; removed.
+- =5v input=
+  Canon: silkscreen power-orientation label near =J2/U3= (not a component).
+  Swap session: =019ecb23= (current goal session).
+  Photo item: none.
+  Reasoning: label, not a placeable part; no substitute.
+- =J2= USB receptacle
+  Canon: Molex =67503-1020= USB Mini-B (gh fNIRS ECU).
+  Swap session: =019e89f9= rollout-2026-06-02:152; also =019eba31=; note =4fa982685581ba92.txt:31=.
+  Photo item: packet =09= (molex 67503-1020 mini-b) + retake =24=.
+  Reasoning: use stocked Molex Mini-B; no substitute. Solder and prove USB +5 V / enumeration if empty.
+- =SD1= Micro SD connector
+  Canon: Micro SD connector footprint (gh fNIRS ECU).
+  Swap session: =019eba31= rollout-2026-06-11:109; also =019ecb23=.
+  Photo item: none.
+  Reasoning: no substitute; bin-check exact connector before placement.
+** OpenNIRScap sensor module
+- =U1= dual op-amp
+  Canon: =AD8616= SOIC-8 (gh fNIRS sensor; PcbDoc R-8 footprint). =AD8618ARUZ= is spare/counterfactual only.
+  Swap session: =4fa982685581ba92.txt:12= ("too many words" thread); JLC-placed per Barton-confirmed BOW.
+  Photo item: packet =03= (ad8618aruz opamp) -- old wrong swap from AD8618 search.
+  Reasoning: current sensor U1 is the SOIC-8 AD8616 placed by JLC; AD8618ARUZ (SOIC-14 quad) does not fit the 8-pad footprint. Do not install; keep as spare.
+- =J1= bottom-edge connector
+  Canon: Samtec =T1M-06-F-SH-L-K= 6-pad (gh fNIRS sensor).
+  Swap session: =019e89f9=/=4fa982685581ba92.txt:43=.
+  Photo item: packet =15= (t1m-06 qty5) + retake =27=.
+  Reasoning: five stocked for eight sensors; buy three more if x8 target holds.
+- optical =D2= / =D3=
+  Canon: =D2= =VBPW34S= SMD photodiode; =D3= 0603 green LED (gh fNIRS sensor).
+  Swap session: =9a8956b66e76c3d2.txt:16=; history.jsonl:5171.
+  Photo item: none direct (sensor SMD parts; dip photodiode packet 18/34 is the Uncut-Gem detector, not this).
+  Reasoning: verify optically/electrically; no purchase unless bench proof contradicts the board.
+** OpenNIRScap ST-LINK adapter
+- =J1= programmer header
+  Canon: =HTSW-107-07-G-D= 2x7 (gh fNIRS STLINK_Breakout.SchDoc).
+  Swap session: =019e89f9= rollout-2026-06-02:164; also =019eba31=; note =329a9466bb71aa0c.txt:30=.
+  Photo item: packet =00= (prior stlink breakout boards) only -- bare adapter photo, does not supply J1.
+  Reasoning: buy/populate exact HTSW-107-07-G-D before the flash path is ready.
+- =J2= fine-pitch header
+  Canon: =FTSH-107-01-L-DV-K= (gh fNIRS STLINK_Breakout / ECU).
+  Swap session: =4fa982685581ba92.txt:36= ("FTSH-107 Samtec"); =329a9466bb71aa0c.txt:30=.
+  Photo item: packet =10= (ftsh-107 sam9449) + retake =23=.
+  Reasoning: populate ECU/ST-LINK headers; buy one extra FTSH only if no spare after adapter build.
+** Uncut Gem main PCB
+- =J1..J4= SMA RF
+  Canon: Molex =73251-2120= edge-mount SMA class (gh UncutGem KiCad/BOM).
+  Swap session: =4fa982685581ba92.txt:72= ("BOOBRIE SMA"); =019eba31=.
+  Photo item: packet =21= (boobrie sma female vertical through-hole).
+  Reasoning: BOOBRIE part is wrong SMA form factor; reject unless the physical board proves vertical through-hole footprint (source evidence contradicts).
+- =J6= ADC SMA
+  Canon: Molex =73251-2200= through-hole/right-angle (gh UncutGem).
+  Swap session: =329a9466bb71aa0c.txt:20=.
+  Photo item: none (no ADC SMA image).
+  Reasoning: keep DNP unless ADC/INA path is confirmed; buy exact 73251-2200 if needed.
+- =U2= / =U3= RF amplifiers
+  Canon: =MMG3014NT1= SOT-89-3 (gh UncutGem; schematic value GALI-84 class).
+  Swap session: =4fa982685581ba92.txt:13=; =329a9466bb71aa0c.txt:32=.
+  Photo item: packet =04= (mmg3014nt1 qty5) + retakes =19= / =35=.
+  Reasoning: eight in hand covers U2/U3 across three boards if board inspection shows empties; no new buy.
+- =D2= / =D3= diodes
+  Canon: =C8598= Schottky intent (gh UncutGem), NOT generic 1N4148.
+  Swap session: =4fa982685581ba92.txt:23= ("1N5819W -- Schottky").
+  Photo item: packet =06= (1n5819w schottky qty10).
+  Reasoning: stocked 1N5819W is a Schottky (correct family vs 1N4148 silicon); reconcile schematic/BOM/footprint before install. Do not guess.
+- =R24= 0 ohm
+  Canon: 0 R jumper (gh UncutGem).
+  Swap session: =e9491f1f-1fef-4150-9682-960250600432.jsonl:135=.
+  Photo item: none.
+  Reasoning: keep inactive unless rework instruction changes.
+- =OLED1= display header
+  Canon: 1x4 OLED socket/header (gh UncutGem).
+  Swap session: =329a9466bb71aa0c.txt:32=.
+  Photo item: packet =17= (1x4 round pin) + retake =31=.
+  Reasoning: populate header and verify OLED alive once pinout/gender + display plan confirmed.
+- =5V_SUPP1= power header
+  Canon: 2x3 power header (gh UncutGem).
+  Swap session: =4fa982685581ba92.txt:70=.
+  Photo item: packet =20= (2x3 socket) + retake =36=.
+  Reasoning: populate only if power plan requires; prove protected 5 V / 3.3 V rails.
+- =PWR1= / =EN1= / =BOOT1= switches
+  Canon: SMD pushbuttons (gh UncutGem).
+  Swap session: =ab2f5df5-66d8-4382-b150-735ca04521ef.jsonl:18= (PWR1); =e91aa73c-...:27= (EN1); history.jsonl:3942 session =019e6d6a-453d-7ae3-8acc-f895431e7d60= (BOOT1).
+  Photo item: none.
+  Reasoning: verify need against the shipped board; no blind population.
+- =R27= / =R29= / =R28= 10k
+  Canon: 10k 0603 (gh UncutGem).
+  Swap session: =e91aa73c-492b-400d-af17-a0afe714b3c6.jsonl:113=.
+  Photo item: none.
+  Reasoning: keep DNP/passive rows inactive unless rework instruction changes.
+- =LED1= indicator
+  Canon: indicator LED (gh UncutGem).
+  Swap session: =329a9466bb71aa0c.txt:32=.
+  Photo item: none.
+  Reasoning: passive/DNP unless rework requires.
+- =TP1= test point
+  Canon: test point TP1 (gh UncutGem source check; TP1..TP26 present).
+  Swap session: =19f703a0ea34d086.txt:315=.
+  Photo item: none.
+  Reasoning: not a placeable component; reference only.
+- =C35= 100 nF
+  Canon: 100 nF bypass (gh UncutGem).
+  Swap session: =e91aa73c-492b-400d-af17-a0afe714b3c6.jsonl:23=.
+  Photo item: none.
+  Reasoning: keep passive row inactive unless rework instruction changes.
+- =D4= / detector =PHOTODIODE1= 1x3
+  Canon: 1x3 detector socket + BPW34 photodiode (gh UncutGem detector path).
+  Swap session: =6b38a4b3f295a5be.txt:11= ("MTCELL female 1x3 socket").
+  Photo item: packet =22= (mtcell female 1x3 straight); detector photodiode =18= / retake =34=.
+  Reasoning: use BPW34/1x3 socket stock only after socket/pinout mapping to detector pads is proven (dark/light contrast).
+- =GND= / =PD= / =2.5V= detector labels
+  Canon: silkscreen detector labels (gh UncutGem), not components.
+  Swap session: =4fa982685581ba92.txt:77= (MUX_OUT pad check).
+  Photo item: none.
+  Reasoning: check MUX_OUT pads: if thru-hole solder, else no part.
+- =D1= / =D5= / =D6= ESD
+  Canon: =ESD9B5.0ST5G= ESD protection; full set is =D1/D5/D6= (gh UncutGem source check), not only D5/D6.
+  Swap session: =019e1a4d= (history.jsonl:3610).
+  Photo item: none.
+  Reasoning: buy/place exact ESD parts if empty; no packet substitute.
+* Session-history canonical-part mention audit
+- Skill correction: relevant skills were selected from the full local skill index, not the first visible slice. Loaded evidence/workflow skills were =opennirscap-build=, =kicad-pcb-automation=, =pcb-design-verification=, =pcb-anatomy=, =verifying-jlcpcb-bom-from-altium-source=, plus =org= and =emacs= for the delivery surface.
+- Search scope: exact MPN/name sweeps covered =~/.codex/history.jsonl=, =~/.codex/sessions/2026/**/*.jsonl=, =~/.claude/projects/-Users-alice-worlds/*.jsonl=, and =~/.claude/paste-cache/*.txt=. Matching files include the canonical source sessions =019eba31-d56a-7a53-86a5-fb1d4b561ab9= and =019ecb23-a842-7133-9453-356b64e0f9e5=, plus follow-on Codex rollouts, Claude project logs, and pasted transcript caches.
+- Method: search terms were canonical/source MPNs and stocked substitute MPNs, not bare refdes alone. Hit counts are mention-line counts and include generated-artifact echoes; the table records the strongest canonical signal and the swap intent, not raw frequency.
+- Exhaustive local ledger: [[file:bci-session-history-part-mentions.tsv]] contains every local session-history line matching the strong GH/source-name and stocked-MPN pattern set in [[file:bci-session-history-strong-patterns.txt]]. [[file:bci-session-history-part-mention-summary.tsv]] has no zero-hit strong groups.
+- Noise rule: bare source refdes such as =SD1=, =TP1=, =R24=, =R27=, =R28=, =R29=, =C35=, =EN1=, and invented rows =U15/U16/U17= are retained in the ledger, but they are not sufficient evidence by themselves because they collide with unrelated sessions and serialized artifacts.
+
+| Coverage group | Mention lines | Matching files | Zero-hit strong terms |
+|-
+| OpenFNIRS ECU sensor headers | 937 | 60 | none |
+| OpenFNIRS ECU =U6= =LMV324AIDR= | 272 | 27 | none |
+| OpenFNIRS ECU unreadable/glare-obscured label | 74 | 11 | none |
+| OpenFNIRS ECU =U5= mux | 1013 | 63 | none |
+| OpenFNIRS ECU =U1= MCU | 422 | 51 | none |
+| OpenFNIRS ECU reset/=SW1= | 746 | 53 | none |
+| OpenFNIRS ECU =U8/U4/U7= | 762 | 44 | none |
+| OpenFNIRS ECU =U3= regulator | 1206 | 65 | none |
+| OpenFNIRS ECU invented =U15/U16/U17= refdes | 4375 | 573 | none, noisy refdes |
+| OpenFNIRS ECU USB =J2= | 677 | 47 | none |
+| OpenFNIRS ECU =SD1= | 3058 | 521 | none, noisy refdes |
+| OpenFNIRS ST-LINK =J1/J2= | 1597 | 59 | none |
+| OpenFNIRS sensor =J1/U1= | 2902 | 73 | none |
+| OpenFNIRS optical chain | 791 | 56 | none |
+| Uncut Gem SMA =J1-J4/J6= | 1590 | 65 | none |
+| Uncut Gem =U2/U3= RF amps | 1683 | 61 | none |
+| Uncut Gem =D2/D3= diodes | 720 | 54 | none |
+| Uncut Gem OLED/power/detector/ESD named rows | 4212 | 85 | none |
+| Uncut Gem bare refdes/DNP rows | 18974 | 615 | none, noisy refdes |
+
+| Area | Canonical / stocked terms searched | History result | Most likely swap intent |
+|-
+| OpenFNIRS ECU sensor headers | =T1M-10-F-SH-L-K=, =T1M-10= | Repeated in history, source sessions, and photo packet. =J11= was only a noncanonical manual/photo row. | Use stocked =T1M-10= for real sensor-header footprints; do not create a =J11= task. |
+| OpenFNIRS ECU =U6= | =LMV324AIDR=, =LMV324= | Later history explicitly corrects ECU =U6= to =LMV324AIDR=. | No packet substitute; inspect population and buy/place exact quad op-amp only if empty. |
+| OpenFNIRS ECU =U5= mux | =TMUX1104DGSR=, analog mux | Strong repeated evidence that mux shortage maps to =TMUX1104DGSR= stock. | Use =TMUX1104DGSR= only after footprint/orientation fit-check. |
+| OpenFNIRS ECU MCU / isolator / charger / expander | =STM32L476RET6=, =ADUM4160BRWZ=, =MCP73831T=, =TCA9535PWR= | Canonical MPNs recur in current session evidence; no stocked substitute emerges. | Treat as exact-part holds, not image-packet swaps. |
+| OpenFNIRS ECU regulator | =AMS1117-3.3=, =LM1085IS-3.3= | History repeatedly frames =LM1085IS-3.3= as the stocked regulator candidate for the =AMS1117-3.3= site. | Fit-check =LM1085IS-3.3= and prove the 3.3 V rail before use. |
+| OpenFNIRS ECU USB / reset | =67503-1020=, =FSM1LP= | Molex USB Mini-B and =FSM1LP= are repeated in history and packet. | Use those stocked parts when footprint matches. |
+| OpenFNIRS ST-LINK adapter | =HTSW-107-07-G-D=, =FTSH-107-01-L-DV-K= | History distinguishes the large through-hole header from the stocked SMD =FTSH-107=. | Stocked =FTSH-107= helps =J2=; =J1= still needs exact =HTSW-107-07-G-D=. |
+| OpenFNIRS sensor connector | =T1M-06-F-SH-L-K=, =T1M-06= | Repeated in history and packet; stock count is five against eight sensors. | Use stocked five and buy three more for an x8 build. |
+| OpenFNIRS sensor =U1= | =AD8616=, =AD8618ARUZ= | JLC/BOM verification skill and history converge: current =U1= footprint is =AD8616= SOIC-8; =AD8618ARUZ= is wrong for that site. | Do not place =AD8618ARUZ=; keep it as spare/counterfactual stock. |
+| OpenFNIRS optical chain | =VSMD66694=, =VBPW34S=, green LED | Repeated as source/JLC-populated sensor parts, not active missing-location tasks. | Verify optically/electrically before inventing any buy/place item. |
+| Uncut Gem SMA edge mounts | =73251-2120=, =73251-2200=, BOOBRIE SMA | History includes BOOBRIE photos but later source-map correction marks them caution-only against Molex edge-mount canon. | Reject BOOBRIE as a blind substitute; use exact edge-mount SMA or leave DNP. |
+| Uncut Gem RF amps | =GALI-84=, =MMG3014NT1= | Earlier packet had =MMG3014NT1= stock; corrected source-map keeps original =GALI-84= canon. | Treat =MMG3014NT1= as mismatch/substitution evidence only unless an explicit rework approves it. |
+| Uncut Gem =D2/D3= diodes | =D_Small=, =1N5819W=, Schottky | History shows Schottky intent was debated, but corrected task keeps exact diode role unresolved. | Do not install =1N5819W= as a guess; reconcile schematic/BOM/footprint first. |
+| Uncut Gem OLED / power headers | =OLED1=, =J5=, =5V_SUPP1=, 1x4, 2x3 | Repeated packet/history mentions confirm available header/display candidates, with pinout/gender warnings. | Use only after pinout, gender, and selected power/display plan are confirmed. |
+| Uncut Gem switches / LEDs / passives | =BOOT1=, =EN1=, =PWR1=, =LED1=, =R27/R28/R29=, =R24=, =C35= | Current session groups them as DNP or unresolved intent, despite broad mention coverage. | No blind population; keep DNP/passive rows inactive unless rework instruction changes. |
+| Uncut Gem detector path | =BPW34=, =PHOTODIODE1=, =GND/PD/2.5V=, 1x3 socket | History and packet show BPW34/1x3 stock for the detector-side assembly. | Use BPW34/socket stock only after socket/pinout mapping to detector pads is proven. |
+| Uncut Gem ESD | =ESD9B5.0ST5G= | History/source evidence says the ESD set is =D1/D5/D6=, not only =D5/D6=. | Buy/place exact ESD parts if empty; no packet substitute. |
+
+** Most Likely image-based swap intents for unresolved rows
+| Location / source name | Relevant packet images | Most Likely intent | Hold condition |
+|-
+| ECU =U6= / =LMV324AIDR= | =03-digikey-505-ad8618aruz-opamp.png= | No likely valid swap; =AD8618ARUZ= was probably a mistaken op-amp purchase from old sensor reasoning, not a =LMV324= substitute. | Buy/place exact =LMV324AIDR= only if empty. |
+| ECU unreadable =U?= | no matching packet part; current evidence says glare/rightmost label | No safe swap inference. | Microscope/readable board photo required. |
+| ECU =U5= / =TMUX1104DGSR= | =14-mouser-tmux1104dgsr-mux.png=, retake =28= | Packet clearly intended to fill mux positions. | Fit/orientation check before placement. |
+| ECU =U1= / =STM32L476RET6= | no MCU packet image | No image-backed swap. | Exact MCU or confirmed populated board only. |
+| ECU =U8/U4/U7= / =ADUM4160BRWZ/MCP73831T/TCA9535PWR= | no matching packet images | No image-backed swap. | Exact parts or confirmed population. |
+| ECU =U3= / =AMS1117-3.3= | =08-mouser-lm1085is-3v3-regulator.png=, retake =25= | =LM1085IS-3.3= was intended as regulator-function replacement. | Package/pad mismatch risk; prove fit and 3.3 V output. |
+| ECU =SD1= | no Micro SD packet image | No image-backed swap. | Exact connector bin-check/buy. |
+| ST-LINK =J1= / =HTSW-107-07-G-D= | =00-prior-stlink-breakout-boards.png= only | Bare adapter board image does not supply =J1=. | Buy exact =HTSW-107-07-G-D=. |
+| ST-LINK =J2= / =FTSH-107-01-L-DV-K= | =10-digikey-sam9449-ftsh-107-header.png=, retake =23= | Packet intended to populate =J2=. | Buy one extra only if no spare after adapter build. |
+| Sensor =U1= / =AD8616= | =03-digikey-505-ad8618aruz-opamp.png= | Most likely old wrong swap from =AD8618= search; not valid for current SOIC-8 =AD8616=. | Do not install; keep as spare/counterfactual. |
+| Uncut Gem =J1-J4= / =73251-2120= | =21-boobrie-sma-female-vertical-through-hole.png= | Most likely wrong SMA-form-factor purchase for the SMA holes. | Reject unless physical board proves vertical through-hole footprint, which source evidence currently contradicts. |
+| Uncut Gem =J6= / =73251-2200= | no matching ADC SMA image | No image-backed swap. | Keep DNP unless ADC/INA333 rework selects it. |
+| Uncut Gem =U2/U3= / =GALI-84= | =04-digikey-mmg3014nt1-qty5-rf-amp.png=, =19-digikey-mmg3014nt1-qty3-rf-amp-retake.png= | =MMG3014NT1= was intended as RF-amp substitute. | Treat as unapproved mismatch until footprint, bias, gain, and source rework approve it. |
+| Uncut Gem =D2/D3= / =D_Small= | =06-digikey-1n5819w-schottky-qty10.png= | Most likely Schottky clamp/power-path swap attempt. | Do not place until diode role and 0603/SOD footprint are reconciled. |
+| Uncut Gem =OLED1= / 1x4 display interface | =17-amazon-x0049aq117-1x4-round-pin.png=, =38-amazon-x003wj4rn-module-w-p3.png= | Most likely display/header kit for =OLED1=. | Verify display pin order and header gender. |
+| Uncut Gem =5V_SUPP1= / 2x3 power connector | =20-amazon-x001tjii3n-2x3-socket.png=, retake =36= | Most likely power-header/socket candidate. | Use only if selected power-bank plan requires socket side. |
+| Uncut Gem =EN1/BOOT1= push switches | =07-digikey-fsm1lp-tactile-switch-qty3.png= | Most likely generic tactile-switch swap for push-switch sites after ECU =SW1= need. | Footprint and actuator height must match; otherwise no placement. |
+| Uncut Gem =D4/PHOTODIODE1= and =GND/PD/2.5V= | =18-amazon-x003383rw5-photodiode-dip2.png=, retake =34=, =22-mtcell-female-1x3-straight.png= | Most likely detector-path photodiode/socket attempt. | Verify BPW34/DIP photodiode polarity and socket-to-pad mapping. |
+| Uncut Gem =PWR1/LED1/R24/R27/R28/R29/C35/TP1= | no exact packet image; packet has unrelated 60.4k, 3.9M, 200pF, resin/mold/wire | No reliable image-backed swap. | Leave DNP/unresolved unless source rework calls them active. |
+| Uncut Gem =D5/D6= / =ESD9B5.0ST5G= | no exact ESD packet image | No image-backed swap. | Buy/place exact ESD if unpopulated and required. |
+
+* Verification snapshot
+- Active assembler-facing source scan: no matches for the stale provenance/source-language token set in the current Markdown bills, task record, Forester trees, or rendered XML.
+- PDF extraction: OpenNIRScap PDF has 7 pages, 4 embedded image XObjects, required current-sensor/MOX/whole-unit phrases, and no stale forbidden terms.
+- PDF extraction: Uncut Gem PDF has 10 pages, 3 embedded image XObjects, required current-issue/INA333/MOX/DiamondMount/current-kit phrases, and no stale forbidden terms.
+- DuckDB scan: active decision, claim, source, canonical-item, and packet tables have no stale forbidden-term matches. Legacy Uncut Gem image rows are excluded with =include_status= value =excluded_audit_only=.
+- Link check: Markdown image links and org file links resolve on disk.
+- Forester localhost check: =openfnirs-build.xml=, =uncut-gems-build.xml=, =bci-indeterminate-spares.xml=, and =bcf-devices.xml= returned =HTTP 200= from localhost.
+
+* Pasted image packet
+| Idx | Status | Image | Description |
+|-
+| 0 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/00-prior-stlink-breakout-boards.png][00-prior-stlink-breakout-boards.png]] | STLINK breakout bare adapter boards; prior single image |
+| 1 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/01-digikey-541-604khct-60k4-resistor.png][01-digikey-541-604khct-60k4-resistor.png]] | DigiKey 541-604KHCT-ND / CRCW060360KFKEA 60.4k 0603 resistor qty 5 |
+| 2 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/02-digikey-399-c0603c201-200pf-cap.png][02-digikey-399-c0603c201-200pf-cap.png]] | DigiKey 399-C0603C201J5GACTU-ND 200pF C0G/NP0 0603 capacitor qty 5 |
+| 3 | selected-spare | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/03-digikey-505-ad8618aruz-opamp.png][03-digikey-505-ad8618aruz-opamp.png]] | DigiKey 505-AD8618ARUZ-ND AD8618ARUZ qty 5; spare/not current sensor U1 |
+| 4 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/04-digikey-mmg3014nt1-qty5-rf-amp.png][04-digikey-mmg3014nt1-qty5-rf-amp.png]] | DigiKey MMG3014NT1CT-ND RF amp qty 5 |
+| 5 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/05-digikey-541-3m90-3m9-resistor.png][05-digikey-541-3m90-3m9-resistor.png]] | DigiKey 541-3.90MHCT-ND 3.9M 0603 resistor qty 5 |
+| 6 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/06-digikey-1n5819w-schottky-qty10.png][06-digikey-1n5819w-schottky-qty10.png]] | DigiKey 1655-1N5819WCT-ND Schottky diode qty 10; role/footprint verify |
+| 7 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/07-digikey-fsm1lp-tactile-switch-qty3.png][07-digikey-fsm1lp-tactile-switch-qty3.png]] | DigiKey 450-1650-ND FSM1LP tactile switch qty 3 |
+| 8 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/08-mouser-lm1085is-3v3-regulator.png][08-mouser-lm1085is-3v3-regulator.png]] | Mouser 926-LM1085IS-3.3NOPB qty 2 |
+| 9 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/09-mouser-molex-67503-1020-mini-b.png][09-mouser-molex-67503-1020-mini-b.png]] | Mouser 538-67503-1020 Molex USB Mini-B receptacle qty 2 |
+| 10 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/10-digikey-sam9449-ftsh-107-header.png][10-digikey-sam9449-ftsh-107-header.png]] | DigiKey SAM9449-ND FTSH-107 14pos 1.27mm SMD header qty 1 |
+| 11 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/11-e4f-33t-07c-cable-unmatched.png][11-e4f-33t-07c-cable-unmatched.png]] | Cable/stock label E4F-33T-07C-Z-1L-08P-1; unmatched/verify |
+| 12 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/12-samtec-stss-06-28-gf.png][12-samtec-stss-06-28-gf.png]] | Samtec STSS-06-28-GF qty 5 |
+| 13 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/13-samtec-stss-10-28-gf-10-l3.png][13-samtec-stss-10-28-gf-10-l3.png]] | Samtec STSS-10-28-GF-10.00-L3 qty 5 |
+| 14 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/14-mouser-tmux1104dgsr-mux.png][14-mouser-tmux1104dgsr-mux.png]] | Mouser 595-TMUX1104DGSR TI multiplexer qty 8 |
+| 15 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/15-digikey-t1m-06-header-qty5.png][15-digikey-t1m-06-header-qty5.png]] | DigiKey 612-T1M-06-F-SH-L-KCT-ND qty 5 |
+| 16 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/16-digikey-sam11993-t1m-10-header-qty8.png][16-digikey-sam11993-t1m-10-header-qty8.png]] | DigiKey SAM11993-ND T1M-10-F-SH-L-K qty 8 |
+| 17 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/17-amazon-x0049aq117-1x4-round-pin.png][17-amazon-x0049aq117-1x4-round-pin.png]] | 2.54mm 1x4 pin round board pack of 20 |
+| 18 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/18-amazon-x003383rw5-photodiode-dip2.png][18-amazon-x003383rw5-photodiode-dip2.png]] | Comimark 5P photodiode DIP-2 label X003383RW5 |
+| 19 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/19-digikey-mmg3014nt1-qty3-rf-amp-retake.png][19-digikey-mmg3014nt1-qty3-rf-amp-retake.png]] | DigiKey MMG3014NT1CT-ND RF amp qty 3; combines with qty5 evidence for 8 in hand |
+| 20 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/20-amazon-x001tjii3n-2x3-socket.png][20-amazon-x001tjii3n-2x3-socket.png]] | 2.54mm pitch 2x3 board socket pack of 20 |
+| 21 | selected-caution | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/21-boobrie-sma-female-vertical-through-hole.png][21-boobrie-sma-female-vertical-through-hole.png]] | BOOBRIE SMA female vertical through-hole; not edge-mount substitute |
+| 22 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/22-mtcell-female-1x3-straight.png][22-mtcell-female-1x3-straight.png]] | MTCELL female single row straight 3 pin 80pcs |
+| 23 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/23-digikey-sam9449-ftsh-107-header-retake.png][23-digikey-sam9449-ftsh-107-header-retake.png]] | Retake of FTSH-107 header evidence |
+| 24 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/24-mouser-molex-67503-1020-mini-b-retake.png][24-mouser-molex-67503-1020-mini-b-retake.png]] | Retake of Molex Mini-B evidence |
+| 25 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/25-mouser-lm1085is-3v3-regulator-retake.png][25-mouser-lm1085is-3v3-regulator-retake.png]] | Retake of LM1085 evidence |
+| 26 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/26-digikey-t1m-10-header-qty8-retake.png][26-digikey-t1m-10-header-qty8-retake.png]] | Retake of T1M-10 header evidence |
+| 27 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/27-digikey-t1m-06-header-qty5-retake.png][27-digikey-t1m-06-header-qty5-retake.png]] | Retake of T1M-06 header evidence |
+| 28 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/28-mouser-tmux1104dgsr-mux-retake.png][28-mouser-tmux1104dgsr-mux-retake.png]] | Retake of TMUX1104 evidence |
+| 29 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/29-bntechgo-enamelled-copper-wire.png][29-bntechgo-enamelled-copper-wire.png]] | BNTECHGO enamelled copper wire spool |
+| 30 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/30-quarton-vlm-520-01-lpt-laser.png][30-quarton-vlm-520-01-lpt-laser.png]] | Quarton VLM-520-01 LPT laser module |
+| 31 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/31-amazon-x0049aq117-1x4-round-pin-retake.png][31-amazon-x0049aq117-1x4-round-pin-retake.png]] | Retake of 1x4 round pin evidence |
+| 32 | selected | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/32-uv-resin-clear-formula.png][32-uv-resin-clear-formula.png]] | UV resin clear formula |
+| 33 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/33-qimoo-523959-lipo-1100mah.png][33-qimoo-523959-lipo-1100mah.png]] | Qimoo 523959 3.7V LiPo 1100mAh |
+| 34 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/34-amazon-x003383rw5-photodiode-dip2-retake.png][34-amazon-x003383rw5-photodiode-dip2-retake.png]] | Retake of Comimark photodiode evidence |
+| 35 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/35-digikey-mmg3014nt1-qty3-rf-amp-retake2.png][35-digikey-mmg3014nt1-qty3-rf-amp-retake2.png]] | Retake of MMG3014 qty3 evidence |
+| 36 | retake-disregard | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/36-amazon-x001tjii3n-2x3-socket-retake.png][36-amazon-x001tjii3n-2x3-socket-retake.png]] | Followup retake of 2x3 socket evidence |
+| 37 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/37-silicone-mold-diy-making-craft.png][37-silicone-mold-diy-making-craft.png]] | Silicone mold / DIY making craft circles; likely prism/epoxy mold candidate |
+| 38 | selected-indeterminate | [[file:../../../assets/hardware-builds/bci-pasted/2026-06-12-packet/38-amazon-x003wj4rn-module-w-p3.png][38-amazon-x003wj4rn-module-w-p3.png]] | Module label X003WJ4RN, 1.3 module W P3; likely OLED/display module candidate |
+
+* Retake policy application
+- Selected or retained rows: 29.
+- Retake-disregard rows: 10.
+- Retake rows remain in the manifest for auditability but should not be duplicated into bill-of-work counts or purchasing decisions.
+
+* Open inspection tasks
+- Build board-by-board population map from microscope photos before any soldering.
+- Confirm OpenNIRScap sensor J1 empty footprints and buy exactly the missing T1M-06 count if x8 remains the target.
+- Confirm OpenNIRScap sensor U1 is AD8616 SOIC-8; keep AD8618ARUZ as spare/counterfactual evidence only.
+- Inspect Uncut Gem U2/U3 before using MMG3014; no new MMG3014 purchase is justified from current evidence.
+- Reject wrong-footprint RF/SMA substitutes unless mechanical fit and continuity prove equivalence.
+
+* Fresh GitHub source verification 2026-06-15
+- Redownloaded upstream sources:
+  - =fNIRS= from =https://github.com/tonykim07/fNIRS= at commit =40bed83a567965f1bf09f8587ad17d99a63d384a=.
+  - =UncutGem= from =https://github.com/QuantumVillage/UncutGem= at commit =fdc0fcb28f0962d59b279080658e2c11bf367494=.
+- Fresh clone roots:
+  - [[file:github-redownloads/2026-06-15/fNIRS/][github-redownloads/2026-06-15/fNIRS/]]
+  - [[file:github-redownloads/2026-06-15/UncutGem/][github-redownloads/2026-06-15/UncutGem/]]
+- Detailed source-check table: [[file:github-redownloads/2026-06-15/source-designator-check-clean.tsv][source-designator-check-clean.tsv]]
+- Result: the quoted missing-part list is source-backed in the fresh GitHub PCB/schematic files, with two scope notes:
+  - fNIRS ECU optode connectors =J4= through =J10= are visible in =OptodeConnectors.SchDoc=; =J11= is present in the =fNIRS_PCB.PcbDoc= =U_OptodeConnectors= component class.
+  - fNIRS test points are broader than the earlier map: =TP1= through =TP26= are present in the source check, with =TP10= and =TP12= coming from the PCB class source rather than the extracted schematic-designator list.
+- STLINK is a separate PCB project in the fNIRS hardware tree, not just a photo subject; the adapter-board diagram request should treat =STLINK_Breakout.PcbDoc= / =STLINK_Breakout.SchDoc= as first-class PCB source.
+- UncutGem source check locates =J4 J3 J2 J1 U3 U2 R7 R6 D3 D2 R24 OLED1 5V_SUPP1 PWR1 EN1 BOOT1 R27 R29 R28 LED1 TP1 C35 J6 D4 D6 D5= plus =GND=, =PD / 2.5V= text, and SMA/coax footprints in the KiCad/BOM sources.

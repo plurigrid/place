@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="760" viewBox="0 0 1300 760" role="img" aria-labelledby="title desc">
+  <title id="title">Uncut Gem current electronic issue and rework plan</title>
+  <desc id="desc">Block diagram of the current Uncut Gem analog issue and the planned reversible INA333 acquisition-isolation rework.</desc>
+  <style>
+    .bg { fill: #101318; }
+    .box { fill: #1d2430; stroke: #d9e2ef; stroke-width: 3; rx: 10; }
+    .warn { fill: #3a2630; stroke: #ff7a7a; stroke-width: 3; rx: 10; }
+    .fix { fill: #1f3329; stroke: #7ee3a1; stroke-width: 3; rx: 10; }
+    .line { stroke: #d9e2ef; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    .noise { stroke: #ff7a7a; stroke-width: 4; stroke-dasharray: 10 10; fill: none; marker-end: url(#warnarrow); }
+    .fixline { stroke: #7ee3a1; stroke-width: 5; fill: none; marker-end: url(#fixarrow); }
+    .title { fill: #f5f7fb; font-family: Arial, sans-serif; font-size: 34px; font-weight: 700; }
+    .text { fill: #f5f7fb; font-family: Arial, sans-serif; font-size: 24px; }
+    .small { fill: #d9e2ef; font-family: Arial, sans-serif; font-size: 19px; }
+    .red { fill: #ffb0b0; font-family: Arial, sans-serif; font-size: 20px; font-weight: 700; }
+    .green { fill: #b8ffd0; font-family: Arial, sans-serif; font-size: 20px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#d9e2ef"/>
+    </marker>
+    <marker id="warnarrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#ff7a7a"/>
+    </marker>
+    <marker id="fixarrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#7ee3a1"/>
+    </marker>
+  </defs>
+  <rect width="1300" height="760" class="bg"/>
+  <text x="58" y="64" class="title">Uncut Gem current electronic issue and improvement plan</text>
+  <text x="58" y="104" class="small">The rework is not a missing-part placement task. It is a reversible measurement-path improvement after baseline testing.</text>
+
+  <rect x="80" y="185" width="220" height="105" class="box"/>
+  <text x="116" y="230" class="text">RF / laser</text>
+  <text x="116" y="262" class="small">drive and modulation</text>
+  <rect x="390" y="185" width="250" height="105" class="box"/>
+  <text x="428" y="230" class="text">Detector path</text>
+  <text x="428" y="262" class="small">photodiode front end</text>
+  <rect x="730" y="170" width="255" height="135" class="warn"/>
+  <text x="765" y="220" class="text">Legacy ADC drive</text>
+  <text x="765" y="253" class="small">TL082 / ADC_SIGNAL</text>
+  <text x="765" y="282" class="red">observed RF corruption risk</text>
+  <rect x="1070" y="185" width="160" height="105" class="box"/>
+  <text x="1106" y="230" class="text">ESP32</text>
+  <text x="1106" y="262" class="small">ADC input</text>
+
+  <path d="M300 238 H390" class="line"/>
+  <path d="M640 238 H730" class="line"/>
+  <path d="M985 238 H1070" class="line"/>
+  <path d="M185 290 C320 410 535 420 750 300" class="noise"/>
+  <text x="330" y="430" class="red">coupled RF noise can make ODMR dips ambiguous</text>
+
+  <rect x="430" y="520" width="310" height="120" class="fix"/>
+  <text x="466" y="568" class="text">INA333 daughterboard</text>
+  <text x="466" y="600" class="small">temporary acquisition-isolation path</text>
+  <text x="466" y="628" class="green">drive clean ADC_SIGNAL after isolation</text>
+  <path d="M515 290 V520" class="fixline"/>
+  <path d="M740 580 C890 570 995 485 1110 290" class="fixline"/>
+  <text x="790" y="625" class="green">Plan: baseline first, then isolate old drive and compare before/after noise.</text>
+</svg>

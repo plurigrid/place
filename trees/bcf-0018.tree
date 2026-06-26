@@ -60,5 +60,5 @@
 }
 
 \subtree{\title{Result}
-\p{The trit-tick is forced: ##{\boxed{1 \text{ trit-tick} = \tfrac{1}{5} \text{ flick} = \tfrac{1}{3{,}528{,}000{,}000} \text{ s} \approx 0.2834 \text{ ns}}} It is the GCD-compatible quantum of the GF(3) conservation law ([[horse-0003]]) with the modeled BCI synchronization kit ([[bcf-0003]]) and the flick multimedia standard (\ref{bib-flick}). The same conservation law governs the triadic structure of supertile levels and SMEC embedding training phases ([[bcf-0027]]).}
+\p{The trit-tick is forced: ##{\boxed{1 \text{ trit-tick} = \tfrac{1}{5} \text{ flick} = \tfrac{1}{3{,}528{,}000{,}000} \text{ s} \approx 0.2834 \text{ ns}}} It is the GCD-compatible quantum of the GF(3) conservation law ([[horse-0003]]) with the modeled BCI synchronization kit ([[bcf-0003]]) and the flick multimedia standard (\ref{bib-flick}).}
 }

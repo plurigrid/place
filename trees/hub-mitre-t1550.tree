@@ -1,0 +1,21 @@
+\title{ATT&CK T1550}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{13 skills addressing MITRE ATT&CK technique T1550.}
+\ul{
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-pass-the-ticket-attack]]}
+\li{[[detecting-lateral-movement-in-network]]}
+\li{[[detecting-pass-the-hash-attacks]]}
+\li{[[detecting-pass-the-ticket-attacks]]}
+\li{[[exploiting-constrained-delegation-abuse]]}
+\li{[[performing-active-directory-compromise-investigation]]}
+\li{[[performing-initial-access-with-evilginx3]]}
+\li{[[performing-lateral-movement-detection]]}
+\li{[[performing-lateral-movement-with-wmiexec]]}
+\li{[[performing-purple-team-exercise]]}
+}

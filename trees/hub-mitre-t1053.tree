@@ -1,0 +1,28 @@
+\title{ATT&CK T1053}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{20 skills addressing MITRE ATT&CK technique T1053.}
+\ul{
+\li{[[analyzing-apt-group-with-mitre-navigator]]}
+\li{[[analyzing-persistence-mechanisms-in-linux]]}
+\li{[[analyzing-windows-event-logs-in-splunk]]}
+\li{[[building-attack-pattern-library-from-cti-reports]]}
+\li{[[building-detection-rule-with-splunk-spl]]}
+\li{[[conducting-full-scope-red-team-engagement]]}
+\li{[[conducting-malware-incident-response]]}
+\li{[[detecting-malicious-scheduled-tasks-with-sysmon]]}
+\li{[[hunting-for-persistence-mechanisms-in-windows]]}
+\li{[[hunting-for-scheduled-task-persistence]]}
+\li{[[hunting-for-suspicious-scheduled-tasks]]}
+\li{[[implementing-continuous-security-validation-with-bas]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[implementing-siem-use-cases-for-detection]]}
+\li{[[implementing-threat-modeling-with-mitre-attack]]}
+\li{[[implementing-velociraptor-for-ir-collection]]}
+\li{[[performing-lateral-movement-detection]]}
+\li{[[performing-privilege-escalation-on-linux]]}
+\li{[[performing-purple-team-atomic-testing]]}
+\li{[[performing-purple-team-exercise]]}
+}

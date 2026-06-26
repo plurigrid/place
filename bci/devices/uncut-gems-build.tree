@@ -1,28 +1,343 @@
-\title{Uncut Gem NV magnetometer build state}
+\title{Bill of Work — Uncut Gem NV Diamond Magnetometer Assembly & Bench Bring-Up}
 \taxon{device}
 \tag{uncut-gems}
 \tag{quantum}
 \tag{magnetometer}
 \tag{latex-diagram}
 \tag{hardware-flow}
-\tag{state-machine}
-\tag{counterfactual-fixed-board}
-\tag{dense-proof-matrix}
+\tag{hardware-builds}
+\author{monaduck1069}
+\date{2026-06-12}
+\import{macros}
+\p{Missing-location, silkscreen-only, and substituted parts for this build are tracked in the canonical ground-truth map: [[bci-swap-provenance]].}
 
-\p{\strong{Status: BUILT} — 2026-06.}
-\p{Uncut Gem is modeled as a dense board-flow artifact for the Quantum Village NV-center magnetometer. Companion PDF/source: \code{p/place/bci/devices/uncut-gems-state-machine.tex}.}
-
-\p{Verdict: identity is fixed as an NV diamond magnetometer, not EEG/fNIRS/BCI; local build is partial; open blockers are wrong stocked SMA for J1, unverified U2/U3 RF amp population, unproven laser/diamond/antenna/photodiode geometry, and unproven ODMR trace; success requires rail, boot, PLL, RF, optomechanical, detector, trace, and optional INA333 comparison proofs.}
-
-\ul{
-  \li{Whole-device flow: B0 safe off -> B1 power -> B2 ESP32/USB -> B3 PLL -> B4 RF gain -> B5 optomechanics -> B6 photodiode -> B7 TIA/ADC -> B8 trace QA, with reversible B9 INA333 branch and failed-proof rollback to B0.}
-  \li{Actual board states: B0 no powered emission; B1 stable 5 V/3.3 V rails; B2 boot log and OLED alive; B3 PLL lock or known output; B4 correct SMA, RF continuity, sane bias; B5 visible laser/diamond/antenna alignment; B6 dark/light contrast; B7 unsaturated ADC baseline; B8 repeatable ODMR dip candidate; B9 lower-noise rework with no RF regression.}
-  \li{Counterfactual fixed board: F0 observed SMA/RF/acquisition faults; F1 connector correction; F2 locked RF amplifier/bias/matching topology; F3 integrated quiet analog front end; F4 partitioned RF, laser, analog return, and detector layout; F5 J6/TP1/TP2/MUX_OUT/RF DNP debug contract; F6 optomechanical constraints encoded in board/mechanical assembly; F7 released main PCB reaches B8 without B9.}
-  \li{BOM/build gates: stocked vertical SMA is not J1; U2/U3 require inspection before RF claim; laser/diamond/antenna/photodiode must co-locate before detector claims; INA333 daughterboard is optional reversible acquisition isolation, not a fixed-board substitute.}
-  \li{Proof checklist: identity, buildability, RF generation, optical/detector path, ODMR claim, and INA333 improvement each require evidence and roll back to B0/B1/B4/B5/B6/B7/B9 as appropriate.}
-  \li{Evidence: \ref{bcf-0031}, \ref{bcf-0036}, \ref{scan-0087}, upstream \code{QuantumVillage/UncutGem}, local gerber archive \code{p/place/assets/gerbers/opennirscap-v2/uncutgem_gerbers.zip}, rendered PDF at \code{p/place/build/latex/uncut-gems/uncut-gems-state-machine.pdf}, and this dense tree.}
+\table{
+  \tr{\th{}\th{}}
+  \tr{\td{Document}\td{BOW-UCG-2026-001, Rev B (2026-06-10)}}
+  \tr{\td{Device ref}\td{Quantum Village Uncut Gem — current "Uncut Gem" KiCad main PCB}}
+  \tr{\td{Status}\td{Issued for quotation}}
+  \tr{\td{Quote basis}\td{Fixed price per work item WI-1…WI-11 — quotation table in §8}}
 }
 
-\p{Safety: Uncut Gem is a laser and RF instrument, not a BCI. Eye safety, RF handling, exposed-power work, and detector saturation must be verified before powered experimentation.}
+\subtree{
+  \title{1. Scope}
 
-\p{Dense criterion: a state advances only when its exit proof exists; failed proof returns to the nearest upstream board state rather than being hidden in firmware or prose.}
+  \p{Turnkey assembly + bench bring-up of one (1) Uncut Gem NV magnetometer unit.}
+
+  \p{In scope: incoming board inspection; hand-solder of the called-out parts; header/connector population; firmware flash with bci.place-supplied image; the epoxy diamond-prism sub-assembly (mould, embed diamond + microwave aerial + photodiode + filter, UV-cure); laser module assembly; staged bench bring-up (power → controller → PLL → RF → optomechanics → detector → trace) to the acceptance evidence in §8, including the INA333 acquisition-isolation rework (§9, KI-1). Not in scope: bare-PCB fabrication and factory SMT (procured separately); NV-diamond sourcing/certification (bulk from Element Six / Adamas Nano); the physics-grade optical calibration science; host-side trace analysis. Eye-safe laser and RF handling apply throughout — see §6.}
+}
+
+\subtree{
+  \title{2. Build quantities (one unit, "fixed-board model")}
+
+  \table{
+    \tr{\th{Assembly}\th{Qty}\th{Notes}}
+    \tr{\td{Uncut Gem main PCB}\td{1}\td{SMT-populated; hand-finish per §7}}
+    \tr{\td{Epoxy diamond prism (sub-assembly)}\td{1}\td{built per WI-6 from the parts below}}
+    \tr{\td{— NV diamond (~750 µm)}\td{1}\td{purple, N-vacancy; bulk-sourced (CFM)}}
+    \tr{\td{— Clear UV-cured epoxy + 10–20 mm silicone mould}\td{1 set}\td{jewellery-grade}}
+    \tr{\td{— 24 AWG enamelled copper wire}\td{—}\td{microwave aerial loop + structural}}
+    \tr{\td{— BPW34 photodiode (3×3 mm)}\td{1}\td{placed directly below the diamond}}
+    \tr{\td{— Red gel light filter}\td{1}\td{passes ~620 nm fluorescence}}
+    \tr{\td{520 nm green laser module}\td{1}\td{wired to 5V/GND (polarity-critical)}}
+    \tr{\td{INA333 rework daughterboard}\td{1}\td{manual optimization (KI-1)}}
+    \tr{\td{External 40 dB RF amp module (30–4000 MHz)}\td{1}\td{off-board, per buy-list}}
+    \tr{\td{1.3" OLED (SH1106 I²C)}\td{1}\td{status display}}
+  }
+
+  \p{Procurement context: parts were bought in a ×3 batch (\code{BOM-3x.md}); this BOW covers one assembled unit.}
+}
+
+\subtree{
+  \title{3. Board as received (mixed assembly condition)}
+
+  \table{
+    \tr{\th{Item}\th{As-received}\th{Assembler adds}}
+    \tr{\td{Main PCB}\td{SMT-populated — U7 ESP32-WROOM-32E, U1 ADF4351, U8 CP2102N, U5 TL082, U6 LM1117-3.3, X1 10 MHz, RF/analog passives}\td{TH headers, SMA connectors, test points; verify populated parts}}
+    \tr{\td{Headers/connectors}\td{not fitted}\td{5V_SUPP1 (2×3), OLED1 (1×4), SPI1 (1×4), PHOTODIODE1 (1×3 socket), TP1/TP2, SMA J1–J4/J6}}
+    \tr{\td{Diamond prism}\td{not built}\td{full sub-assembly per WI-6}}
+    \tr{\td{Laser module}\td{loose}\td{mount + wire per WI-6}}
+    \tr{\td{INA333 daughterboard}\td{bare / not built}\td{build + integrate per KI-1}}
+  }
+}
+
+\subtree{
+  \title{Reference photos — current PCB, unfilled locations, and rework issue}
+
+  \p{Main PCB (Uncut Gem / Quantum Village / DEF CON 33): current clear photo of the bci.place-furnished board. Use it for board identity, connector-pad orientation, unfilled-footprint inspection, and incoming-condition reference only; it does not prove RF, optical, detector, ADC, or ODMR bring-up. The generated map is derived from the original GitHub KiCad/BOM sources (\code{plurigrid/UncutGem/hardware/PCB/Uncut Gem.kicad_pcb} and \code{Uncut Gem-BOM.csv}); the work table below controls whether each source footprint is populate-now, optional/DNP, verify-only, or leave-empty.}
+
+  \image{hardware-builds/uncut-gem/current-photos/defcon33-main-pcb-clear-20260612.png}
+
+  \image{hardware-builds/generated/uncut-gem-main-pcb-unfilled-locations.svg}
+
+  \p{Current electronic issue: analog measurement integrity is the rework target. RF/modulation energy can couple into the detector-to-ADC path and make ODMR dips ambiguous. Capture stock dark, light, RF-off, RF-on, and sweep baselines before any rework; install the INA333 daughterboard only as a reversible improvement if the baseline confirms the issue.}
+
+  \image{hardware-builds/generated/uncut-gem-adc-noise-rework.svg}
+
+  \p{Repo DiamondMount assembly spec evidence is used only with current kit evidence for the prism, laser, and optical-mechanical work items below.}
+}
+
+\subtree{
+  \title{Source-spec footprint map — populate, verify-only, and indeterminate work}
+
+  \table{
+    \tr{\th{Assembly}\th{Location}\th{Board image evidence}\th{Part image / part-evidence image}\th{Current status}\th{Action}}
+    \tr{\td{Main PCB}\td{J4/J3/J2/J1 plus J6 SMA holes / edge SMA pad sets}\td{Source-spec PCB map + current board photo}\td{No saved image of the required Molex 73251-2120 style edge-mount SMA exists in the packet. The saved BOOBRIE vertical SMA image is caution evidence only and must not be treated as the fill part.}\td{J1-J4/J6 are source footprints; BOOBRIE through-hole stock does not prove fit for these footprints}\td{Source/photograph the exact edge-mount SMA fit before install; do not substitute the BOOBRIE vertical part}}
+    \tr{\td{Main PCB}\td{U3/U2, R7/R6, D3/D2, R24 RF-side sites}\td{Source-spec PCB/BOM map + current board photo + May 27 checklist}\td{Original BOM calls U2/U3 \code{GALI-84} SOT-89; MMG3014 stock image is mismatch evidence until explicitly approved: \image{hardware-builds/bci-pasted/2026-06-12-packet/04-digikey-mmg3014nt1-qty5-rf-amp.png} R7/R6/R24/D3/D2 values come from the BOM before any placement}\td{Source footprints exist; current photo/microscope check decides as-received population}\td{Microscope-check each designator and value; populate only after BOM/value confirmation}}
+    \tr{\td{Main PCB}\td{OLED1/J5 interface, 5V_SUPP1, PWR1, EN1, BOOT1}\td{Source-spec PCB/BOM map + current board photo}\td{OLED/header candidates: \image{hardware-builds/bci-pasted/2026-06-12-packet/17-amazon-x0049aq117-1x4-round-pin.png} \image{hardware-builds/bci-pasted/2026-06-12-packet/38-amazon-x003wj4rn-module-w-p3.png} 2×3 socket stock for 5V_SUPP1: \image{hardware-builds/bci-pasted/2026-06-12-packet/20-amazon-x001tjii3n-2x3-socket.png}}\td{Source footprints exist; current photo verifies display, power-header, and control pad population}\td{Populate only with verified pin order and current power/control plan; prove protected 5 V and 3.3 V rails}}
+    \tr{\td{Main PCB}\td{R27/R29/R28, LED1, TP1, C35}\td{Source-spec PCB/BOM map + current board photo}\td{No placement image until BOM values and LED/test-point intent are confirmed}\td{Source footprints exist; current photo/microscope check decides whether they are already populated}\td{Do not back-fill by footprint shape; confirm values and whether TP1 is an access pad or fitted post}}
+    \tr{\td{Main PCB}\td{D4 / PHOTODIODE1 / GND / PD / 2.5V detector-side pads}\td{Source-spec PCB/BOM map + current board photo + detector wiring plan}\td{MTCELL 1×3 socket stock if the selected detector assembly needs a socket: \image{hardware-builds/bci-pasted/2026-06-12-packet/22-mtcell-female-1x3-straight.png}}\td{D4 and PHOTODIODE1 are source footprints; detector-side labels/pads remain current-photo inspection evidence}\td{Verify detector pinout and whether these are socket, test, or direct-wire pads before soldering}}
+    \tr{\td{Main PCB}\td{D5/D6 ESD footprints}\td{Source-spec PCB/BOM map + current board photo}\td{BOM calls D5/D6 \code{ESD9B5.0ST5G} ST_QFN-2L; no saved part image is in the packet}\td{Spec-present footprints, not photo-only guesses; current photo/microscope check decides population}\td{Treat as inspection hold; do not create a buy/place task until confirmed}}
+    \tr{\td{Prism subassembly}\td{Diamond, BPW34, red gel, aerial loop, epoxy layers}\td{Repo DiamondMount assembly spec + current kit evidence}\td{Photodiode DIP-2 stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/18-amazon-x003383rw5-photodiode-dip2.png} Enamelled copper wire stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/29-bntechgo-enamelled-copper-wire.png} UV resin stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/32-uv-resin-clear-formula.png} Silicone mould candidate: \image{hardware-builds/bci-pasted/2026-06-12-packet/37-silicone-mold-diy-making-craft.png} No saved diamond image exists in the packet}\td{Not a PCB populate step; this is the major hand-built optical/mechanical assembly}\td{Build per WI-6; photograph every layer before cure}}
+    \tr{\td{Laser module}\td{520 nm laser aligned into diamond/prism}\td{Current kit evidence + WI-6 alignment evidence}\td{520 nm laser module stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/30-quarton-vlm-520-01-lpt-laser.png}}\td{Loose module in kit; polarity-critical}\td{Mount, wire to 5V/GND, verify eye-safety controls}}
+    \tr{\td{INA333 rework}\td{Off-board ADC_SIGNAL isolation daughterboard}\td{No shipped-PCB location; tied to U5/J6/TP nodes}\td{No saved INA333 part image exists in the packet; the generated rework diagram remains the current visual instruction until the daughterboard parts are photographed}\td{New work, not present on shipped board}\td{Build only as KI-1, compare baseline before/after, keep reversible}}
+  }
+}
+
+\subtree{
+\title{Substitutions and missing-location parts (this board)}
+\p{Actionable substitution decisions for the Uncut Gem board. Provenance (origin date, codex session, photo-packet span) is in the canonical [[bci-swap-provenance]] map. Final populate and verify calls rest with the build verifier.}
+\table{
+\tr{\th{Designator}\th{Replacement / sourced}\th{Note}}
+\tr{\td{C35}\td{100nF bypass}\td{exact}}
+\tr{\td{LED1}\td{indicator LED}\td{exact}}
+\tr{\td{R24}\td{0R jumper}\td{exact}}
+\tr{\td{R27/R29/R28}\td{10k 0603}\td{exact}}
+\tr{\td{TP1}\td{— (test point)}\td{no part}}
+\tr{\td{OLED1}\td{1×4 round-pin hdr X0049AQ117}\td{for 1×4 OLED header}}
+\tr{\td{D2/D3}\td{1N5819W Schottky}\td{C8598 intent; not 1N4148}}
+\tr{\td{PWR1/EN1/BOOT1}\td{SMD pushbuttons}\td{verify}}
+\tr{\td{GND/PD/2.5V}\td{— (silkscreen labels)}\td{no part}}
+\tr{\td{D4/PHOTO DIODE1}\td{MTCELL 1×3 socket + BPW34}\td{socket + photodiode}}
+\tr{\td{J1–J4}\td{Molex 73251-2120 SMA}\td{BOOBRIE SMA vertical THT REJECTED}}
+\tr{\td{U2/U3}\td{MMG3014NT1}\td{stock, 8 in hand}}
+\tr{\td{5V_SUPP1}\td{2×3 socket X001TJII3N}\td{power header}}
+\tr{\td{D1/D5/D6}\td{ESD9B5.0ST5G}\td{exact}}
+\tr{\td{J6}\td{Molex 73251-2200}\td{exact}}
+}
+}
+\subtree{
+  \title{Part images for location-fill decisions}
+
+  \p{Use these saved packet images as the "what goes there" references for the location map above. Correct-fit uncertainty is preserved in the notes; the part image is not permission to solder unless the footprint, orientation, pinout, and current board need all agree.}
+
+  \table{
+    \tr{\th{Location / decision}\th{Part image}\th{Fit / use note}}
+    \tr{\td{J1 RFIN edge SMA}\td{BOOBRIE vertical SMA stock, no-fit warning: \image{hardware-builds/bci-pasted/2026-06-12-packet/21-boobrie-sma-female-vertical-through-hole.png}}\td{This saved part is the wrong through-hole style for the edge footprint; use it as a no-substitution warning, not as the target part. Correct Molex 73251-2120 style evidence is not in the saved packet.}}
+    \tr{\td{OLED1 1×4 header}\td{1x4 round-pin header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/17-amazon-x0049aq117-1x4-round-pin.png}}\td{Populate only if the current display/test plan requires OLED1 and pin order is verified.}}
+    \tr{\td{SPI1 1×4 header}\td{1x4 round-pin header stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/17-amazon-x0049aq117-1x4-round-pin.png}}\td{Populate only if required for firmware/debug/peripheral access.}}
+    \tr{\td{5V_SUPP1 2×3 power header}\td{2x3 socket stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/20-amazon-x001tjii3n-2x3-socket.png}}\td{Populate only if the selected power plan uses this header, then prove protected 5 V and 3.3 V rails.}}
+    \tr{\td{PHOTODIODE1 detector socket}\td{1x3 socket stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/22-mtcell-female-1x3-straight.png}}\td{Populate only when the detector assembly pinout is verified.}}
+    \tr{\td{U2/U3 RF amp source check}\td{MMG3014 packet stock mismatch evidence: \image{hardware-builds/bci-pasted/2026-06-12-packet/04-digikey-mmg3014nt1-qty5-rf-amp.png}}\td{The original BOM calls U2/U3 \code{GALI-84} SOT-89. Treat MMG3014 stock as non-authoritative until explicitly approved as a substitution.}}
+    \tr{\td{Prism BPW34 detector}\td{BPW34-style photodiode stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/18-amazon-x003383rw5-photodiode-dip2.png}}\td{Place in the prism assembly below the diamond, not as an OpenFNIRS sensor substitute.}}
+    \tr{\td{Prism microwave aerial}\td{Enamelled copper wire stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/29-bntechgo-enamelled-copper-wire.png}}\td{Form the aerial loop around the diamond during the epoxy-layer build.}}
+    \tr{\td{Prism mould / epoxy body}\td{Silicone mould candidate: \image{hardware-builds/bci-pasted/2026-06-12-packet/37-silicone-mold-diy-making-craft.png}}\td{Verify size and cleanliness before cure; photograph every layer before the next pour.}}
+    \tr{\td{Prism clear resin}\td{Clear UV resin stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/32-uv-resin-clear-formula.png}}\td{Use only under the ventilation and handling controls in §5.}}
+    \tr{\td{520 nm laser module}\td{Quarton 520 nm laser stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/30-quarton-vlm-520-01-lpt-laser.png}}\td{Polarity-critical; mount and wire only after eye-safety controls are ready.}}
+    \tr{\td{OLED module candidate}\td{1.3 inch module candidate: \image{hardware-builds/bci-pasted/2026-06-12-packet/38-amazon-x003wj4rn-module-w-p3.png}}\td{Treat as candidate display evidence; verify interface/pinout before connecting to OLED1.}}
+  }
+}
+
+\subtree{
+  \title{4. bci.place-furnished material}
+
+  \p{All boards, modules, the diamond, laser, wire, epoxy, antenna, and connectors are bci.place-furnished; the assembler quotes labor only. Key parts (PCB from \code{hardware/PCB/JLCPCB-BOM.csv}; prism from \code{hardware/DiamondMount}):}
+
+  \table{
+    \tr{\th{Function}\th{Designator / part}\th{Note}}
+    \tr{\td{RF connectors}\td{Molex 73251-2120 SMA edge-mount — J1 RFIN, J2/J3 RFOUT_A±, J4 RFOUT_DIAMOND, J6 ADC_SIGNAL}\td{verify on board (§9, V-1)}}
+    \tr{\td{PLL / synth}\td{U1 ADF4351 (LFCSP-32), X1 10 MHz}\td{microwave source}}
+    \tr{\td{RF gain}\td{external 40 dB module + on-board L1/L2 1.9 nH, L3/L4 470 nH, R6/R7/R9/R10 50 Ω}\td{inspect/integrate (V-2)}}
+    \tr{\td{Controller}\td{U7 ESP32-WROOM-32E, U8 CP2102N, OLED1}\td{firmware coordinator}}
+    \tr{\td{Power}\td{P1 USB-C, U6 LM1117-3.3, 5V_SUPP1}\td{rails; isolated USB recommended}}
+    \tr{\td{Diamond prism}\td{NV diamond, UV epoxy + mould, 24 AWG aerial, BPW34, red gel}\td{the optical heart (WI-6)}}
+    \tr{\td{Light source}\td{520 nm laser module}\td{polarity-critical}}
+    \tr{\td{Front-end}\td{U5 TL082, TP1, TP2/MUX_OUT}\td{conditioning}}
+    \tr{\td{Rework}\td{INA333 (off-BOM daughterboard)}\td{KI-1}}
+  }
+
+  \p{No substitutions of CFM parts without written approval.}
+}
+
+\subtree{
+  \title{5. Workmanship & handling standards}
+
+  \ul{
+    \li{Hand-solder acceptance to IPC-A-610 Class 2; ESD handling per ANSI/ESD S20.20.}
+    \li{bci.place can provide a working station at MOX, 1618 Mission Street, San Francisco, with a fan, air filter, soldering bench, and ESD wrist straps. The assembler may use their own qualified station instead.}
+    \li{First power-on behind a current limit; isolated/protected USB for test (per BuildGuide); laser and RF stay OFF until the relevant work item.}
+    \li{Eye safety for the 520 nm laser and RF-exposure care are gating, not optional.}
+    \li{Diamond prism: UV-cure in a ventilated area; the ~750 µm diamond is a single bulk-sourced grain — handle/track as a high-value small part.}
+    \li{Defective/damaged CFM: stop, photograph, report per §9 non-conformance; do not rework factory SMT population without written go-ahead.}
+  }
+}
+
+\subtree{
+  \title{6. Work items}
+
+  \p{Each work item carries assembly tasks and acceptance evidence. Acceptance artifacts are deliverables feeding the WI-11 evidence bundle. Quote each WI as a line in §8.}
+}
+
+\subtree{
+  \title{WI-1 — Inventory & kitting — qty 1 kit}
+
+  \ul{
+    \li{Map kit against BOM + DiamondMount parts; record as-received population (§3). Confirm laser/RF OFF and 5 V untrusted until proven.}
+    \li{Acceptance evidence: population map + shortfall list, signed; laser/RF off condition documented.}
+  }
+}
+
+\subtree{
+  \title{WI-2 — Power rails — qty 1}
+
+  \ul{
+    \li{Fit P1 (USB-C) / 5V_SUPP1; prove protection and U6 LM1117 3.3 V before any downstream load. Check R1/R2 divider (5 V / 2.5 V / 0 V) per BuildGuide.}
+    \li{Acceptance evidence: 5 V and 3.3 V measured.}
+  }
+}
+
+\subtree{
+  \title{WI-3 — Controller bring-up — qty 1}
+
+  \ul{
+    \li{Populate OLED1 header, ESP32/ADF4351 sockets (ADF4351 socket solders on the back), BOOT1/EN1; CP2102N (U8) programs ESP32 (U7); OLED + serial report condition. Flash firmware.}
+    \li{Acceptance evidence: boot log + OLED alive.}
+  }
+}
+
+\subtree{
+  \title{WI-4 — PLL / microwave source — qty 1}
+
+  \ul{
+    \li{X1 10 MHz drives U1 ADF4351; ESP32 writes SPI registers (SPI1); confirm \code{LOCK} LED and output (~2880 MHz per stock firmware modes).}
+    \li{Acceptance evidence: PLL lock + frequency as configured.}
+  }
+}
+
+\subtree{
+  \title{WI-5 — RF gain & connectors — qty 1}
+
+  \ul{
+    \li{Mount ADF4351 (back) + RF amp board (front); link with a short SMA-SMA cable; fit + verify the SMA connectors — use the existing one if it works (V-1); inspect L1/L2 1.9 nH, L3/L4 470 nH, and R6/R7/R9/R10 50 Ω matching; integrate external 40 dB amp; short test antenna to confirm.}
+    \li{Acceptance evidence: SMA fit + RF continuity + sane bias.}
+  }
+}
+
+\subtree{
+  \title{WI-6 — Optomechanical assembly: diamond prism + laser — qty 1 — major hand-assembly}
+
+  \ul{
+    \li{Diamond prism (jewellery-style epoxy mount): in a 10–20 mm silicone mould, layer clear UV-cured epoxy; form a small loop of 24 AWG enamelled-copper microwave aerial and place it around the ~750 µm NV diamond during layering; seat the BPW34 photodiode directly below and close to the diamond; add the red gel filter; UV-cure. Result: the "diamond holding prism" with aerial + photodiode leads.}
+    \li{Laser: mount the 520 nm green laser module; wire to the 5V/GND socket watching polarity.}
+    \li{Co-locate laser spot, diamond prism, and microwave aerial in the printed holder.}
+    \li{Acceptance evidence: cured prism (diamond + aerial loop + BPW34 + gel), laser mounted, visible green-on-diamond alignment.}
+  }
+}
+
+\subtree{
+  \title{WI-7 — Detector path — qty 1}
+
+  \ul{
+    \li{Connect the assembled prism's BPW34 leads to the PHOTODIODE1 (1×3) socket; verify the D4 path converts red (~620 nm) fluorescence to current.}
+    \li{Acceptance evidence: dark/light contrast at the detector.}
+  }
+}
+
+\subtree{
+  \title{WI-8 — Front-end / ADC — qty 1}
+
+  \ul{
+    \li{U5 TL082 conditions detector current (add C1/C2 only if using the op-amp as an integrator); ADC_SIGNAL reaches ESP32 and TP1 / TP2 (MUX_OUT).}
+    \li{Acceptance evidence: unsaturated baseline.}
+  }
+}
+
+\subtree{
+  \title{WI-9 — Sweep QA — qty 1}
+
+  \ul{
+    \li{ESP32 sweeps 128 points, averages ADC, streams the trace.}
+    \li{Acceptance evidence: repeatable ODMR dip candidate (baseline + dip + recorded settings).}
+  }
+}
+
+\subtree{
+  \title{WI-10 — Build the INA333 acquisition-isolation daughterboard — qty 1 — known issue / manual optimization (KI-1)}
+
+  \ul{
+    \li{This is new work, not a populate step. The INA333 daughterboard is not on the Uncut Gem PCB as shipped — the assembler fabricates/builds it from scratch (INA333 instrumentation amp + headers/probes, off-BOM).}
+    \li{The error being fixed: on the main board, RF energy couples into the detector / \code{ADC_SIGNAL} line, corrupting the analog baseline so ODMR dips are noisy or ambiguous. This is the designer's known defect — the board ships needing it corrected.}
+    \li{The fix: route the detector-side input into the INA333 and have it drive one clean, isolated single-ended \code{ADC_SIGNAL} to the ESP32. Map U5 / J6 / TP nodes; isolate the old TL082 output before injecting the clean ADC drive. Reversible — no re-spin of the main PCB.}
+    \li{Acceptance evidence: lower-noise acquisition with no RF-sweep regression (stock-vs-rework comparison).}
+  }
+}
+
+\subtree{
+  \title{WI-11 — Release QA / evidence bundle — qty 1}
+
+  \ul{
+    \li{Compile: board photo, rail measurements, boot log, PLL/LOCK trace, RF continuity, prism + laser alignment photo, detector dark/light, ODMR sweep, INA333 before/after, firmware hash, BOM counts.}
+    \li{Acceptance evidence: evidence bundle delivered for bci.place review.}
+  }
+}
+
+\subtree{
+  \title{7. Quotation summary (assembler to complete)}
+
+  \table{
+    \tr{\th{WI}\th{Description}\th{Qty}\th{Est. hours}\th{Price}}
+    \tr{\td{WI-1}\td{Inventory & kitting}\td{1}\td{}\td{}}
+    \tr{\td{WI-2}\td{Power rails}\td{1}\td{}\td{}}
+    \tr{\td{WI-3}\td{Controller bring-up}\td{1}\td{}\td{}}
+    \tr{\td{WI-4}\td{PLL / microwave source}\td{1}\td{}\td{}}
+    \tr{\td{WI-5}\td{RF gain & connectors}\td{1}\td{}\td{}}
+    \tr{\td{WI-6}\td{Optomechanical assembly (prism + laser)}\td{1}\td{}\td{}}
+    \tr{\td{WI-7}\td{Detector path}\td{1}\td{}\td{}}
+    \tr{\td{WI-8}\td{Front-end / ADC}\td{1}\td{}\td{}}
+    \tr{\td{WI-9}\td{Sweep QA}\td{1}\td{}\td{}}
+    \tr{\td{WI-10}\td{Build INA333 isolation daughterboard (new)}\td{1}\td{}\td{}}
+    \tr{\td{WI-11}\td{Release QA / evidence bundle}\td{1}\td{}\td{}}
+    \tr{\td{}\td{Total}\td{}\td{}\td{}}
+  }
+
+  \p{Lead time from kit-complete: _ working days. Quote validity: _ days.}
+}
+
+\subtree{
+  \title{8. Acceptance criteria}
+
+  \table{
+    \tr{\th{Claim}\th{Evidence required}\th{If missing}}
+    \tr{\td{Buildable}\td{rail measurements, boot log, SMA-compatible connectors, RF passive inspection}\td{Resolve inventory, power, or RF connector issue before acceptance}}
+    \tr{\td{Microwave source}\td{PLL/LOCK trace, output evidence, RF continuity/bias}\td{Repair PLL/RF stage before acceptance}}
+    \tr{\td{Optical coupling}\td{prism photo, laser/diamond/aerial alignment + dark/light contrast}\td{Repair prism, laser, or detector alignment before acceptance}}
+    \tr{\td{ODMR candidate}\td{repeatable sweep with baseline, dip, recorded settings}\td{Repair ADC or sweep path before acceptance}}
+    \tr{\td{INA333 improvement}\td{stock-vs-rework noise comparison, unchanged RF sweep}\td{Revert or repair the daughterboard before acceptance}}
+  }
+}
+
+\subtree{
+  \title{9. Open items — known issue, verify-on-board, and holds}
+
+  \table{
+    \tr{\th{ID}\th{Type}\th{Item}\th{Action}}
+    \tr{\td{KI-1}\td{Known issue (designer) — build a NEW rework board}\td{The shipped PCB couples RF energy into the detector / \code{ADC_SIGNAL} path, corrupting the analog baseline so ODMR dips are noisy/ambiguous}\td{Build a new INA333 daughterboard (WI-10) — not present on the board as shipped — that drives one clean, isolated \code{ADC_SIGNAL} to the ESP32. The board ships needing this fix; it is the designer-flagged optimization, not a defect to reject}}
+    \tr{\td{V-1}\td{Verify on board}\td{SMA connectors (J1–J4, J6)}\td{Confirm the SMA fits and passes RF continuity — use the existing/populated SMA if it works; only swap to the Molex 73251-2120 horizontal edge-mount if it genuinely will not fit or fails continuity. Part/function check, not a footprint redesign}}
+    \tr{\td{V-2}\td{Verify}\td{RF amp population + external 40 dB module integration}\td{Inspect bias/matching before any RF claim}}
+    \tr{\td{V-3}\td{Verify}\td{Prism geometry + detector baseline}\td{Co-locate diamond/aerial/laser and prove detector baseline before interpreting any trace}}
+  }
+
+  \p{Non-conformance: any failed acceptance item or damaged CFM is reported with photos within 1 working day; rework path agreed in writing before proceeding.}
+}
+
+\subtree{
+  \title{10. Out of scope for the assembler}
+
+  \p{NV-diamond sourcing/certification, physics-grade optical calibration science, host-side trace analysis/plotting, and any magnetometry-performance claims. No BCI claim — this is a laser + RF instrument.}
+}
+
+\subtree{
+  \title{11. Packaging & return}
+
+  \p{Finished unit returned in ESD packaging with laser/RF safed and the prism protected, plus the digital WI-11 evidence bundle and the signed §7/§8 tables.}
+}

@@ -1,0 +1,15 @@
+\title{ATT&CK T1543}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{7 skills addressing MITRE ATT&CK technique T1543.}
+\ul{
+\li{[[analyzing-persistence-mechanisms-in-linux]]}
+\li{[[detecting-living-off-the-land-attacks]]}
+\li{[[hunting-for-persistence-mechanisms-in-windows]]}
+\li{[[hunting-for-unusual-service-installations]]}
+\li{[[implementing-mitre-attack-coverage-mapping]]}
+\li{[[performing-privilege-escalation-on-linux]]}
+\li{[[performing-purple-team-atomic-testing]]}
+}

@@ -4,46 +4,42 @@
 \date{2026-03-29}
 \meta{institution}{BCI Factory}
 \meta{url}{https://bci.place}
-
-\p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{222 Dore Street, San Francisco} — two upstairs offices with a BCI bench, 3D printers, soldering supplies, and a changing bench inventory. This forest separates current inventory, loaned or donated equipment, wanted equipment, rejected options, and possible-world design directions.}
-
-
+\p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{222 Dore Street, San Francisco}. This forest separates current inventory, loaned or donated equipment, wanted equipment, rejected options, and possible-world design directions.}
 \p{Contact: yuzu@plurigrid.com. Current public direction: \code{https://bci.place}.}
-
 \subtree{\title{Current Map}
-\transclude{bcf-0006}
-\transclude{bcf-0004}
-\transclude{bcf-devices}
-}
-
+\ul{\li{[[bcf-devices]]}\li{[[bcf-0009]]}\li{[[bcf-0006]]}\li{[[bcf-0004]]}}}
 \subtree{\title{Possible Worlds}
-\p{Portal rooms, self-serve readings, and communal economics are design worlds for comparison and voting. They are not the canonical current stack.}
-\transclude{horse-0001}
-\transclude{bcf-0030}
-\transclude{bcf-0008}
-\transclude{bcf-0042}
-\transclude{bcf-0043}
-}
-
+\p{Design worlds for comparison and voting; not the canonical current stack.}
+\ul{\li{[[horse-0001]]}\li{[[bcf-0030]]}\li{[[bcf-0008]]}\li{[[bcf-0042]]}}}
 \subtree{\title{Innovation And Comfort}
-\transclude{bci-0009}
-\transclude{bcf-0036}
-}
-
+\ul{\li{[[bci-0009]]}\li{[[bcf-0036]]}}}
 \subtree{\title{Mathematics And Protocols}
-\transclude{bci-0001}
-\transclude{bcf-0003}
-\transclude{bcf-0005}
-\transclude{bcf-0040}
-}
-
+\ul{\li{[[bci-0001]]}\li{[[bcf-0003]]}\li{[[bcf-0005]]}\li{[[bcf-0040]]}\li{[[bci-0017]]}\li{[[bcf-0050]]}\li{[[bcf-0043]]}}
+\p{Theory foundations:}
+\ul{\li{[[hub-categorical-systems]]}\li{[[hub-doctrines]]}\li{[[hub-morphisms]]}\li{[[hub-outcome-logic]]}\li{[[hub-capability-security]]}\li{[[hub-researchers]]}\li{[[hub-bibliography]]}}}
 \subtree{\title{Resources And Surviving Stubs}
-\transclude{bcf-0038}
-\transclude{bcf-0039}
-\transclude{bcf-0041}
-}
-
+\ul{\li{[[bcf-0038]]}\li{[[bcf-0039]]}\li{[[bcf-0041]]}}}
 \subtree{\title{Standards}
-\transclude{std-0001}
-\transclude{bcf-0002}
-}
+\ul{\li{[[std-0001]]}\li{[[bcf-0002]]}}}
+\subtree{\title{Secure Messaging}
+\p{Whisper-λ: a Signal-class messaging stack built in the forest, anchored to the capability-security foundations.}
+\ul{\li{[[bcf-0070]]}\li{[[bcf-0069]]}\li{[[bcf-0071]]}\li{[[bcf-0073]]}\li{[[bcf-0072]]}\li{[[hub-capability-security]]}}}
+\subtree{\title{BCI Landscape}
+\ul{\li{[[bcf-0051]]}}}
+\subtree{\title{Deep Index}
+\p{Fullest-depth reachability — the forest's theory, math, security, and reference bodies.}
+\ul{
+\li{\strong{CatColab doctrines} — [[idx-catcolab]]}
+\li{\strong{Security skills} — [[idx-skills]] · [[idx-skill-tools]] · [[idx-skill-mitre]] · [[idx-skill-stages]]}
+\li{\strong{Remaining atoms} — [[idx-mopup]]}
+\li{[[stk-0000]]}
+\li{[[xref-0008]]}
+\li{[[xref-0009]]}
+\li{[[xref-0010]]}
+\li{[[silviculture-0001]]}
+\li{[[efr-001Z]]}
+\li{[[topos-0005]]}
+\li{[[ocl-000M]]}
+\li{[[ocl-0027]]}
+\li{[[dbl-000D]]}
+}}

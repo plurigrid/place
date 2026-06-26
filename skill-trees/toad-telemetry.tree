@@ -107,7 +107,7 @@ toadia -a claude .
 \subtree{
 \title{Span Attributes}
 \subtree{
-\title{Tool Spans (\code{\startverb tool.<name>\stopverb})}
+\title{Tool Spans (tool name)}
 \ul{
 \li{\code{\startverb toad.tool.id\stopverb} - Unique tool call ID}
 \li{\code{\startverb toad.tool.name\stopverb} - Tool name (Bash, Read, Write, etc.)}

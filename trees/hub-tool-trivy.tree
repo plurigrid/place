@@ -1,0 +1,30 @@
+\title{Skill hub: trivy}
+\taxon{index}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{22 security skills using trivy.}
+\ul{
+\li{[[analyzing-docker-container-forensics]]}
+\li{[[analyzing-sbom-for-supply-chain-vulnerabilities]]}
+\li{[[auditing-kubernetes-cluster-rbac]]}
+\li{[[building-devsecops-pipeline-with-gitlab-ci]]}
+\li{[[building-vulnerability-dashboard-with-defectdojo]]}
+\li{[[implementing-aqua-security-for-container-scanning]]}
+\li{[[implementing-container-image-minimal-base-with-distroless]]}
+\li{[[implementing-devsecops-security-scanning]]}
+\li{[[implementing-infrastructure-as-code-security-scanning]]}
+\li{[[implementing-policy-as-code-with-open-policy-agent]]}
+\li{[[implementing-secret-scanning-with-gitleaks]]}
+\li{[[implementing-supply-chain-security-with-in-toto]]}
+\li{[[performing-container-image-hardening]]}
+\li{[[performing-container-security-scanning-with-trivy]]}
+\li{[[performing-sca-dependency-scanning-with-snyk]]}
+\li{[[scanning-containers-with-trivy-in-cicd]]}
+\li{[[scanning-docker-images-with-trivy]]}
+\li{[[securing-container-registry-images]]}
+\li{[[securing-container-registry-with-harbor]]}
+\li{[[securing-helm-chart-deployments]]}
+\li{[[securing-kubernetes-on-cloud]]}
+\li{[[securing-serverless-functions]]}
+}

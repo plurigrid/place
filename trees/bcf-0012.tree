@@ -1,5 +1,5 @@
 \title{fNIRS: Hemodynamic (DIY Full-Head)}
-\taxon{device}
+\taxon{rejected}
 \author{monaduck1069}
 \date{2026-03-29}
 \tag{fnirs}
@@ -21,3 +21,4 @@
   \li{\strong{Silicon photodiodes} x20 — 30mm source-detector separation for cortical sensitivity}
   \li{\strong{LiPo batteries} (3.7V, 500mAh) x4 — ~2hr continuous recording per charge}
 }}}
+\p{\strong{REJECTED reference.} Not a current device — replaced by the OpenNIRScap build [[bcf-0036]].}

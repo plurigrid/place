@@ -60,7 +60,7 @@ plurigrid/ontology
 \subtree{
 \title{Integration Points}
 \subtree{
-\title{1. Autopoietic Ergodicity <-> autopoiesis, ergodicity, dynamic-sufficiency}
+\title{1. Autopoietic Ergodicity to autopoiesis, ergodicity, dynamic-sufficiency}
 \p{Ontology defines autopoietic ergodicity as the convergence criterion: a system that self-organizes (autopoiesis) such that time averages equal ensemble averages (ergodicity), minimizing surprise through continuous learning (active inference).}
 
 \pre{\startverb
@@ -77,7 +77,7 @@ plurigrid/ontology
 }
 
 \subtree{
-\title{2. Open Games Framework <-> open-games, cybernetic-open-game}
+\title{2. Open Games Framework to open-games, cybernetic-open-game}
 \p{The Plurigrid protocol IS a compositional open game. Agents are morphisms in a Markov category with generative (play) and recognition (coplay) channels.}
 
 \pre{\startverb
@@ -94,7 +94,7 @@ plurigrid/ontology
 }
 
 \subtree{
-\title{3. Gromov-Wasserstein Theory <-> gflownet, duckdb-spatial}
+\title{3. Gromov-Wasserstein Theory to gflownet, duckdb-spatial}
 \p{GW theory compares metric measure spaces and does graph matching across heterogeneous energy networks. Entropic regularization + Bregman projections for efficient optimization.}
 
 \pre{\startverb
@@ -111,7 +111,7 @@ plurigrid/ontology
 }
 
 \subtree{
-\title{4. Arena CRDT System <-> crdt, time-travel-crdt, duckdb-ies}
+\title{4. Arena CRDT System to crdt, time-travel-crdt, duckdb-ies}
 \p{Arena is a local-first graph-based data store in Rust with DuckDB backend and Yrs CRDTs for real-time peer synchronization.}
 
 \pre{\startverb
@@ -130,7 +130,7 @@ plurigrid/ontology
 }
 
 \subtree{
-\title{5. Digital Twin Architecture <-> dynamic-sufficiency, agent-o-rama}
+\title{5. Digital Twin Architecture to dynamic-sufficiency, agent-o-rama}
 \p{Virtual representations of physical entities. Multi-agent loop in Chat Arena. Agent profiles with value systems and behavior models. Value elicitation via mutual recursion.}
 
 \pre{\startverb
@@ -148,7 +148,7 @@ plurigrid/ontology
 }
 
 \subtree{
-\title{6. Nexus Nodes <-> hvm-runtime, world-runtime, iot-device-provisioning}
+\title{6. Nexus Nodes to hvm-runtime, world-runtime, iot-device-provisioning}
 \p{3-tier hardware architecture, all targeting wasm32-unknown-unknown with WASI + capability plugins:}
 
 \pre{\startverb
@@ -170,7 +170,7 @@ plurigrid/ontology
 }
 
 \subtree{
-\title{7. Transactive Energy <-> nashator, open-games, equilibrium}
+\title{7. Transactive Energy to nashator, open-games, equilibrium}
 \p{Market-based transactions between energy grids. Stigmergic feedback for energy availability, demand, and prices. Multi-agent RL + mutual information optimization + Open Games.}
 
 \pre{\startverb
