@@ -1,0 +1,29 @@
+\title{Security Skills Library — X}
+\taxon{skill}
+\import{macros}
+\author{monaduck1069}
+\date{2026-06-10}
+\p{Skills beginning with X.}
+\subtree{\title{x}
+\taxon{remark}
+\ul{
+\li{[[x]]}
+\li{[[x-module-bimodule]]}
+\li{[[x-twitter-mcp]]}
+}}
+\subtree{\title{xenodium}
+\taxon{remark}
+\ul{
+\li{[[xenodium-elisp]]}
+}}
+\subtree{\title{xlsx}
+\taxon{remark}
+\ul{
+\li{[[xlsx]]}
+}}
+\subtree{\title{xr}
+\taxon{remark}
+\ul{
+\li{[[xr]]}
+\li{[[xr-color-management]]}
+}}
