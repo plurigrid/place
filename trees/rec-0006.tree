@@ -1,0 +1,16 @@
+\title{scrappy Engineering generalist}
+\taxon{recruit}
+\date{2026-06-28}
+\meta{world}{W'}
+\meta{trit}{-1}
+\tag{recruit}
+\tag{solderathon}
+\import{macros}
+
+\p{F-image of [[arch-0006]] under the down-leveling functor #{F:\mathcal{W}\to\mathcal{W}'}. The same morphisms, carried: function→track, team→pod, level→stage, competency→skill.}
+
+\p{\strong{in-track}: [[trk-bench]] · \strong{in-pod}: [[pod-0004]] · \strong{at-stage}: [[stg-glue]]}
+\p{\strong{needs}: [[skl-electrical-pcb]] · [[skl-test-automation]]}
+\p{\strong{builds at the bench}: shows up already able to KiCad → JLCPCB overnight.}
+\p{\strong{source} (where to find them): KiCad community, JLCPCB forums, local hackerspace; QA-hackathon teams, RaspberryPi tinkerer subreddits.}
+\p{\strong{valence} (superior discernment): younger #{\Delta a=1} · faster #{\Delta v=0} · cheaper #{\Delta c=1} · #{r=2} · trit #{=-1}}

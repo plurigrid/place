@@ -1,0 +1,46 @@
+\title{The Solderathon}
+\taxon{event}
+\date{2026-06-28}
+\meta{world}{W'}
+\tag{solderathon}
+\tag{recruiting}
+\import{macros}
+
+\p{The Solderathon is where world #{\mathcal{W}'} becomes flesh: the younger, faster, cheaper
+recruits attracted by the functor #{F:\mathcal{W}\to\mathcal{W}'} assemble at the bench. It is the
+\strong{colimit of the pods over the track diagram} —
+#{\mathrm{Solderathon}=\operatorname{colim}_{\mathrm{Track}}\mathrm{Pod}} — the place where the
+recruiting funnel #{\mathcal{W}\xrightarrow{F}\mathcal{W}'\to\text{bench}} terminates.}
+
+\p{\strong{functor of record}: [[wld-0000]] · \strong{venue}: [[bcf-0001]] (222 Dore Street)}
+
+\subtree{
+\title{Tracks (parallel benches)}
+\p{[[trk-bench]] · [[trk-lab]] · [[trk-glue]]}
+}
+
+\subtree{
+\title{Pods}
+\p{[[pod-0001]] · [[pod-0002]] · [[pod-0003]] · [[pod-0004]] · [[pod-0005]] · [[pod-0006]] · [[pod-0007]] · [[pod-0008]] · [[pod-0009]]}
+}
+
+\subtree{
+\title{Day schedule}
+\pre{\startverb
+ 09:00  doors / coffee — first-PR cohorts trickle in
+ 10:00  bench briefing per track (bench / lab / glue)
+ 10:30  build sprint I — solder, flash, blink
+ 13:00  lunch — pods swap notes
+ 14:00  build sprint II — integrate across pods
+ 17:00  demo at the bench — shitty signal > no signal
+ 18:30  who-do-we-want debrief (valence: younger / faster / cheaper)
+\stopverb}
+}
+
+\subtree{
+\title{Selection valence}
+\p{Recruits are ranked by the measured attractor #{r=\Delta a+\Delta v+\Delta c}. The \strong{16
+clean} recruits (#{r=3}) are who a solderathon surfaces; the \strong{10 obstructed}
+(senior / finance / support, #{\Delta=0} on an axis) are not — content-H¹, named not hidden.
+See [[wld-audit]] for the full measurement.}
+}

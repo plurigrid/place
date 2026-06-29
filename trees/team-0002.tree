@@ -1,0 +1,6 @@
+\title{Facilities}
+\taxon{team}
+\meta{world}{W}
+\import{macros}
+
+\p{Team object in #{\mathcal{W}}. \strong{team-in}: [[fn-ops]]. F-image: [[pod-0002]].}

@@ -1,0 +1,13 @@
+\title{Software Engineer}
+\taxon{archetype}
+\date{2026-06-28}
+\meta{world}{W}
+\tag{archetype}
+\tag{engineering}
+\import{macros}
+
+\p{Role archetype in world #{\mathcal{W}}, abstracted from the open talent graph. Object of the schema category; all structure is carried by its morphisms.}
+
+\p{\strong{in-function}: [[fn-eng]] · \strong{on-team}: [[team-0008]] · \strong{at-level}: [[stg-ic]]}
+\p{\strong{requires} (span legs): [[cmp-software-systems]]}
+\p{\strong{F-image} (#{\mathcal{W}'}): [[rec-0009]]}
