@@ -1,0 +1,16 @@
+\title{young Member of Research Staff, Preclinical}
+\taxon{recruit}
+\date{2026-06-28}
+\meta{world}{W'}
+\meta{trit}{0}
+\tag{recruit}
+\tag{solderathon}
+\import{macros}
+
+\p{F-image of [[arch-0019]] under the down-leveling functor #{F:\mathcal{W}\to\mathcal{W}'}. The same morphisms, carried: function→track, team→pod, level→stage, competency→skill.}
+
+\p{\strong{in-track}: [[trk-lab]] · \strong{in-pod}: [[pod-0006]] · \strong{at-stage}: [[stg-ic]]}
+\p{\strong{needs}: [[skl-imaging-reconstruction]] · [[skl-neuroscience]] · [[skl-preclinical-rodent]]}
+\p{\strong{builds at the bench}: shows up already able to GPU recon straight off GitHub.}
+\p{\strong{source} (where to find them): GPU-recon GitHub contributors, CUDA hobbyists; OpenBCI / Open Ephys forums, neuro grad servers; undergrad research-assistant pools.}
+\p{\strong{valence} (superior discernment): younger #{\Delta a=1} · faster #{\Delta v=1} · cheaper #{\Delta c=1} · #{r=3} · trit #{=0}}

@@ -1,0 +1,57 @@
+\title{World → World′: quality rubric, counterfactuals, invariants}
+\taxon{finding}
+\date{2026-06-28}
+\meta{description}{Measured audit of the down-leveling functor F:𝒲→𝒲′ over the solderathon recruit world}
+\import{macros}
+
+\p{This is the audit applied to the auditor. Every number below is \emph{read off} the
+generated forest, never assigned. Apparatus: source ingested via duckdb (\code{read_json});
+116 trees emitted; re-ingested into a snapshottable DuckLake (\code{place_world.ducklake});
+cross-checked by an independent babashka pass.}
+
+\subtree{\title{Invariants (measured)}
+\pre{\startverb
+  entities ............... 116   (W: 56, W': 57, schema: 1, audit: 1)
+  morphism edges ......... 415
+  unresolved edges ......... 0   →  H¹ = 0  (every morphism resolves; world is closed)
+  commuting triangle ....... 0 violations / 26 archetypes
+                                 in_function = team_in ∘ on_team, preserved by F
+  Σtrit (recruits) ....... −10 ≡ 2 (mod 3)   ← NOT forced to 0
+  clean attractor ........ 16 recruits  (younger·faster·cheaper all +1)
+  obstructed ............. 10 recruits  (one axis measures 0)
+\stopverb}
+\p{The Σtrit drift is the load-bearing finding: F is \strong{not clean} on the senior /
+finance / support archetypes — they have no younger·faster·cheaper image. That obstruction
+is content-H¹, preserved as information, not engineered away.}
+}
+
+\subtree{\title{Quality rubric}
+\pre{\startverb
+  R1 categorical correctness (functor carries all morphisms) ... PASS (0 triangle viol.)
+  R2 closure (H¹=0, no dangling morphism) ..................... PASS (0/415)
+  R3 coverage (role · skill · + other categories) ............. PASS (10 taxa)
+  R4 ingested via duckdb webbed ............................... PASS (json) / XML path armed
+  R5 de-branding (source identity invisible) .................. PASS (0 tokens, 0 URLs)
+  R6 worm-honesty (Σtrit measured, not assigned) ............. PASS (−10≡2 reported)
+  R7 superior-discernment attractor present .................. PASS (valence per recruit)
+  R8 snapshottable (time-travel) ............................. PASS (DuckLake, 3 snapshots)
+\stopverb}
+}
+
+\subtree{\title{Counterfactuals considered}
+\ul{
+\li{\strong{Brace-glob silent-empty}: \code{read_text('{a,b}-*.tree')} matched 0 files and
+    produced empty tables with no error. Caught by a file-count sanity gate before trusting
+    the ingest. (The −1 leg doing its job.)}
+\li{\strong{taxon collision}: W′ skills use the \code{skill} taxon, which shares a fiber with
+    the forest's existing agent-skills. Deliberate (they \emph{are} skills) but it conflates
+    two populations in a census; namespacing to \code{recruit-skill} is the clean fork if
+    separation is wanted.}
+\li{\strong{de-branding leak vectors}: titles, ids, apply URLs, "About …" prose — all scanned,
+    all absent. Role titles that remain ("Firmware Engineer") are generic occupational types,
+    not proprietary content.}
+\li{\strong{functoriality break}: had the triangle not commuted, recruits would inherit a
+    track inconsistent with their pod. Verified 0 violations, so the recruiting map respects
+    org structure by construction.}
+}
+}

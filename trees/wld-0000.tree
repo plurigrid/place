@@ -1,0 +1,45 @@
+\title{World → World′: the down-leveling functor}
+\taxon{schema}
+\date{2026-06-28}
+\meta{description}{ACSet schema 𝒲, its solderathon image 𝒲′, and the functor F carrying every morphism}
+\import{macros}
+
+\p{Two worlds and a functor. #{\mathcal{W}} is the archetype world (seeded from the open talent graph, de-identified to its categorical skeleton). #{\mathcal{W}'} is the solderathon world. #{F:\mathcal{W}\to\mathcal{W}'} attracts \emph{younger, faster, cheaper} images of each archetype.}
+
+\subtree{\title{Objects}
+\ul{
+\li{\strong{Archetype} ↦ \strong{Recruit}}
+\li{\strong{Function} ↦ \strong{Track}}
+\li{\strong{Team} ↦ \strong{Pod}}
+\li{\strong{Level} ↦ \strong{Stage}}
+\li{\strong{Competency} ↦ \strong{Skill′}}
+}}
+
+\subtree{\title{Morphisms (all of them)}
+\pre{\startverb
+  in_function : Archetype → Function
+  on_team     : Archetype → Team
+  team_in     : Team      → Function
+  at_level    : Archetype → Level
+  requires    : Archetype ↞ Requirement ↠ Competency   (span)
+
+  COMMUTES:   in_function = team_in ∘ on_team
+
+F carries each one (functoriality):
+  in_track : Recruit → Track ;  in_pod : Recruit → Pod ;  pod_in : Pod → Track
+  at_stage : Recruit → Stage ;  needs : Recruit ↞ • ↠ Skill′
+  F(in_function) = pod_in ∘ in_pod   (the triangle still commutes in 𝒲′)
+\stopverb}}
+
+\subtree{\title{The attractor (superior discernment)}
+\p{Each recruit carries a measured valence #{r=\Delta a+\Delta v+\Delta c}: younger (#{\Delta a}), faster (#{\Delta v}), cheaper (#{\Delta c}), each in #{\{0,+1\}}. The trit is \emph{read off}, not assigned: archetypes with no cheap/young analog (finance, head-of roles) measure #{\Delta c=0} — content-H¹ kept, not forced to 0.}
+}
+
+\subtree{\title{Telos}
+\p{Where 𝒲′ assembles into flesh: [[sol-0000]] — the solderathon, colimit of the pods over the tracks, held at the bench ([[bcf-0001]]).}
+}
+
+\subtree{\title{Index}
+\p{Archetypes: [[arch-0001]] · [[arch-0002]] · [[arch-0003]] · [[arch-0004]] · [[arch-0005]] · [[arch-0006]] · [[arch-0007]] · [[arch-0008]] · [[arch-0009]] · [[arch-0010]] · [[arch-0011]] · [[arch-0012]] · [[arch-0013]] · [[arch-0014]] · [[arch-0015]] · [[arch-0016]] · [[arch-0017]] · [[arch-0018]] · [[arch-0019]] · [[arch-0020]] · [[arch-0021]] · [[arch-0022]] · [[arch-0023]] · [[arch-0024]] · [[arch-0025]] · [[arch-0026]]}
+\p{Recruits: [[rec-0001]] · [[rec-0002]] · [[rec-0003]] · [[rec-0004]] · [[rec-0005]] · [[rec-0006]] · [[rec-0007]] · [[rec-0008]] · [[rec-0009]] · [[rec-0010]] · [[rec-0011]] · [[rec-0012]] · [[rec-0013]] · [[rec-0014]] · [[rec-0015]] · [[rec-0016]] · [[rec-0017]] · [[rec-0018]] · [[rec-0019]] · [[rec-0020]] · [[rec-0021]] · [[rec-0022]] · [[rec-0023]] · [[rec-0024]] · [[rec-0025]] · [[rec-0026]]}
+}

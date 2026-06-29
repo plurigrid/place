@@ -1,0 +1,7 @@
+\title{Engineering}
+\taxon{function}
+\meta{world}{W}
+\import{macros}
+
+\p{Function object in #{\mathcal{W}}. Codomain of \strong{in-function} and of \strong{team-in}; the triangle #{\text{in-function}=\text{team-in}\circ\text{on-team}} commutes here.}
+\p{\strong{F-image}: [[trk-bench]]}

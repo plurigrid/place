@@ -1,0 +1,6 @@
+\title{Firmware / RTOS}
+\taxon{competency}
+\meta{world}{W}
+\import{macros}
+
+\p{Competency object in #{\mathcal{W}} (codomain of the \strong{requires} span). F-image: [[skl-firmware-rtos]].}

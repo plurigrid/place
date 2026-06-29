@@ -1,0 +1,13 @@
+\title{Recruiting Coordinator}
+\taxon{archetype}
+\date{2026-06-28}
+\meta{world}{W}
+\tag{archetype}
+\tag{operations}
+\import{macros}
+
+\p{Role archetype in world #{\mathcal{W}}, abstracted from the open talent graph. Object of the schema category; all structure is carried by its morphisms.}
+
+\p{\strong{in-function}: [[fn-ops]] · \strong{on-team}: [[team-0009]] · \strong{at-level}: [[stg-glue]]}
+\p{\strong{requires} (span legs): [[cmp-recruiting-talent]]}
+\p{\strong{F-image} (#{\mathcal{W}'}): [[rec-0013]]}
