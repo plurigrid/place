@@ -1,0 +1,73 @@
+\title{Quality of connection: scan-registered descent}
+\taxon{reference}
+\import{macros}
+\author{monaduck1069}
+\date{2026-07-17}
+\tag{scan}
+\tag{descent}
+
+\p{The \ref{bcf-INV-einstar-rockit} scans actual heads at 0.05 mm. This tree
+relates that capture to the rest of place://bci: a head mesh turns the descent
+obstruction #{H^1} ([[bci-stage-3]]) from an assumed quantity into a measured
+one. Quality of connection \defeq the cocycle obstruction to gluing local
+electrode/optode sections, evaluated on \emph{scan-registered} site positions
+rather than nominal montage coordinates.}
+
+\subtree{\title{The measurement}
+\p{Nominal montage: electrode sites are placed by 10-20 fractions of an assumed
+sphere. Scan-registered montage: sites are the actual scalp points, so the
+Fisher-Rao cocycle on each overlap #{U_i \cap U_j} is computed at true geodesic
+distance. #{H^1_{\mathrm{scan}} \le H^1_{\mathrm{nominal}}} whenever the head
+departs from the sphere — which is always. The \emph{quality of connection} is
+the gap #{\Delta = H^1_{\mathrm{nominal}} - H^1_{\mathrm{scan}}}: how much
+obstruction was fictitious, an artifact of not knowing where the sensors were.}
+}
+
+\subtree{\title{bci.blue counterfactuals at 0.05}
+\taxon{remark}
+\p{bci.blue is the sensing side (inhibition, transparent). At the scanner's
+0.05 mm resolution, a counterfactual is resolvable only if swapping it moves
+#{\Delta} by more than the registration floor. Enumerated by sensitivity to
+scalp geometry, most-to-least:}
+\table{
+\tr{\th{blue world} \th{coupling} \th{scan sensitivity of #{\Delta}} \th{resolvable @ .05?}}
+\tr{\td{OpenNIRScap fNIRS} \td{optode source-detector spacing} \td{highest — spacing sets cortical penetration; 0.05 mm changes depth} \td{yes, dominant}}
+\tr{\td{NIRSport 2 fNIRS} \td{optode spacing (research-grade)} \td{high — same physics, denser array} \td{yes}}
+\tr{\td{Cyton wet EEG} \td{gel bridge geometry} \td{high — scan gives true gel column length per site} \td{yes}}
+\tr{\td{DSI-24 / Muse dry EEG} \td{spring-pin scalp contact} \td{medium — fit/pressure map, but contact is point-like} \td{marginal}}
+\tr{\td{QuSpin OPM-MEG} \td{non-contact standoff} \td{low — sensitivity #{\sim 1/r^3}, but 0.05 mm #{\ll} the mm-cm standoff} \td{no — below floor}}
+\tr{\td{Entropy / Ising sensors} \td{lattice, not head-coupled} \td{none} \td{no — counterfactual collapses}}
+}
+\p{So "all counterfactuals for bci.blue at .05" is really \emph{three}: the two
+fNIRS worlds and wet EEG. Dry EEG is marginal; MEG and the lattice sensors are
+below the 0.05 mm floor — the scan cannot tell those blue worlds apart, so they
+are one world, not many. This is itself a finding: \strong{0.05 mm is an fNIRS/
+wet-EEG-grade resolution}; it over-resolves EEG contact and under-resolves the
+standoff modalities.}
+}
+
+\subtree{\title{Three maximally-unlike bci.red}
+\taxon{remark}
+\p{bci.red is the activation side (opaque, it does something to you). "Maximally
+unlike each other" = span the actuation space on orthogonal axes: carrier
+medium, depth, and contact. Chosen to maximize pairwise distance:}
+\table{
+\tr{\th{red world} \th{medium} \th{depth} \th{contact} \th{what the scan buys}}
+\tr{\td{Focused ultrasound (tFUS)} \td{acoustic pressure} \td{deep (sub-cortical)} \td{coupled, non-electrical} \td{skull thickness/curvature for the acoustic focus — scan is \emph{load-bearing}}}
+\tr{\td{Vibrotactile haptic array} \td{mechanical / skin} \td{peripheral (surface)} \td{direct dermal} \td{body-surface geometry for actuator placement}}
+\tr{\td{XREAL photic / AR} \td{optical / retinal} \td{exogenous (through the eye)} \td{contactless} \td{interpupillary + nose-bridge fit — a different mesh region entirely}}
+}
+\p{These three share no axis: acoustic vs mechanical vs optical carrier; deep vs
+surface vs exogenous depth; coupled vs dermal vs contactless. A fourth (tongue
+electrodes, gustatory) would collapse toward the haptic corner (electrical,
+surface, contact), so it is excluded to keep the three maximally separated.}
+}
+
+\subtree{\title{GF(3) closure}
+\taxon{remark}
+\p{blue(#{-1}) + place(#{0}) + red(#{+1}) = 0 ([[horse-0001]]). The scanner sits
+at \strong{place} (trit 0, the crossover): it neither senses brain state nor
+activates it — it measures the \emph{substrate geometry} both sides are defined
+over. It is the shared #{U_i} on which blue's sections and red's actuation are
+glued. That is why one device improves connection quality on both sides at once.}
+}

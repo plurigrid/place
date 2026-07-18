@@ -59,6 +59,7 @@ before casting a vote.}
   \tr{\th{Item} \th{Status} \th{Notes}}
   \tr{\td{Wet EEG gel} \td{own} \td{Supports repair and extended wet EEG sessions}}
   \tr{\td{Electrodes, chargers, adapters, printed parts} \td{want} \td{Useful extras for maintaining local and visiting setups}}
+  \tr{\td{0.2 mm print nozzle} \td{own} \td{Fine-detail fab floor for scan-derived parts: electrode holders, optode grid, phantoms ([[dev-fab]])}}
   \tr{\td{\ref{bci-indeterminate-spares}} \td{building} \td{Canonical holding page for OpenNIRScap and Uncut Gem conditional, spare, and verify-before-buy parts}}
 }
 }
@@ -96,7 +97,9 @@ before casting a vote.}
 \tr{\td{\code{artinis-brite-lite-mkiv}} \td{Artinis Brite Lite MKIV} \td{bcf-0035} \td{want} \td{5000-8000 USD}}
 \tr{\td{\code{domain-renewals-10yr}} \td{Domain renewals (bci.place/red/blue + plurigrid.org, 10yr)} \td{bcf-0001} \td{want} \td{500-1500 USD}}
 \tr{\td{\code{dsi-24}} \td{DSI-24 Wireless EEG (Wearable Sensing)} \td{bcf-0010} \td{want} \td{12000-18000 USD}}
+\tr{\td{\code{einstar-rockit}} \td{EINSTAR Rockit handheld 3D scanner} \td{bcf-0006} \td{want} \td{1500-1700 USD}}
 \tr{\td{\code{electrode-supplies}} \td{Conductive gel + paste + electrodes} \td{bcf-0010} \td{want} \td{100-500 USD/month}}
+\tr{\td{\code{entropyloop-qrng}} \td{EntropyLoop phase-diffusion QRNG (quantum pacer)} \td{bcf-0031} \td{want} \td{35-60 USD}}
 \tr{\td{\code{faraday-cage-250-dore}} \td{Faraday cage / RF shielding} \td{bcf-0004} \td{want} \td{5000-20000 USD}}
 \tr{\td{\code{fus-s1-a1}} \td{Rigol AWG + 300kHz FUS (S1/A1)} \td{bcf-0016} \td{want} \td{3000-6000 USD}}
 \tr{\td{\code{hackeeg}} \td{HackEEG (TI ADS1299 breakout)} \td{bcf-0010} \td{want} \td{300-500 USD}}

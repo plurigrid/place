@@ -1,0 +1,88 @@
+\title{EntropyLoop: quantum pacer for bci.place}
+\taxon{reference}
+\import{macros}
+\author{monaduck1069}
+\date{2026-07-17}
+\tag{quantum}
+\tag{voting}
+\tag{pacer}
+
+\p{\ref{bci-qrng-collapse} argued the daily draw needs a genuine stochastic
+source. Quantum Village's \strong{EntropyLoop} (Kumaran & Carney, 2026;
+\code{github.com/QuantumVillage/EntropyLoop}) is that source, shipped: a $35
+credit-card phase-diffusion QRNG on off-the-shelf fiber + a Pi Pico, passing
+NIST STS, exposing an MCP server. Same physics as Abellán 2014, same house as
+the NV magnetometer ([[bcf-0031]]). This tree captures its structure and wires
+it as the \strong{pacer} — the quantum heartbeat that times bci.place.}
+
+\subtree{\title{Core structure}
+\p{Vacuum fluctuations set each laser pulse's phase/polarization at power-up;
+pulsing on/off (~42 MHz, ~24 ns period) makes each pulse quantum-independent. A
+1x2 splitter sends half straight to the detector and half through a \strong{5 m
+SC/APC fiber delay loop}, so pulse #{k} interferes with pulse #{k{+}1} — chaotic
+by construction. That is the entropy.}
+\table{
+\tr{\th{block} \th{role}}
+\tr{\td{PIO} \td{generates the narrow pulse wave that drives the laser diode}}
+\tr{\td{Pico core 0} \td{gathers entropy — ADC-reads the detector}}
+\tr{\td{Pico core 1} \td{computes #{H_{\min}}, SHA-512 hashes raw samples, ships over UART}}
+\tr{\td{USB bridge} \td{serial line: \code{H_min: <f> | R: <int> | Data: <hex>}}}
+}
+\p{On-device min-entropy + hashing means the \emph{certified quantum} bits leave
+the device already extracted — the surety step of Abellán §6.2 baked into
+firmware. 128-byte samples, ~4 ms apart in practice.}
+}
+
+\subtree{\title{The MCP surface}
+\taxon{remark}
+\p{FastMCP over Streamable HTTP at \code{127.0.0.1:8000/mcp} (local-only;
+origin-validated; SSH-tunnel for remote). Four tools:}
+\table{
+\tr{\th{tool} \th{use} \th{pacer meaning}}
+\tr{\td{\code{get_server_status}} \td{health, samples_received, last error} \td{is the heart beating?}}
+\tr{\td{\code{get_latest_qrng_sample}} \td{most recent sample} \td{read the current beat}}
+\tr{\td{\code{get_recent_qrng_samples}} \td{batch of #{n}} \td{a strip of beats}}
+\tr{\td{\code{wait_for_next_qrng_sample}} \td{block until next sample or timeout} \td{\strong{the tick} — block for the next collapse}}
+}
+\p{Add to Claude Code (needs the device on \code{/dev/ttyACM0} and the server
+running):}
+\pre{claude mcp add --transport http qrng http://127.0.0.1:8000/mcp}
+\p{Without the hardware + running server this registers a disconnected stub —
+the pacer only beats when the physical loop is plugged in. That is the point:
+bci.place's collapse is gated on a real quantum device existing, not on a
+software promise.}
+}
+
+\subtree{\title{Pacer semantics for bci.place}
+\taxon{remark}
+\p{A \strong{pacer} is doubly apt: the factory is a BCI shop, and a pacemaker
+sets the beat a body can't set for itself. EntropyLoop paces three clocks —
+each a distinct binding of quantum time to the forest:}
+\table{
+\tr{\th{paced object} \th{tick source} \th{gate}}
+\tr{\td{daily red/blue draw ([[bcf-devices]])} \td{one sample at 00:00 UTC, published + committed} \td{beacon: unpredictable-before, verifiable-after}}
+\tr{\td{this /loop's cadence} \td{\code{wait_for_next_qrng_sample}} \td{each iteration waits on a fresh collapse, not a wall clock}}
+\tr{\td{per-vote \code{final_state_hash}} \td{sample drawn at vote time} \td{binds the voter's collapse to a certified quantum beat}}
+}
+\p{What is \emph{not} paced: name #{\to} color (SplitMix64, [[bci-0002]]) and
+passport.gay identity ([[bcf-0024]]) stay deterministic — you must remain
+yourself between beats. The pacer supplies indeterminism only where a real
+choice is made ([[bci-qrng-collapse]] identity/collapse split).}
+\p{The min-entropy gate is the valve: \strong{only samples with #{H_{\min}}
+above threshold count as valid ticks} (\code{Reject any samples with min-entropy
+less than 6}). A weak beat is a skipped beat — arrhythmia rejection for the
+factory's heart.}
+}
+
+\subtree{\title{As a device}
+\taxon{remark}
+\p{$35 BOM: EntropyLoop PCB, 2x 1x2 fiber splitters, 3x SC/APC couplers, 5 m
+fiber delay, RPi Pico. Cheapest quantum device in the factory by two orders of
+magnitude — sibling to the NV magnetometer ([[bcf-0031]], same Quantum Village
+lineage). Trit-0 \strong{place} device like the scanner
+([[bci-scan-connection]]) and the QRNG ([[bci-qrng-collapse]]): it neither
+senses nor activates brain state; it supplies the substrate of genuine chance
+both sides collapse through. GF(3): the certified stream maps to trits
+#{\{-1,0,+1\}}, closing blue(#{-1}) + place(#{0}) + red(#{+1}) = 0 with an
+actually-random draw.}
+}

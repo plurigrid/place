@@ -1,0 +1,26 @@
+\title{EINSTAR Rockit handheld 3D scanner}
+\taxon{Inventory-item}
+\import{macros}
+\author{monaduck1069}
+\date{2026-07-17}
+\meta{dev-id}{DEV-SCAN-001}
+\meta{status}{want}
+\meta{cost-range}{1500-1700 USD}
+\meta{category}{bcf-0006}
+\meta{manufacturer}{SHINING 3D}
+\meta{modality}{structured-light + laser 3D capture}
+\meta{light}{hybrid IR + 38 cross / 7 parallel laser lines}
+\meta{accuracy}{0.05-10 mm (Laser HD)}
+\meta{texture}{5MP color camera}
+\meta{connectivity}{built-in Wi-Fi, swappable battery, wired fallback}
+\meta{url}{https://www.einstar.com/products/einstar-rockit}
+
+\p{Status: \strong{want}. Pocket-sized wireless successor to the base EINSTAR.
+Wanted as the capture device feeding the \ref{scan-0000} pipeline — statues,
+station furniture geometry ([[bcf-0043]]), and BCI mount/enclosure scanning
+([[bcf-0037]]). Street price ~$1,635 (base non-Rockit EINSTAR ~$999).}
+
+\p{Enters the daily possible-world rotation ([[bcf-devices]]): its
+\code{1500-1700 USD} range overlaps within 1.5x with the second Cyton+Daisy
+rig (\code{1650 USD}) and HackEEG (\code{300-500 USD} — no overlap), so expect
+it to pair against the mid-cost cluster.}
