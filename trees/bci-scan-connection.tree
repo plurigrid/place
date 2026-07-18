@@ -9,7 +9,7 @@
 \p{The \ref{bcf-INV-einstar-rockit} scans actual heads at 0.05 mm. This tree
 relates that capture to the rest of place://bci: a head mesh turns the descent
 obstruction #{H^1} ([[bci-stage-3]]) from an assumed quantity into a measured
-one. Quality of connection \defeq the cocycle obstruction to gluing local
+one. Quality of connection #{\coloneqq} the cocycle obstruction to gluing local
 electrode/optode sections, evaluated on \emph{scan-registered} site positions
 rather than nominal montage coordinates.}
 
