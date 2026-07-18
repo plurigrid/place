@@ -1,0 +1,75 @@
+\title{Quantum collapse: the draw that makes counterfactuals real}
+\taxon{reference}
+\import{macros}
+\author{monaduck1069}
+\date{2026-07-17}
+\tag{quantum}
+\tag{voting}
+
+\p{The daily red/blue draw ([[bcf-devices]]) is currently a deterministic
+date-seeded PRNG in the vote-agg Worker (FNV-1a #{\to} Mulberry32). This tree
+argues that determinism voids the possible-world semantics ([[bci-0015]],
+[[horse-0001]]) and identifies the physical fix: vacuum phase-diffusion QRNG
+(Abellán et al., \emph{Opt. Express} 22(2):1645, 2014), 43 Gbps from a
+gain-switched DFB laser + unbalanced Mach-Zehnder.}
+
+\subtree{\title{Determinism has no counterfactuals}
+\p{Under \code{getSeededRandom(dateStr)} the date fixes the pair. There is one
+realized world per day and it pre-exists in the seed — so "all counterfactuals
+for bci.blue" ([[bci-scan-connection]]) is a category error against a PRNG: the
+superposition never collapses because it was a lookup, not a measurement.
+Counterfactuals are real only if the draw is genuinely stochastic.
+#{\langle\Delta\theta^2\rangle > (9.45\,\mathrm{rad})^2} is what "could have
+gone otherwise" costs in physics.}
+}
+
+\subtree{\title{The identity/collapse split}
+\taxon{remark}
+\p{Not everything should become quantum. The forest already runs two clocks:}
+\table{
+\tr{\th{layer} \th{needs} \th{mechanism} \th{trit}}
+\tr{\td{name #{\to} color (SplitMix64)} \td{persistence of self — your name must \emph{always} give your color} \td{deterministic hash ([[bci-0002]], passport.gay [[bcf-0024]])} \td{identity}}
+\tr{\td{daily red/blue draw} \td{genuine indeterminacy — the measurement that collapses} \td{QRNG vacuum phase diffusion} \td{choice}}
+}
+\p{Determinism where you need to remain yourself; indeterminism where a real
+choice is made. The \strong{place} crossover (trit 0) is exactly where the coin
+is physically flipped — the QRNG sits at place, like the scanner
+([[bci-scan-connection]]) sits at place. Both are trit-0 substrate devices.}
+}
+
+\subtree{\title{Reproducibility tension → committed beacon}
+\taxon{remark}
+\p{A QRNG breaks the Worker's one virtue: \emph{same date #{\to} same pair,
+verifiable on any engine}. The resolution is the beacon pattern (NIST
+randomness beacon / drand): at 00:00 UTC draw quantum bits, \strong{publish +
+hash-commit} them, then derive the pair. Unpredictable-before, verifiable-after.
+This is precisely what \code{final_state_hash} was reaching for and throwing
+away ([[bcf-devices]] handoff): the commitment layer that makes the collapse
+both genuine \emph{and} auditable. QRNG + committed beacon closes the
+narrative-vs-runtime gap in one move.}
+\p{Surety model comes straight from the paper: publish only the
+min-entropy-certified quantum bits (their §6.2, 7.33/14 bits, Whirlpool
+extractor RF #{\approx} 1.9). A beacon that emits only quantum-certified bits is
+a beacon nobody — not even the operator — could have biased.}
+}
+
+\subtree{\title{As a device}
+\taxon{remark}
+\p{Buildable from telecom parts (1550 nm DFB LD w/ 10 Gbps mod + internal 30 dB
+isolator, two 50/50 PM couplers, 3.55 cm PM-fiber delay for 5.825 GHz PRF, fast
+photodetector, 14-bit digitizer). Sibling to the NV magnetometer ([[bcf-0031]],
+tag \code{quantum}). Status \code{aspirational}: the fast digitizer/scope is the
+cost driver, not the optics. GF(3): the extracted uniform stream maps to trits
+#{\{-1,0,+1\}}, feeding the blue/place/red conservation law directly.}
+}
+
+\subtree{\title{The .05, tripled}
+\taxon{remark}
+\p{A counterfactual world \emph{exists} iff all three hold: (a) physically
+resolvable — 0.05 mm head scan ([[bci-scan-connection]]); (b) genuinely
+drawable — QRNG makes the selection stochastic; (c) statistically
+distinguishable — separable at #{p<0.05} (cf. the paper's NIST battery at
+#{\alpha_{SL}=0.01}). The scanner supplies (a), the QRNG supplies (b), and the
+vote tally tested at significance supplies (c). Only worlds passing all three
+are real counterfactuals; the rest are nominal.}
+}

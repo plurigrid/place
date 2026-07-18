@@ -1,0 +1,26 @@
+\title{EntropyLoop phase-diffusion QRNG}
+\taxon{Inventory-item}
+\import{macros}
+\author{monaduck1069}
+\date{2026-07-17}
+\meta{dev-id}{DEV-QRNG-001}
+\meta{status}{want}
+\meta{cost-range}{35-60 USD}
+\meta{category}{bcf-0031}
+\meta{manufacturer}{Quantum Village (open source)}
+\meta{modality}{quantum entropy source (vacuum phase diffusion)}
+\meta{mechanism}{gain-switched laser + 5m SC/APC fiber delay loop, RPi Pico}
+\meta{output}{128-byte samples, on-device H_min + SHA-512, UART/MCP}
+\meta{validated}{NIST STS 2.1.2 (1e6 x 200) pass}
+\meta{upstream}{https://github.com/QuantumVillage/EntropyLoop}
+
+\p{Status: \strong{want}. $35 open-source phase-diffusion QRNG, credit-card
+sized. The quantum \strong{pacer} for the daily draw and this /loop —
+see [[bci-entropyloop-pacer]]. Same Quantum Village lineage as the NV
+magnetometer ([[bcf-0031]]); cheapest quantum device in the factory.}
+
+\p{Enters the daily rotation ([[bcf-devices]]): its \code{35-60 USD} range
+overlaps within 1.5x with the vibrotactile haptic array (\code{50-300 USD}) and
+PPG HRV wristband (\code{50-300 USD}) — expect it to pair against the low-cost
+cluster. Fittingly, the device that would \emph{run} the rotation is also a
+candidate \emph{in} it.}
