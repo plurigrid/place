@@ -166,7 +166,7 @@ struct RoomCaptureViewRepresentable: UIViewRepresentable {
 
 // MARK: - Point Cloud from ARKit Depth (works alongside RoomPlan)
 
-#if canImport(ARKit)
+#if os(iOS) && canImport(ARKit)
 
 import ARKit
 
