@@ -5,7 +5,7 @@
 \date{2026-06-15}
 \meta{dev-id}{DEV-OIM-001}
 \meta{status}{design}
-\meta{location}{222 Dore}
+\meta{location}{[viv](https://vivarium.sh)}
 \meta{paper}{paper://bowring-anderson-tiffany-electronic-ising-machine}
 \meta{source}{bci://pcb=ising}
 \meta{external-repo}{repo://monaduck1069/bci-pcb-ising@ed7c029}

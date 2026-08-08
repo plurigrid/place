@@ -9,7 +9,7 @@
 \import{macros}
 \meta{institution}{BCI Factory}
 
-\p{On March 31, 2026 — four days after session #7 almost captured it ([[bcf-0038]]) — the first self-serve EEG readings were recorded at 222 Dore. Two sessions, stored as \code{selfserve_20260331_*.json}.}
+\p{On March 31, 2026 — four days after session #7 almost captured it ([[bcf-0038]]) — the first self-serve EEG readings were recorded at [viv](https://vivarium.sh). Two sessions, stored as \code{selfserve_20260331_*.json}.}
 
 \subtree{
 \title{Recording Parameters}

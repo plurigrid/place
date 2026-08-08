@@ -3,20 +3,20 @@
 \author{monaduck1069}
 \date{2026-04-01}
 \tag{space}
-\tag{222-dore}
+\tag{viv}
 \tag{250-dore}
-\meta{address-current}{222 Dore Street, San Francisco, CA}
+\meta{address-current}{[viv](https://vivarium.sh), San Francisco, CA}
 \meta{address-expansion}{250 Dore Street, San Francisco, CA}
 \meta{neighborhood}{Showplace Square, SoMa}
 \meta{related}{[[bci-0007]]}
 
-\subtree{\title{Current: 222 Dore Street}
+\subtree{\title{Current: [viv](https://vivarium.sh)}
 \meta{status}{operational}
 \meta{rent}{$4,000/mo ($2,000/office × 2)}
 \meta{offices}{2}
 \meta{floor}{upstairs}
 
-\p{222 Dore Street, San Francisco. Showplace Square. Walk Score 98, Transit Score 99, Bike Score 99. Two upstairs offices at $2,000/month each. The BCI Factory's operating base since early 2026.}
+\p{[viv](https://vivarium.sh), San Francisco. Showplace Square. Walk Score 98, Transit Score 99, Bike Score 99. Two upstairs offices at $2,000/month each. The BCI Factory's operating base since early 2026.}
 
 \subtree{\title{BCI Bench}
 \p{One dedicated BCI recording station. OpenBCI Cyton 8ch (250 Hz), conductive gel, impedance meter, laptop running Emacs kiosk with real-time topomap. Walk-in readings: 2-minute protocol, deterministic color hash output via SplitMix64. The bench fits in a single office — shitty signal is better than no signal.}}
@@ -33,7 +33,7 @@
 \meta{sold}{$3,750,000 on Dec 1, 2025}
 \meta{deposit-available}{$120,000}
 
-\p{250 Dore Street. Less than 100 feet from 222 Dore — same block. 14,543 SF standalone building, currently empty and listed for lease through Kidder Mathews. Built in 1984/85 by sculptor Fletcher Benton as his creative retreat. Sold Dec 2025 for $3.75M (28.6\% below $5.25M ask). The full-scale instantiation of Victor and Iannini's communal science lab.}
+\p{250 Dore Street. Less than 100 feet from [viv](https://vivarium.sh) — same block. 14,543 SF standalone building, currently empty and listed for lease through Kidder Mathews. Built in 1984/85 by sculptor Fletcher Benton as his creative retreat. Sold Dec 2025 for $3.75M (28.6\% below $5.25M ask). The full-scale instantiation of Victor and Iannini's communal science lab.}
 
 \subtree{\title{Ground Floor: The Lab}
 \meta{sqft}{6638}
@@ -53,11 +53,11 @@
 \subtree{\title{Why Dore Street}
 \p{The communal science lab requires specific physical properties:}
 \ul{
-  \li{\strong{Existing presence}: already operating at 222 Dore with BCI bench — proven location}
+  \li{\strong{Existing presence}: already operating at [viv](https://vivarium.sh) with BCI bench — proven location}
   \li{\strong{Adjacency}: 250 Dore is next door — no relocation logistics, walk 30 seconds}
   \li{\strong{Volume}: 34-foot ceilings at 250 for projection and shared visibility}
   \li{\strong{Permeability}: 16-foot roll-up door, street-level access}
   \li{\strong{Density}: SoMa location, transit score 99}
   \li{\strong{Heritage}: Fletcher Benton built balanced, harmonious geometric sculptures here — GF(3) conservation is the same aesthetic in a new medium}
 }
-\p{The path: 222 Dore (now, $4K/mo, BCI bench) → 250 Dore ($120K deposit, 14,543 SF, full factory).}}
+\p{The path: [viv](https://vivarium.sh) (now, $4K/mo, BCI bench) → 250 Dore ($120K deposit, 14,543 SF, full factory).}}

@@ -30,7 +30,7 @@
 \subtree{
 \title{Apple (trit: +1, hub-primary)}
 \ol{
-  \li{HomePod (2nd gen) — full TBR + smart home hub. \strong{Canonical hub for 222 Dore.}}
+  \li{HomePod (2nd gen) — full TBR + smart home hub. \strong{Canonical hub for [viv](https://vivarium.sh).}}
   \li{HomePod Mini — compact TBR}
   \li{Apple TV 4K (3rd gen) — TBR via tvOS}
   \li{Apple TV 4K (2nd gen) — TBR via tvOS update}
@@ -190,7 +190,7 @@
 \subtree{
 \title{BCI Factory Transport Architecture}
 
-\p{The 222 Dore deployment ([[horse-0001]]) uses \strong{Apple HomePod} as canonical TBR hub — it is the \strong{descent functor} for the transport layer, gluing the Thread mesh into the IP backbone where the pipeline runs.}
+\p{The [viv](https://vivarium.sh) deployment ([[horse-0001]]) uses \strong{Apple HomePod} as canonical TBR hub — it is the \strong{descent functor} for the transport layer, gluing the Thread mesh into the IP backbone where the pipeline runs.}
 
 \table{
   \tr{\th{BCI Device} \th{Transport} \th{Thread Role} \th{Pipeline Stage}}

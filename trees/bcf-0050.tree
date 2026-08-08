@@ -22,7 +22,7 @@
 \tr{\td{○}\td{14th & Valencia}\td{849VQH9H+W2}}
 \tr{\td{��}\td{14th & Mission}\td{849VQHCH+26}}
 \tr{\td{−}\td{14th near Dore}\td{849VQHCH+47}}
-\tr{\td{+}\td{222 Dore (\ref{bcf-0049})}\td{849VQHCH+67}}
+\tr{\td{+}\td{[viv](https://vivarium.sh) (\ref{bcf-0049})}\td{849VQHCH+67}}
 }
 \p{The MINUS corridor: 5 consecutive − tiles along 14th St. One ergodic waypoint at Valencia.}
 }
@@ -39,7 +39,7 @@
 \tr{\td{−}\td{14th & Church}\td{849VQHCG+2H}}
 \tr{\td{−}\td{14th & Dolores}\td{849VQHCH+32}}
 \tr{\td{−}\td{14th & Guerrero}\td{849VQHCH+56}}
-\tr{\td{+}\td{222 Dore (\ref{bcf-0049})}\td{849VQHCH+67}}
+\tr{\td{+}\td{[viv](https://vivarium.sh) (\ref{bcf-0049})}\td{849VQHCH+67}}
 }
 \p{Two ergodic waypoints at street intersections. Duboce Park (−) sits between them.}
 }
@@ -55,7 +55,7 @@
 \tr{\td{○}\td{Duboce cut-through}\td{849VQH9G+PH}}
 \tr{\td{○}\td{14th mid-block}\td{849VQH9G+VV}}
 \tr{\td{○}\td{Shotwell alley}\td{849VQHCH+24}}
-\tr{\td{+}\td{222 Dore (\ref{bcf-0049})}\td{849VQHCH+67}}
+\tr{\td{+}\td{[viv](https://vivarium.sh) (\ref{bcf-0049})}\td{849VQHCH+67}}
 }
 \p{The ergodic path: 4 consecutive ○ tiles through the alley network. This is the natural corridor for the third station — any of the 4 ergodic tiles completes the triad.}
 }
@@ -66,7 +66,7 @@
 \tr{\th{Tile}\th{Address}\th{Trit}\th{Role}\th{Distance}}
 \tr{\td{\ref{bcf-0048} 849VQH9F+47}\td{2175 Market #602}\td{−1}\td{Validator}\td{—}}
 \tr{\td{849VQH9G+VV}\td{14th mid-block}\td{0}\td{Coordinator}\td{~200m from each}}
-\tr{\td{\ref{bcf-0049} 849VQHCH+67}\td{222 Dore St}\td{+1}\td{Generator}\td{—}}
+\tr{\td{\ref{bcf-0049} 849VQHCH+67}\td{[viv](https://vivarium.sh)}\td{+1}\td{Generator}\td{—}}
 }
 \p{This tile sits roughly equidistant from both endpoints on Route C, at the center of the ergodic corridor. Sum: (−1) + 0 + (+1) = 0. ✓}
 \p{The 14th mid-block position is also on the Duboce cut-through, a quiet residential alley ideal for a waypoint station — a bench with a Cyton headset and a weatherproof pegboard, the outdoor analog of the indoor station (\ref{bcf-0043}).}

@@ -5,7 +5,7 @@
 \tag{hardware}
 \tag{stack}
 
-\p{Full multimodal BCI stack. Currently a single bench at 222 Dore; full deployment at 250 Dore. Each modality measures a different physical quantity. Together they triangulate cognitive state from electrical, hemodynamic, optical, kinematic, and acoustic signals. For the sheaf-theoretic signal processing pipeline, see [[bci-0001]] and the four stages: [[bci-stage-1]], [[bci-stage-2]], [[bci-stage-3]], [[bci-stage-4]]. For device color assignments, see [[bci-0002]].}
+\p{Full multimodal BCI stack. Currently a single bench at [viv](https://vivarium.sh); full deployment at 250 Dore. Each modality measures a different physical quantity. Together they triangulate cognitive state from electrical, hemodynamic, optical, kinematic, and acoustic signals. For the sheaf-theoretic signal processing pipeline, see [[bci-0001]] and the four stages: [[bci-stage-1]], [[bci-stage-2]], [[bci-stage-3]], [[bci-stage-4]]. For device color assignments, see [[bci-0002]].}
 
 \transclude{bcf-0010}
 \transclude{bcf-0011}

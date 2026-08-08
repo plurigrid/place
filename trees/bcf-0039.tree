@@ -37,7 +37,7 @@
 \subtree{
 \title{worlds/bcifactory-tui/ — Ratzilla TUI}
 
-\p{Rust terminal-in-browser via Ratzilla. ASCII art header, four-pillar overview (Visibility, Agency, Physical Reality, In-Person Collaboration), hardware table. Runs in any terminal. Designed for the kiosk at 222 Dore — Emacs-adjacent, no browser required.}
+\p{Rust terminal-in-browser via Ratzilla. ASCII art header, four-pillar overview (Visibility, Agency, Physical Reality, In-Person Collaboration), hardware table. Runs in any terminal. Designed for the kiosk at [viv](https://vivarium.sh) — Emacs-adjacent, no browser required.}
 }
 
 \subtree{

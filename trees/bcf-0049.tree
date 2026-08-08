@@ -13,7 +13,7 @@
 
 \import{macros}
 
-\p{OLC tile \code{849VQHCH+67} — 222 Dore St, San Francisco CA 94103. Trit +1 (PLUS). Generator tile in the BCI station network.}
+\p{OLC tile \code{849VQHCH+67} — [viv](https://vivarium.sh), San Francisco CA 94103. Trit +1 (PLUS). Generator tile in the BCI station network.}
 
 \subtree{\title{Tile hierarchy}
 \table{
@@ -22,7 +22,7 @@
 \tr{\td{4}\td{849V}\td{~14,000 km²}\td{SF Bay Area}}
 \tr{\td{6}\td{849VQH}\td{~700 km²}\td{San Francisco}}
 \tr{\td{8}\td{849VQHCH}\td{~250m × 250m}\td{Dore St / Folsom / 14th block}}
-\tr{\td{10}\td{849VQHCH+67}\td{~14m × 14m}\td{222 Dore St}}
+\tr{\td{10}\td{849VQHCH+67}\td{~14m × 14m}\td{[viv](https://vivarium.sh)}}
 }
 }
 
@@ -52,14 +52,14 @@ Corrected using alphabet index:
 \table{
 \tr{\th{Tile}\th{Address}\th{Trit}\th{Role}}
 \tr{\td{\ref{bcf-0048} 849VQH9F+47}\td{2175 Market St #602}\td{-1}\td{Validator (home station)}}
-\tr{\td{849VQHCH+67}\td{222 Dore St}\td{+1}\td{Generator (Dore station)}}
+\tr{\td{849VQHCH+67}\td{[viv](https://vivarium.sh)}\td{+1}\td{Generator (Dore station)}}
 \tr{\td{?}\td{TBD}\td{0}\td{Coordinator (completes triad)}}
 }
 \p{Two of three station tiles identified. Sum so far: (−1) + (+1) = 0. Any ERGODIC(0) tile completes the triad with sum 0 mod 3.}
 }
 
 \subtree{\title{Scan targets at this tile}
-\p{iPhone LiDAR scan of 222 Dore St should capture:}
+\p{iPhone LiDAR scan of [viv](https://vivarium.sh) should capture:}
 \ol{
 \li{Room geometry → \ref{bcf-0044} RoomPlan pipeline}
 \li{Existing furniture and equipment for station placement}

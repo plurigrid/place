@@ -30,7 +30,7 @@
 \subtree{
 \title{3. Ratzilla — Terminal Presence}
 
-\p{\code{worlds/bcifactory-tui/}. Rust TUI via Ratzilla (terminal-in-browser). ASCII art header, four-pillar overview, hardware table. Runs in any terminal, designed for the kiosk at 222 Dore. Renders for terminals, Emacs-adjacent.}
+\p{\code{worlds/bcifactory-tui/}. Rust TUI via Ratzilla (terminal-in-browser). ASCII art header, four-pillar overview, hardware table. Runs in any terminal, designed for the kiosk at [viv](https://vivarium.sh). Renders for terminals, Emacs-adjacent.}
 }
 }
 

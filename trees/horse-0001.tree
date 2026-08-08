@@ -51,13 +51,13 @@ to nothing. What remains is the rider.}
 
 \table{
   \tr{\th{Status} \th{Device} \th{Location}}
-  \tr{\td{🟢} \td{Cyton 8ch (shared)} \td{Vivarium, 222 Dore St}}
+  \tr{\td{🟢} \td{Cyton 8ch (shared)} \td{[viv](https://vivarium.sh)}}
   \tr{\td{🟡} \td{Albert's $10 prototype} \td{Mobile}}
   \tr{\td{🟡} \td{Lucas's device} \td{Left at Vivarium}}
   \tr{\td{🔴} \td{BCI chair} \td{In transit}}
 }
 
-\p{Open invitation: anyone can be the first rider. Come to 222 Dore.
+\p{Open invitation: anyone can be the first rider. Come to [viv](https://vivarium.sh).
 Sit in the chair. Your wave starts when you sit.}
 }
 
@@ -76,7 +76,7 @@ Sit in the chair. Your wave starts when you sit.}
 \p{The math: [[bci-0001]]. Current device state: [[bcf-devices]]. The games: [[bci-0006]].
 The hatchery: [[bci-0007]]. The project map: [[bcf-0001]].
 Unison algebraic effects implementation: [[bcf-0045]].
-The physical space (222 Dore current, 250 Dore expansion): [[bcf-0004]]. Hardware sources: [[bcf-0006]].
+The physical space ([viv](https://vivarium.sh) current, 250 Dore expansion): [[bcf-0004]]. Hardware sources: [[bcf-0006]].
 People: [[bcf-0007]]. Economics: [[bcf-0008]].
 Transport mesh: [[horse-0008]] (69 Thread Border Routers). Categorical topology: [[horse-0009]].
 Learnable color space: [[bci-0015]] (device-conditional metric, sheaf over output devices).}

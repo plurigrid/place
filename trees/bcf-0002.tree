@@ -30,7 +30,7 @@
 \p{Actual electrodes on actual heads. Conductive gel on skin. Impedance checks with ohm meters. Photons from LEDs entering cortical tissue and scattering off hemoglobin. This is wet science. The artifact is not a dashboard — it is a person wearing a device in a room with other people.}}
 
 \subtree{\title{In-Person Collaboration}
-\p{The BCI bench at 222 Dore. Communal science starts small — two offices, one bench, walk-in readings. You do not mail someone your EEG recording and wait for their analysis. You sit next to them. They see your signal. You see theirs. Hyperscanning is not a research paradigm — it is the default mode. When we expand to 250 Dore (next door, 14,543 SF), the bench becomes a factory floor.}}}
+\p{The BCI bench at [viv](https://vivarium.sh). Communal science starts small — two offices, one bench, walk-in readings. You do not mail someone your EEG recording and wait for their analysis. You sit next to them. They see your signal. You see theirs. Hyperscanning is not a research paradigm — it is the default mode. When we expand to 250 Dore (next door, 14,543 SF), the bench becomes a factory floor.}}}
 
 \subtree{\title{What This Is Not}
 \p{This is not a neuroscience lab. Labs have PIs, grants, IRBs, and publication incentives that optimize for credibility over access.}
@@ -44,4 +44,4 @@
 }}
 
 \subtree{\title{Invitation}
-\p{If you can solder, you can build a BCI. If you can write firmware, you can modify one. If you can do neither, you can come to 222 Dore and learn. The signal is noisy. The hardware is cheap. The door is open.}}
+\p{If you can solder, you can build a BCI. If you can write firmware, you can modify one. If you can do neither, you can come to [viv](https://vivarium.sh) and learn. The signal is noisy. The hardware is cheap. The door is open.}}

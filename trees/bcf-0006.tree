@@ -31,7 +31,7 @@
 \taxon{reference}
 \meta{status}{own}
 \tag{fabrication}
-\p{222 Dore has 3D printers and soldering supplies for fabricating electrode holders, headset adapters, paste applicators, repair parts, and comfort modifications (see \ref{bci-0009}).}}
+\p{[viv](https://vivarium.sh) has 3D printers and soldering supplies for fabricating electrode holders, headset adapters, paste applicators, repair parts, and comfort modifications (see \ref{bci-0009}).}}
 
 \subtree{\title{OpenBCI Cyton LiPo Battery Charger}
 \taxon{reference}

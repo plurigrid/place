@@ -4,7 +4,7 @@
 \date{2026-03-29}
 \meta{institution}{BCI Factory}
 \meta{url}{https://bci.place}
-\p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{222 Dore Street, San Francisco}. This forest separates current inventory, loaned or donated equipment, wanted equipment, rejected options, and possible-world design directions.}
+\p{Brain-computer interfaces belong in communal space. BCI Factory operates from \strong{[viv](https://vivarium.sh), San Francisco}. This forest separates current inventory, loaned or donated equipment, wanted equipment, rejected options, and possible-world design directions.}
 \p{Contact: yuzu@plurigrid.com. Current public direction: \code{https://bci.place}.}
 \subtree{\title{Current Map}
 \ul{\li{[[bcf-devices]]}\li{[[bcf-0009]]}\li{[[bcf-0006]]}\li{[[bcf-0004]]}}}
