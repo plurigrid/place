@@ -1,4 +1,4 @@
-\title{Trit Pathways: Market → Dore}
+\title{Trit Pathways: Market → [viv](https://vivarium.sh)}
 \date{2026-04-04}
 \taxon{design}
 \author{barton-rhodes}
@@ -10,7 +10,7 @@
 
 \p{Three walking routes between the two BCI station tiles, colored by GF(3) spatial trit. Route C — the diagonal alley cut — is the ergodic path: 4 consecutive ○ tiles.}
 
-\subtree{\title{Route A: Market → 14th → Dore}
+\subtree{\title{Route A: Market → 14th → [viv](https://vivarium.sh)}
 \p{Trit sequence: \code{−+−−−○−−+}}
 \table{
 \tr{\th{Trit}\th{Location}\th{OLC tile}}
@@ -21,13 +21,13 @@
 \tr{\td{−}\td{14th heading east}\td{849VQH9G+QQ}}
 \tr{\td{○}\td{14th & Valencia}\td{849VQH9H+W2}}
 \tr{\td{��}\td{14th & Mission}\td{849VQHCH+26}}
-\tr{\td{−}\td{14th near Dore}\td{849VQHCH+47}}
+\tr{\td{−}\td{14th near [viv](https://vivarium.sh)}\td{849VQHCH+47}}
 \tr{\td{+}\td{[viv](https://vivarium.sh) (\ref{bcf-0049})}\td{849VQHCH+67}}
 }
 \p{The MINUS corridor: 5 consecutive − tiles along 14th St. One ergodic waypoint at Valencia.}
 }
 
-\subtree{\title{Route B: Duboce → 14th �� Dore}
+\subtree{\title{Route B: Duboce → 14th �� [viv](https://vivarium.sh)}
 \p{Trit sequence: \code{−○−−○−−−+}}
 \table{
 \tr{\th{Trit}\th{Location}\th{OLC tile}}
@@ -88,10 +88,10 @@ Market (−1) ——— McCoppin (+) ——— Stevenson (○) ——— Hermann
         Valencia (○) ———————————————————————————— Shotwell (○)
         849VQH9H+W2                               849VQHCH+24
              |                                         |
-        Mission (−) ——— near Dore (−) ——————————— Dore (+1)
+        Mission (−) ——— near viv (−) ——————————— viv (+1)
         849VQHCH+26     849VQHCH+47                849VQHCH+67
 \stopverb}
-\p{The ergodic corridor (○○○○) forms a connected subgraph through the alley network. The MINUS tiles cluster along the main streets (14th, Market). The PLUS tiles bookend at McCoppin and Dore — the two alley entrances.}
+\p{The ergodic corridor (○○○○) forms a connected subgraph through the alley network. The MINUS tiles cluster along the main streets (14th, Market). The PLUS tiles bookend at McCoppin and [viv](https://vivarium.sh) — the two alley entrances.}
 }
 
 \subtree{\title{GF(3) on the pathway graph}

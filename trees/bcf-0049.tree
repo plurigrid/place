@@ -21,7 +21,7 @@
 \tr{\td{2}\td{84}\td{~2,800,000 km²}\td{Western North America}}
 \tr{\td{4}\td{849V}\td{~14,000 km²}\td{SF Bay Area}}
 \tr{\td{6}\td{849VQH}\td{~700 km²}\td{San Francisco}}
-\tr{\td{8}\td{849VQHCH}\td{~250m × 250m}\td{Dore St / Folsom / 14th block}}
+\tr{\td{8}\td{849VQHCH}\td{~250m × 250m}\td{[viv](https://vivarium.sh) / Folsom / 14th block}}
 \tr{\td{10}\td{849VQHCH+67}\td{~14m × 14m}\td{[viv](https://vivarium.sh)}}
 }
 }
@@ -52,7 +52,7 @@ Corrected using alphabet index:
 \table{
 \tr{\th{Tile}\th{Address}\th{Trit}\th{Role}}
 \tr{\td{\ref{bcf-0048} 849VQH9F+47}\td{2175 Market St #602}\td{-1}\td{Validator (home station)}}
-\tr{\td{849VQHCH+67}\td{[viv](https://vivarium.sh)}\td{+1}\td{Generator (Dore station)}}
+\tr{\td{849VQHCH+67}\td{[viv](https://vivarium.sh)}\td{+1}\td{Generator ([viv](https://vivarium.sh) station)}}
 \tr{\td{?}\td{TBD}\td{0}\td{Coordinator (completes triad)}}
 }
 \p{Two of three station tiles identified. Sum so far: (−1) + (+1) = 0. Any ERGODIC(0) tile completes the triad with sum 0 mod 3.}
