@@ -1,0 +1,30 @@
+\title{OpenFNIRS component loan request}
+\taxon{reference}
+\author{exanova-y}
+\date{2026-08-07}
+\import{macros}
+\tag{openfnirs}
+\tag{hardware}
+
+\p{In support of cloning a second OpenNIRSCap system, I am requesting to borrow:}
+
+\ul{
+  \li{One assembled sensor module, preferably tested — 660 nm and 940 nm LEDs, photodiode, op-amp, MOSFETs, passives, connectors}
+  \li{One ST-LINK programming unit — USB cable, ribbon cable, adapter leads}
+  \li{The partially populated OpenNIRScap ECU: the green fNIRS ECU marked SENSOR GROUP 1–8, with STM32L476RET6 control, sensor-group headers, multiplexers, USB, power, and SWD interfaces.}
+}
+
+\p{Approximately $500 of additional funding would complete the clone. These materials are found in [[openfnirs-build]] bill of work. The loaned hardware will be used as the bring-up reference for the additional sensor modules and returned after interface, programming, and channel checks. The hardware would be loaned for a 2-week initial period}
+
+\p{Rough order of steps towards extending a secondary fNIRS device with assist:}
+
+\ol{
+\li{order ~3 sensor groups, consisting of 9 detectors and 3 dual-wavelength emitters}
+\li{Open SensorModule.PrjPcb, generate BOM}
+\li{Order three populated boards from JLCPCB}
+\li{make sure for borrowed stack is working}
+\li{assemble >=1 working sensor module}
+\li{A/B test against borrowed sensor module}
+\li{assemble sensor modules with the ECU}
+\li{gradually expand towards the entire OpenNIRSCap setup during early fall 2026}
+}

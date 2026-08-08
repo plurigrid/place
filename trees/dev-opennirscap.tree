@@ -7,3 +7,5 @@
 \meta{status}{building}
 \meta{location}{[viv](https://vivarium.sh)}
 \p{Status: \strong{building}. Partial build, blockers open (see [[openfnirs-build]]). Device: [[bcf-0036]]; build record: [[openfnirs-build]].}
+
+\transclude{req-openfnirs-components}
