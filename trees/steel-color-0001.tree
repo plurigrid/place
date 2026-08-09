@@ -1,0 +1,67 @@
+\title{world://colored-steel — tileable colored-parens over Gay(placement)}
+\taxon{synthesis}
+\date{2026-06-29}
+\meta{description}{Colored parentheses whose color is first-class Gay.jl learned from runtime placement (Steel's Span); conserved (Σ≡0, colorless world://) or broken with a ± attitude; rendered as a tileable brick-diagram = zellij TiledPaneGrid. Grounded in six VT parsers, Steel/olambiffs, Helix PR 8675, and a self-play balance search.}
+\import{macros}
+
+\p{One pipeline, executable end to end: \strong{Gay(placement) → colored parens → self-play balanced
+colorless world:// → tiled brick-diagram → zellij TiledPaneGrid}. Color is a pure function of where
+a node sits; conservation of color (Σ≡0) is solved by search, not assumed; the result tiles.}
+
+\subtree{
+\title{The pipeline (runs in babashka)}
+\pre{\startverb
+  color(node) = band(SplitMix64(seed ⊕ placement))      placement = path / Steel Span (start,end,source_id)
+  trit in [+,_,-]   (hue/120)                             first-class, learnable, zero new AST state
+  CONSERVE: outer = Σ(children) mod 3   → world:// loses color mod palette (colorless if _)
+  BREAK(±): outer = (Σ ± attitude) mod 3 → conservation broken, outer carries the sign
+\stopverb}
+\p{Self-play search finds the colorless world://: 243 seed proposals (curriculum), rubric scores
+Σ≡0 first then distinguishability, validity-predicate keeps colors distinct. Measured balance rate
+\strong{32.9 percent ≈ 1/3} — exactly the GF(3) prior (a uniform sum over the trits −,0,+ hits 0 mod 3 with probability 1/3).}
+}
+
+\subtree{
+\title{Tileable = zellij TiledPaneGrid}
+\p{The colored s-expr renders as an icicle/flame \em{tiling}: rows = depth (zoom), bricks = subexprs
+(focus), width ∝ leaf-count, color = Gay(placement); a balanced seed makes the whole tiling colorless
+(Σ≡0). This IS zellij's TiledPaneGrid (zellij-server/src/panes/tiled_panes) of the expression —
+each brick a colored, traversable pane. The "better brick diagram."}
+}
+
+\subtree{
+\title{Steel adaptation (the target)}
+\ul{
+\li{\strong{olambiffs is already Steel} — "Lispstick to the Void," a godsays/os://temple rewrite.}
+\li{Steel's Span (start,end,source_id) (steel-parser/src/span.rs) = the flexible runtime placement.}
+\li{color = Gay(Span) = band(SplitMix64(start ⊕ end ⊕ source)) — a visitors.rs walk over ExprKind attaches it.}
+\li{the self-play search over Spans finds the Σ≡0 colorless world://. tip-top via rubric + validity-predicate.}
+}
+}
+
+\subtree{
+\title{Substrate survey (relationalthinking, grounded in source)}
+\pre{\startverb
+  urxvt     hand-rolled process_nonprinting switch
+  foot      Williams VT500 FSM (vt.c enum state)
+  alacritty/rio  vte / copa  (Parser ⟂ Perform)
+  ratty     vt100 crate + Callbacks::unhandled_escape   (orhun, GPU 3D, TempleOS-inspired)
+  ghostty   Williams VT500, comptime transition table
+  zellij    TiledPaneGrid (the tiling substrate)
+  helix     PR 8675 "Add Steel as an optional plugin system" (OPEN, +1091) — steel-event-system branch
+  warp      open-sourced 2026-04-28 (AGPL) — scip://warp valid
+\stopverb}
+\p{Every good emulator = Williams behind a parse⟂perform seam; the table-driven ones swap to balanced
+ternary (b3e) by replacing the table alone, leaving the handler invariant (proven in Rust: same screen,
+two parsers, assert passed).}
+}
+
+\subtree{
+\title{Honest ledger}
+\ul{
+\li{Counterfactuals that won: Warp is OPEN (not closed); CIMC = California Institute for Machine Consciousness.}
+\li{Default placement-colorings are out of balance (Σ≢0) — conservation is a constraint to solve, not a default.}
+\li{rustc vanished mid-session (compiled b3e.rs earlier) → visitors.rs not compiled here; bb proofs stand.}
+\li{entropyloop originary-101 USB photon device down; drand beacon used for the QRNG draws (flagged).}
+}
+}
