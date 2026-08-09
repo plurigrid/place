@@ -3,8 +3,11 @@
 \import{macros}
 \author{monaduck1069}
 \date{2026-07-17}
+\tag{bci.red}
+\tag{bci.blue}
 \meta{dev-id}{DEV-QRNG-001}
-\meta{status}{want}
+\meta{status}{on hand}
+\meta{quantity}{3}
 \meta{cost-range}{35-60 USD}
 \meta{category}{bcf-0031}
 \meta{manufacturer}{Quantum Village (open source)}
@@ -14,10 +17,16 @@
 \meta{validated}{NIST STS 2.1.2 (1e6 x 200) pass}
 \meta{upstream}{https://github.com/QuantumVillage/EntropyLoop}
 
-\p{Status: \strong{want}. $35 open-source phase-diffusion QRNG, credit-card
-sized. The quantum \strong{pacer} for the daily draw and this /loop —
-see [[bci-entropyloop-pacer]]. Same Quantum Village lineage as the NV
-magnetometer ([[bcf-0031]]); cheapest quantum device in the factory.}
+\p{Status: \strong{three on hand}. This is the standard EntropyLoop: a $35
+open-source phase-diffusion QRNG, credit-card sized. It is the quantum
+\strong{pacer} for the daily draw and this /loop — see
+[[bci-entropyloop-pacer]]. Same Quantum Village lineage as the NV magnetometer
+([[bcf-0031]]); cheapest quantum device in the factory.}
+
+\p{The three-unit inventory is the seed for beginning mass production. Its
+UART protocol and MCP surface also leave room for framework plugins: a host
+framework can bind the same certified sample stream through a transport
+adapter without changing the physical entropy loop.}
 
 \p{Enters the daily rotation ([[bcf-devices]]): its \code{35-60 USD} range
 overlaps within 1.5x with the vibrotactile haptic array (\code{50-300 USD}) and

@@ -5,6 +5,8 @@
 \date{2026-07-17}
 \tag{scan}
 \tag{descent}
+\tag{bci.red}
+\tag{bci.blue}
 
 \p{The \ref{bcf-INV-einstar-rockit} scans actual heads at 0.05 mm. This tree
 relates that capture to the rest of place://bci: a head mesh turns the descent

@@ -6,6 +6,8 @@
 \tag{quantum}
 \tag{voting}
 \tag{pacer}
+\tag{bci.red}
+\tag{bci.blue}
 
 \p{\ref{bci-qrng-collapse} argued the daily draw needs a genuine stochastic
 source. Quantum Village's \strong{EntropyLoop} (Kumaran & Carney, 2026;
@@ -14,6 +16,13 @@ credit-card phase-diffusion QRNG on off-the-shelf fiber + a Pi Pico, passing
 NIST STS, exposing an MCP server. Same physics as Abellán 2014, same house as
 the NV magnetometer ([[bcf-0031]]). This tree captures its structure and wires
 it as the \strong{pacer} — the quantum heartbeat that times bci.place.}
+
+\p{This is the standard EntropyLoop deployment for bci.place. Three physical
+units are on hand, establishing the first repeatable batch and the starting
+point for mass production. The serial/MCP boundary is also a possible
+framework-plugin boundary: adapters may expose the same paced sample stream to
+additional frameworks while the device, extraction, and min-entropy gate stay
+fixed.}
 
 \subtree{\title{Core structure}
 \p{Vacuum fluctuations set each laser pulse's phase/polarization at power-up;

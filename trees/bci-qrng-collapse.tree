@@ -5,6 +5,8 @@
 \date{2026-07-17}
 \tag{quantum}
 \tag{voting}
+\tag{bci.red}
+\tag{bci.blue}
 
 \p{The daily red/blue draw ([[bcf-devices]]) is currently a deterministic
 date-seeded PRNG in the vote-agg Worker (FNV-1a #{\to} Mulberry32). This tree
