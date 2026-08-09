@@ -8,16 +8,13 @@
 \p{Contact: yuzu@plurigrid.com. Current public direction: \code{https://bci.place}.}
 \subtree{\title{Current Map}
 \ul{\li{[[bcf-devices]]}\li{[[bcf-0009]]}\li{[[bcf-0006]]}\li{[[bcf-0004]]}}}
-\subtree{\title{Public Data Inventory}
-\p{Discover every locally verified offered file through a privacy-safe deterministic color ledger, then request governed access by public alias. Listings are not release authorization.}
-\transclude{eeg-inventory-datasheet}}
 \subtree{\title{Possible Worlds}
 \p{Design worlds for comparison and voting; not the canonical current stack.}
 \ul{\li{[[horse-0001]]}\li{[[bcf-0030]]}\li{[[bcf-0008]]}\li{[[bcf-0042]]}}}
 \subtree{\title{Innovation And Comfort}
 \ul{\li{[[bci-0009]]}\li{[[bcf-0036]]}}}
 \subtree{\title{Mathematics And Protocols}
-\ul{\li{[[bci-0001]]}\li{[[bcf-0003]]}\li{[[bcf-0005]]}\li{[[bcf-0040]]}\li{[[bci-0017]]}\li{[[bcf-0043]]}}
+\ul{\li{[[bci-0001]]}\li{[[bcf-0003]]}\li{[[bcf-0005]]}\li{[[bcf-0040]]}\li{[[bci-0017]]}\li{[[bcf-0050]]}\li{[[bcf-0043]]}}
 \p{Theory foundations:}
 \ul{\li{[[hub-categorical-systems]]}\li{[[hub-doctrines]]}\li{[[hub-morphisms]]}\li{[[hub-outcome-logic]]}\li{[[hub-capability-security]]}\li{[[hub-researchers]]}\li{[[hub-bibliography]]}}}
 \subtree{\title{Resources And Surviving Stubs}
@@ -28,7 +25,7 @@
 \p{Whisper-λ: a Signal-class messaging stack built in the forest, anchored to the capability-security foundations.}
 \ul{\li{[[bcf-0070]]}\li{[[bcf-0069]]}\li{[[bcf-0071]]}\li{[[bcf-0073]]}\li{[[bcf-0072]]}\li{[[hub-capability-security]]}}}
 \subtree{\title{BCI Landscape}
-\p{Comparative landscape notes are being revised.}}
+\ul{\li{[[bcf-0051]]}}}
 \subtree{\title{Deep Index}
 \p{Fullest-depth reachability — the forest's theory, math, security, and reference bodies.}
 \ul{
@@ -36,6 +33,9 @@
 \li{\strong{Security skills} — [[idx-skills]] · [[idx-skill-tools]] · [[idx-skill-mitre]] · [[idx-skill-stages]]}
 \li{\strong{Remaining atoms} — [[idx-mopup]]}
 \li{[[stk-0000]]}
+\li{[[xref-0008]]}
+\li{[[xref-0009]]}
+\li{[[xref-0010]]}
 \li{[[silviculture-0001]]}
 \li{[[efr-001Z]]}
 \li{[[topos-0005]]}
