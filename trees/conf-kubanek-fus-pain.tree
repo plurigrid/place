@@ -1,0 +1,36 @@
+\title{Noninvasive targeted modulation of pain circuits with focused ultrasound}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{fus}
+\tag{ultrasound}
+\tag{deep-brain}
+\tag{pain}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{poster}{132}
+\meta{authors}{T. Riis, D. Feldman, A. Okifuji, J. Kubanek}
+\meta{institution}{Kubanek Lab, University of Utah}
+\meta{modality}{transcranial focused ultrasound (tFUS)}
+\meta{targets}{subgenual cingulate cortex; dorsal anterior cingulate cortex}
+\meta{landscape-class}{[U] Focused Ultrasound BCI}
+\meta{category}{deep brain imaging inference}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. A device for \strong{targeted noninvasive deep brain neuromodulation}: an MRI-guided transducer array steers focused ultrasound into deep cingulate targets. Filed under \strong{deep brain imaging inference} for its fMRI-localized targeting, and cross-referenced to \strong{sense stimulation & distinct qualia} because the modulated variable is pain \em{aversiveness} — an affective quale, not just intensity. Maps to the \strong{[U] Focused Ultrasound} class in [[bcf-0051]].}
+
+\image{kubanek-fus-pain.jpg}
+
+\subtree{\title{Targeting}
+\taxon{remark}
+\p{A dual transducer array couples through both temples; an MRI intensity map confirms the focus. Deep-brain circuits engaged in pain aversiveness were localized by fMRI: \strong{subgenual cingulate cortex} and \strong{dorsal anterior cingulate cortex} (targeted regions, t = 3--6). This is the "imaging inference" half — you cannot steer blind ultrasound into sgACC/dACC without per-subject imaging.}
+}
+
+\subtree{\title{Effect on pain}
+\taxon{finding}
+\p{Sham vs Active, n=20 each. Active produced a significantly larger drop in pain-intensity change (\strong{***}). Across days 1--7 following stimulation, the Active arm held a durable ~\strong{−35 to −45\%} reduction versus Sham (significant at multiple days). Conclusion: direct modulation of deep-brain pain-aversiveness circuits yields a \strong{rapid and durable} reduction in pain intensity — a candidate rapid treatment for treatment-resistant presentations.}
+\p{Funding: NIH R00NS100986, RF1NS128569.}
+}
+
+\p{Why it matters for us: the noninvasive-deep-brain-targeting counterpart to our aspirational tFUS rig (\code{DEV-USTIM-001}, [[bcf-0056]]) — same modality, but with the imaging-guided targeting and controlled trial our bench version still lacks.}

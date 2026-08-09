@@ -1,0 +1,21 @@
+\title{Printed dry electrodes for transcutaneous stimulation and closed-loop neuromodulation}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{dry-electrodes}
+\tag{tes}
+\tag{closed-loop}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{poster}{25}
+\meta{authors}{R. Ibrahim, D. Re, I. Vėbraitė, P. F. Funk, G. F. Volk, O. Guntinas-Lichius, Y. Hanein}
+\meta{institution}{Hanein Lab, Tel Aviv University; Jena University Hospital}
+\meta{category}{open-source device application}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 1 (device application); crosses into category 3 for the transorbital-phosphene work. A participant face on the poster is blurred.}
+
+\image{conf-hanein-dry-electrodes.jpg}
+
+\p{\strong{Caption.} Soft, screen-printed \strong{dry carbon electrode arrays} for simultaneous transcutaneous electrical stimulation and biopotential recording — a wearable, gel-free path toward closed-loop neuromodulation. Demonstrations span facial neuromodulation (EMG-triggered), \strong{transorbital stimulation evoking phosphenes} (a directly-induced visual quale), transcutaneous vagus nerve stimulation, and sleep. Activation/discomfort thresholds were comparable to wet gel electrodes.}

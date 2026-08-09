@@ -1,0 +1,67 @@
+\title{Bayesian optimization of robotic coil positioning for prefrontal TMS-EEG}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tms}
+\tag{open-source}
+\tag{closed-loop}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{lab}{Stanford Precision Neurotherapeutics Lab}
+\meta{authors}{C. C. Cline, L. Schreiner, H. Lee, E. Klebaner, J. Truong, C. J. Keller}
+\meta{institution}{Stanford Dept. of Psychiatry & Behavioral Sciences; Wu Tsai Neurosciences Institute; VA Palo Alto}
+\meta{modality}{TMS + EEG}
+\meta{open-source}{true}
+\meta{category}{open-source device application}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. This is the flagship \strong{open-source device application} poster: two released tools (NaviNIBS, EphyNIBS) drive a robotic, closed-loop TMS-EEG targeting loop.}
+
+\image{stanford-tms-navinibs.jpg}
+
+\subtree{\title{Problem}
+\taxon{remark}
+\p{dlPFC rTMS is FDA-cleared for treatment-resistant depression, but only \strong{~50\% respond}, and stimulation parameters are fixed by convention rather than evidence. The \strong{EL-TEP} (early local TMS-evoked potential, 20--60 ms) is a promising acute readout: coil pose shapes both on-target E-field and off-target muscle/sensory contamination, and best location and angle vary across individuals.}
+}
+
+\subtree{\title{Method: closed-loop Bayesian coil optimization}
+\taxon{remark}
+\p{Robotic neuronavigation (\strong{NaviNIBS}) + real-time electrophysiology (\strong{EphyNIBS}) + closed-loop Bayesian optimization. A Gaussian-process model of response-vs-coil-pose picks the next pose via an acquisition function (q-log noisy expected improvement), implemented with \code{BoTorch}, with residual-based empirical noise estimation. The human-in-the-loop prototype hit \strong{artifact −64\%, EL-TEP +75\% (N=18)} but took ~30 min and was operator-dependent; the automation target is speed and reproducibility.}
+\p{Practical innovations: coil air-gapping, spatial search constrained to a local 2D region (optionally by cortical ROI), coil entry vectors auto-determined, sample batching to minimize coil movement between steps, and automatic response-noise estimation to avoid overconfidence.}
+}
+
+\subtree{\title{Device stack}
+\taxon{remark}
+\table{
+\tr{\th{Role} \th{Hardware}}
+\tr{\td{Stimulator} \td{MagVenture X100}}
+\tr{\td{Coil} \td{B65-AP}}
+\tr{\td{Robot} \td{Axium Cobot}}
+\tr{\td{Tracking} \td{OptiTrack motion-capture cameras}}
+\tr{\td{EEG} \td{Brain Products actiCHamp, 64-channel active electrodes}}
+\tr{\td{Software} \td{NaviNIBS (open source) + EphyNIBS + optimizer}}
+}
+}
+
+\subtree{\title{In silico evaluation}
+\taxon{finding}
+\p{N=10 healthy participants, left dlPFC (two subregions), 13 coil angles / 21 locations. In silico, artifact minimization converged in \strong{~30 s (angle) / ~40 s (location)} versus \strong{~8.5 min (angle) / ~24 min (location)} for direct EL-TEP maximization. NaviNIBS is already open source; EphyNIBS and the optimization algorithms are to follow. Now in use in ongoing in vivo studies.}
+}
+
+\subtree{\title{Companion poster — deep-brain single-neuron evidence of plasticity}
+\taxon{finding}
+\meta{poster}{41}
+\meta{authors}{C. W. Dickey, U. Hassan, H. Kawasaki, A. E. Rhone, C. C. Cline, N. T. Trapp, A. D. Boes, J. I. Berger, C. J. Keller}
+\image{conf-keller-deepbrain-plasticity.jpg}
+\p{\strong{Caption.} Same lab, from the other end of the electrode: single-neuron recordings via depth microwires in epilepsy patients show that prefrontal \strong{intermittent theta-burst TMS (iTBS)} induces cell-type-specific plasticity in deep human neurons (striato-thalamic vs limbic), consistent with a BCM-like sliding threshold. Category 2 (deep-brain inference) — direct intracranial evidence for what the surface TMS-EEG loop is optimizing.}
+}
+
+\subtree{\title{Companion poster — TMS-EEG sensitivity to coil angle, location, intensity}
+\taxon{finding}
+\meta{authors}{L. Schreiner, C. C. Cline, S. M. Gray, E. Klebaner, U. Hassan, H. Lee, N. T. Trapp, A. D. Boes, C. J. Keller}
+\image{conf-keller-tmseeg-sensitivity.jpg}
+\p{\strong{Caption.} The dose-response map behind the optimizer: probing dlPFC with TMS-EEG across coil angle, location, and intensity shows the \strong{EL-TEP} has a distinct sensitivity profile, cleanly dissociable from the muscle/scalp artifact, and validated against stereo-EEG. This is the response surface the Bayesian loop above searches.}
+}
+
+\p{Why it matters for us: this is the reference architecture for a \strong{released} closed-loop stimulation loop — the same NaviNIBS/EphyNIBS pattern our own possible-world rotation ([[bcf-devices]]) would adopt to close the loop on genuine choice.}

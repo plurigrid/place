@@ -1,0 +1,33 @@
+\title{Wearable Disposable Electrotherapy accelerates wound healing}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{electrotherapy}
+\tag{wearable}
+\tag{wound-healing}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{poster}{137}
+\meta{authors}{M. Belali Koochesfahani, K. Donnery, A. Senthil Kumar, R. Bhuiyan, D. A. Drumm, B. Mirza, M. Posada Perez, M. R. Diaz Uraga, S. N. Makaroff, G. Núñez Ponasso, M. FallahRad, M. Bikson}
+\meta{institution}{City College of New York; Worcester Polytechnic Institute; Martinos Center, Massachusetts General Hospital}
+\meta{modality}{self-powered electrotherapy patch}
+\meta{category}{open-source device application}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. A second Bikson-group \strong{Wearable Disposable Electrotherapy (WDE)} device — this one a self-powered bandage that accelerates wound healing. Not a brain device, but the clearest example at the conference of a \strong{fully self-contained, electronics-free, printed} stimulation patch, which is why it sits in the device-application category.}
+
+\image{ccny-wde-wound.jpg}
+
+\subtree{\title{Device architecture}
+\taxon{remark}
+\p{A printed stack, all in a thin bandage: (1) skin bandage/adhesive, (2) flexible PET sheet, (3) printed battery (printed carbon / anode / separator / cathode), (4) stimulation electrode (printed silver anode + cathode), (5) ion-conductive hydrogel, (6) wound dressing. Self-powered, electronics-free, no external stimulator or wires, no electrode contact with the wound bed, single-use controlled dose, scalable, bandage-like.}
+}
+
+\subtree{\title{Performance and results}
+\taxon{finding}
+\p{Target 300 µA; WDE current \strong{286 ± 98 µA}; 120 min/day; WDE charge 2.06 ± 0.71 C vs CC 2.16 C. In a full-thickness rat wound model, WDE matched conventional constant-current electrotherapy and \strong{accelerated healing by 29\%} (50\% closure at 7.10 ± 1.36 vs 5.02 ± 1.35 days, p = 0.003), with earlier exudate resolution and ~25\% higher tissue cellularity (p = 0.016). Histology showed greater collagen deposition, angiogenesis, and macrophage response; cellular-resolution BEM-FMM modeling linked local fields (>0.44 V/m at tissue interfaces, ~0.30 V/m near wound edges) to the effect.}
+\p{Funding: NIH UG3NS134619, R01EB035129, UG3DA048502, UH3DA048502 (bioRxiv preprint).}
+}
+
+\p{Why it matters for us: proof that a useful therapeutic dose fits in a printed, disposable, self-powered patch — the extreme low-cost, electronics-free end of the device design space that [[bcf-devices]] surveys.}

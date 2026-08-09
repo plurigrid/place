@@ -1,0 +1,21 @@
+\title{Evoked potentials: an extended multiscale cortical circuit framework}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{multiscale}
+\tag{modeling}
+\tag{eeg}
+\meta{venue}{2026 NYC Neuromodulation Conference}
+\meta{poster}{48}
+\meta{authors}{S. Lee, …, A. Opitz}
+\meta{institution}{University of Minnesota (Opitz Lab)}
+\meta{category}{deep brain imaging inference; methods & modeling}
+
+\p{Filed under [[conf-neuromod-nyc-2026]]. A modeling companion to the Minnesota traveling-wave work ([[conf-umn-twtacs]]).}
+
+\image{conf-umn-multiscale-circuit.jpg}
+
+\p{\strong{Caption.} A biophysical, \strong{multiscale cortical-circuit} model that couples microscopic transmembrane currents to the \strong{macroscopic scalp voltages} you actually record — a realistic-head FEM feeding a laminar circuit so simulated scalp EEG has a mechanistic generator. Aimed at making NIBS dose-response in motor cortex (and non-motor targets by frontal geometry) target-specific and electric-field-informed, rather than nominal. The generative bridge between the fast single-unit solves ([[conf-neuromodec-hh-operators]]) and network-scale readouts.}

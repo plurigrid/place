@@ -1,0 +1,41 @@
+\title{Making bidirectional BCIs last a decade}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{bidirectional-bci}
+\tag{icms}
+\tag{somatosensory}
+\tag{qualia}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{speaker}{Robert Gaunt}
+\meta{institution}{Rehab Neural Engineering Labs (RNEL), Dept. of Physical Medicine & Rehabilitation, University of Pittsburgh}
+\meta{url}{http://rnel.pitt.edu}
+\meta{disclosures}{Prior consultant and research funding from Blackrock Neurotech; NeuroWired SAB}
+\meta{landscape-class}{[I] High-Bandwidth Invasive}
+\meta{category}{sense stimulation & distinct qualia}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. This is the flagship \strong{sense stimulation & distinct qualia} talk: Robert Gaunt's RNEL group runs \strong{bidirectional} BCIs — motor decoding out, and intracortical microstimulation (ICMS) of somatosensory cortex back in — where stimulation on a given electrode evokes a \strong{distinct, localized tactile percept} on the hand. That evoked percept is the quale; the "last a decade" framing is about array longevity holding that percept map stable over years.}
+
+\subtree{\title{Title}
+\taxon{remark}
+\image{conf-pitt-gaunt-title.jpg}
+\p{\strong{Caption.} \em{Making bidirectional BCIs last a decade} — Robert Gaunt, RNEL, Dept. of Physical Medicine & Rehabilitation, University of Pittsburgh (\code{http://rnel.pitt.edu}). Disclosures: prior consultant / research funding from Blackrock Neurotech; NeuroWired SAB. Audience faces in the photo are blurred.}
+}
+
+\subtree{\title{Microstimulation evokes focal somatotopic sensations}
+\taxon{finding}
+\image{conf-pitt-gaunt-somatotopy.jpg}
+\p{\strong{Caption.} The distinct-qualia evidence: ICMS on the medial/lateral S1 arrays at ~\strong{60 µA} evokes \strong{focal, digit-specific tactile percepts} — individual electrodes map to individual fingers (thumb/D1 … little/D5) and hand regions along the somatotopic homunculus. Separable electrodes → separable, nameable percepts. This is the sharp end of "distinct qualia."}
+}
+
+\subtree{\title{Tissue safety — and the FDA burden}
+\taxon{finding}
+\image{conf-pitt-gaunt-tissue-safety.jpg}
+\p{\strong{Caption.} Chronic-ICMS tissue-safety study (Rajan et al., \em{J. Neural Eng.} 12 (2015) 066018): in 3 NHPs, two arrays each, 4 h/day, 5 d/wk for 6 months at up to 100 µA / 300 Hz, stimulation caused \strong{no detectable additional tissue effect} beyond array presence, and no effect on fine motor behavior.}
+\p{\strong{The speaker's emphasis: the FDA path is the hard part.} The talk framed \em{making bidirectional BCIs last a decade} as fundamentally a \strong{regulatory and durability} problem, not a neuroscience one — years of tissue-safety histology, chronic large-animal data, and demonstrated device longevity are the gating burden for an implant meant to stay in a human head for ten years. (Compare Motif's "4 years, $20M to IDE," [[conf-motif-dot]] — the same difficulty, from the device-company side.)}
+}
+
+\p{Why it matters for us: the invasive endpoint of the "distinct qualia" axis — the same axis our noninvasive multi-sensory stimulation direction ([[bcf-0056]]) approaches from the other side. Maps to \strong{[I] High-Bandwidth Invasive} (Blackrock/Utah array) in [[bcf-0051]].}

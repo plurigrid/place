@@ -1,0 +1,34 @@
+\title{High-Capacity tDCS in benchtop & wearable platforms}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tdcs}
+\tag{wearable}
+\tag{stimulation}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{poster}{138}
+\meta{authors}{K. Donnery, M. FallahRad, M. Belali Koochesfahani, C. Hernandez, J. M. Elwassif, M. Saw, B. Babaev, R. Bhuiyan, N. Khadka, M. Bikson}
+\meta{institution}{Biomedical Engineering, City College of New York; Macaulay Honors College; Hunter College}
+\meta{modality}{transcranial direct current stimulation (tDCS)}
+\meta{category}{open-source device application}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. From Marom Bikson's group (City College of New York): pushing tDCS to \strong{high current} and into a self-contained \strong{wearable disposable} form factor. Filed under \strong{device application}; cross-referenced to \strong{sense stimulation} because tolerability (VASP-100 pain scoring) is the gating variable.}
+
+\image{ccny-hc-tdcs.jpg}
+
+\subtree{\title{Claim}
+\taxon{finding}
+\p{Conventional tDCS applies up to 4 mA; HD-tDCS splits current across HD electrodes. They developed \strong{High-Capacity tDCS (HC-tDCS)} capable of \strong{6+ mA} through two specialized hydrogel electrodes, delivered either from a bench-top source or from a self-contained, electronics-less \strong{Wearable Disposable Electrotherapy} patch (0.8--1.2 mm thick, 190 mm long, 25 cm² hydrogel interface on the forehead under the hairline).}
+}
+
+\subtree{\title{Study}
+\taxon{remark}
+\p{HC-tDCS across the PFC of healthy adults (n=6), 30 min at 1--6 mA (anode right). During stimulation participants ran a blocked lexical-decision task and reported VASP-100 pain every 2 min; tolerability assessed by VAS-100, skin condition, thermal imaging, and adverse-event questionnaires.}
+\p{Adaptive bench-top VASP-100 pain (subject avg ± SD) ranged from \strong{4.7 ± 4.9 at 1 mA} to \strong{12.6 ± 11.7 at 6 mA}, with no significant difference vs the wearable device and no significant task-performance difference across conditions. Conclusion: specialized HC electrode design + adaptive current/voltage control supports tolerated bifrontotemporal tDCS at \strong{≥6 mA} in both benchtop and disposable-wearable platforms.}
+\p{Funding: Harold Shames Fund. Ref: FallahRad et al., \em{Wearable Disposable Electrotherapy}, bioRxiv (2023): 2023-11.}
+}
+
+\p{Why it matters for us: a wearable, electronics-free stimulation device at real dose — a concrete comparison point for the stimulation-capable end of [[bcf-devices]].}

@@ -1,0 +1,39 @@
+\title{Influence of optimization constraints on personalized vs group-optimized tES}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tes}
+\tag{personalization}
+\tag{optimization}
+\meta{venue}{2026 NYC Neuromodulation Conference}
+\meta{poster}{86}
+\meta{authors}{R. Salvador, J. Zhou, B. Mercadal, B. Manor, G. Ruffini}
+\meta{institution}{Neuroelectrics (Barcelona); Barcelona Computational Foundation; Hinda & Arthur Marcus Institute for Aging Research, Hebrew SeniorLife / Harvard Medical School}
+\meta{metric}{NERNI (normalized error relative to no intervention)}
+\meta{category}{open-source device application; deep brain imaging inference}
+
+\p{Filed under [[conf-neuromod-nyc-2026]]. The quantitative anchor for the personalization question: when does a per-person MRI actually beat a group-optimized montage, and can you fake it without the MRI? Category 1 (the TES device) meeting category 2 (per-person anatomy). No people in the photo.}
+
+\image{conf-tes-personalization-note.jpg}
+
+\p{\strong{Method (brief).} 546 head models from the IXI MRI dataset; finite-element lead-field to the cortical surface; Stimweaver optimization minimizing \strong{NERNI} for a left-dlPFC (BA 9/46) target; personalized vs leave-one-out group-pooled protocols compared.}
+
+\subtree{\title{Findings (from the author's walkthrough)}
+\taxon{finding}
+\ul{
+\li{\strong{Personalized benefit plateaus beyond ~2 mA/channel}, but group-optimized protocols keep closing the gap as total current rises to \strong{8 mA} — \em{except} where inter-subject anatomical variability is highest (high current, low target field, tight focality), where personalized still wins by \strong{8--17\% NERNI}.}
+\li{\strong{MRI-free features can't triage.} Scalp geodesic distances, head perimeters, and demographics (no MRI tissue thickness) predict a subject's group-optimization loss with \strong{essentially no signal (CV R²≈0)}.}
+\li{\strong{Donor selection} — electrically-nearest-neighbor pooling using \em{actual} MRI — recovers about \strong{half} the personalized deficit; a learned electro-anatomical metric using only MRI-free features captures only ~\strong{10\%} of that oracle gain.}
+\li{\strong{Feature-limited, not data-limited.} Learning curves flatten — more subjects barely helps; closing the gap needs richer geometric capture, i.e. an actual MRI.}
+}
+}
+
+\subtree{\title{The author's broader take (conversation)}
+\taxon{remark}
+\p{In conversation he framed it the same way from the top: a group task (e.g. one focused on \strong{color perception}) can standardize a protocol \em{at the voxel level}, but not much past that, because head/brain anatomy varies too much. His own interest had moved to \strong{combining TMS with imaging} to map each person's actual \strong{sulcal shape}, and to an \strong{interference pulse read out by EEG} to standardize targeting across individuals — the EL-TEP move in [[conf-stanford-tms-navinibs]].}
+}
+
+\p{Our read: this is the hard evidence behind the "group task fixes the coordinate, not the connection" line — and it prices the alternative. For [[bcf-devices]]: a per-person, scan-registered montage genuinely beats a group-optimized one only in the high-variability corner, and you cannot cheaply fake the MRI; an evoked-potential readout ([[conf-soterix-uhd-tes]] geometry + EL-TEP) is the realistic path to closing it.}

@@ -1,0 +1,22 @@
+\title{Transcorneal electrical stimulation for retinal neuroprotection}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{retina}
+\tag{vision}
+\tag{tes}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{poster}{38}
+\meta{authors}{E. Iseri, H. M. Dowlatabad, O. Sharafi, S. T. Walston, G. Lazzi}
+\meta{institution}{USC — ITEMS, Keck School of Medicine, Dept. of Electrical Engineering (Lazzi Lab)}
+\meta{landscape-class}{[V] Vision Prosthetics}
+\meta{category}{sense stimulation & distinct qualia}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 3 (sense — vision). No people in the photo. Maps to the \strong{[V] Vision Prosthetics} class in [[bcf-0051]].}
+
+\image{conf-usc-transcorneal-retina.jpg}
+
+\p{\strong{Caption.} A computational platform (retina connectomics + FEM + NEURON) to place \strong{transcorneal / retro-orbital electrical stimulation} so that induced current density selectively targets \strong{outer retinal neurons} for neuroprotection in degeneration (e.g. AMD/RP), rather than just directly firing ganglion cells. The vision-side entry point of the "sense stimulation" axis — writing into the earliest sensory layer.}

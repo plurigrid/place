@@ -1,0 +1,24 @@
+\title{Data-driven fast estimation of the Hodgkin-Huxley model}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{neural-operators}
+\tag{modeling}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{authors}{A. Kerwick, I. Byrne, D. Erdogmus, K. Lockwood, M. Yarossi, A. Dorval}
+\meta{institution}{Northeastern University; University of Massachusetts Boston; University of Utah}
+\meta{category}{methods & modeling}
+
+\p{Filed under [[conf-neuromod-nyc-2026]] as a methods/modeling entry (it sits under all three device lenses rather than in one). No people in the photo.}
+
+\image{conf-neuromodec-hh-operators.jpg}
+
+\p{\strong{Caption.} Fourier and Laplace \strong{Neural Operators} (FNO / LNO) trained to reproduce stiff \strong{Hodgkin-Huxley} membrane dynamics orders of magnitude faster than conventional ODE solvers, evaluated by a rate-of-agreement metric across DC/AC/AC+DC stimulus regimes. The fast forward-model layer under any simulation-kernel voting scheme like ours ([[bcf-devices]]): if HH runs in real time, per-vote world-simulation becomes cheap.}
+
+\subtree{\title{Conversation note}
+\taxon{remark}
+\p{From talking with the author: the model is currently limited to \strong{single-membrane potentiation} modeling, which is compute-constrained, and he agreed it is only really meaningful for \strong{large-scale brain behavior once embedded in a bigger network} — a single membrane in isolation does not tell you much. This is \strong{consistent with the other Hodgkin-Huxley discussion} at the conference: the value is in the network, and the point of making the single-unit solve cheap (via neural operators) is precisely to afford the network scale.}
+}

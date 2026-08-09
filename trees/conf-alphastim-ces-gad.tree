@@ -1,0 +1,21 @@
+\title{At-home cranial electrotherapy stimulation (Alpha-Stim) for generalized anxiety}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{ces}
+\tag{eeg}
+\tag{anxiety}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{authors}{G. Ross, Z. Stewart, T. Schwippel, C. N. Carlton, et al.}
+\meta{institution}{Vanderbilt University Dept. of Psychiatry; UNC-CH; Carolina Center for Neuromodulation; Pulvinar Neuro}
+\meta{device}{Alpha-Stim AID (cranial electrotherapy stimulation)}
+\meta{category}{open-source device application}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 1 (device application); crosses into category 3 (affective state). Background bystanders are blurred.}
+
+\image{conf-alphastim-ces-gad.jpg}
+
+\p{\strong{Caption.} A double-blind RCT of at-home \strong{cranial electrotherapy stimulation (Alpha-Stim AID)} for generalized anxiety disorder in young adults, with resting-state HD-EEG as a mechanistic readout. Active CES reduced frontal-midline theta power and Default-Mode-Network alpha connectivity, and those EEG changes correlated with self-reported somatic-anxiety improvement — offered as the first neurophysiological evidence of a CES mechanism for GAD.}

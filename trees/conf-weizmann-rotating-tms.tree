@@ -1,0 +1,21 @@
+\title{Extending rotating-field TMS from 270° to full circle}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tms}
+\tag{rotating-field}
+\tag{coil}
+\meta{venue}{2026 NYC Neuromodulation Conference}
+\meta{poster}{85}
+\meta{authors}{M. Yeshua, E. Weinreb, E. Moses}
+\meta{institution}{Weizmann Institute of Science}
+\meta{category}{open-source device application; methods & modeling}
+
+\p{Filed under [[conf-neuromod-nyc-2026]]. A coil-field-geometry method (a preliminary N=1 motor-threshold evaluation). A bystander is blurred.}
+
+\image{conf-weizmann-rotating-tms.jpg}
+
+\p{\strong{Caption.} \strong{Rotating-field TMS (rfTMS)} — a cloverleaf array driven with biphasic pulses at a quarter-cycle offset so the induced field \em{sweeps} the plane rather than pointing one way, recruiting axons across many directions instead of one preferred axis. This work adds a delayed second activation to extend the trajectory from \strong{270° to a full circle} (rfTMS-FC), asking whether closing the loop improves efficacy. The field-orientation control layer beneath any coil-placement rig (cf. [[conf-njit-rtch-coil]], [[conf-stanford-tms-navinibs]]).}

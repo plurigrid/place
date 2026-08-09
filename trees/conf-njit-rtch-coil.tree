@@ -1,0 +1,20 @@
+\title{RTCH — the Robotic TMS Coil Holder}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tms}
+\tag{open-hardware}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{poster}{6}
+\meta{authors}{O. Texter, N. Namdar, I. Arias, E. Kallioniemi}
+\meta{institution}{Brain Stimulation Lab, Biomedical Engineering, New Jersey Institute of Technology}
+\meta{category}{open-source device application}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 1 (open-source device application). Bystander faces in the photo are blurred.}
+
+\image{conf-njit-rtch-coil.jpg}
+
+\p{\strong{Caption.} A cost-effective, 3D-printed \strong{6-DOF robotic TMS coil holder} (Prusa Mk4S, PLA + PETG carbon fiber; high-torque servos + rotary encoders) meant to replace manual coil-holding for long sessions — reducing operator fatigue and coil drift. Target: hold a ~2.5 kg TMS coil within a few mm / few degrees over hours. The low-cost, in-house-manufacturable counterpart to the commercial Axium Cobot in [[conf-stanford-tms-navinibs]].}

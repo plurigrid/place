@@ -1,0 +1,33 @@
+\title{Introducing Ultra High Definition tES}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tes}
+\tag{hd-tes}
+\tag{electrode-placement}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{poster}{123}
+\meta{authors}{N. Khadka, S. Li, E. Caparelli-Daquer, B. Hampstead, A. Datta}
+\meta{institution}{Soterix Medical; McGovern Medical School (Houston); Rio de Janeiro State University; University of Michigan; City College of New York}
+\meta{modality}{transcranial electrical stimulation (tES)}
+\meta{open-source}{false}
+\meta{category}{open-source device application}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. Soterix Medical's proposal to move HD-tES off the 10-10 grid and onto a denser \strong{10-05} montage. A device-application poster: same stimulator, finer electrode placement. Noted honestly as \strong{commercial / not open source} — it sits in the device-application category by function, not by license.}
+
+\image{soterix-uhd-tes.jpg}
+
+\subtree{\title{Claim}
+\taxon{remark}
+\p{HD-tES has been restricted to \strong{10-10} electrode placement; they introduce ultra-high-definition tES on a \strong{10-05} cap (5\% spacing — finer than 10-20's 19--25 channels). Four use cases benefit: (a) motor-cortex mapping, (b) concurrent stimulation of two cortical regions, (c) pairing with 64-channel EEG, (d) flexible array stimulation.}
+}
+
+\subtree{\title{Pipeline and finding}
+\taxon{finding}
+\p{Per-subject pipeline: MRI → segmentation → electrode placement → FEM computation of the induced E-field (V/m), compared head-to-head between 10-10 and 10-05 montages across the four use cases. The denser grid gives \strong{improved spatial resolution and source localization}, selective targeting of nearby regions while avoiding in-between tissue, and fuller cortical coverage — including temporal lobe often missed by 10-20 setups.}
+}
+
+\p{Why it matters for us: the electrode-placement geometry layer under any montage-based EEG/tES device in [[bcf-devices]] — the same 10-10 → 10-05 refinement our scan-registered montage work (the "quality of connection" thread) is chasing from the imaging side.}

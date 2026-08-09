@@ -1,0 +1,21 @@
+\title{Externally controlled traveling-wave dynamics shape cognition}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tacs}
+\tag{traveling-waves}
+\tag{ecog}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{poster}{109}
+\meta{authors}{S. Lee, J. Park, Y. Ketema, I. Alekseichuk, T. A. Berger, A. M. G. Manea, H. Tran, G. Delgado Salazar, S. D. König, A. B. Herman, D. P. Darrow, J. Zimmermann, A. Opitz}
+\meta{institution}{University of Minnesota (Opitz Lab)}
+\meta{category}{deep brain imaging inference}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 2 (intracranial validation); crosses into category 3 (modulating cognition). No people in the photo.}
+
+\image{conf-umn-twtacs.jpg}
+
+\p{\strong{Caption.} \strong{Traveling-wave tACS (twtACS)} — externally-imposed transcranial alternating fields that generate directional traveling waves across cortex. Human \strong{ECoG} confirmed the fields shift the phase/timing of multi-unit activity, and the induced waves produced direction- and speed-dependent effects on memory and visual-attention tasks — causal evidence that traveling-wave structure shapes cognition, not just correlates with it (PNAS 2026).}

@@ -1,0 +1,39 @@
+\title{Motif Neurotech DOT: sub-scalp cortical therapeutic}
+\taxon{reference}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{minimally-invasive}
+\tag{ecog}
+\tag{stimulation}
+\meta{venue}{Neuromodulation Conference, NYC (2026)}
+\meta{company}{Motif Neurotech}
+\meta{product}{DOT (Digitally-programmable Over-brain Therapeutic)}
+\meta{url}{https://motifneuro.tech}
+\meta{modality}{implanted stim + ECoG-band sense}
+\meta{landscape-class}{[M] Minimally Invasive / Neural Dust}
+\meta{category}{deep brain imaging inference + sense stimulation}
+
+\p{Field note from the Neuromodulation Conference (NYC, 2026), filed under [[conf-neuromod-nyc-2026]]. Motif Neurotech's \strong{DOT} is a sub-scalp, minimally invasive cortical stimulator that also reads high-frequency activity — so it straddles two of our categories: \strong{deep brain imaging inference} (the sense side) and \strong{sense stimulation} (the dose side). It is the same entity our landscape already tracks as canonical of the \strong{[M] Minimally Invasive} class in [[bcf-0051]].}
+
+\p{Content transcribed from three publicly presented slides. The slide images themselves were marked \em{investor overview / confidential} and are deliberately \strong{not} republished here; only the scientific claims shown at the podium are recorded.}
+
+\subtree{\title{Sense: implanted electrodes track high-frequency brain activity}
+\taxon{finding}
+\p{The bandwidth argument for going under the scalp: scalp \strong{EEG} resolves ~\strong{0.2--25 Hz}, while the implanted \strong{ECoG}-band electrode (DOT / probe) resolves ~\strong{0.2--200 Hz}. Cross-section runs Skin → Skull → Dura/Arachnoid/Pia → Cerebral cortex; the DOT sits above the skull, the probe reaches cortex. This is the \strong{deep brain imaging inference} claim: an order-of-magnitude wider readable band than any scalp montage in our ledger.}
+}
+
+\subtree{\title{Stimulation: electric field directed away from scalp — expand dose window}
+\taxon{finding}
+\p{A protective cover shapes the DOT field so the \strong{electric field is directed away from the scalp}, expanding the usable \strong{dose window} (the gap between therapeutic effect and scalp sensation/discomfort). FEM field lines shown through Scalp / Skull / CSF / Grey matter.}
+\p{Cited: S. Sridhar, …, A. Peterchev, W. Grill, \em{J. Neural Eng.} \strong{23} 046034 (2026).}
+}
+
+\subtree{\title{Safety: 4 years, $20M to IDE}
+\taxon{remark}
+\p{Headline: \strong{265+} functional tests passed, \strong{100+} cumulative months of animal safety data, \strong{5×} total dose factor, \strong{FDA IDE approved}. Biocompatibility/safety battery included ISO 14708 (implantable neurostimulators), IEC 60601 (electrical safety), cytotoxicity, sensitization, irritation, acute/sub-acute/sub-chronic/chronic systemic toxicity, implantation effects and neurotoxicity (3-month), genotoxicity (Ames + chromosomal aberration), stimulation safety, carcinogenicity, accelerated aging, material-mediated pyrogenicity, endotoxin (newly added), and particulate.}
+}
+
+\p{Why it matters for us: DOT is the concrete instance of the "expand the dose window by controlling field geometry" idea, and the ECoG-band figure is the honest ceiling on what scalp devices in [[bcf-devices]] can ever infer.}

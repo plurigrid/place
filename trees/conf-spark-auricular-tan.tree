@@ -1,0 +1,22 @@
+\title{Wearable auricular neurostimulation modulates acute stress}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tan}
+\tag{wearable}
+\tag{vagus}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{poster}{80}
+\meta{authors}{M. J. Darrow, P. Putnam, M. Heimann, J. Wettenstein, H. Van der Walt, C. Benner, M. A. McWade, B. L. Wade, A. Covalin, N. Khodaparast, K. Harada}
+\meta{institution}{Spark Biomedical; Battelle Memorial Institute}
+\meta{product}{Sparrow Hawk tAN (Model 511)}
+\meta{category}{open-source device application}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 1 (device application); crosses into category 3 (affective/stress state).}
+
+\image{conf-spark-auricular-tan.jpg}
+
+\p{\strong{Caption.} \strong{Sparrow Hawk}, a cable-free wearable \strong{transcutaneous auricular neurostimulation (tAN)} device, in a randomized sham-controlled acute-stress study (N=40). Active tAN attenuated the stress-induced rise in subjective stress (SMART) and inflammatory biomarkers (cortisol, IL-6, TNF-α), the latter sampled non-invasively via a "Corti" sweat wearable. A consumer-form-factor vagal stimulator — the wearable, non-invasive end of the device space in [[bcf-devices]].}

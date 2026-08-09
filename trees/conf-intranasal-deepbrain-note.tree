@@ -1,0 +1,25 @@
+\title{Intranasal deep-brain data collection (lead)}
+\taxon{conversation}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{deep-brain}
+\tag{intranasal}
+\tag{field-note}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{format}{hallway conversation (no image)}
+\meta{category}{deep brain imaging inference}
+
+\p{Hallway field note from [[conf-neuromod-nyc-2026]] — a lead, not a written-up poster. No photo.}
+
+\subtree{\title{The work}
+\taxon{remark}
+\p{Some interesting work on \strong{intranasal deep-brain data collection} — using the nasal route as a shorter path toward deep structures. The open methodological question raised: how to \strong{subtract out the olfactory-bulb signal}, which sits right in the access path and contaminates whatever deeper source you are after.}
+}
+
+\subtree{\title{Our note (BCI place)}
+\taxon{remark}
+\p{For that access route, \strong{fiber optics look easier than EEG}: EEG's electrode/size constraints fight the geometry of a nasal path, whereas an optical fiber (fluorescence / photometry) is thin enough to go where the EEG can't and doesn't need the olfactory bulb as a return. Files against category 2 (deep-brain inference) — a cheaper, less-invasive access angle than the implanted-electrode ceiling ([[conf-motif-dot]]); the olfactory-bulb-subtraction problem is the thing to solve before it is trustworthy.}
+}

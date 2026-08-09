@@ -1,0 +1,19 @@
+\title{Why do we care about the target? (TMS targeting talk)}
+\taxon{poster}
+\author{monaduck1069}
+\date{2026-08-01}
+\import{macros}
+\tag{conference}
+\tag{neuromodulation-nyc-2026}
+\tag{tms}
+\tag{targeting}
+\tag{connectomics}
+\meta{venue}{Neuromodec 2026 (NYC)}
+\meta{format}{podium talk (projected slide)}
+\meta{category}{deep brain imaging inference}
+
+\p{Filed under [[conf-neuromod-nyc-2026]], category 2 (imaging-derived targeting). Projected talk slide; audience cropped out.}
+
+\image{conf-fox-targeting-talk.jpg}
+
+\p{\strong{Caption.} A targeting talk making the case that \em{where} you stimulate is the whole game: \strong{connectivity-based} targeting (via fMRI cortico-subcortical connection and drug-cue reactivity maps) versus \strong{scalp-based} targeting, with a depression trial (MADRS) showing the connectivity-guided target outperforming. Cites Taylor et al. 2026 (JAMA Psychiatry). Same thesis as [[conf-siddiqi-impulsivity-mapping]] — the target is an imaging inference, not a scalp landmark.}
