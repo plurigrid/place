@@ -1,0 +1,526 @@
+\title{Public EEG File Inventory and Deterministic Color Ledger}
+\taxon{inventory}
+\author{monaduck1069}
+\date{2026-07-13}
+\tag{bci}
+\tag{eeg}
+\tag{data-request}
+\tag{cohort}
+\tag{color-ledger}
+\meta{place}{place://public/inventory}
+\meta{source}{private://inventory/source}
+\meta{request}{private contact route on parent page}
+\meta{access}{request-only; case-by-case review}
+\meta{status}{public alias ledger; no file-level release authorization}
+\meta{private-registry}{maintainer-held; not published}
+\meta{snapshot-date}{2026-07-13}
+\meta{source-latest-evidence}{2026-06-28}
+\meta{available-units}{38}
+\meta{available-files}{88}
+\meta{available-bytes}{21036101577}
+\meta{requestable-files}{77}
+\meta{tooling-fixture-files}{11}
+\meta{trit-minus}{29}
+\meta{trit-zero}{30}
+\meta{trit-plus}{29}
+\meta{trit-sum}{0}
+\meta{trit-modulus}{3}
+\meta{color-kernel-revision}{4b19d9cb21b719e19ab477b6d54fd124f8304d5f}
+\meta{color-kernel-tree}{41ed0ba365f87dcfc683c2b22e102b984056f07c}
+\meta{color-kernel-version}{0.5.0}
+\meta{color-kernel-verified-date}{2026-07-14}
+\meta{color-seed}{stable seed of public artifact alias}
+\meta{color-selection}{first unused color matching the assigned trit}
+
+\p{This public page lists every file in the locally verified offer surface as a snapshot-scoped anonymous artifact alias and assigns each file a deterministic color. It contains 88 files in 38 units: 77 requestable artifacts and 11 simulated tooling fixtures. The exact restricted inventory, filenames, paths, timestamps, hashes, accounts, host details, participant-like labels, and row linkages are intentionally not embedded.}
+\p{A listing means that an artifact is locally present and that a governed request can be reviewed. It is not a license, consent record, blanket offer, or release authorization. Colors identify artifact aliases only; they do not identify people, sessions, devices, or physiological states.}
+\p{Aliases are scoped to the snapshot date and are not cross-snapshot identities. Cite the snapshot date with every request.}
+\subtree{
+\title{Request Data}
+\p{Use the private contact route published on the parent page with subject \code{[data request]}. Cite one or more public group, unit, or file aliases and the snapshot date from this page. Do not put private source values in a public issue or pull request.}
+\p{State the smallest useful artifact set, intended use, requester and collaborators, onward-sharing plan, security controls, retention and deletion plan, and the applicable consent, ethics, privacy, rights, and release-authority basis. Review may return aggregate metadata, a schema, a redacted or derived subset, or nothing.}
+}
+\subtree{
+\title{Color and GF(3) Method}
+\p{Artifact aliases are ordered deterministically by source class, anonymous unit, and artifact kind. Complete triples receive \code{-1}, \code{0}, \code{+1}; any trailing aliases receive \code{0}. Each alias is assigned a stable seed; the generator selects the first unused color whose canonical trit matches the assigned trit. The ledger has 29 minus, 30 zero, and 29 plus assignments, so the trit sum is zero and therefore conserved modulo three. Files remain separate colored artifacts under their anonymous cohort and unit.}
+}
+\subtree{
+\title{Complete Available-File Ledger}
+\p{The ledger below contains all 88 locally present files, totaling 21,036,101,577 bytes. Real-data artifacts remain request-only. Simulated entries are listed for completeness and are tooling fixtures, not physiological data.}
+\subtree{
+\title{EEG cohort (April)}
+\meta{cohort-code}{OFR-A}
+\meta{unit-count}{17}
+\meta{file-count}{17}
+\meta{bytes}{16557921432}
+\p{Seventeen requestable files from the companion and support surface cited by the approved April inventory. Placement is cohort-level navigation and does not establish a file-to-human linkage.}
+\subtree{
+\title{Group A1 — face files}
+\meta{request-code}{OFR-A01}
+\meta{unit-count}{6}
+\meta{file-count}{6}
+\meta{bytes}{7069134608}
+\p{Six requestable face files retained by the final companion inventory.}
+\subtree{
+\title{OFR-A01-U01}
+\meta{unit-alias}{OFR-A01-U01}
+\meta{file-count}{1}
+\meta{bytes}{742391808}
+\ul{
+\li{\code{OFR-A01-U01-F01} — \code{face-video}; format \code{MOV}; 742,391,808 bytes; color \code{#91D781}; trit \code{-1}; seed \code{0x3787D0B142347452}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-A01-U02}
+\meta{unit-alias}{OFR-A01-U02}
+\meta{file-count}{1}
+\meta{bytes}{16661359}
+\ul{
+\li{\code{OFR-A01-U02-F01} — \code{face-video}; format \code{MOV}; 16,661,359 bytes; color \code{#3AC56C}; trit \code{0}; seed \code{0x4AC920EF7EEAA08B}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-A01-U03}
+\meta{unit-alias}{OFR-A01-U03}
+\meta{file-count}{1}
+\meta{bytes}{28686171}
+\ul{
+\li{\code{OFR-A01-U03-F01} — \code{face-video}; format \code{MOV}; 28,686,171 bytes; color \code{#C10B12}; trit \code{1}; seed \code{0x8DDEA3864ADB9ACD}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-A01-U04}
+\meta{unit-alias}{OFR-A01-U04}
+\meta{file-count}{1}
+\meta{bytes}{1489982462}
+\ul{
+\li{\code{OFR-A01-U04-F01} — \code{face-video}; format \code{MOV}; 1,489,982,462 bytes; color \code{#BCCB17}; trit \code{-1}; seed \code{0xCC76A43FCE22B5F2}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-A01-U05}
+\meta{unit-alias}{OFR-A01-U05}
+\meta{file-count}{1}
+\meta{bytes}{3270864928}
+\ul{
+\li{\code{OFR-A01-U05-F01} — \code{face-video}; format \code{MOV}; 3,270,864,928 bytes; color \code{#5D64D9}; trit \code{0}; seed \code{0xC47885E4E8558149}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-A01-U06}
+\meta{unit-alias}{OFR-A01-U06}
+\meta{file-count}{1}
+\meta{bytes}{1520547880}
+\ul{
+\li{\code{OFR-A01-U06-F01} — \code{face-video}; format \code{MOV}; 1,520,547,880 bytes; color \code{#E64F63}; trit \code{1}; seed \code{0xD8F5981F529EED64}; index \code{1}.}
+}
+}
+}
+\subtree{
+\title{Group A2 — April screen files}
+\meta{request-code}{OFR-A02}
+\meta{unit-count}{7}
+\meta{file-count}{7}
+\meta{bytes}{9449481596}
+\p{Seven requestable April-dated screen files.}
+\subtree{
+\title{OFR-A02-U01}
+\meta{unit-alias}{OFR-A02-U01}
+\meta{file-count}{1}
+\meta{bytes}{1337578884}
+\ul{
+\li{\code{OFR-A02-U01-F01} — \code{screen-video}; format \code{MOV}; 1,337,578,884 bytes; color \code{#E6AC91}; trit \code{-1}; seed \code{0xD76ACC46882BF1F9}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-A02-U02}
+\meta{unit-alias}{OFR-A02-U02}
+\meta{file-count}{1}
+\meta{bytes}{32699665}
+\ul{
+\li{\code{OFR-A02-U02-F01} — \code{screen-video}; format \code{MOV}; 32,699,665 bytes; color \code{#1095EA}; trit \code{0}; seed \code{0xBCC72CF0AEF3D4FC}; index \code{6}.}
+}
+}
+\subtree{
+\title{OFR-A02-U03}
+\meta{unit-alias}{OFR-A02-U03}
+\meta{file-count}{1}
+\meta{bytes}{2703573051}
+\ul{
+\li{\code{OFR-A02-U03-F01} — \code{screen-video}; format \code{MOV}; 2,703,573,051 bytes; color \code{#97237E}; trit \code{1}; seed \code{0xD34CC113081B1FA7}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-A02-U04}
+\meta{unit-alias}{OFR-A02-U04}
+\meta{file-count}{1}
+\meta{bytes}{4557441}
+\ul{
+\li{\code{OFR-A02-U04-F01} — \code{screen-video}; format \code{MOV}; 4,557,441 bytes; color \code{#935E2F}; trit \code{-1}; seed \code{0x3D105465713AFC75}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-A02-U05}
+\meta{unit-alias}{OFR-A02-U05}
+\meta{file-count}{1}
+\meta{bytes}{436867245}
+\ul{
+\li{\code{OFR-A02-U05-F01} — \code{screen-video}; format \code{MOV}; 436,867,245 bytes; color \code{#2F9A48}; trit \code{0}; seed \code{0xB69D965B0A020765}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-A02-U06}
+\meta{unit-alias}{OFR-A02-U06}
+\meta{file-count}{1}
+\meta{bytes}{203223577}
+\ul{
+\li{\code{OFR-A02-U06-F01} — \code{screen-video}; format \code{MOV}; 203,223,577 bytes; color \code{#8051EB}; trit \code{1}; seed \code{0xC24C1A8C1C8E4597}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-A02-U07}
+\meta{unit-alias}{OFR-A02-U07}
+\meta{file-count}{1}
+\meta{bytes}{4730981733}
+\ul{
+\li{\code{OFR-A02-U07-F01} — \code{screen-video}; format \code{MOV}; 4,730,981,733 bytes; color \code{#A43E2F}; trit \code{-1}; seed \code{0xF685057E2DF4660D}; index \code{1}.}
+}
+}
+}
+\subtree{
+\title{Group A3 — supporting files}
+\meta{request-code}{OFR-A03}
+\meta{unit-count}{4}
+\meta{file-count}{4}
+\meta{bytes}{39305228}
+\p{Four requestable supporting files. Listing does not establish redistribution rights.}
+\subtree{
+\title{OFR-A03-U01}
+\meta{unit-alias}{OFR-A03-U01}
+\meta{file-count}{1}
+\meta{bytes}{9315}
+\ul{
+\li{\code{OFR-A03-U01-F01} — \code{supporting-document}; format \code{Markdown}; 9,315 bytes; color \code{#5EE3B6}; trit \code{0}; seed \code{0x241671188C46708A}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-A03-U02}
+\meta{unit-alias}{OFR-A03-U02}
+\meta{file-count}{1}
+\meta{bytes}{9315}
+\ul{
+\li{\code{OFR-A03-U02-F01} — \code{supporting-document}; format \code{Markdown}; 9,315 bytes; color \code{#EF6ACC}; trit \code{1}; seed \code{0x21CD7D98D75F4EC1}; index \code{11}.}
+}
+}
+\subtree{
+\title{OFR-A03-U03}
+\meta{unit-alias}{OFR-A03-U03}
+\meta{file-count}{1}
+\meta{bytes}{19643299}
+\ul{
+\li{\code{OFR-A03-U03-F01} — \code{supporting-document}; format \code{PDF}; 19,643,299 bytes; color \code{#C9F357}; trit \code{-1}; seed \code{0x65E9C2B85E108C8F}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-A03-U04}
+\meta{unit-alias}{OFR-A03-U04}
+\meta{file-count}{1}
+\meta{bytes}{19643299}
+\ul{
+\li{\code{OFR-A03-U04-F01} — \code{supporting-document}; format \code{PDF}; 19,643,299 bytes; color \code{#7DEBCA}; trit \code{0}; seed \code{0xC2C54FF0139EEB6C}; index \code{2}.}
+}
+}
+}
+}
+\subtree{
+\title{Math-proofs cohort (March)}
+\meta{cohort-code}{OFR-B}
+\meta{unit-count}{14}
+\meta{file-count}{14}
+\meta{bytes}{3778530919}
+\p{Fourteen requestable screen or audio files grouped at the approved March cohort level: ten March-dated files and four undated companion files. Participant-row reconciliation remains separate from this public offer ledger.}
+\subtree{
+\title{Group B1 — March screen and audio files}
+\meta{request-code}{OFR-B01}
+\meta{unit-count}{10}
+\meta{file-count}{10}
+\meta{bytes}{3742859816}
+\p{Ten requestable March-dated screen or audio files.}
+\subtree{
+\title{OFR-B01-U01}
+\meta{unit-alias}{OFR-B01-U01}
+\meta{file-count}{1}
+\meta{bytes}{796778}
+\ul{
+\li{\code{OFR-B01-U01-F01} — \code{screen-video}; format \code{MOV}; 796,778 bytes; color \code{#6333E1}; trit \code{1}; seed \code{0x4669194FEABFBC02}; index \code{5}.}
+}
+}
+\subtree{
+\title{OFR-B01-U02}
+\meta{unit-alias}{OFR-B01-U02}
+\meta{file-count}{1}
+\meta{bytes}{6628480}
+\ul{
+\li{\code{OFR-B01-U02-F01} — \code{screen-video}; format \code{MOV}; 6,628,480 bytes; color \code{#89C626}; trit \code{-1}; seed \code{0x62F8F3BD7CA9A244}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-B01-U03}
+\meta{unit-alias}{OFR-B01-U03}
+\meta{file-count}{1}
+\meta{bytes}{9255863}
+\ul{
+\li{\code{OFR-B01-U03-F01} — \code{screen-video}; format \code{MOV}; 9,255,863 bytes; color \code{#64E2E8}; trit \code{0}; seed \code{0x554C88C89A8575CD}; index \code{6}.}
+}
+}
+\subtree{
+\title{OFR-B01-U04}
+\meta{unit-alias}{OFR-B01-U04}
+\meta{file-count}{1}
+\meta{bytes}{11194301}
+\ul{
+\li{\code{OFR-B01-U04-F01} — \code{screen-video}; format \code{MOV}; 11,194,301 bytes; color \code{#932C78}; trit \code{1}; seed \code{0x5401307E5413610C}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-B01-U05}
+\meta{unit-alias}{OFR-B01-U05}
+\meta{file-count}{1}
+\meta{bytes}{4620856}
+\ul{
+\li{\code{OFR-B01-U05-F01} — \code{screen-audio}; format \code{M4A}; 4,620,856 bytes; color \code{#78E10F}; trit \code{-1}; seed \code{0x24D7556607AF44BF}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-B01-U06}
+\meta{unit-alias}{OFR-B01-U06}
+\meta{file-count}{1}
+\meta{bytes}{319076349}
+\ul{
+\li{\code{OFR-B01-U06-F01} — \code{screen-video}; format \code{MOV}; 319,076,349 bytes; color \code{#4ABAD9}; trit \code{0}; seed \code{0x3B79FEB5762EB4DD}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-B01-U07}
+\meta{unit-alias}{OFR-B01-U07}
+\meta{file-count}{1}
+\meta{bytes}{322996889}
+\ul{
+\li{\code{OFR-B01-U07-F01} — \code{screen-video}; format \code{MOV}; 322,996,889 bytes; color \code{#DD466C}; trit \code{1}; seed \code{0xC7B999045B09CD22}; index \code{3}.}
+}
+}
+\subtree{
+\title{OFR-B01-U08}
+\meta{unit-alias}{OFR-B01-U08}
+\meta{file-count}{1}
+\meta{bytes}{2613199703}
+\ul{
+\li{\code{OFR-B01-U08-F01} — \code{screen-video}; format \code{MOV}; 2,613,199,703 bytes; color \code{#8BD966}; trit \code{-1}; seed \code{0x2ED6C9A9265F9107}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-B01-U09}
+\meta{unit-alias}{OFR-B01-U09}
+\meta{file-count}{1}
+\meta{bytes}{173040140}
+\ul{
+\li{\code{OFR-B01-U09-F01} — \code{screen-video}; format \code{MOV}; 173,040,140 bytes; color \code{#5E63CA}; trit \code{0}; seed \code{0x13D74B3481A06A30}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-B01-U10}
+\meta{unit-alias}{OFR-B01-U10}
+\meta{file-count}{1}
+\meta{bytes}{282050457}
+\ul{
+\li{\code{OFR-B01-U10-F01} — \code{screen-video}; format \code{MOV}; 282,050,457 bytes; color \code{#CF4951}; trit \code{1}; seed \code{0xAAEE84077BA6461C}; index \code{0}.}
+}
+}
+}
+\subtree{
+\title{Group B2 — undated screen files}
+\meta{request-code}{OFR-B02}
+\meta{unit-count}{4}
+\meta{file-count}{4}
+\meta{bytes}{35671103}
+\p{Four requestable undated screen files retained so the available-file ledger is complete; no participant-row linkage is asserted.}
+\subtree{
+\title{OFR-B02-U01}
+\meta{unit-alias}{OFR-B02-U01}
+\meta{file-count}{1}
+\meta{bytes}{21875812}
+\ul{
+\li{\code{OFR-B02-U01-F01} — \code{screen-video}; format \code{MOV}; 21,875,812 bytes; color \code{#2EB019}; trit \code{-1}; seed \code{0x626A7555D8309813}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-B02-U02}
+\meta{unit-alias}{OFR-B02-U02}
+\meta{file-count}{1}
+\meta{bytes}{7678168}
+\ul{
+\li{\code{OFR-B02-U02-F01} — \code{screen-video}; format \code{MOV}; 7,678,168 bytes; color \code{#209456}; trit \code{0}; seed \code{0xCE6E0549C4571519}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-B02-U03}
+\meta{unit-alias}{OFR-B02-U03}
+\meta{file-count}{1}
+\meta{bytes}{425876}
+\ul{
+\li{\code{OFR-B02-U03-F01} — \code{screen-video}; format \code{MOV}; 425,876 bytes; color \code{#35288F}; trit \code{1}; seed \code{0x87AB2A95AF41DE62}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-B02-U04}
+\meta{unit-alias}{OFR-B02-U04}
+\meta{file-count}{1}
+\meta{bytes}{5691247}
+\ul{
+\li{\code{OFR-B02-U04-F01} — \code{screen-video}; format \code{MOV}; 5,691,247 bytes; color \code{#D36339}; trit \code{-1}; seed \code{0x7A831F226C457E63}; index \code{3}.}
+}
+}
+}
+}
+\subtree{
+\title{Edge Esmeralda}
+\meta{cohort-code}{OFR-C}
+\meta{unit-count}{7}
+\meta{file-count}{57}
+\meta{bytes}{699649226}
+\p{The real-data surface is one direct reading containing forty-six requestable files in a single reading unit. Eleven simulated tooling fixtures are listed separately for ledger completeness and are not part of the reading. Cohort placement does not establish a person-level linkage.}
+\subtree{
+\title{Group C1 — one direct reading}
+\meta{request-code}{OFR-C01}
+\meta{unit-count}{1}
+\meta{file-count}{46}
+\meta{bytes}{699275572}
+\p{One requestable reading unit containing all forty-six retained packet streams, metadata files, decoded arrays, derived event streams, and available status rollups. Some downstream files are derived-only and cannot reconstruct the packet stream.}
+\subtree{
+\title{OFR-C01-U01}
+\meta{unit-alias}{OFR-C01-U01}
+\meta{file-count}{46}
+\meta{bytes}{699275572}
+\ul{
+\li{\code{OFR-C01-U01-F01} — \code{raw-packet-stream}; format \code{BIN}; 1,520,647 bytes; color \code{#30A44C}; trit \code{0}; seed \code{0x72D5964B04776C93}; index \code{0}.}
+\li{\code{OFR-C01-U01-F02} — \code{run-metadata}; format \code{JSON}; 2,163 bytes; color \code{#D062E9}; trit \code{1}; seed \code{0xE510A5BA6B242034}; index \code{0}.}
+\li{\code{OFR-C01-U01-F03} — \code{raw-packet-stream}; format \code{BIN}; 1,057,141 bytes; color \code{#DCB62D}; trit \code{-1}; seed \code{0x8496400C6612D635}; index \code{4}.}
+\li{\code{OFR-C01-U01-F04} — \code{run-metadata}; format \code{JSON}; 1,065 bytes; color \code{#61CCC1}; trit \code{0}; seed \code{0x3955E78AA99878D9}; index \code{0}.}
+\li{\code{OFR-C01-U01-F05} — \code{raw-packet-stream}; format \code{BIN}; 3,145,462 bytes; color \code{#3915B2}; trit \code{1}; seed \code{0x8A2A370422EAE6EC}; index \code{2}.}
+\li{\code{OFR-C01-U01-F06} — \code{run-metadata}; format \code{JSON}; 1,158 bytes; color \code{#BDE39A}; trit \code{-1}; seed \code{0x24A23037DD6C4267}; index \code{1}.}
+\li{\code{OFR-C01-U01-F07} — \code{raw-packet-stream}; format \code{BIN}; 61,007,815 bytes; color \code{#2559DC}; trit \code{0}; seed \code{0x011887E24F1D7CA4}; index \code{1}.}
+\li{\code{OFR-C01-U01-F08} — \code{run-metadata}; format \code{JSON}; 634 bytes; color \code{#E84369}; trit \code{1}; seed \code{0xA5EA212DC03A6DC6}; index \code{4}.}
+\li{\code{OFR-C01-U01-F09} — \code{decode-metadata}; format \code{JSON}; 627 bytes; color \code{#E98C71}; trit \code{-1}; seed \code{0xE6C9B85442957493}; index \code{6}.}
+\li{\code{OFR-C01-U01-F10} — \code{derived-event-stream}; format \code{JSONL}; 4,160 bytes; color \code{#48E2C7}; trit \code{0}; seed \code{0x0B57CB92B25D63B6}; index \code{0}.}
+\li{\code{OFR-C01-U01-F11} — \code{decoded-array}; format \code{NPZ}; 80,459,497 bytes; color \code{#D234C5}; trit \code{1}; seed \code{0x17A3174DA677CB4F}; index \code{3}.}
+\li{\code{OFR-C01-U01-F12} — \code{raw-packet-stream}; format \code{BIN}; 33,267,926 bytes; color \code{#B3C343}; trit \code{-1}; seed \code{0x2E4A52CAD4CBD03B}; index \code{4}.}
+\li{\code{OFR-C01-U01-F13} — \code{run-metadata}; format \code{JSON}; 655 bytes; color \code{#1B5698}; trit \code{0}; seed \code{0x286ADAB49E3F93D8}; index \code{0}.}
+\li{\code{OFR-C01-U01-F14} — \code{decode-metadata}; format \code{JSON}; 876 bytes; color \code{#E659F2}; trit \code{1}; seed \code{0x677DD277E69A6E18}; index \code{0}.}
+\li{\code{OFR-C01-U01-F15} — \code{derived-event-stream}; format \code{JSONL}; 3,936 bytes; color \code{#DDAC86}; trit \code{-1}; seed \code{0xE50C1E4BBE91CA63}; index \code{3}.}
+\li{\code{OFR-C01-U01-F16} — \code{decoded-array}; format \code{NPZ}; 43,872,037 bytes; color \code{#5ED9B1}; trit \code{0}; seed \code{0x2B94CAF47BFB40E3}; index \code{0}.}
+\li{\code{OFR-C01-U01-F17} — \code{raw-packet-stream}; format \code{BIN}; 14,556,404 bytes; color \code{#3510E9}; trit \code{1}; seed \code{0x1ECFD4FDCD7C6CB7}; index \code{0}.}
+\li{\code{OFR-C01-U01-F18} — \code{run-metadata}; format \code{JSON}; 682 bytes; color \code{#A8E96B}; trit \code{-1}; seed \code{0xA6722D3EB00486D3}; index \code{5}.}
+\li{\code{OFR-C01-U01-F19} — \code{decode-metadata}; format \code{JSON}; 1,049 bytes; color \code{#2A3589}; trit \code{0}; seed \code{0x592D4C3FB7CD2196}; index \code{6}.}
+\li{\code{OFR-C01-U01-F20} — \code{derived-event-stream}; format \code{JSONL}; 436 bytes; color \code{#EE49B0}; trit \code{1}; seed \code{0x3B665E21425E7561}; index \code{1}.}
+\li{\code{OFR-C01-U01-F21} — \code{decoded-array}; format \code{NPZ}; 19,198,297 bytes; color \code{#DBA384}; trit \code{-1}; seed \code{0x238929F29206B350}; index \code{0}.}
+\li{\code{OFR-C01-U01-F22} — \code{raw-packet-stream}; format \code{BIN}; 61,953,727 bytes; color \code{#309646}; trit \code{0}; seed \code{0x56AD8BF5C8790B76}; index \code{1}.}
+\li{\code{OFR-C01-U01-F23} — \code{run-metadata}; format \code{JSON}; 749 bytes; color \code{#674DD3}; trit \code{1}; seed \code{0x75DA18691F101312}; index \code{6}.}
+\li{\code{OFR-C01-U01-F24} — \code{decode-metadata}; format \code{JSON}; 1,065 bytes; color \code{#DBE41A}; trit \code{-1}; seed \code{0x3221B6F40F4A3647}; index \code{1}.}
+\li{\code{OFR-C01-U01-F25} — \code{derived-event-stream}; format \code{JSONL}; 1,322 bytes; color \code{#365DA5}; trit \code{0}; seed \code{0x06993FE734882033}; index \code{0}.}
+\li{\code{OFR-C01-U01-F26} — \code{decoded-array}; format \code{NPZ}; 81,703,012 bytes; color \code{#B42CBD}; trit \code{1}; seed \code{0x04D86EA0D5E273E1}; index \code{2}.}
+\li{\code{OFR-C01-U01-F27} — \code{raw-packet-stream}; format \code{BIN}; 6,776 bytes; color \code{#EDE92E}; trit \code{-1}; seed \code{0x8C1E2214106CB532}; index \code{0}.}
+\li{\code{OFR-C01-U01-F28} — \code{run-metadata}; format \code{JSON}; 1,028 bytes; color \code{#5DC3EC}; trit \code{0}; seed \code{0x8AF0A9CB9A2875A5}; index \code{2}.}
+\li{\code{OFR-C01-U01-F29} — \code{derived-event-stream}; format \code{JSONL}; 306,042 bytes; color \code{#C51565}; trit \code{1}; seed \code{0xF82D984F978D3DB4}; index \code{1}.}
+\li{\code{OFR-C01-U01-F30} — \code{derived-event-stream}; format \code{JSONL}; 10,778,744 bytes; color \code{#6EDE22}; trit \code{-1}; seed \code{0xEB9C00F05A504292}; index \code{0}.}
+\li{\code{OFR-C01-U01-F31} — \code{derived-event-stream}; format \code{JSONL}; 664,152 bytes; color \code{#29F18F}; trit \code{0}; seed \code{0xFBC493A79A978CF8}; index \code{5}.}
+\li{\code{OFR-C01-U01-F32} — \code{derived-event-stream}; format \code{JSONL}; 11,889,900 bytes; color \code{#DC8AEC}; trit \code{1}; seed \code{0x1B07D33860E88A43}; index \code{0}.}
+\li{\code{OFR-C01-U01-F33} — \code{derived-event-stream}; format \code{JSONL}; 88,669 bytes; color \code{#43A333}; trit \code{-1}; seed \code{0x75CE079A1C0FFFBA}; index \code{0}.}
+\li{\code{OFR-C01-U01-F34} — \code{status-rollup}; format \code{JSON}; 534 bytes; color \code{#83DEE0}; trit \code{0}; seed \code{0xCFCFA81AFA60DE87}; index \code{11}.}
+\li{\code{OFR-C01-U01-F35} — \code{derived-event-stream}; format \code{JSONL}; 763,006 bytes; color \code{#9E5FCD}; trit \code{1}; seed \code{0x5FC13395F4883331}; index \code{3}.}
+\li{\code{OFR-C01-U01-F36} — \code{status-rollup}; format \code{JSON}; 563 bytes; color \code{#91CD45}; trit \code{-1}; seed \code{0x90524C32304EB182}; index \code{0}.}
+\li{\code{OFR-C01-U01-F37} — \code{derived-event-stream}; format \code{JSONL}; 108,732,986 bytes; color \code{#1E68A9}; trit \code{0}; seed \code{0xBAE2D0EF502786DC}; index \code{4}.}
+\li{\code{OFR-C01-U01-F38} — \code{status-rollup}; format \code{JSON}; 638 bytes; color \code{#7471D9}; trit \code{1}; seed \code{0xA0DE03A0C557FB3F}; index \code{0}.}
+\li{\code{OFR-C01-U01-F39} — \code{derived-event-stream}; format \code{JSONL}; 1,460,920 bytes; color \code{#A7CD25}; trit \code{-1}; seed \code{0x0765B829BD607E44}; index \code{6}.}
+\li{\code{OFR-C01-U01-F40} — \code{status-rollup}; format \code{JSON}; 1,333 bytes; color \code{#1C2EE1}; trit \code{0}; seed \code{0xC8B8D09C7AFA9189}; index \code{0}.}
+\li{\code{OFR-C01-U01-F41} — \code{derived-event-stream}; format \code{JSONL}; 12,610 bytes; color \code{#3213E8}; trit \code{1}; seed \code{0x68CC3D4F28066182}; index \code{2}.}
+\li{\code{OFR-C01-U01-F42} — \code{status-rollup}; format \code{JSON}; 788 bytes; color \code{#C9A121}; trit \code{-1}; seed \code{0x31407BFCD4B26010}; index \code{0}.}
+\li{\code{OFR-C01-U01-F43} — \code{derived-event-stream}; format \code{JSONL}; 3,076,099 bytes; color \code{#519CE5}; trit \code{0}; seed \code{0x8248FE1BE1A259E8}; index \code{2}.}
+\li{\code{OFR-C01-U01-F44} — \code{status-rollup}; format \code{JSON}; 1,332 bytes; color \code{#6763D8}; trit \code{1}; seed \code{0x4847CFD0B94234A0}; index \code{3}.}
+\li{\code{OFR-C01-U01-F45} — \code{derived-event-stream}; format \code{JSONL}; 159,725,570 bytes; color \code{#E6B72D}; trit \code{-1}; seed \code{0xC5657C48C8358D44}; index \code{0}.}
+\li{\code{OFR-C01-U01-F46} — \code{status-rollup}; format \code{JSON}; 1,340 bytes; color \code{#7AE7D7}; trit \code{0}; seed \code{0xA29632461892C150}; index \code{0}.}
+}
+}
+}
+\subtree{
+\title{Group C2 — simulated tooling fixtures}
+\meta{request-code}{OFR-C02}
+\meta{unit-count}{6}
+\meta{file-count}{11}
+\meta{bytes}{373654}
+\p{Six simulated run units listed so the available-file ledger is complete. They must be excluded from physiological or participant-level analysis.}
+\subtree{
+\title{OFR-C02-U01}
+\meta{unit-alias}{OFR-C02-U01}
+\meta{file-count}{1}
+\meta{bytes}{56756}
+\ul{
+\li{\code{OFR-C02-U01-F01} — \code{derived-event-stream}; format \code{JSONL}; 56,756 bytes; color \code{#DC2DBE}; trit \code{1}; seed \code{0xC2907327752F6039}; index \code{2}.}
+}
+}
+\subtree{
+\title{OFR-C02-U02}
+\meta{unit-alias}{OFR-C02-U02}
+\meta{file-count}{2}
+\meta{bytes}{58669}
+\ul{
+\li{\code{OFR-C02-U02-F01} — \code{derived-event-stream}; format \code{JSONL}; 58,112 bytes; color \code{#C9583C}; trit \code{-1}; seed \code{0x25DDEB24A7C84853}; index \code{0}.}
+\li{\code{OFR-C02-U02-F02} — \code{status-rollup}; format \code{JSON}; 557 bytes; color \code{#8299F7}; trit \code{0}; seed \code{0xD0335EF6BB8A8027}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-C02-U03}
+\meta{unit-alias}{OFR-C02-U03}
+\meta{file-count}{2}
+\meta{bytes}{39602}
+\ul{
+\li{\code{OFR-C02-U03-F01} — \code{derived-event-stream}; format \code{JSONL}; 39,251 bytes; color \code{#D448B8}; trit \code{1}; seed \code{0x8613330F196ABF95}; index \code{3}.}
+\li{\code{OFR-C02-U03-F02} — \code{status-rollup}; format \code{JSON}; 351 bytes; color \code{#968F2A}; trit \code{-1}; seed \code{0x02686CAA5AB36BCB}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-C02-U04}
+\meta{unit-alias}{OFR-C02-U04}
+\meta{file-count}{2}
+\meta{bytes}{60937}
+\ul{
+\li{\code{OFR-C02-U04-F01} — \code{derived-event-stream}; format \code{JSONL}; 60,491 bytes; color \code{#2B64AF}; trit \code{0}; seed \code{0x8ED73570797FC768}; index \code{3}.}
+\li{\code{OFR-C02-U04-F02} — \code{status-rollup}; format \code{JSON}; 446 bytes; color \code{#9E3451}; trit \code{1}; seed \code{0x07D4923724F2056A}; index \code{0}.}
+}
+}
+\subtree{
+\title{OFR-C02-U05}
+\meta{unit-alias}{OFR-C02-U05}
+\meta{file-count}{2}
+\meta{bytes}{62118}
+\ul{
+\li{\code{OFR-C02-U05-F01} — \code{derived-event-stream}; format \code{JSONL}; 60,958 bytes; color \code{#A0E665}; trit \code{-1}; seed \code{0x66D58509C29A344A}; index \code{1}.}
+\li{\code{OFR-C02-U05-F02} — \code{status-rollup}; format \code{JSON}; 1,160 bytes; color \code{#55D3E5}; trit \code{0}; seed \code{0x599D74F8C6AA91B6}; index \code{1}.}
+}
+}
+\subtree{
+\title{OFR-C02-U06}
+\meta{unit-alias}{OFR-C02-U06}
+\meta{file-count}{2}
+\meta{bytes}{95572}
+\ul{
+\li{\code{OFR-C02-U06-F01} — \code{derived-event-stream}; format \code{JSONL}; 94,256 bytes; color \code{#DE4ABA}; trit \code{1}; seed \code{0x86C3EEECEE3156F3}; index \code{0}.}
+\li{\code{OFR-C02-U06-F02} — \code{status-rollup}; format \code{JSON}; 1,316 bytes; color \code{#23AB50}; trit \code{0}; seed \code{0x872EE228DE1E163A}; index \code{1}.}
+}
+}
+}
+}
+}
+\subtree{
+\title{Maintenance and Verification}
+\p{The checked-in generator verifies the canonical raw manifest against local bytes, rejects missing or unknown companion types, separates real and simulated runs from their recorded flags, requires the expected unit and file counts, assigns all colors in one clean color process, checks uniqueness and GF(3) conservation, emits only allowlisted public fields, and separately writes a mode-0600 private alias-to-source registry with integrity hashes. A maintainer must regenerate and review this page whenever the private offer surface or color-kernel revision changes.}
+}
