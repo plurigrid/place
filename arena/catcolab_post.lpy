@@ -1,0 +1,51 @@
+;; POST 26-theory × 3-object tile registry to live CatColab instance.
+;; Each theory → new CatColab document; objects → generators; invariant → note.
+
+(ns arena.catcolab-post
+  (:require [arena.theories :as th]
+            [basilisp.json :as json])
+  (:import [urllib.request :as urlreq]
+           [urllib.error :as urlerr]))
+
+(def catcolab-url "https://catcolab.org/api/documents")
+(def ^:dynamic *dry-run* false)
+
+(defn theory->doc [letter]
+  (let [t (th/theory letter)]
+    {:title    (str letter " — " (:name t))
+     :type     "diagram"
+     :content  {:generators (mapv name (:objects t))
+                :relations  []
+                :note       (str "invariant: " (name (:invariant t)))}}))
+
+(defn post-doc [doc]
+  (if *dry-run*
+    (do (println "DRY POST" catcolab-url (json/write-str doc))
+        {:ok true :id (str "dry-" (:title doc))})
+    (try
+      (let [body (.encode (json/write-str doc) "utf-8")
+            req  (urlreq/Request catcolab-url
+                                 ** {:data body
+                                     :headers {"Content-Type" "application/json"}
+                                     :method "POST"})
+            resp (urlreq/urlopen req ** {:timeout 10})
+            out  (json/read-str (.decode (.read resp) "utf-8"))]
+        {:ok true :id (get out "id") :title (:title doc)})
+      (catch urlerr/HTTPError e
+        {:ok false :status (.-code e) :title (:title doc)})
+      (catch Exception e
+        {:ok false :error (str e) :title (:title doc)}))))
+
+(defn post-all []
+  (into {} (for [letter "ABCDEFGHIJKLMNOPQRSTUVWXYZ"]
+             [letter (post-doc (theory->doc letter))])))
+
+;; cross-theory invariant links (parrot-fixed-point cluster etc.)
+(defn post-cluster-links []
+  (for [[cluster letters] th/clusters
+        l1 letters, l2 letters
+        :when (not= l1 l2)]
+    (post-doc {:title (str l1 "↔" l2)
+               :type  "morphism"
+               :content {:src (str l1) :tgt (str l2)
+                         :note (str "cluster: " (name cluster))}})))

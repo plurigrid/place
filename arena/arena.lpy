@@ -1,0 +1,65 @@
+;; Arena — basilisp outer loop for bci.horse
+;; SUB :7069 ← dt26.hy trits → GF(3) conservation gate → CRDT atom → Goblins broadcast
+
+(ns arena.arena
+  (:require [basilisp.json :as json]
+            [basilisp.core.async :as a])
+  (:import [zmq] [threading]))
+
+;; ── state ──────────────────────────────────────────────────────────
+(def state
+  (atom {:trits []          ; append-only log [int ...]
+         :events []         ; parallel log [{:trit :L :t ...} ...]
+         :sum 0             ; running sum mod 3
+         :by-letter {}      ; letter → [trit ...]
+         :witnesses 0}))    ; trials that pass GF(3)
+
+;; ── GF(3) law ──────────────────────────────────────────────────────
+(defn gf3-conserved? [trits]
+  (zero? (mod (reduce + 0 trits) 3)))
+
+(defn merge-trial [s ev]
+  (let [t (:trit ev)
+        L (:L ev)
+        trits' (conj (:trits s) t)
+        sum'   (mod (+ (:sum s) t) 3)]
+    (-> s
+        (assoc :trits trits' :sum sum')
+        (update :events conj ev)
+        (update-in [:by-letter L] (fnil conj []) t)
+        (cond-> (zero? sum') (update :witnesses inc)))))
+
+;; ── ingest loop ────────────────────────────────────────────────────
+(defn ingest [ev-chan]
+  (a/go-loop []
+    (when-let [ev (a/<! ev-chan)]
+      (swap! state merge-trial ev)
+      (when (zero? (mod (count (:trits @state)) 26))
+        (println (format "arena: n=%d sum=%d witnesses=%d"
+                         (count (:trits @state))
+                         (:sum @state)
+                         (:witnesses @state))))
+      (recur))))
+
+;; ── ZMQ SUB bridge (python pyzmq via basilisp interop) ────────────
+(defn zmq-reader-thread [port ch]
+  (let [ctx  (zmq/Context)
+        sock (.socket ctx zmq/SUB)]
+    (.connect sock (str "tcp://127.0.0.1:" port))
+    (.setsockopt sock zmq/SUBSCRIBE (.encode "" "utf-8"))
+    (while true
+      (let [msg (.decode (.recv sock) "utf-8")
+            ev  (json/read-str msg)]
+        (a/>!! ch ev)))))
+
+(defn start [port]
+  (let [ch (a/chan 1024)
+        t  (threading/Thread ** {:target (fn [] (zmq-reader-thread port ch))
+                                 :daemon true})]
+    (ingest ch)
+    (.start t)
+    {:ch ch :thread t}))
+
+(defn -main [& _]
+  (start 7069)
+  @(promise))

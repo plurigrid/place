@@ -1,0 +1,46 @@
+;; 26 catcolab theories × 3 objects = 78 tiles
+;; Each theory carries invariant predicate; cross-theory clusters = confusion predictions.
+
+(ns arena.theories)
+
+(def theories
+  {\A {:name "Arena"             :objects [:play :coplay :merge]   :invariant :crdt-converge}
+   \B {:name "Blume-Capel"       :objects [:spin-1 :spin0 :spin+1] :invariant :gf3-sum}
+   \C {:name "Cohomology"        :objects [:site :sheaf :descent]  :invariant :cech-closed}
+   \D {:name "DOTS"              :objects [:double :open :tracing] :invariant :para-lens-6}
+   \E {:name "Eff"               :objects [:handler :op :cont]     :invariant :neg-neg-top}
+   \F {:name "Fisher-Rao"        :objects [:metric :geodesic :kl]  :invariant :info-monotone}
+   \G {:name "Glimpse"           :objects [:epoch :sync :emit]     :invariant :temporal-align}
+   \H {:name "Hedges-Herold"     :objects [:seq :par :id]          :invariant :brick-flow}
+   \I {:name "IES"               :objects [:olog :000 :session]    :invariant :type-safe}
+   \J {:name "Julia-Gay"         :objects [:hash :color :mac]      :invariant :splitmix-det}
+   \K {:name "Kuramoto"          :objects [:phase :coupling :sync] :invariant :order-param}
+   \L {:name "Lens"              :objects [:get :put :law]         :invariant :put-get}
+   \M {:name "Majj"              :objects [:cell :merge :ord]      :invariant :lattice-join}
+   \N {:name "Nashator"          :objects [:player :payoff :eq]    :invariant :best-response}
+   \O {:name "Open-Games"        :objects [:play :coplay :best]    :invariant :subgame-perfect}
+   \P {:name "Propagator"        :objects [:cell :merge :contra]   :invariant :monotone}
+   \Q {:name "Qualia-Market"     :objects [:bid :ask :clear]       :invariant :budget-balance}
+   \R {:name "Rewriting"         :objects [:lhs :rhs :strategy]    :invariant :confluence}
+   \S {:name "Sheaf"             :objects [:cover :section :glue]  :invariant :parrot-fixed}
+   \T {:name "Topos"             :objects [:obj :arrow :subobj]    :invariant :heyting}
+   \U {:name "USS"               :objects [:entropy :mc :quantize] :invariant :second-law}
+   \V {:name "Vertex"            :objects [:model :pipeline :rag]  :invariant :kfp-dag}
+   \W {:name "Wiring"            :objects [:box :wire :nerve]      :invariant :nerve-commute}
+   \X {:name "X-acsets"          :objects [:schema :instance :hom] :invariant :mural}
+   \Y {:name "Y-combinator"      :objects [:fix :aseity :loop]     :invariant :y-squared}
+   \Z {:name "Z2-graded"         :objects [:even :odd :susy]       :invariant :aperiodic}})
+
+;; predicted confusion clusters (from invariant resonance)
+(def clusters
+  {:parrot-fixed-point #{\S \Y \Z \W}     ; y² ≅ ¬¬⊤ ≅ P(f)-inv ≅ nerve
+   :aperiodic          #{\Z \R}           ; hat-rewrite, Z2
+   :nerve-complex      #{\Z \X \W}        ; mural/nerve/∞-sheaf
+   :gf3-triad          #{\B \J \P}})      ; conservation-law wielders
+
+(defn theory [letter] (get theories letter))
+(defn objects [letter] (:objects (theory letter)))
+(defn invariant [letter] (:invariant (theory letter)))
+
+(defn same-cluster? [l1 l2]
+  (some (fn [[_ s]] (and (s l1) (s l2))) clusters))
