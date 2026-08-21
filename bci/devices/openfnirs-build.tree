@@ -82,7 +82,7 @@
 
   \table{
     \tr{\th{Board}\th{Ref/location}\th{Board image evidence}\th{Part image / part-evidence image}\th{Current status}\th{Action}}
-    \tr{\td{Sensor module ×8}\td{J1, bottom edge, six-pad 1 mm footprint}\td{Current clear bottom photo + source-spec map}\td{T1M-06 connector stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/15-digikey-t1m-06-header-qty5.png}}\td{Empty by design; 5 T1M-06 in hand for 8 boards}\td{Buy 3× T1M-06-F-SH-L-K if completing all eight boards, then hand-solder all required J1 footprints}}
+    \tr{\td{Sensor module ×8}\td{J1, bottom edge, six-pad 1 mm footprint}\td{Current clear bottom photo + source-spec map}\td{T1M-06 connector stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/15-digikey-t1m-06-header-qty5.png}}\td{5 of 8 boards assembled 2026-08-20: J1 hand-soldered on boards 1–5, all five in-hand T1M-06 consumed}\td{Buy 3× T1M-06-F-SH-L-K to complete boards 6–8, then hand-solder the remaining J1 footprints}}
     \tr{\td{Sensor module ×8}\td{R1/R2/C1/C2 top-side analog network}\td{Current clear top photo plus bench probing}\td{If a real open/missing site is found: 60.4k 0603 resistor stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/01-digikey-541-604khct-60k4-resistor.png} 3.9M 0603 resistor stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/05-digikey-541-3m90-3m9-resistor.png} 200pF 0603 capacitor stock: \image{hardware-builds/bci-pasted/2026-06-12-packet/02-digikey-399-c0603c201-200pf-cap.png}}\td{Placement is verification-only unless microscope/probe check shows an actual missing part}\td{Probe each board; hand-add only if open/missing}}
     \tr{\td{Sensor module ×8}\td{C3/U1/D3/Q1 bottom-side analog and indicator path}\td{Current clear bottom photo plus bench probing}\td{No current-fill image: the saved AD8618ARUZ image is spare/ECO evidence, not a placement instruction for current U1}\td{U1 is AD8616 SOIC-8; surrounding bottom-side locations appear populated or verification-only}\td{Do not place AD8618ARUZ; verify value/function before any rework}}
     \tr{\td{Sensor module ×8}\td{D1/D2 top source/detector}\td{Current clear top photo plus optical/electrical evidence}\td{No current-fill image in the saved packet; use optical/electrical evidence before any diode claim}\td{Verify optically/electrically; not a purchase task unless bench evidence contradicts the board}\td{Record evidence; do not create a parts order from images alone}}
@@ -118,7 +118,7 @@
 \tr{\td{ECU U?}\td{— (open)}\td{unresolved glare, packet 06}}
 \tr{\td{Sensor U1}\td{AD8616 SOIC-8}\td{kept; AD8618ARUZ rejected to spare}}
 \tr{\td{Sensor D2/D3}\td{VBPW34S + 0603 green LED}\td{verify}}
-\tr{\td{Sensor J1}\td{Samtec T1M-06-F-SH-L-K}\td{T1M-06 stock; short 5/8}}
+\tr{\td{Sensor J1}\td{Samtec T1M-06-F-SH-L-K}\td{5/8 placed 2026-08-20; in-hand stock consumed, 3 to buy}}
 \tr{\td{ST-LINK J2}\td{FTSH-107-01-L-DV-K}\td{exact}}
 \tr{\td{ST-LINK J1}\td{HTSW-107-07-G-D}\td{exact}}
 }
@@ -302,7 +302,7 @@
 
   \table{
     \tr{\th{ID}\th{Blocker}\th{Blocks}\th{Owner}\th{Action}}
-    \tr{\td{B1}\td{Sensor J1: 5 of 8 stocked}\td{WI-2 (3 of 8 boards)}\td{bci.place}\td{Procure 3× T1M-06-F-SH-L-K}}
+    \tr{\td{B1}\td{Sensor J1: 5 of 8 placed (2026-08-20); 0 in stock}\td{WI-2 (boards 6–8)}\td{bci.place}\td{Procure 3× T1M-06-F-SH-L-K for boards 6–8}}
     \tr{\td{B2}\td{SW1 footprint fit unknown}\td{WI-3}\td{Assembler, at kickoff}\td{Fit-check before placement}}
     \tr{\td{B3}\td{TMUX1104 population unverified}\td{WI-3}\td{Assembler, at kickoff}\td{Inspect/confirm ×8}}
     \tr{\td{B4}\td{Adapter HTSW missing; extra FTSH needed}\td{WI-4 → WI-5}\td{bci.place}\td{Procure headers before flash path is "ready"}}
@@ -315,4 +315,19 @@
   \title{10. Packaging & return}
 
   \p{Finished assemblies returned in ESD packaging (original trays where available) with the digital WI-9 evidence bundle and the signed §7/§8 tables.}
+}
+
+\subtree{
+  \title{11. Assembly progress — 2026-08-20 (ECU reflection)}
+
+  \p{Five of eight sensor modules are assembled: J1 (Samtec T1M-06-F-SH-L-K) hand-soldered on boards 1–5, consuming all five in-hand connectors. Boards 6–8 remain open on blocker B1 (procure 3× T1M-06-F-SH-L-K).}
+
+  \table{
+    \tr{\th{Item}\th{State 2026-08-20}\th{Next action}}
+    \tr{\td{Sensor modules 1–5}\td{Assembled — J1 populated}\td{Bench-verify R1/R2/C1/C2/D1/D2 per WI-2; photo evidence into the WI-9 bundle}}
+    \tr{\td{Sensor modules 6–8}\td{Awaiting J1 stock}\td{Procure 3× T1M-06-F-SH-L-K (B1), then hand-solder}}
+    \tr{\td{ECU sensor-group headers}\td{5× T1M-10 due from qty-8 stock}\td{Populate the five sensor-group headers matching the assembled sensors per the channel/cable map; record orientation and mux channel order}}
+  }
+
+  \p{ECU reflection: the 5/8 sensor state lands on the ECU as five populated T1M-10 sensor-group positions — the generated unfilled-location count for sensor-group headers drops from eight to three once placement evidence is recorded. Per the governing state machine, N2 (sensor J1) is 5/8 complete and N2→N3 proceeds per-board for boards 1–5.}
 }
