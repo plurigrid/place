@@ -1,0 +1,21 @@
+\title{labfinder: routing a project to the lab that can host it}
+\taxon{tool}
+\author{monaduck1069}
+\date{2026-08-27}
+\tag{tooling}
+\tag{collaboration}
+\tag{openalex}
+\meta{entrypoint}{bci/tools/labfinder/labfinder.ml}
+\meta{source}{OpenAlex}
+\meta{deps}{OCaml only — no libraries, no build step}
+\meta{output}{lf-0001}
+
+\p{\strong{Run it: }\code{ocaml bci/tools/labfinder/labfinder.ml "<project>"} — one file, no build, no libraries. It emits forester source; commit that as a tree. A worked result is [[lf-0001]]. No JavaScript is involved — the ranking happens at authoring time, and the site stays static XML and XSLT.}
+
+\p{A person describes a project at an event — say, unexpected death in prion proteomics — and the useful question is not "what is known about this" but "whose lab could run it, is running it now, and would take it". Paper search answers the first. \code{labfinder} answers the second: it ranks \em{labs} (PI × institution), not papers.}
+
+\p{Three decisions carry the tool. \strong{Facet decomposition}: OpenAlex ANDs a long phrase, so the full description as one query matched 32 papers and ranked an author with h=1 as a lab; searching four facets separately and fusing gives 1592. \strong{Coverage bonus}: score is multiplied by (facets matched)^1.5, because the right lab sits at the \em{intersection} of a project's facets rather than being the most-cited lab touching one of them. \strong{Senior-author = PI}: last and corresponding authors weigh 1.0, first 0.35, middle 0.12, under a 3-year recency half-life, so the ranking points at labs active now.}
+
+\p{\code{--trace} reconstructs lineage forward from the publication record: first authors on a PI's senior-author papers who now publish as senior authors elsewhere are that lab's descendants — adjacent labs, usually hungrier and faster to say yes than the parent. This exists because the genealogy databases could not be queried. neurotree and academictree gate \code{peopleinfo.php}, \code{peoplelist.php} and \code{index.php} behind a validation wall; only \code{tree.php?pid=} responds, and pids come only from the walled search. Wikidata resolved 5/5 test PIs by ORCID but 0/5 had advisor or trainee edges — it carries identity, not lineage, for working biomedical PIs.}
+
+\p{GF(3): the tool is offline analysis, outside the 4.0ms decode path, so it adds no critical-path latency and no trit parity obligation.}

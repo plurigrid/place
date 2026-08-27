@@ -1,0 +1,26 @@
+\title{labfinder: prion proteomics sudden unexplained death}
+\taxon{lab ranking}
+\author{monaduck1069}
+\meta{generated-by}{bci/tools/labfinder/labfinder.ml}
+\meta{source}{OpenAlex}
+\meta{since}{2018}
+\meta{corpus}{798 unique works}
+
+\p{Labs ranked by principal investigator for the project \em{prion proteomics sudden unexplained death}. Score sums authorship weight times recency times relevance, then multiplies by facets matched to the power 1.5 — the best lab sits at the intersection of the project's facets, not at the most-cited lab touching one of them.}
+
+\p{Facets searched:}
+\ul{
+  \li{prion protein misfolding — 200 of 8955 works}
+  \li{proteomics mass spectrometry brain — 200 of 46630 works}
+  \li{sudden unexplained death — 200 of 15345 works}
+  \li{neuropathology postmortem — 200 of 15436 works}
+}
+
+\ol{
+  \li{\strong{Orrin Devinsky} — New York University. Score 10.98 across 3 facet(s); 17 on-topic works, 13 as senior author; active 2018–2024. \p{2021 — Proteomic differences in the hippocampus and cortex of epilepsy brain tissue} \p{2020 — Sudden Unexplained Death in Childhood: A Neuropathology Review} \p{2020 — Neuropathologic Changes in Sudden Unexplained Death in Childhood} \p{ORCID: https://orcid.org/0000-0003-0044-4632}}
+  \li{\strong{Nicholas T. Seyfried} — Emory University. Score 5.56 across 2 facet(s); 14 on-topic works, 11 as senior author; active 2018–2023. \p{2020 — Large-scale proteomic analysis of Alzheimer’s disease brain and cerebrospinal fluid reveals early changes in energy metabolism associated with microglia and astrocyte activation} \p{2018 — Deep proteomic network analysis of Alzheimer’s disease brain reveals alterations in RNA binding proteins and RNA splicing associated with disease} \p{2022 — Large-scale deep multi-layer analysis of Alzheimer’s disease brain reveals strong proteomic disease-related changes not observed at the RNA level} \p{ORCID: https://orcid.org/0000-0002-4507-624X}}
+  \li{\strong{Erik C. B. Johnson} — Emory University. Score 4.95 across 2 facet(s); 12 on-topic works, 8 as senior author; active 2018–2024. \p{2020 — Large-scale proteomic analysis of Alzheimer’s disease brain and cerebrospinal fluid reveals early changes in energy metabolism associated with microglia and astrocyte activation} \p{2018 — Deep proteomic network analysis of Alzheimer’s disease brain reveals alterations in RNA binding proteins and RNA splicing associated with disease} \p{2022 — Large-scale deep multi-layer analysis of Alzheimer’s disease brain reveals strong proteomic disease-related changes not observed at the RNA level} \p{ORCID: https://orcid.org/0000-0002-0604-2944}}
+  \li{\strong{David A. Bennett} — Rush University Medical Center. Score 3.22 across 2 facet(s); 29 on-topic works, 5 as senior author; active 2018–2025. \p{2023 — Trends in Postmortem Neurodegenerative and Cerebrovascular Neuropathologies Over 25 Years} \p{2018 — Sex differences in Alzheimer’s disease and common neuropathologies of aging} \p{2018 — Targeted brain proteomics uncover multiple pathways to Alzheimer's dementia} \p{ORCID: https://orcid.org/0000-0003-3689-554X}}
+  \li{\strong{Allan I. Levey} — Emory University. Score 3.14 across 2 facet(s); 17 on-topic works, 4 as senior author; active 2018–2024. \p{2020 — Large-scale proteomic analysis of Alzheimer’s disease brain and cerebrospinal fluid reveals early changes in energy metabolism associated with microglia and astrocyte activation} \p{2022 — Large-scale deep multi-layer analysis of Alzheimer’s disease brain reveals strong proteomic disease-related changes not observed at the RNA level} \p{2023 — Quantitative proteomics of cerebrospinal fluid from African Americans and Caucasians reveals shared and divergent changes in Alzheimer’s disease} \p{ORCID: https://orcid.org/0000-0002-3153-502X}}
+  \li{\strong{Junmin Peng} — St. Jude Children's Research Hospital. Score 3.14 across 2 facet(s); 8 on-topic works, 6 as senior author; active 2020–2022. \p{2020 — Deep Multilayer Brain Proteomics Identifies Molecular Networks in Alzheimer’s Disease Progression} \p{2020 — 27-Plex Tandem Mass Tag Mass Spectrometry for Profiling Brain Proteome in Alzheimer’s Disease} \p{2021 — Proteomic landscape of Alzheimer’s Disease: novel insights into pathogenesis and biomarker discovery} \p{ORCID: https://orcid.org/0000-0003-0472-7648}}
+}
