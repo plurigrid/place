@@ -21,7 +21,7 @@ echo "  BCI trees: $(find trees -name 'bci-*.tree' | wc -l | tr -d ' ')"
 echo "  Horse trees: $(find localcharts/forest/trees -name 'horse-*.tree' | wc -l | tr -d ' ')"
 
 # Build with forester
-./forester build --config "$FORESTER_CONFIG"
+./forester build "$FORESTER_CONFIG"
 
 echo "Output in output/"
 echo "Deploy: rsync -avz output/ bci.horse:/var/www/bci.horse/"
